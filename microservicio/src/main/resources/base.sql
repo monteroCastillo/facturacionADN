@@ -1,1 +1,0 @@
-INSERT INTO CLIENTE VALUES(111,'Shi', 'user');

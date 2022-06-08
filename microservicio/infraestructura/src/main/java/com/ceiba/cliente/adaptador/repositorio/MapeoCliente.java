@@ -1,7 +1,7 @@
 package com.ceiba.cliente.adaptador.repositorio;
 
-import com.ceiba.cliente.entidad.Cliente;
-import com.ceiba.cliente.entidad.TipoCliente;
+import com.ceiba.cliente.puerto.entidad.Cliente;
+import com.ceiba.cliente.puerto.entidad.TipoCliente;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;
 

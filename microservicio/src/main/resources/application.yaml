@@ -6,7 +6,7 @@ jasypt:
 server:
    port: 8083
    servlet:
-      context-path: /facturaVivero
+     # context-path: /facturaVivero
       session:
          timeout: 21600s
 springdoc:

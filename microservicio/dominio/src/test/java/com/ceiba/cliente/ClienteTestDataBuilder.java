@@ -1,7 +1,7 @@
 package com.ceiba.cliente;
 
-import com.ceiba.cliente.entidad.Cliente;
-import com.ceiba.cliente.entidad.TipoCliente;
+import com.ceiba.cliente.puerto.entidad.Cliente;
+import com.ceiba.cliente.puerto.entidad.TipoCliente;
 
 public class ClienteTestDataBuilder {
     private String nombre;

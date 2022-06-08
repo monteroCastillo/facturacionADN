@@ -1,6 +1,6 @@
 package com.ceiba.factura;
 
-import com.ceiba.cliente.entidad.Cliente;
+import com.ceiba.cliente.puerto.entidad.Cliente;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
 

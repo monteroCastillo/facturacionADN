@@ -1,7 +1,7 @@
 package com.ceiba.cliente;
 
 import com.ceiba.BasePrueba;
-import com.ceiba.cliente.entidad.TipoCliente;
+import com.ceiba.cliente.puerto.entidad.TipoCliente;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

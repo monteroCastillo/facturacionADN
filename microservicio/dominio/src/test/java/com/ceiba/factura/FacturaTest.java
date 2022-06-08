@@ -2,8 +2,8 @@ package com.ceiba.factura;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.cliente.ClienteTestDataBuilder;
-import com.ceiba.cliente.entidad.Cliente;
-import com.ceiba.cliente.entidad.TipoCliente;
+import com.ceiba.cliente.puerto.entidad.Cliente;
+import com.ceiba.cliente.puerto.entidad.TipoCliente;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;

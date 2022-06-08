@@ -1,8 +1,8 @@
 package com.ceiba.factura;
 
 import com.ceiba.cliente.ClienteTestDataBuilder;
-import com.ceiba.cliente.entidad.Cliente;
-import com.ceiba.cliente.entidad.TipoCliente;
+import com.ceiba.cliente.puerto.entidad.Cliente;
+import com.ceiba.cliente.puerto.entidad.TipoCliente;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
