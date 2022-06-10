@@ -10,53 +10,33 @@ pipeline {
  	disableConcurrentBuilds()
   }
 
-  //Una sección que define las herramientas preinstaladas en Jenkins
+  //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
-    gradle 'Gradle5.6_Centos' //Preinstalada en la Configuración del Master
+    jdk 'JDK8_Centos' //Verisión preinstalada en la Configuración del Master
   }
+/*	Versiones disponibles
+      JDK8_Mac
+      JDK6_Centos
+      JDK7_Centos
+      JDK8_Centos
+      JDK10_Centos
+      JDK11_Centos
+      JDK13_Centos
+      JDK14_Centos
+*/
 
-  //Aquí comienzan los items del Pipeline
+  //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-        checkout([
-			$class: 'GitSCM', 
-			branches: [[name: '*/main']],
-			doGenerateSubmoduleConfigurations: false, 
-			extensions: [], 
-			gitTool: 'Git_Centos', 
-			submoduleCfg: [], 
-			userRemoteConfigs: [[
-				credentialsId: 'GITHUB_monterocastillo',
-				url:'https://github.com/monteroCastillo/facturacionADN.git'
-			]]
-		])
-        
       }
     }
-    
-	stage('Clean & Compile') {
+
+    stage('Compile & Unit Tests') {
       steps{
-      	sh 'gradle --b ./facturaVivero/build.gradle clean compileJava'
-      }
-    }
-	
-	 stage('Build') {
-      steps {
-        echo "------------>Build<------------"
-        //Construir sin tarea test que se ejecutó previamente
-		sh 'gradle --b ./facturaVivero/build.gradle build -x test'
-                
-      }
-    } 
-	
-    stage('Unit Tests') {
-      steps{
-      //	sh 'gradle --b ./facturaVivero/build.gradle clean'
-        echo "------------>Unit Tests<------------"
-		sh 'gradle --b ./facturaVivero/build.gradle test'
+        echo "------------>Compile & Unit Tests<------------"
+
       }
     }
 
@@ -64,12 +44,16 @@ pipeline {
       steps{
         echo '------------>Análisis de código estático<------------'
         withSonarQubeEnv('Sonar') {
-			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
       }
     }
 
-    
+    stage('Build') {
+      steps {
+        echo "------------>Build<------------"
+      }
+    }
   }
 
   post {
@@ -77,15 +61,11 @@ pipeline {
       echo 'This will always run'
     }
     success {
-		echo 'This will run only if successful'
-		junit 'facturaVivero/build/test-results/test/*.xml'
-	}
-
+      echo 'This will run only if successful'
+    }
     failure {
-		echo 'This will run only if failed'
-		mail (to: 'rodrigo.montero@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
-
-	}
+      echo 'This will run only if failed'
+    }
     unstable {
       echo 'This will run only if the run was marked as unstable'
     }
