@@ -20,8 +20,11 @@ spring:
    datasource:
       driver-class-name:  org.h2.Driver
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:h2:mem:facturaVivero
+      jdbcUrl: jdbc:h2:mem:facturaVivero;DB_CLOSE_DELAY=-1
       username: root
       password: 
       hikari:
          poolName: pool
+   jpa:
+      spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+

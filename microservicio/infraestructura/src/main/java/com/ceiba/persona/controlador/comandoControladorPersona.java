@@ -32,8 +32,8 @@ public class comandoControladorPersona {
     }
 
     @DeleteMapping({"/persona/{id}"})
-    public String eliminar(@PathVariable("id") int idPersona) {
-        servicioPersona.eliminar((long)idPersona);
-        return "Registro dePersona eliminada";
+    public String eliminar(@PathVariable("id") Long idPersona) {
+        servicioPersona.eliminar((Long)idPersona);
+        return "Registro de Persona eliminada!";
     }
 }

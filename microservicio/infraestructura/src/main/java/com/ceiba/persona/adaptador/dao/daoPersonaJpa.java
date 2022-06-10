@@ -21,14 +21,14 @@ public class daoPersonaJpa implements RepositorioPersona {
         repoPersona.save(persona);
     }
 
-    @Override
-    public void eliminar(Long idPersona) {
-        repoPersona.delete(idPersona);
-    }
-
-//    public void eliminar(long idPersona) {
-//        repoPersona.deleteById(idPersona);
+//    @Override
+//    public void eliminar(Long idPersona) {
+//        repoPersona.delete(idPersona);
 //    }
+
+    public void eliminar(Long idPersona) {
+        repoPersona.deleteById(idPersona);
+    }
 
     public List<Persona> buscarTodos() {
         return repoPersona.findAll();

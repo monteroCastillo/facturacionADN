@@ -29,6 +29,25 @@ create table producto_facturar (
  primary key (id)
 );
 
+create table factura2 (
+ id int(11) not null auto_increment,
+ total int(11) not null,
+ primary key (id)
+);
+
+
+
+create table persona (
+   idPersona bigint(11) not null auto_increment,
+   nombre varchar(20) not null,
+   direccion varchar(20) not null,
+   telefono varchar(20) not null,
+   email varchar(20) not null,
+   fechaRegistro DATE,
+   primary key (idPersona)
+);
+
+
 ALTER TABLE factura
 ADD CONSTRAINT cliente_fk
   FOREIGN KEY (id_cliente)
