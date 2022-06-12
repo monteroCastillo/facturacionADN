@@ -1,6 +1,5 @@
 package com.ceiba;
 
-import com.ceiba.persona.adaptador.repositorio.RepositorioPersonaJpa;
 import com.ceiba.persona.modelo.entidad.Persona;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

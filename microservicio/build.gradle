@@ -76,7 +76,8 @@ repositories {
 
 dependencies {
 
-	configurations {
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+    configurations {
     	runtime.exclude module: 'spring-boot-starter-tomcat'
     	compile.exclude module: 'spring-boot-starter-tomcat'
 	}

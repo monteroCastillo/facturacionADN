@@ -17,7 +17,7 @@ public class PersonaTest {
         persona.setNombre("Andres");
         String esperado = "Andres";
         String real = persona.getNombre();
-        Assertions.assertEquals(esperado, real); //Esta es la clase que realmente hace la comprobación
+        Assertions.assertEquals(esperado, real);
 
     }
 

@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Persona {
 
     @Id
-    private long idPersona;
+    private Long idPersona;
     private String nombre;
     private String direccion;
     private String telefono;
@@ -45,6 +45,16 @@ public class Persona {
         ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
         ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
         return new Persona(id, nombre, direccion, telefono);
+    }
+
+    public static Persona reconstruir(Long id, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro) {
+        ValidadorArgumento.validarObligatorio(id, "El id de la persona es requerido");
+        ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");
+        ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
+        ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
+        ValidadorArgumento.validarObligatorio(email, "El email de la persona es requerido");
+        ValidadorArgumento.validarObligatorio(fechaRegistro, "La fecha de registro es requerida");
+        return new Persona(id, nombre, direccion, telefono, email, fechaRegistro);
     }
     public long getIdPersona() {
         return this.idPersona;

@@ -7,11 +7,12 @@ import java.util.Optional;
 
 public interface RepositorioPersona {
 
-    void guardar(Persona persona);
+    Persona obtener(Long idPersona);
+    Long guardar(Persona persona);
+//
+//    void eliminar(Long idPersona);
+//
+//    List<Persona> buscarTodos();
 
-    void eliminar(Long idPersona);
-
-    List<Persona> buscarTodos();
-
-    Optional<Persona> buscarPersonaPorID(Long idPersona);
+    Persona buscarPersonaPorID(Long idPersona);
 }

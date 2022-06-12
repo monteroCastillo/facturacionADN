@@ -4,7 +4,7 @@ import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 
-public class ServicioAnular {
+public class  ServicioAnular {
 
     private final RepositorioFactura repositorioFactura;
 
