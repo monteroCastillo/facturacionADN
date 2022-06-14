@@ -15,4 +15,6 @@ public interface RepositorioPersona {
 //    List<Persona> buscarTodos();
 
     Persona buscarPersonaPorID(Long idPersona);
+
+    boolean existe(Long id);
 }

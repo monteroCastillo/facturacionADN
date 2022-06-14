@@ -29,6 +29,10 @@ public class daoPersona implements RepositorioPersona {
         return null;
     }
 
+    @Override
+    public boolean existe(Long id) {
+        return false;
+    }
 
 
 //

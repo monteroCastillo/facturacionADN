@@ -17,7 +17,7 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    private RepositorioPersona repoPersona;
+   // private RepositorioPersona repoPersona;
 
     @SqlStatement(namespace = "persona", value = "crear")
     private static String sqlCrear;
@@ -42,6 +42,11 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
         paramSource.addValue("id_persona", id_persona);
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -> this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlObtenerPorId, paramSource, new MapeoPersona()));
+    }
+
+    @Override
+    public boolean existe(Long id) {
+        return false;
     }
 
     @Override

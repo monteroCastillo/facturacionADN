@@ -1,29 +1,33 @@
 package com.ceiba.persona.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.persona.comando.ComandoSolicitudCrear;
 import com.ceiba.persona.adaptador.repositorio.RepositorioPersonaMysql;
+import com.ceiba.persona.comando.ComandoPersona;
+import com.ceiba.persona.comando.manejador.ManejadorCrearPersona;
 import com.ceiba.persona.modelo.entidad.Persona;
-import io.swagger.v3.oas.annotations.Operation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/apiPersona")
 public class comandoControladorPersona {
 
-    @Autowired
-    private RepositorioPersonaMysql servicioPersona;
+    private final ManejadorCrearPersona manejadorCrearPersona;
 
-    @GetMapping({"/persona/{id}"})
-    public Persona buscarTodos(@PathVariable("id") Long idPersona) {
-        return servicioPersona.buscarPersonaPorID(idPersona);
+
+
+
+    public comandoControladorPersona(ManejadorCrearPersona manejadorCrearPersona) {
+        this.manejadorCrearPersona = manejadorCrearPersona;
     }
 
+//    @GetMapping({"/persona/{id}"})
+//    public Persona buscarTodos(@PathVariable("id") Long idPersona) {
+//        return servicioPersona.buscarPersonaPorID(idPersona);
+//    }
+
     @PostMapping({"/persona"})
-    public Long guardar(@RequestBody Persona persona) {
-       return servicioPersona.guardar(persona);
+    public ComandoRespuesta<Long> guardar(@RequestBody ComandoPersona comandoPersona) {
+       return manejadorCrearPersona.ejecutar(comandoPersona);
 
     }
 

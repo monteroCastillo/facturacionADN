@@ -6,4 +6,5 @@ INSERT INTO PERSONA VALUES (123,'Shi', 'Av 6','4545456','shi@gmail.com','2022-05
 INSERT INTO PERSONA VALUES (124,'luna', 'Av 5', '55555','luna@gmail.com','2022-06-05' );
 
 
-INSERT INTO PLANTA VALUES(12, 'FLORES', 'flor amarilla', '2022-06-05' );
+INSERT INTO PLANTA VALUES(12, 'Margarita', 'flor amarilla', '2022-12-05' );
+INSERT INTO PLANTA VALUES(13, 'Jazmin', 'Planta con buen olor en las noches', '2022-12-05' );

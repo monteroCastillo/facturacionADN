@@ -15,13 +15,13 @@ public class MapeoPersona implements RowMapper<Persona>, MapperResult {
     @Override
     public Persona mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-        var id = resultSet.getLong("id_persona");
+        var idPersona = resultSet.getLong("id_persona");
         var nombre = resultSet.getString("nombre");
         var direccion = resultSet.getString("direccion");
         var telefono = resultSet.getString("telefono");
         var email = resultSet.getString("email");
         var fechaRegistro = resultSet.getDate("fecha_registro").toLocalDate();
 
-        return Persona.reconstruir(id, nombre, direccion, telefono,email, fechaRegistro);
+        return Persona.reconstruir(idPersona, nombre, direccion, telefono,email, fechaRegistro);
     }
 }

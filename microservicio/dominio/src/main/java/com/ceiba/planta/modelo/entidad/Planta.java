@@ -1,21 +1,15 @@
-package com.ceiba.planta.entidad;
+package com.ceiba.planta.modelo.entidad;
 
+import com.ceiba.dominio.ValidadorArgumento;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.ToString;
-
-import javax.persistence.*;
 import java.time.LocalDate;
-
-
 @AllArgsConstructor
 @Builder
 @ToString
-
 public class Planta {
 
-    @Id
 
     private int idPlanta;
     private String nombre;
@@ -27,8 +21,14 @@ public class Planta {
     }
 
     public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso){
+        ValidadorArgumento.validarObligatorio(idPlanta, "El id de la planta es requerido");
+        ValidadorArgumento.validarObligatorio(nombre, "El nombre de la planta es requerido");
+        ValidadorArgumento.validarObligatorio(descripcion, "La descripcion de la planta es requerida");
+        ValidadorArgumento.validarObligatorio(fechaIngreso, "La fecha de ingreso de la planta es requerida");
         return new Planta(idPlanta, nombre, descripcion,fechaIngreso);
     }
+
+
 
     public int getIdPlanta() {
         return idPlanta;

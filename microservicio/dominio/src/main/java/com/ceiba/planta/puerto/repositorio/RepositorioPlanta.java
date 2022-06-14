@@ -1,18 +1,17 @@
 package com.ceiba.planta.puerto.repositorio;
 
 
-import com.ceiba.planta.entidad.Planta;
+import com.ceiba.planta.modelo.entidad.Planta;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RepositorioPlanta {
 
-    void guardar(Planta planta);
+    int guardar(Planta planta);
 
     void eliminar(int idPlanta);
 
     List<Planta> buscarTodos();
 
-    Planta buscarPlantaPorID(int idPlanta);
+
 }

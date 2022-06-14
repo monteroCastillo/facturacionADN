@@ -3,17 +3,12 @@ package com.ceiba.persona.modelo.entidad;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.producto.entidad.Producto;
 
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table
 public class Persona {
 
-    @Id
+
     private Long idPersona;
     private String nombre;
     private String direccion;
@@ -39,22 +34,24 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public static Persona reconstruir(Long id, String nombre, String direccion, String telefono) {
-        ValidadorArgumento.validarObligatorio(id, "El id de la persona es requerido");
+
+
+    public static Persona reconstruir(Long idPersona, String nombre, String direccion, String telefono) {
+        ValidadorArgumento.validarObligatorio(idPersona, "El id de la persona es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");
         ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
         ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
-        return new Persona(id, nombre, direccion, telefono);
+        return new Persona(idPersona, nombre, direccion, telefono);
     }
 
-    public static Persona reconstruir(Long id, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro) {
-        ValidadorArgumento.validarObligatorio(id, "El id de la persona es requerido");
+    public static Persona reconstruir(Long idPersona, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro) {
+        ValidadorArgumento.validarObligatorio(idPersona, "El id de la persona es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");
         ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
         ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
         ValidadorArgumento.validarObligatorio(email, "El email de la persona es requerido");
         ValidadorArgumento.validarObligatorio(fechaRegistro, "La fecha de registro es requerida");
-        return new Persona(id, nombre, direccion, telefono, email, fechaRegistro);
+        return new Persona(idPersona, nombre, direccion, telefono, email, fechaRegistro);
     }
     public long getIdPersona() {
         return this.idPersona;

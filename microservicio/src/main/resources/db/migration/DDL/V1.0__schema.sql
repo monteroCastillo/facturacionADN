@@ -38,7 +38,7 @@ create table factura2 (
 
 
 create table persona (
-   id_persona bigint(11) not null ,
+   id_persona int(11) not null auto_increment,
    nombre varchar(20) not null,
    direccion varchar(20) not null,
    telefono varchar(20) not null,
@@ -48,11 +48,11 @@ create table persona (
 );
 
 create table planta(
-    idPlanta int(11),
+    id_planta int(11),
     nombre varchar(50),
     descripcion varchar(50),
-    fechaIngreso DATE,
-    primary key (idPlanta)
+    fecha_ingreso DATE,
+    primary key (id_planta)
 );
 
 
