@@ -1,22 +1,19 @@
-package com.ceiba.proveedor.consulta;
+package com.ceiba.proveedor.comando.manejador;
 
 import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import com.ceiba.proveedor.puerto.dao.DaoProveedor;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public class ManejadorListarProveedores {
+public class ManejadorBuscarProveedor {
 
     private final DaoProveedor daoProveedor;
-    public ManejadorListarProveedores(DaoProveedor daoProveedor) {
+
+    public ManejadorBuscarProveedor(DaoProveedor daoProveedor) {
         this.daoProveedor = daoProveedor;
     }
 
-
-
-    public List<DtoProveedor> ejecutar(){return this.daoProveedor.listar();}
-
-
+    public DtoProveedor ejecutar(Long id){
+        return this.daoProveedor.obtenerProveedorPorId(id);
+    }
 }

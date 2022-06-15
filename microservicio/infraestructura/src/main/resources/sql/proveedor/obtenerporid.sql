@@ -1,3 +1,3 @@
-select  id, nombre, direccion, telefono, paginaweb
-from planta
+select  id, nombre, direccion, telefono, paginaWeb
+from proveedor
 where id = :id

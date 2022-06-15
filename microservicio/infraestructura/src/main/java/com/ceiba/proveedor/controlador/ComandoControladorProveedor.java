@@ -34,7 +34,7 @@ public class ComandoControladorProveedor {
         manejadorEliminarProveedor.ejecutar(id);
     }
 
-    @PutMapping("actualizar")
+    @PutMapping("/actualizar")
     public void actualizar(@RequestBody ComandoProveedor comandoProveedor) {
         manejadorActualizarProveedor.ejecutar(comandoProveedor);
     }

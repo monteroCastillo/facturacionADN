@@ -7,6 +7,7 @@ import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import com.ceiba.persona.servicio.ServicioCrearPersona;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
+import com.ceiba.planta.servicio.ServicioEliminarPlanta;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 import com.ceiba.proveedor.servicio.ServicioActualizarProveedor;
 import com.ceiba.proveedor.servicio.ServicioCrearProveedor;
@@ -38,6 +39,11 @@ public class BeanServicio {
     public ServicioCrearPlanta servicioCrearPlanta(RepositorioPlanta repositorioPlanta){
         return new ServicioCrearPlanta(repositorioPlanta);
     }
+    @Bean
+    public ServicioEliminarPlanta servicioEliminarPlanta(RepositorioPlanta repositorioPlanta){
+        return new ServicioEliminarPlanta(repositorioPlanta);
+    }
+
     @Bean
     public ServicioCrearProveedor servicioCrearProveedor(RepositorioProveedor repositorioProveedor){
         return  new ServicioCrearProveedor(repositorioProveedor);

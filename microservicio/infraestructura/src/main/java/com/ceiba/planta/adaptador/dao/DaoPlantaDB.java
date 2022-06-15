@@ -32,7 +32,7 @@ public class DaoPlantaDB implements DaoPlanta{
     @Override
     public DtoPlanta obtenerPlantaPorId(int idPlanta) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("idPlanta", idPlanta);
+        paramSource.addValue("id", idPlanta);
         List<DtoPlanta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());
         if(list.size()==1){
             return list.get(0);

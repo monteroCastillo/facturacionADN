@@ -3,7 +3,6 @@ package com.ceiba.planta.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.adaptador.dao.MapeoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -22,6 +21,9 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     @SqlStatement(namespace = "planta", value = "obtenerporid")
     private static String sqlObtenerPorId;//
 
+    @SqlStatement(namespace="planta", value="eliminar")
+    private static String sqlEliminar;
+
 //    private static String sqlActualizarEstado;
 
     public RepositorioPlantaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -39,14 +41,21 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     }
 
     @Override
-    public void eliminar(int idPlanta) {
-
+    public void eliminar(int id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
+
+
 
     @Override
     public List<Planta> buscarTodos() {
         return null;
     }
+
+
+
 
     //    @Override
 //    public Planta buscarPlantaPorID(int id_planta){
