@@ -7,7 +7,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public class DtoProveedor {
 
-    private final Long idProveedor;
+    private final Long id;
     private final String nombre;
     private final String direccion;
     private final String telefono;

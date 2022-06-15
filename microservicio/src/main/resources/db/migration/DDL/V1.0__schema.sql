@@ -38,22 +38,32 @@ create table factura2 (
 
 
 create table persona (
-   id_persona int(11) not null auto_increment,
+   id int(11) not null auto_increment,
    nombre varchar(20) not null,
    direccion varchar(20) not null,
    telefono varchar(20) not null,
    email varchar(20) not null,
    fecha_registro DATE,
-   primary key (id_persona)
+   primary key (id)
 );
 
 create table planta(
-    id_planta int(11),
+    id int(11),
     nombre varchar(50),
-    descripcion varchar(50),
+    descripcion varchar(200),
     fecha_ingreso DATE,
-    primary key (id_planta)
+    primary key (id)
 );
+
+create table proveedor(
+   id int(11),
+   nombre varchar(50),
+   direccion varchar(50),
+   telefono varchar(30),
+   paginaWeb varchar(100),
+   primary key (id)
+);
+
 
 
 ALTER TABLE factura

@@ -1,7 +1,7 @@
 package com.ceiba.proveedor.modelo.entidad;
 
 public class Proveedor {
-    private Long idProveedor;
+    private Long id;
     private String nombre;
     private String direccion;
     private String telefono;
@@ -10,20 +10,20 @@ public class Proveedor {
     public Proveedor() {
     }
 
-    public Proveedor(Long idProveedor, String nombre, String direccion, String telefono, String paginaWeb) {
-        this.idProveedor = idProveedor;
+    public Proveedor(Long id, String nombre, String direccion, String telefono, String paginaWeb) {
+        this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.paginaWeb = paginaWeb;
     }
 
-    public Long getIdProveedor() {
-        return idProveedor;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdProveedor(Long idProveedor) {
-        this.idProveedor = idProveedor;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -56,16 +56,5 @@ public class Proveedor {
 
     public void setPaginaWeb(String paginaWeb) {
         this.paginaWeb = paginaWeb;
-    }
-
-    @Override
-    public String toString() {
-        return "Proveedor{" +
-                "idProveedor=" + idProveedor +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", paginaWeb='" + paginaWeb + '\'' +
-                '}';
     }
 }

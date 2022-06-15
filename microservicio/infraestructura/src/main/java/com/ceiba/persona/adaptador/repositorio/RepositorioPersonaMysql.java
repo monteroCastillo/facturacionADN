@@ -57,12 +57,12 @@ public class RepositorioPersonaMysql implements RepositorioPersona {
     @Override
     public Long guardar(Persona persona) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id_persona", persona.getIdPersona());
+        paramSource.addValue("id", persona.getIdPersona());
         paramSource.addValue("nombre", persona.getNombre());
         paramSource.addValue("direccion", persona.getDireccion());
         paramSource.addValue("telefono", persona.getTelefono());
         paramSource.addValue("email", persona.getEmail());
-        paramSource.addValue("fecha_registro", persona.getDireccion());
+        paramSource.addValue("fecha_registro", persona.getFechaRegistro());
         Long idPersonaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
         //repoPersona.guardar(persona);
         return idPersonaGuardada;

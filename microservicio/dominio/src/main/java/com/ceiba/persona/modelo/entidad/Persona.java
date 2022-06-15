@@ -27,23 +27,6 @@ public class Persona {
         this.email = email;
         this.fechaRegistro = fechaRegistro;
     }
-    public Persona(long idPersona, String nombre, String direccion, String telefono) {
-        this.idPersona = idPersona;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-    }
-
-
-
-    public static Persona reconstruir(Long idPersona, String nombre, String direccion, String telefono) {
-        ValidadorArgumento.validarObligatorio(idPersona, "El id de la persona es requerido");
-        ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");
-        ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
-        ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
-        return new Persona(idPersona, nombre, direccion, telefono);
-    }
-
     public static Persona reconstruir(Long idPersona, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro) {
         ValidadorArgumento.validarObligatorio(idPersona, "El id de la persona es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");

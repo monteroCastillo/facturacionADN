@@ -21,12 +21,14 @@ public class PersonaTestDataBuilder {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.email = email;
+        this.fechaRegistro = fechaRegistro;
         return this;
     }
 
 
     public Persona reconstruir() {
-        return Persona.reconstruir(idPersona, nombre, direccion, telefono);
+        return Persona.reconstruir(idPersona, nombre, direccion, telefono, email, fechaRegistro);
     }
 
     public PersonaTestDataBuilder conId(Long idPersona) {

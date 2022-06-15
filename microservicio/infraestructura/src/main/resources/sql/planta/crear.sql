@@ -1,5 +1,5 @@
-insert into planta( id_planta,
+insert into planta( id,
                      nombre,
                      descripcion,
                      fecha_ingreso
-) values (:id_planta, :nombre, :descripcion, :fecha_ingreso)
+) values (:id, :nombre, :descripcion, :fecha_ingreso)

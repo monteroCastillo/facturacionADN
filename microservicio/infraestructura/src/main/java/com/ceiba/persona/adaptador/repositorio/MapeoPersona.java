@@ -15,7 +15,7 @@ public class MapeoPersona implements RowMapper<Persona>, MapperResult {
     @Override
     public Persona mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-        var idPersona = resultSet.getLong("id_persona");
+        var idPersona = resultSet.getLong("id");
         var nombre = resultSet.getString("nombre");
         var direccion = resultSet.getString("direccion");
         var telefono = resultSet.getString("telefono");
