@@ -1,6 +1,7 @@
 package com.ceiba.factura.comando.fabrica;
 
-import com.ceiba.cliente.puerto.RepositorioCliente;
+import com.ceiba.cliente.puerto.dao.DaoCliente;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.factura.comando.ComandoProductoFacturar;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
@@ -13,10 +14,12 @@ import java.util.List;
 @Component
 public class FabricaSolicitudFacturar {
 
+
     private final RepositorioCliente repositorioCliente;
     private final RepositorioProducto repositorioProducto;
 
-    public FabricaSolicitudFacturar(RepositorioCliente repositorioCliente, RepositorioProducto repositorioProducto) {
+    public FabricaSolicitudFacturar( RepositorioCliente repositorioCliente, RepositorioProducto repositorioProducto) {
+
         this.repositorioCliente = repositorioCliente;
         this.repositorioProducto = repositorioProducto;
     }

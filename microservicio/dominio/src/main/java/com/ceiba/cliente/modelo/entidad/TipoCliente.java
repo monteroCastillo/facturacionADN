@@ -1,4 +1,4 @@
-package com.ceiba.cliente.puerto.entidad;
+package com.ceiba.cliente.modelo.entidad;
 
 public enum TipoCliente {
     PREFERENCIAL, COMUN, ESPECIAL

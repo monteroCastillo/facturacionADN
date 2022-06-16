@@ -10,4 +10,6 @@ public interface RepositorioProveedor {
     List<Proveedor> buscarTodos();
 
     void actualizar(Proveedor proveedor);
+
+    boolean existe(Long id);
 }

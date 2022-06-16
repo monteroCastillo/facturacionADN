@@ -1,11 +1,14 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
+import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.factura.servicio.ServicioFacturar;
 import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
 import com.ceiba.persona.servicio.ServicioCrearPersona;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
+import com.ceiba.planta.servicio.ServicioActualizarPlanta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
 import com.ceiba.planta.servicio.ServicioEliminarPlanta;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
@@ -43,6 +46,10 @@ public class BeanServicio {
     public ServicioEliminarPlanta servicioEliminarPlanta(RepositorioPlanta repositorioPlanta){
         return new ServicioEliminarPlanta(repositorioPlanta);
     }
+    @Bean
+    public ServicioActualizarPlanta servicioActualizarPlanta(RepositorioPlanta repositorioPlanta){
+        return new ServicioActualizarPlanta(repositorioPlanta);
+    }
 
     @Bean
     public ServicioCrearProveedor servicioCrearProveedor(RepositorioProveedor repositorioProveedor){
@@ -55,6 +62,11 @@ public class BeanServicio {
     @Bean
     public ServicioActualizarProveedor servicioActualizarProveedor(RepositorioProveedor repositorioProveedor){
         return new ServicioActualizarProveedor(repositorioProveedor);
+    }
+
+    @Bean
+    public ServicioCrearCliente servicioCrearCliente(RepositorioCliente repositorioCliente){
+        return new ServicioCrearCliente(repositorioCliente);
     }
 
 }

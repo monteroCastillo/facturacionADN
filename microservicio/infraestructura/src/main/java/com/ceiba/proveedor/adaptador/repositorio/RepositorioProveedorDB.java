@@ -26,6 +26,9 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
     @SqlStatement(namespace="proveedor", value="actualizar")
     private static String sqlActualizar;
 
+    @SqlStatement(namespace="proveedor", value="existe")
+    private static String sqlExiste;
+
     public RepositorioProveedorDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
@@ -47,8 +50,30 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
         return null;
     }
 
+//    @Override
+//    public void actualizar(Proveedor proveedor) {
+//        System.out.println("Datos para el metodo actualizar: " + proveedor);
+//        this.customNamedParameterJdbcTemplate.actualizar(proveedor, sqlActualizar);
+//    }
     @Override
     public void actualizar(Proveedor proveedor) {
-        this.customNamedParameterJdbcTemplate.actualizar(proveedor, sqlActualizar);
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", proveedor.getId());
+        paramSource.addValue("nombre", proveedor.getNombre());
+        paramSource.addValue("direccion", proveedor.getDireccion());
+        paramSource.addValue("telefono", proveedor.getTelefono());
+        paramSource.addValue("paginaWeb", proveedor.getPaginaWeb());
+        System.out.println("El dato que le entra a actualizar " + paramSource);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
+
     }
+
+    @Override
+    public boolean existe(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
+    }
+
+
 }

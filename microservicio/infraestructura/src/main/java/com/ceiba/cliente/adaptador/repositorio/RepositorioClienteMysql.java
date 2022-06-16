@@ -1,7 +1,8 @@
 package com.ceiba.cliente.adaptador.repositorio;
 
-import com.ceiba.cliente.puerto.entidad.Cliente;
-import com.ceiba.cliente.puerto.RepositorioCliente;
+
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
@@ -13,8 +14,14 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
+    @SqlStatement(namespace = "cliente", value = "crear")
+    private static String sqlCrear;
+
     @SqlStatement(namespace = "cliente", value = "obtenerporid")
     private static String sqlObtenerPorId;
+
+    @SqlStatement(namespace="cliente", value="eliminar")
+    private static String sqlEliminar;
 
     public RepositorioClienteMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -27,6 +34,19 @@ public class RepositorioClienteMysql implements RepositorioCliente {
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() ->
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
                         paramSource, new MapeoCliente()));
+    }
+
+    @Override
+    public void eliminar(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+
+    }
+
+    @Override
+    public Long guardar(Cliente cliente) {
+        return (this.customNamedParameterJdbcTemplate.crear(cliente, sqlCrear));
     }
 
 }

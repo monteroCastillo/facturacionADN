@@ -1,7 +1,8 @@
 package com.ceiba.factura;
 
 import com.ceiba.cliente.ClienteTestDataBuilder;
-import com.ceiba.cliente.puerto.entidad.Cliente;
+
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
@@ -22,15 +23,15 @@ public class FacturaTestDataBuilder {
         productosFacturar = new ArrayList<>();
     }
 
-    public FacturaTestDataBuilder conFacturaPorDefecto() {
-        this.id = 5l;
-        this.cliente = new ClienteTestDataBuilder().conClientePorDefecto().reconstruir();
-        var producto = new ProductoTestDataBuilder().conProductoPorDefecto().reconstruir();
-        this.conProducto(new ProductoFacturarTestDataBuilder().conCantidad(5).conProducto(producto).conId(2l).reconstruir());
-        this.valorTotal = BigDecimal.valueOf(36000);
-        this.estadoFactura = EstadoFactura.ACTIVA;
-        return this;
-    }
+//    public FacturaTestDataBuilder conFacturaPorDefecto() {
+//        this.id = 5l;
+//        this.cliente = new ClienteTestDataBuilder().conClientePorDefecto().reconstruir();
+//        var producto = new ProductoTestDataBuilder().conProductoPorDefecto().reconstruir();
+//        this.conProducto(new ProductoFacturarTestDataBuilder().conCantidad(5).conProducto(producto).conId(2l).reconstruir());
+//        this.valorTotal = BigDecimal.valueOf(36000);
+//        this.estadoFactura = EstadoFactura.ACTIVA;
+//        return this;
+//    }
 
     public FacturaTestDataBuilder conId(Long id) {
         this.id = id;
@@ -63,12 +64,12 @@ public class FacturaTestDataBuilder {
         return this;
     }
 
-    public Factura crear() {
-        return Factura.crear(new SolicitudFacturarTestDataBuilder()
-                .conProductosFacturar(productosFacturar)
-                .conCliente(cliente)
-                .build());
-    }
+//    public Factura crear() {
+//        return Factura.crear(new SolicitudFacturarTestDataBuilder()
+//                .conProductosFacturar(productosFacturar)
+//                .conCliente(cliente)
+//                .build());
+//    }
 
     public Factura reconstruir() {
         return Factura.reconstruir(id, cliente, productosFacturar, valorTotal, estadoFactura);

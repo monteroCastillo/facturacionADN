@@ -1,6 +1,9 @@
 create table cliente (
  id int(11) not null auto_increment,
  nombre varchar(100) not null,
+ direccion varchar(100) not null,
+ telefono varchar(50) not null,
+ email varchar(100) not null,
  tipo_cliente varchar(20) not null,
  primary key (id)
 );
@@ -56,7 +59,7 @@ create table planta(
 );
 
 create table proveedor(
-   id int(11),
+   id int(11) not null auto_increment,
    nombre varchar(50),
    direccion varchar(50),
    telefono varchar(30),

@@ -1,7 +1,8 @@
 package com.ceiba.cliente;
 
-import com.ceiba.cliente.puerto.entidad.Cliente;
-import com.ceiba.cliente.puerto.entidad.TipoCliente;
+
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.TipoCliente;
 
 public class ClienteTestDataBuilder {
     private String nombre;
@@ -30,7 +31,7 @@ public class ClienteTestDataBuilder {
         return this;
     }
 
-    public Cliente reconstruir() {
-        return Cliente.reconstruir(id, nombre, tipoCliente);
-    }
+  //  public Cliente reconstruir() {
+  //      return Cliente.reconstruir(id, nombre, tipoCliente);
+  //  }
 }

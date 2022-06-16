@@ -35,4 +35,6 @@ public class ComandoControladorFactura {
     public void anular(@PathVariable("id-factura") Long idFactura) {
         this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));
     }
+
+
 }

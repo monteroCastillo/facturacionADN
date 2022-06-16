@@ -1,6 +1,7 @@
 package com.ceiba.factura.modelo.entidad;
 
-import com.ceiba.cliente.puerto.entidad.Cliente;
+
+import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 

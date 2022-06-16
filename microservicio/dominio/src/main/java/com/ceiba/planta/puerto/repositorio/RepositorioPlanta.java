@@ -13,5 +13,9 @@ public interface RepositorioPlanta {
 
     List<Planta> buscarTodos();
 
+    boolean existe(int id);
+
+    void actualizar(Planta planta);
+
 
 }

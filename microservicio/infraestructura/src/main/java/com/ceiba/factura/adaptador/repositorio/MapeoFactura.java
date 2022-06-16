@@ -1,6 +1,6 @@
 package com.ceiba.factura.adaptador.repositorio;
 
-import com.ceiba.cliente.puerto.RepositorioCliente;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.puerto.repositorio.RepositorioProductoFacturar;

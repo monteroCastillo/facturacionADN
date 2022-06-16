@@ -5,6 +5,7 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,12 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     @SqlStatement(namespace="planta", value="eliminar")
     private static String sqlEliminar;
 
-//    private static String sqlActualizarEstado;
+    @SqlStatement(namespace="planta", value="existe")
+    private static String sqlExiste;
+
+    @SqlStatement(namespace="planta", value="actualizar")
+    private static String sqlActualizar;
+
 
     public RepositorioPlantaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -47,29 +53,32 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-
-
     @Override
     public List<Planta> buscarTodos() {
         return null;
     }
 
 
-
-
-    //    @Override
-//    public Planta buscarPlantaPorID(int id_planta){
-//        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-//        paramSource.addValue("id_planta", id_planta);
-//        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -> this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
-//                .queryForObject(sqlObtenerPorId, paramSource, new MapeoPlanta()));
+//    @Override
+//    public void actualizar(Planta planta) {
+//        this.customNamedParameterJdbcTemplate.actualizar(planta, sqlActualizar);
 //    }
 
+    @Override
+    public void actualizar(Planta planta) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", planta.getIdPlanta());
+        paramSource.addValue("nombre", planta.getNombre());
+        paramSource.addValue("descripcion", planta.getDescripcion());
+        paramSource.addValue("fecha_ingreso", planta.getFechaIngreso());
+        System.out.println("El dato que le entra a actualizar " + paramSource);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 
-//    public int guardar(Planta planta) {
-//        return Math.toIntExact(this.customNamedParameterJdbcTemplate.crear(planta, sqlCrear));
-//    }
-
-
-
+    }
+    @Override
+    public boolean existe(int id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
+    }
 }
