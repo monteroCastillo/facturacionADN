@@ -1,5 +1,6 @@
 package com.ceiba.planta.comando;
 
+import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,6 @@ public class ComandoPlanta {
     private String nombre;
     private String descripcion;
     private LocalDate fechaIngreso;
+    private int cantidad;
+    private CategoriaPlanta categoria;
 }

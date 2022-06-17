@@ -1,10 +1,9 @@
 package com.ceiba.planta.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
-import com.ceiba.persona.utils.MensajesDeExcepcion;
+import com.ceiba.Empleado.utils.MensajesDeExcepcion;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 public class ServicioActualizarPlanta {
 

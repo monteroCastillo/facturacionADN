@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 public class ManejadorActualizarProveedor implements ManejadorComando<ComandoProveedor> {
 
     private final FabricaProveedor fabricaProveedor;
-
     private final ServicioActualizarProveedor servicioActualizarProveedor;
 
     public ManejadorActualizarProveedor(FabricaProveedor fabricaProveedor, ServicioActualizarProveedor servicioActualizarProveedor) {

@@ -1,12 +1,13 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.Empleado.servicio.ServicioActualizarEmpleado;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.factura.servicio.ServicioFacturar;
-import com.ceiba.persona.puerto.repositorio.RepositorioPersona;
-import com.ceiba.persona.servicio.ServicioCrearPersona;
+import com.ceiba.Empleado.puerto.repositorio.RepositorioEmpleado;
+import com.ceiba.Empleado.servicio.ServicioCrearEmpleado;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
@@ -34,8 +35,13 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioCrearPersona servicioCrearPersona(RepositorioPersona repositorioPersona){
-        return new ServicioCrearPersona(repositorioPersona);
+    public ServicioCrearEmpleado servicioCrearPersona(RepositorioEmpleado repositorioEmpleado){
+        return new ServicioCrearEmpleado(repositorioEmpleado);
+    }
+
+    @Bean
+    ServicioActualizarEmpleado servicioActualizarEmpleado(RepositorioEmpleado repositorioEmpleado){
+        return  new ServicioActualizarEmpleado(repositorioEmpleado);
     }
 
     @Bean

@@ -3,6 +3,7 @@ package com.ceiba.planta.adaptador.dao;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.planta.modelo.dto.DtoPlanta;
 
+import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,9 @@ public class MapeoPlanta implements RowMapper<DtoPlanta>, MapperResult {
         var nombre = resultSet.getString("nombre");
         var descripcion = resultSet.getString("descripcion");
         var fechaIngreso = resultSet.getDate("fecha_ingreso").toLocalDate();
+        var cantidad = resultSet.getInt("cantidad");
+        var categoria = CategoriaPlanta.valueOf(resultSet.getString("categoria"));
 
-        return new DtoPlanta(idPlanta,nombre,descripcion,fechaIngreso);
+        return new DtoPlanta(idPlanta,nombre,descripcion,fechaIngreso, cantidad, categoria);
     }
 }
