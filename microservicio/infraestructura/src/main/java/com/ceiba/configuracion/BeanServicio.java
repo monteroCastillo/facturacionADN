@@ -1,6 +1,8 @@
 package com.ceiba.configuracion;
 
 import com.ceiba.Empleado.servicio.ServicioActualizarEmpleado;
+import com.ceiba.PlantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.PlantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
@@ -73,6 +75,11 @@ public class BeanServicio {
     @Bean
     public ServicioCrearCliente servicioCrearCliente(RepositorioCliente repositorioCliente){
         return new ServicioCrearCliente(repositorioCliente);
+    }
+
+    @Bean
+    public ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor(RepositorioPlantaPorProveedor repositorioPlantaPorProveedor){
+        return new ServicioCrearPlantaPorProveedor(repositorioPlantaPorProveedor);
     }
 
 }

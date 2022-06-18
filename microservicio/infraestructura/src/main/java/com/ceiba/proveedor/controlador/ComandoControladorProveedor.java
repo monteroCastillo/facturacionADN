@@ -24,12 +24,12 @@ public class ComandoControladorProveedor {
         this.manejadorActualizarProveedor = manejadorActualizarProveedor;
     }
 
-    @PostMapping("/proveedor")
+    @PostMapping("/guardar")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoProveedor comandoProveedor) {
         return manejadorCrearProveedor.ejecutar(comandoProveedor);
     }
 
-    @DeleteMapping(value="/{id}")
+    @DeleteMapping(value="/eliminar/{id}")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarProveedor.ejecutar(id);
     }

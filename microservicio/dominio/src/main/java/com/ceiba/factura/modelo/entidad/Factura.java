@@ -1,11 +1,13 @@
 package com.ceiba.factura.modelo.entidad;
 
 
+import com.ceiba.Empleado.modelo.entidad.Empleado;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,6 +22,12 @@ public class Factura {
     private List<ProductoFacturar> productosFacturar;
     private BigDecimal valorTotal;
     private EstadoFactura estado;
+
+    private Cliente idCliente;
+
+    private Empleado idEmpleado;
+
+    private LocalDate fechaIngreso;
 
     private Factura(Cliente cliente, List<ProductoFacturar> productosFacturar) {
         this.cliente = cliente;

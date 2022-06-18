@@ -6,6 +6,8 @@ import com.ceiba.factura.comando.ComandoProductoFacturar;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
+import com.ceiba.planta.puerto.dao.DaoPlanta;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.producto.puerto.RepositorioProducto;
 import org.springframework.stereotype.Component;
 
@@ -16,12 +18,12 @@ public class FabricaSolicitudFacturar {
 
 
     private final RepositorioCliente repositorioCliente;
-    private final RepositorioProducto repositorioProducto;
+    private final DaoPlanta daoPlanta;
 
-    public FabricaSolicitudFacturar( RepositorioCliente repositorioCliente, RepositorioProducto repositorioProducto) {
+    public FabricaSolicitudFacturar( RepositorioCliente repositorioCliente, DaoPlanta daoPlanta) {
 
         this.repositorioCliente = repositorioCliente;
-        this.repositorioProducto = repositorioProducto;
+        this.daoPlanta = daoPlanta;
     }
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
@@ -31,10 +33,10 @@ public class FabricaSolicitudFacturar {
     }
 
     private List<ProductoFacturar> obtenerProductos(List<ComandoProductoFacturar> comandoProductosFacturar) {
-        return comandoProductosFacturar.stream().map(comandoProducto ->
+        return comandoProductosFacturar.stream().map(comandoPlanta ->
                         ProductoFacturar.crear(
-                                comandoProducto.getCantidad(),
-                                repositorioProducto.obtener(comandoProducto.getIdProducto())))
+                                comandoPlanta.getCantidad(),
+                                daoPlanta.obtener(comandoPlanta.getIdPlanta())))
                 .toList();
     }
 }

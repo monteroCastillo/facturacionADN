@@ -26,13 +26,13 @@ public class Empleado {
         this.perfil = perfil;
     }
     public static Empleado reconstruir(Long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
-        ValidadorArgumento.validarObligatorio(idEmpleado, "El id de la persona es requerido");
-        ValidadorArgumento.validarObligatorio(nombre, "El nombre de la persona es requerido");
-        ValidadorArgumento.validarObligatorio(direccion, "La direccion de la persoan es requerida");
-        ValidadorArgumento.validarObligatorio(telefono, "El telefono de la persona es requerido");
-        ValidadorArgumento.validarObligatorio(email, "El email de la persona es requerido");
+        ValidadorArgumento.validarObligatorio(idEmpleado, "El id del empleado es requerido");
+        ValidadorArgumento.validarObligatorio(nombre, "El nombre del empleado es requerido");
+        ValidadorArgumento.validarObligatorio(direccion, "La direccion del empleado es requerida");
+        ValidadorArgumento.validarObligatorio(telefono, "El telefono del empleado es requerido");
+        ValidadorArgumento.validarObligatorio(email, "El email del empleado es requerido");
         ValidadorArgumento.validarObligatorio(fechaRegistro, "La fecha de registro es requerida");
-        ValidadorArgumento.validarObligatorio(perfil, "La fecha de registro es requerida");
+        ValidadorArgumento.validarObligatorio(perfil, "El perfil del empleado es requerido");
         return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);
     }
 

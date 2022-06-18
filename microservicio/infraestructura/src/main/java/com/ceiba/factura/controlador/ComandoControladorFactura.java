@@ -24,7 +24,7 @@ public class ComandoControladorFactura {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
+    @PostMapping("/guardar")
     @Operation(summary = "Facturar", description = "Metodo utilizado para crear una nueva factura")
     public ComandoRespuesta<Long> facturar(@RequestBody ComandoSolicitudFacturar comandoSolicitudFacturar) {
         return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);

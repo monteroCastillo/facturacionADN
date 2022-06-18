@@ -12,9 +12,10 @@ public class FabricaPlanta {
              comandoPlanta.getIdPlanta(),
              comandoPlanta.getNombre(),
              comandoPlanta.getDescripcion(),
-              comandoPlanta.getFechaIngreso(),
-              comandoPlanta.getCantidad(),
-              comandoPlanta.getCategoria()
+             comandoPlanta.getFechaIngreso(),
+             comandoPlanta.getCantidad(),
+             comandoPlanta.getValor(),
+             comandoPlanta.getCategoria()
       );
     }
 }

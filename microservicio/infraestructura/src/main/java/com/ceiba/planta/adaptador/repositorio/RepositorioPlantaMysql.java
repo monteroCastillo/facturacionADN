@@ -43,6 +43,7 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         parameterSource.addValue("descripcion", planta.getDescripcion());
         parameterSource.addValue("fecha_ingreso",planta.getFechaIngreso());
         parameterSource.addValue("cantidad",planta.getCantidad());
+        parameterSource.addValue("valor",planta.getValor());
         parameterSource.addValue("categoria",planta.getCategoria().name());
         Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
         return Math.toIntExact(idPlantaGuardada);
@@ -74,8 +75,8 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         paramSource.addValue("descripcion", planta.getDescripcion());
         paramSource.addValue("fecha_ingreso", planta.getFechaIngreso());
         paramSource.addValue("cantidad", planta.getCantidad());
+        paramSource.addValue("valor",planta.getValor());
         paramSource.addValue("categoria", planta.getCategoria().name());
-
         System.out.println("El dato que le entra a actualizar " + paramSource);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 

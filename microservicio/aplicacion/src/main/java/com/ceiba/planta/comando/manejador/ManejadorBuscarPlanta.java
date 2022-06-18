@@ -1,6 +1,7 @@
 package com.ceiba.planta.comando.manejador;
 
 import com.ceiba.planta.modelo.dto.DtoPlanta;
+import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ public class ManejadorBuscarPlanta {
         this.daoPlanta = daoPlanta;
     }
 
-    public DtoPlanta ejecutar(int id){
+    public Planta ejecutar(int id){
         return this.daoPlanta.obtenerPlantaPorId(id);
     }
 }

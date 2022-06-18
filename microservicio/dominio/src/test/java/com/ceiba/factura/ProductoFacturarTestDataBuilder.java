@@ -1,11 +1,12 @@
 package com.ceiba.factura;
 
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
+import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.producto.entidad.Producto;
 
 public class ProductoFacturarTestDataBuilder {
     private Integer cantidad;
-    private Producto producto;
+    private Planta planta;
     private Long id;
 
     public ProductoFacturarTestDataBuilder conCantidad(Integer cantidad) {
@@ -13,8 +14,8 @@ public class ProductoFacturarTestDataBuilder {
         return this;
     }
 
-    public ProductoFacturarTestDataBuilder conProducto(Producto producto) {
-        this.producto = producto;
+    public ProductoFacturarTestDataBuilder conPlanta(Planta planta) {
+        this.planta = planta;
         return this;
     }
 
@@ -24,10 +25,10 @@ public class ProductoFacturarTestDataBuilder {
     }
 
     public ProductoFacturar build() {
-        return ProductoFacturar.crear(cantidad, producto);
+        return ProductoFacturar.crear(cantidad, planta);
     }
 
     public ProductoFacturar reconstruir() {
-        return ProductoFacturar.reconstruir(id, cantidad, producto);
+        return ProductoFacturar.reconstruir(id, cantidad, planta);
     }
 }

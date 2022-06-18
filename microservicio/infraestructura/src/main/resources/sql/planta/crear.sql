@@ -3,5 +3,6 @@ insert into planta( id,
                      descripcion,
                      fecha_ingreso,
                      cantidad,
+                     valor,
                      categoria
-) values (:id, :nombre, :descripcion, :fecha_ingreso, :cantidad, :categoria)
+) values (:id, :nombre, :descripcion, :fecha_ingreso, :cantidad, :valor, :categoria)

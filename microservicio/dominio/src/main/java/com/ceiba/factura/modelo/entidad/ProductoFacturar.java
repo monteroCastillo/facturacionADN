@@ -1,6 +1,7 @@
 package com.ceiba.factura.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.producto.entidad.Producto;
 
 import java.math.BigDecimal;
@@ -10,36 +11,37 @@ public class ProductoFacturar {
 
     private Long id;
     private final Integer cantidad;
-    private final Producto producto;
+    private final Planta planta;
 
-    private ProductoFacturar(Integer cantidad, Producto producto) {
+    private ProductoFacturar(Integer cantidad, Planta planta) {
         this.cantidad = cantidad;
-        this.producto = producto;
+        this.planta = planta;
     }
 
-    private ProductoFacturar(Long id, Integer cantidad, Producto producto) {
+    private ProductoFacturar(Long id, Integer cantidad, Planta planta) {
         this.cantidad = cantidad;
-        this.producto = producto;
+        this.planta = planta;
         this.id = id;
     }
 
-    public static ProductoFacturar crear(Integer cantidad, Producto producto) {
+    public static ProductoFacturar crear(Integer cantidad, Planta planta) {
         ValidadorArgumento.validarObligatorio(cantidad, "Cantidad es requerida");
-        ValidadorArgumento.validarObligatorio(producto, "Producto es requerido");
-        return new ProductoFacturar(cantidad, producto);
+        ValidadorArgumento.validarObligatorio(planta, "Producto es requerido");
+        return new ProductoFacturar(cantidad, planta);
     }
 
-    public static ProductoFacturar reconstruir(Long id, Integer cantidad, Producto producto) {
+    public static ProductoFacturar reconstruir(Long id, Integer cantidad, Planta planta) {
         ValidadorArgumento.validarObligatorio(cantidad, "Cantidad es requerida");
-        ValidadorArgumento.validarObligatorio(producto, "Producto es requerido");
-        return new ProductoFacturar(id, cantidad, producto);
+        ValidadorArgumento.validarObligatorio(planta, "Planta es requerido");
+        return new ProductoFacturar(id, cantidad, planta);
     }
 
     public BigDecimal calcularIva() {
-        if (producto.aplicaIva()) {
-            return calcularSubTotal().multiply(BigDecimal.valueOf(VALOR_IVA));
-        }
-        return BigDecimal.ZERO;
+//        if (planta.aplicaIva()) {
+//            return calcularSubTotal().multiply(BigDecimal.valueOf(VALOR_IVA));
+//        }
+//        return BigDecimal.ZERO;
+        return new BigDecimal(1);
     }
 
     public BigDecimal calcularTotalConIva() {
@@ -48,19 +50,23 @@ public class ProductoFacturar {
     }
 
     private BigDecimal calcularSubTotal() {
-        return producto.getValor()
+        return planta.getValor()
                 .multiply(BigDecimal.valueOf(cantidad));
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Integer getCantidad() {
         return cantidad;
     }
 
-    public Producto getProducto() {
-        return producto;
-    }
-
-    public Long getId() {
-        return id;
+    public Planta getPlanta() {
+        return planta;
     }
 }

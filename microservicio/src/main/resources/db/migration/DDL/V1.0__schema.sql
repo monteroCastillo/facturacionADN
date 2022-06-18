@@ -46,22 +46,31 @@ create table empleado (
 );
 
 create table planta(
-    id int(11),
-    nombre varchar(50),
-    descripcion varchar(200),
-    fecha_ingreso DATE,
-    cantidad int(10),
-    categoria varchar(500),
+    id int(11) not null auto_increment,
+    nombre varchar(50) not null,
+    descripcion varchar(200) not null,
+    fecha_ingreso DATE not null,
+    cantidad int(10) not null,
+    valor DECIMAL(10,2) not null,
+    categoria varchar(500)not null,
     primary key (id)
 );
 
+
 create table proveedor(
    id int(11) not null auto_increment,
-   nombre varchar(50),
-   direccion varchar(50),
-   telefono varchar(30),
-   paginaWeb varchar(100),
+   nombre varchar(50) not null,
+   direccion varchar(50) not null,
+   telefono varchar(30) not null,
+   paginaWeb varchar(100) not null,
    primary key (id)
+);
+
+create table plantaporproveedor(
+    id int(11) not null auto_increment,
+    id_proveedor int(11) not null,
+    id_planta int(11) not null,
+    primary key (id)
 );
 
 

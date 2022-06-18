@@ -18,8 +18,8 @@ public class ComandoFacturarTestDataBuilder {
 
     public ComandoFacturarTestDataBuilder crearPorDefecto() {
         this.idCliente = 1l;
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(1l, 5));
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(2l, 7));
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(1, 5));
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(2, 7));
         return this;
 
     }

@@ -14,6 +14,10 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
+    public RepositorioProveedorDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
+        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
+    }
+
     @SqlStatement(namespace = "proveedor", value = "crear")
     private static String sqlCrear;
 
@@ -28,10 +32,6 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
 
     @SqlStatement(namespace="proveedor", value="existe")
     private static String sqlExiste;
-
-    public RepositorioProveedorDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
-        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
-    }
 
     @Override
     public Long guardar(Proveedor proveedor) {
