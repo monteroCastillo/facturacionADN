@@ -9,6 +9,8 @@ import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+
 @Repository
 public class RepositorioFacturaMysql implements RepositorioFactura {
 
@@ -38,6 +40,7 @@ public class RepositorioFacturaMysql implements RepositorioFactura {
         paramSource.addValue("id_cliente", factura.getCliente().getId());
         paramSource.addValue("valor_total", factura.getValorTotal());
         paramSource.addValue("estado", factura.getEstado().name());
+        paramSource.addValue("fecha", LocalDate.now());
         Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
         repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);
         return idFacturaGuardada;

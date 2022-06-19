@@ -2,6 +2,7 @@ package com.ceiba.PlantaPorProveedor.controlador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.manejador.ManejadorCrearPlantaPorProveedor;
 import com.ceiba.proveedor.comando.ComandoProveedor;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,12 @@ public class ComandoControladorPlantaPorProveedor {
     }
 
     @PostMapping("/guardar")
-    public ComandoRespuesta<Long> crear(@RequestBody ComandoPlantaPorProveedor comandoPlantaPorProveedor) {
-        return manejadorCrearPlantaPorProveedor.ejecutar(comandoPlantaPorProveedor);
+    public ComandoRespuesta<Long> crear(@RequestBody ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor) {
+        return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoSolicitudPlantaPorProveedor);
     }
+
+//    @PostMapping("/guardar")
+//    public ComandoRespuesta<Long> crear(@RequestBody ComandoPlantaPorProveedor comandoPlantaPorProveedor) {
+//        return manejadorCrearPlantaPorProveedor.ejecutar(comandoPlantaPorProveedor);
+//    }
 }

@@ -25,11 +25,11 @@ public class ConsultaControladorProveedor {
 
 
     @GetMapping("/index")
-    public List<DtoProveedor> listar(){
+    public List<Proveedor> listar(){
         return this.manejadorListarProveedores.ejecutar();}
 
     @GetMapping({"/buscar/{id}"})
-    public DtoProveedor buscar(@PathVariable("id") Long id) {
+    public Proveedor buscar(@PathVariable("id") Long id) {
         return this.manejadorBuscarProveedor.ejecutar(id);
     }
 }

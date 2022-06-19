@@ -1,11 +1,12 @@
 package com.ceiba.proveedor.puerto.dao;
 
 import com.ceiba.proveedor.modelo.dto.DtoProveedor;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 import java.util.List;
 
 public interface DaoProveedor {
 
-    List<DtoProveedor> listar();
-    DtoProveedor obtenerProveedorPorId(Long id);
+    List<Proveedor> listar();
+    Proveedor obtenerProveedorPorId(Long id);
 }

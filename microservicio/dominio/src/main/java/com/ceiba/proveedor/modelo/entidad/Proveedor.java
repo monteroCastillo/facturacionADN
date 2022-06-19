@@ -1,5 +1,7 @@
 package com.ceiba.proveedor.modelo.entidad;
 
+import com.ceiba.dominio.ValidadorArgumento;
+
 public class Proveedor {
     private Long id;
     private String nombre;
@@ -17,6 +19,17 @@ public class Proveedor {
         this.telefono = telefono;
         this.paginaWeb = paginaWeb;
     }
+
+    public static Proveedor reconstruir(Long id, String nombre, String direccion, String telefono, String paginaWeb ){
+        ValidadorArgumento.validarObligatorio(id, "El id del proveedor es requerido");
+        ValidadorArgumento.validarObligatorio(nombre, "el nombre del proveedor es requerido");
+        ValidadorArgumento.validarObligatorio(direccion, "La direccion del proveedor es requerida");
+        ValidadorArgumento.validarObligatorio(telefono, "El telefono del proveedor es requerido");
+        ValidadorArgumento.validarObligatorio(paginaWeb, "La pagina web del proveedor es requerida");
+
+        return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
+    }
+
 
     public Long getId() {
         return id;

@@ -17,6 +17,8 @@ public class Factura {
     public static final double DESCUENTO_CLIENTE_PREFERENCIAL = 0.2;
     public static final double DESCUENTO_CLIENTE_ESPECIAL = 0.1;
 
+    public static final double COBRO_ADICIONAL_FESTIVO = 0.15;
+
     private Long id;
     private Cliente cliente;
     private List<ProductoFacturar> productosFacturar;
@@ -109,5 +111,13 @@ public class Factura {
 
     public EstadoFactura getEstado() {
         return estado;
+    }
+
+    public LocalDate getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
     }
 }

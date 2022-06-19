@@ -21,13 +21,14 @@ create table factura (
  id_cliente int(11) not null,
  valor_total DECIMAL(10,2) not null,
  estado varchar(20) not null,
+ fecha  DATE not null,
  primary key (id)
 );
 
 create table producto_facturar (
  id int(11) not null auto_increment,
  id_factura int(11) not null,
- id_producto int(11) not null,
+ id_planta int(11) not null,
  cantidad int(11) not null,
  primary key (id)
 );
@@ -70,10 +71,10 @@ create table plantaporproveedor(
     id int(11) not null auto_increment,
     id_proveedor int(11) not null,
     id_planta int(11) not null,
-    primary key (id)
+    primary key (id),
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id),
+    FOREIGN KEY (id_planta) REFERENCES planta(id)
 );
-
-
 
 ALTER TABLE factura
 ADD CONSTRAINT cliente_fk
@@ -83,9 +84,9 @@ ADD CONSTRAINT cliente_fk
   ON UPDATE NO ACTION;
 
 ALTER TABLE producto_facturar
-ADD CONSTRAINT producto_fk
-  FOREIGN KEY (id_producto)
-  REFERENCES producto (id)
+ADD CONSTRAINT planta_fk
+  FOREIGN KEY (id_planta)
+  REFERENCES planta (id)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 

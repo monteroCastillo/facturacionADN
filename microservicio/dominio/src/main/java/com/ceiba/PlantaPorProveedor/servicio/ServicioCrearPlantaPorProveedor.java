@@ -1,6 +1,7 @@
 package com.ceiba.PlantaPorProveedor.servicio;
 
 import com.ceiba.PlantaPorProveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.PlantaPorProveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
 import com.ceiba.PlantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
 
 public class ServicioCrearPlantaPorProveedor {
@@ -12,7 +13,12 @@ public class ServicioCrearPlantaPorProveedor {
         this.repositorioPlantaPorProveedor = repositorioPlantaPorProveedor;
     }
 
-    public Long ejecutar(PlantaPorProveedor plantaPorProveedor){
-        return this.repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
+//    public Long ejecutar(PlantaPorProveedor plantaPorProveedor){
+//        return this.repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
+//    }
+    public Long ejecutar(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
+        var plantaPorProveedor = PlantaPorProveedor.crear(solicitudCrearPlantaPorProveedor);
+
+        return repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
     }
 }

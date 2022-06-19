@@ -28,12 +28,13 @@ public class EmpleadoTest {
     @Test
     void deberiaReconstruirPersonaExitosamente() {
 
-        var persona = new EmpleadoTestDataBuilder().conId(123l)
+        var persona = new EmpleadoTestDataBuilder()
+                .conId(123l)
                 .conNombre("Shirly")
                 .conDireccion("Av 5")
                 .conTelefono("12345")
                         .conEmail("shi@gmail.com")
-                                .conFechaRegistro(LocalDate.of(2022,05,22))
+                                .conFechaRegistro( LocalDate.now())
                                         .conPerfil(Perfil.valueOf("ADMINISTRADOR")).
                 reconstruir();
 
@@ -42,8 +43,8 @@ public class EmpleadoTest {
         Assertions.assertEquals("Av 5", persona.getDireccion());
         Assertions.assertEquals("12345", persona.getTelefono());
         Assertions.assertEquals("shi@gmail.com", persona.getEmail());
-        Assertions.assertEquals(2022-05-22, persona.getFechaRegistro());
-        Assertions.assertEquals("ADMINISTRADOR", persona.getPerfil());
+        Assertions.assertEquals(LocalDate.now(), persona.getFechaRegistro());
+        Assertions.assertEquals(Perfil.valueOf("ADMINISTRADOR"), persona.getPerfil());
     }
 
     @Test
@@ -71,4 +72,31 @@ public class EmpleadoTest {
                         reconstruir(), ExcepcionValorObligatorio.class,
                 "El nombre del empleado es requerido");
     }
+
+    @Test
+    void reconstruirSinDirecciondeberiaDeberiaLanzarError() {
+        BasePrueba.assertThrows(() -> new EmpleadoTestDataBuilder()
+                        .conId(123l)
+                        .conNombre("Shirly")
+                        .conTelefono("12345")
+                        .conEmail("shi@gmail.com")
+                        .conFechaRegistro(LocalDate.of(2022,05,22))
+                        .conPerfil(Perfil.valueOf("ADMINISTRADOR")).
+                        reconstruir(), ExcepcionValorObligatorio.class,
+                "La direccion del empleado es requerida");
+    }
+    @Test
+    void reconstruirSinTelefonodeberiaDeberiaLanzarError() {
+        BasePrueba.assertThrows(() -> new EmpleadoTestDataBuilder()
+                        .conId(123l)
+                        .conNombre("Shirly")
+                        .conDireccion("Av 5")
+                        .conEmail("shi@gmail.com")
+                        .conFechaRegistro(LocalDate.of(2022,05,22))
+                        .conPerfil(Perfil.valueOf("ADMINISTRADOR")).
+                        reconstruir(), ExcepcionValorObligatorio.class,
+                "El telefono del empleado es requerido");
+    }
+
+
 }

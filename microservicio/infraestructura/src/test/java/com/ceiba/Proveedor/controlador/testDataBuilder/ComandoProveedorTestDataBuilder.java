@@ -1,5 +1,7 @@
 package com.ceiba.Proveedor.controlador.testDataBuilder;
 
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
+
 public class ComandoProveedorTestDataBuilder {
     private Long id;
     private String nombre;
@@ -9,15 +11,14 @@ public class ComandoProveedorTestDataBuilder {
 
 
     public ComandoProveedorTestDataBuilder() {
-        this.id = 1l;
+        this.id = 22l;
         this.nombre ="plantas y plantas";
-        this.direccion = "Av 4";
-        this.telefono = "2747258";
+        this.direccion = "Av vasquez Cobo";
+        this.telefono = "5656565";
         this.paginaWeb = "plantasyplantas.com.co";
 
     }
 
-    public ComandoProveedorTestDataBuilder build() {
-        return new ComandoProveedorTestDataBuilder(id, nombre, direccion, telefono, paginaWeb);
-    }
+    public Proveedor build() {
+        return new Proveedor(id,nombre, direccion, telefono,paginaWeb);}
 }

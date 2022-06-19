@@ -54,12 +54,12 @@ public class EmpleadoTestDataBuilder {
     }
 
     public EmpleadoTestDataBuilder conFechaRegistro(LocalDate fechaRegistro) {
-        this.fechaRegistro = (fechaRegistro);
+        this.fechaRegistro = fechaRegistro;
         return this;
     }
 
     public EmpleadoTestDataBuilder conPerfil(Perfil perfil) {
-        this.perfil = (perfil);
+        this.perfil = perfil;
         return this;
     }
 

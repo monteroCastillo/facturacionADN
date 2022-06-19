@@ -1,1 +1,1 @@
-insert into factura(id_cliente, valor_total, estado ) values(:id_cliente, :valor_total, :estado)
+insert into factura(id_cliente, valor_total, estado, fecha ) values(:id_cliente, :valor_total, :estado, :fecha)
