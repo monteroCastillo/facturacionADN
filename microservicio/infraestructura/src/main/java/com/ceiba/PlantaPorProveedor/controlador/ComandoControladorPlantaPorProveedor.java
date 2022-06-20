@@ -1,10 +1,9 @@
 package com.ceiba.PlantaPorProveedor.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.manejador.ManejadorCrearPlantaPorProveedor;
-import com.ceiba.proveedor.comando.ComandoProveedor;
+import com.ceiba.plantaporproveedor.comando.manejador.ManejadorEliminarPlantaPorProveedor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,10 +12,11 @@ import org.springframework.web.bind.annotation.*;
 public class ComandoControladorPlantaPorProveedor {
 
     private final ManejadorCrearPlantaPorProveedor manejadorCrearPlantaPorProveedor;
+    private final ManejadorEliminarPlantaPorProveedor manejadorEliminarPlantaPorProveedor;
 
-
-    public ComandoControladorPlantaPorProveedor(ManejadorCrearPlantaPorProveedor manejadorCrearPlantaPorProveedor) {
+    public ComandoControladorPlantaPorProveedor(ManejadorCrearPlantaPorProveedor manejadorCrearPlantaPorProveedor, ManejadorEliminarPlantaPorProveedor manejadorEliminarPlantaPorProveedor) {
         this.manejadorCrearPlantaPorProveedor = manejadorCrearPlantaPorProveedor;
+        this.manejadorEliminarPlantaPorProveedor = manejadorEliminarPlantaPorProveedor;
     }
 
     @PostMapping("/guardar")
@@ -24,8 +24,8 @@ public class ComandoControladorPlantaPorProveedor {
         return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoSolicitudPlantaPorProveedor);
     }
 
-//    @PostMapping("/guardar")
-//    public ComandoRespuesta<Long> crear(@RequestBody ComandoPlantaPorProveedor comandoPlantaPorProveedor) {
-//        return manejadorCrearPlantaPorProveedor.ejecutar(comandoPlantaPorProveedor);
-//    }
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminar(@PathVariable Long id){
+        manejadorEliminarPlantaPorProveedor.ejecutar(id);
+    }
 }
