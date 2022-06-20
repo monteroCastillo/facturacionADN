@@ -1,7 +1,7 @@
-package com.ceiba.plantaPorProveedor.adaptador.repositorio;
+package com.ceiba.plantaporproveedor.adaptador.repositorio;
 
-import com.ceiba.plantaPorProveedor.modelo.entidad.PlantaPorProveedor;
-import com.ceiba.plantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.plantaporproveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

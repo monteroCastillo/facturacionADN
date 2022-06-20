@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface DaoCliente {
 
-    List<DtoCliente> listar();
 
     Cliente obtenerClientePorId(Long id);
 }

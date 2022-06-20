@@ -1,10 +1,6 @@
 package com.ceiba.planta.comando;
 
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

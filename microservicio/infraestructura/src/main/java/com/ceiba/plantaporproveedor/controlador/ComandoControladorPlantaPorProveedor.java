@@ -1,4 +1,4 @@
-package com.ceiba.plantaPorProveedor.controlador;
+package com.ceiba.plantaporproveedor.controlador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;

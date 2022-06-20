@@ -43,7 +43,7 @@ public class ProductoFacturar {
 
     public BigDecimal calcularTotal() {
 
-        return new BigDecimal(1);
+        return calcularSubTotal();
     }
 
     public Long getId() {

@@ -1,6 +1,6 @@
-package com.ceiba.plantaPorProveedor.puerto.repositorio;
+package com.ceiba.plantaporproveedor.puerto.repositorio;
 
-import com.ceiba.plantaPorProveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 
 public interface RepositorioPlantaPorProveedor {
 

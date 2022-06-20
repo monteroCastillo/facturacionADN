@@ -26,10 +26,8 @@ public class DaoClienteDB implements DaoCliente {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
 
-    @Override
-    public List<DtoCliente> listar() {
-        return null;
-    }
+
+
 
     @Override
     public Cliente obtenerClientePorId(Long id) {

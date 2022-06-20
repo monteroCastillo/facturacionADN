@@ -1,8 +1,8 @@
-package com.ceiba.plantaPorProveedor.servicio;
+package com.ceiba.plantaporproveedor.servicio;
 
-import com.ceiba.plantaPorProveedor.modelo.entidad.PlantaPorProveedor;
-import com.ceiba.plantaPorProveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
-import com.ceiba.plantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
 
 public class ServicioCrearPlantaPorProveedor {
 

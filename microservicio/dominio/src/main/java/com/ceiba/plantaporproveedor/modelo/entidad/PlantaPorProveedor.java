@@ -1,4 +1,4 @@
-package com.ceiba.plantaPorProveedor.modelo.entidad;
+package com.ceiba.plantaporproveedor.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.planta.modelo.entidad.Planta;

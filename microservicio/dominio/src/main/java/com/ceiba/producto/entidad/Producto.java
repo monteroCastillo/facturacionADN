@@ -16,14 +16,6 @@ public class Producto {
         this.aplicaIva = aplicaIva;
         this.valor = valor;
     }
-
-    private Producto(Long id, String nombre, boolean aplicaIva, BigDecimal valor) {
-        this.id = id;
-        this.nombre = nombre;
-        this.aplicaIva = aplicaIva;
-        this.valor = valor;
-    }
-
     public static Producto reconstruir(Long id, String nombre, Boolean aplicaIva, BigDecimal valor) {
         ValidadorArgumento.validarObligatorio(id, "El id del producto es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "El nombre del producto es requerido");
