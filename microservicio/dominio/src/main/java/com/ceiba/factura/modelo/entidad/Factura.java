@@ -86,13 +86,13 @@ public class Factura {
 
     public static Factura crear(SolicitudFacturar solicitudFacturar) {
         ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), "El cliente es requerido para facturar");
-        ValidadorArgumento.validarNoVacio(solicitudFacturar.getProductosFacturar(), "No se puede crear una factura sin productos");
+        ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), "No se puede crear una factura sin productos");
         return new Factura(solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());
     }
 
     public static Factura reconstruir(Long id, Cliente cliente, List<ProductoFacturar> productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura) {
         ValidadorArgumento.validarObligatorio(cliente, "El cliente es requerido para facturar");
-        ValidadorArgumento.validarNoVacio(productosFacturar, "No se puede crear una factura sin productos");
+        ValidadorArgumento.validarObligatorio(productosFacturar, "No se puede crear una factura sin productos");
         ValidadorArgumento.validarObligatorio(id, "El id es requerido");
         if (valorTotal.compareTo(BigDecimal.ZERO) <= 0) {
             throw new ExcepcionValorInvalido("El total no puede ser menor a cero");

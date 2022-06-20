@@ -43,14 +43,14 @@ pipeline {
         	  sh 'ls'
         	  echo "------------>Lista de carpetas -a <------------"
         	  sh 'ls -a'
-        	  sh 'chmod +x ./microservicio/gradlew'
-        	  sh './microservicio/gradlew --b ./microservicio/build.gradle clean test'
+        	 // sh 'chmod +x ./microservicio/gradlew'
+        	 // sh './microservicio/gradlew --b ./microservicio/build.gradle clean test'
       }
     }
 
     stage('Static Code Analysis') {
         steps{
-            	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:factura-vivero.rodrigo.montero',
+            	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:factura.vivero-rodrigo.montero',
             sonarName:'CeibaADN-factura-vivero-rodrigo.montero',
             sonarPathProperties:'./sonar-project.properties')
         }

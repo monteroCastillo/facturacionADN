@@ -20,6 +20,10 @@ public class ManejadorFacturar implements ManejadorComandoRespuesta<ComandoSolic
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoSolicitudFacturar comandoSolicitudFacturar) {
+
+        System.out.println("MENSAJE DESDE EL MANEJADOR FACTURAR");
+        System.out.println("mensaje idcliente"  +comandoSolicitudFacturar.getIdCliente());
+        System.out.println("mensaje productos "  +comandoSolicitudFacturar.getComandoProductosFacturar());
         return new ComandoRespuesta<>(servicioFacturar
                 .ejecutar(fabricaSolicitudFacturar.crear(comandoSolicitudFacturar)));
     }

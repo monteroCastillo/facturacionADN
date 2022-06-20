@@ -11,4 +11,6 @@ public interface DaoPlanta {
     Planta obtenerPlantaPorId(int id);
 
     Planta obtener(int id);
+
+
 }

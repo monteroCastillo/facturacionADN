@@ -21,6 +21,9 @@ public class DaoPlantaDB implements DaoPlanta{
     @SqlStatement(namespace="planta", value="obtenerporid")
     private static String sqlObtener;
 
+    @SqlStatement(namespace="planta", value="listaConsulta")
+    private static String sqlObtenerPlantaProveedor;
+
 
     public DaoPlantaDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -32,6 +35,7 @@ public class DaoPlantaDB implements DaoPlanta{
 
     @Override
     public Planta obtenerPlantaPorId(int idPlanta) {
+        System.out.println("\n *************  ENTRO A LA FUNCION DE PRUEBA");
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", idPlanta);
         List<Planta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());
@@ -43,6 +47,17 @@ public class DaoPlantaDB implements DaoPlanta{
 
     @Override
     public Planta obtener(int id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        List<Planta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());
+        if(list.size()==1){
+            return list.get(0);
+        }
+        return null;
+    }
+
+
+    public Planta obtenerPlantaProveedor(int id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
         List<Planta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());

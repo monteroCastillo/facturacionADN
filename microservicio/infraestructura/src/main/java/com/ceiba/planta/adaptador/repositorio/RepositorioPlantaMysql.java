@@ -62,11 +62,6 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     }
 
 
-//    @Override
-//    public void actualizar(Planta planta) {
-//        this.customNamedParameterJdbcTemplate.actualizar(planta, sqlActualizar);
-//    }
-
     @Override
     public void actualizar(Planta planta) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();

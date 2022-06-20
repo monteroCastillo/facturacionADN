@@ -9,7 +9,8 @@ INSERT INTO EMPLEADO VALUES (124,'luna', 'Av 5', '55555','luna@gmail.com','2022-
 
 
 INSERT INTO PLANTA VALUES(12, 'Margarita', 'flor amarilla', '2022-12-05', 50, 12000, 'PLANTASDEFLOR' );
-INSERT INTO PLANTA VALUES(13, 'Jazmin', 'Planta con buen olor en las noches', '2022-12-05', 10, 25000, 'PLANTASDEFLOR' );
+INSERT INTO PLANTA VALUES(13, 'Jazmin', 'Planta con buen olor en las noches', '2022-06-05', 10, 25000, 'PLANTASDEFLOR' );
+INSERT INTO PLANTA VALUES(14, 'gardenias', 'Flor de clima tropical','2022-06-15', 17, 26000, 'PLANTASDEFLOR');
 
 INSERT INTO PRODUCTO_FACTURAR VALUES(1,12,13,58);
 -- insert into producto_facturar( id_factura, id_planta, cantidad ) values(12, 12, 158);
@@ -19,3 +20,5 @@ INSERT INTO PROVEEDOR VALUES(22, 'plantas y plantas', 'Av vasquez Cobo', '565656
 INSERT INTO PROVEEDOR VALUES(23, 'Vivero Marinela', 'Calle 23 # 25-46', '2481476', 'viveromarinela.com.co');
 
 INSERT INTO PLANTAPORPROVEEDOR VALUES(1, 22, 12);
+INSERT INTO PLANTAPORPROVEEDOR VALUES(2, 22, 13);
+INSERT INTO PLANTAPORPROVEEDOR VALUES(3, 23, 14);

@@ -32,4 +32,6 @@ public class ConsultaControladorProveedor {
     public Proveedor buscar(@PathVariable("id") Long id) {
         return this.manejadorBuscarProveedor.ejecutar(id);
     }
+
+
 }

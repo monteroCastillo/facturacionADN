@@ -45,6 +45,7 @@ public class RepositorioProductoFacturarMysql implements RepositorioProductoFact
         paramSource.addValue("id_factura", idFactura);
         paramSource.addValue("id_planta", productoFacturar.getPlanta().getIdPlanta());
         paramSource.addValue("cantidad", productoFacturar.getCantidad());
+        System.out.println("***** DATO DE FACTURA" + paramSource);
         this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
     }
 }

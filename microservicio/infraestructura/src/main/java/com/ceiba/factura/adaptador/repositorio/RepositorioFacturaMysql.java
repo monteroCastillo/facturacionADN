@@ -15,7 +15,6 @@ import java.time.LocalDate;
 public class RepositorioFacturaMysql implements RepositorioFactura {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-
     private final MapeoFactura mapeoFactura;
     private final RepositorioProductoFacturar repositorioProductoFacturar;
 
@@ -41,6 +40,7 @@ public class RepositorioFacturaMysql implements RepositorioFactura {
         paramSource.addValue("valor_total", factura.getValorTotal());
         paramSource.addValue("estado", factura.getEstado().name());
         paramSource.addValue("fecha", LocalDate.now());
+        System.out.println(" *********Datos de factura de repositorio Factura" + paramSource);
         Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
         repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);
         return idFacturaGuardada;
