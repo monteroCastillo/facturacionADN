@@ -50,11 +50,7 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
         return null;
     }
 
-//    @Override
-//    public void actualizar(Proveedor proveedor) {
-//        System.out.println("Datos para el metodo actualizar: " + proveedor);
-//        this.customNamedParameterJdbcTemplate.actualizar(proveedor, sqlActualizar);
-//    }
+
     @Override
     public void actualizar(Proveedor proveedor) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
@@ -63,7 +59,6 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
         paramSource.addValue("direccion", proveedor.getDireccion());
         paramSource.addValue("telefono", proveedor.getTelefono());
         paramSource.addValue("paginaWeb", proveedor.getPaginaWeb());
-        System.out.println("El dato que le entra a actualizar " + paramSource);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 
     }

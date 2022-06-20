@@ -1,6 +1,5 @@
 package com.ceiba.proveedor.puerto.dao;
 
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 import java.util.List;

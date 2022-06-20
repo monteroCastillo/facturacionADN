@@ -20,7 +20,6 @@ public class ManejadorActualizarProveedor implements ManejadorComando<ComandoPro
 
     @Override
     public void ejecutar(ComandoProveedor comandoProveedor)  {
-        System.out.println("Comando proveedor"+ comandoProveedor);
         Proveedor proveedor = this.fabricaProveedor.crear(comandoProveedor);
         this.servicioActualizarProveedor.ejecutar(proveedor);
 

@@ -6,8 +6,6 @@ import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.dao.DaoCliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.adaptador.dao.MapeoPlanta;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
@@ -43,8 +41,5 @@ public class DaoClienteDB implements DaoCliente {
         }
         return null;
     }
-
-
-
 
 }

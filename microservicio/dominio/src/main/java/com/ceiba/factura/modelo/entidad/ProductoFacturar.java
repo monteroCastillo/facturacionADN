@@ -36,19 +36,6 @@ public class ProductoFacturar {
         return new ProductoFacturar(id, cantidad, planta);
     }
 
-    public BigDecimal calcularIva() {
-//        if (planta.aplicaIva()) {
-//            return calcularSubTotal().multiply(BigDecimal.valueOf(VALOR_IVA));
-//        }
-//        return BigDecimal.ZERO;
-        return new BigDecimal(1);
-    }
-
-    public BigDecimal calcularTotalConIva() {
-        return calcularSubTotal()
-                .add(calcularIva());
-    }
-
     private BigDecimal calcularSubTotal() {
         return planta.getValor()
                 .multiply(BigDecimal.valueOf(cantidad));

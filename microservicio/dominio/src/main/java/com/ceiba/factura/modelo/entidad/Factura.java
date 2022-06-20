@@ -1,7 +1,7 @@
 package com.ceiba.factura.modelo.entidad;
 
 
-import com.ceiba.Empleado.modelo.entidad.Empleado;
+
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
@@ -19,17 +19,23 @@ public class Factura {
 
     public static final double COBRO_ADICIONAL_FESTIVO = 0.15;
 
+
     private Long id;
     private Cliente cliente;
     private List<ProductoFacturar> productosFacturar;
     private BigDecimal valorTotal;
     private EstadoFactura estado;
 
-    private Cliente idCliente;
-
-    private Empleado idEmpleado;
-
     private LocalDate fechaIngreso;
+
+    public Factura(Long id, Cliente cliente, List<ProductoFacturar> productosFacturar, BigDecimal valorTotal, EstadoFactura estado, LocalDate fechaIngreso) {
+        this.id = id;
+        this.cliente = cliente;
+        this.productosFacturar = productosFacturar;
+        this.valorTotal = valorTotal;
+        this.estado = estado;
+        this.fechaIngreso = fechaIngreso;
+    }
 
     private Factura(Cliente cliente, List<ProductoFacturar> productosFacturar) {
         this.cliente = cliente;

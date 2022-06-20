@@ -7,9 +7,6 @@ import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-@AllArgsConstructor
-@Builder
-@ToString
 public class Planta {
 
 
@@ -25,6 +22,15 @@ public class Planta {
 
     }
 
+    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
+        this.idPlanta = idPlanta;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fechaIngreso = fechaIngreso;
+        this.cantidad = cantidad;
+        this.valor = valor;
+        this.categoria = categoria;
+    }
 
     public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
         ValidadorArgumento.validarObligatorio(idPlanta, "El id de la planta es requerido");

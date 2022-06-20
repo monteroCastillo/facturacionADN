@@ -2,7 +2,6 @@ package com.ceiba.proveedor.controlador;
 
 import com.ceiba.proveedor.comando.manejador.ManejadorBuscarProveedor;
 import com.ceiba.proveedor.consulta.ManejadorListarProveedores;
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

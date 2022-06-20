@@ -2,9 +2,7 @@ package com.ceiba.planta.controlador;
 
 import com.ceiba.planta.comando.manejador.ManejadorBuscarPlanta;
 import com.ceiba.planta.consulta.ManejadorListarPlantas;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,6 @@
 package com.ceiba.plantaporproveedor.comando.manejador;
 
-import com.ceiba.PlantaPorProveedor.servicio.ServicioEliminarPlantaPorProveedor;
+import com.ceiba.plantaPorProveedor.servicio.ServicioEliminarPlantaPorProveedor;
 import com.ceiba.manejador.ManejadorComando;
 import org.springframework.stereotype.Component;
 

@@ -9,10 +9,6 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class ComandoPlanta {
     private int idPlanta;
     private String nombre;

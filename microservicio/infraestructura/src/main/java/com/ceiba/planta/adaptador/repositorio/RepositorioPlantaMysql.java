@@ -5,7 +5,6 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -72,7 +71,6 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         paramSource.addValue("cantidad", planta.getCantidad());
         paramSource.addValue("valor",planta.getValor());
         paramSource.addValue("categoria", planta.getCategoria().name());
-        System.out.println("El dato que le entra a actualizar " + paramSource);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 
     }

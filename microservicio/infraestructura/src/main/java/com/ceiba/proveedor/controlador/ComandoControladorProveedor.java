@@ -1,7 +1,6 @@
 package com.ceiba.proveedor.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.proveedor.comando.ComandoProveedor;
 import com.ceiba.proveedor.comando.manejador.ManejadorActualizarProveedor;
 import com.ceiba.proveedor.comando.manejador.ManejadorCrearProveedor;

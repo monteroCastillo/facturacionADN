@@ -3,7 +3,6 @@ package com.ceiba.planta.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -35,7 +34,6 @@ public class DaoPlantaDB implements DaoPlanta{
 
     @Override
     public Planta obtenerPlantaPorId(int idPlanta) {
-        System.out.println("\n *************  ENTRO A LA FUNCION DE PRUEBA");
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", idPlanta);
         List<Planta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());

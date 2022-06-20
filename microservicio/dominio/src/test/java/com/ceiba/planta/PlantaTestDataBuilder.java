@@ -1,8 +1,5 @@
 package com.ceiba.planta;
 
-import com.ceiba.Empleado.EmpleadoTestDataBuilder;
-import com.ceiba.Empleado.modelo.entidad.Empleado;
-import com.ceiba.Empleado.modelo.entidad.Perfil;
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 

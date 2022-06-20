@@ -1,7 +1,7 @@
 package com.ceiba.planta.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
-import com.ceiba.Empleado.utils.MensajesDeExcepcion;
+import com.ceiba.empleado.utils.MensajesDeExcepcion;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 

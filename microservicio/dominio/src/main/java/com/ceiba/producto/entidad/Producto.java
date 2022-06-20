@@ -10,6 +10,13 @@ public class Producto {
     private final Boolean aplicaIva;
     private final BigDecimal valor;
 
+    public Producto(Long id, String nombre, Boolean aplicaIva, BigDecimal valor) {
+        this.id = id;
+        this.nombre = nombre;
+        this.aplicaIva = aplicaIva;
+        this.valor = valor;
+    }
+
     private Producto(Long id, String nombre, boolean aplicaIva, BigDecimal valor) {
         this.id = id;
         this.nombre = nombre;

@@ -1,6 +1,6 @@
 package com.ceiba.plantaporproveedor.comando.fabrica;
 
-import com.ceiba.PlantaPorProveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
+import com.ceiba.plantaPorProveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.proveedor.puerto.dao.DaoProveedor;

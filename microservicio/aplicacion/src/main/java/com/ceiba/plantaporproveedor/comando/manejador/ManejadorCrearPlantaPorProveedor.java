@@ -1,7 +1,7 @@
 package com.ceiba.plantaporproveedor.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.PlantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
+import com.ceiba.plantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.fabrica.FabricaSolicitudPlantaPorProveedor;

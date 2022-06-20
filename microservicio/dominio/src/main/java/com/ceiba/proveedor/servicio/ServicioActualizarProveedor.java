@@ -1,7 +1,7 @@
 package com.ceiba.proveedor.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
-import com.ceiba.Empleado.utils.MensajesDeExcepcion;
+import com.ceiba.empleado.utils.MensajesDeExcepcion;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 

@@ -1,16 +1,16 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.Empleado.servicio.ServicioActualizarEmpleado;
-import com.ceiba.PlantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
-import com.ceiba.PlantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
-import com.ceiba.PlantaPorProveedor.servicio.ServicioEliminarPlantaPorProveedor;
+import com.ceiba.empleado.servicio.ServicioActualizarEmpleado;
+import com.ceiba.plantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.plantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
+import com.ceiba.plantaPorProveedor.servicio.ServicioEliminarPlantaPorProveedor;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 import com.ceiba.factura.servicio.ServicioAnular;
 import com.ceiba.factura.servicio.ServicioFacturar;
-import com.ceiba.Empleado.puerto.repositorio.RepositorioEmpleado;
-import com.ceiba.Empleado.servicio.ServicioCrearEmpleado;
+import com.ceiba.empleado.puerto.repositorio.RepositorioEmpleado;
+import com.ceiba.empleado.servicio.ServicioCrearEmpleado;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
