@@ -3,9 +3,8 @@ package com.ceiba.empleado.adaptador.repositorio;
 import com.ceiba.empleado.modelo.dto.DtoEmpleado;
 import com.ceiba.empleado.modelo.entidad.Perfil;
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import org.springframework.stereotype.Component;
-
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -3,6 +3,7 @@ package com.ceiba.empleado.modelo.dto;
 import com.ceiba.empleado.modelo.entidad.Perfil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
 import java.time.LocalDate;
 
 @Getter

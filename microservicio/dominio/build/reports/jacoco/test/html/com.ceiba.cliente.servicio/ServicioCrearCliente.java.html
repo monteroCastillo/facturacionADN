@@ -2,18 +2,17 @@
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
-import com.ceiba.planta.modelo.entidad.Planta;
 
 public class ServicioCrearCliente {
 
     private final RepositorioCliente repositorioCliente;
 
-<span class="nc" id="L11">    public ServicioCrearCliente(RepositorioCliente repositorioCliente) {</span>
-<span class="nc" id="L12">        this.repositorioCliente = repositorioCliente;</span>
-<span class="nc" id="L13">    }</span>
+<span class="nc" id="L10">    public ServicioCrearCliente(RepositorioCliente repositorioCliente) {</span>
+<span class="nc" id="L11">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L12">    }</span>
 
     public Long ejecutar(Cliente cliente){
-<span class="nc" id="L16">        return this.repositorioCliente.guardar(cliente);</span>
+<span class="nc" id="L15">        return this.repositorioCliente.guardar(cliente);</span>
     }
 
 }

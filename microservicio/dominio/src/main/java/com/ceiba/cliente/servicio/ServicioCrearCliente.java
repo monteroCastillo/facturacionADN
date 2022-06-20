@@ -2,7 +2,6 @@ package com.ceiba.cliente.servicio;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
-import com.ceiba.planta.modelo.entidad.Planta;
 
 public class ServicioCrearCliente {
 

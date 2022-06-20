@@ -1,14 +1,11 @@
 package com.ceiba.factura.comando.fabrica;
 
-import com.ceiba.cliente.puerto.dao.DaoCliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.factura.comando.ComandoProductoFacturar;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
-import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
-import com.ceiba.producto.puerto.RepositorioProducto;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

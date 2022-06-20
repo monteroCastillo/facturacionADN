@@ -1,7 +1,6 @@
 package com.ceiba.cliente.adaptador.dao;
 
 import com.ceiba.cliente.adaptador.repositorio.MapeoCliente;
-import com.ceiba.cliente.modelo.dto.DtoCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.dao.DaoCliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;

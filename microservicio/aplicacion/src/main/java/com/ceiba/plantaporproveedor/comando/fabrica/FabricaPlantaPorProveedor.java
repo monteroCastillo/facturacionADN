@@ -1,7 +1,7 @@
 package com.ceiba.plantaporproveedor.comando.fabrica;
 
-import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,9 +1,9 @@
 package com.ceiba.empleado.servicio;
 
+import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.puerto.repositorio.RepositorioEmpleado;
 import com.ceiba.empleado.utils.MensajesDeExcepcion;
-import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 
 public class ServicioActualizarEmpleado {
     private final RepositorioEmpleado repositorioEmpleado;

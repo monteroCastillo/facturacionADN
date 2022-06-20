@@ -1,10 +1,9 @@
 package com.ceiba.proveedor.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
-
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.jdbc.core.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

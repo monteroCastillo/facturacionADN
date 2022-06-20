@@ -1,12 +1,9 @@
 package com.ceiba.factura;
 
-import com.ceiba.cliente.ClienteTestDataBuilder;
-
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
-import com.ceiba.producto.ProductoTestDataBuilder;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

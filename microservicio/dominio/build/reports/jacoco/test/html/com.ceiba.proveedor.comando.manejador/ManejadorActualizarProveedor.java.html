@@ -20,10 +20,9 @@ public class ManejadorActualizarProveedor implements ManejadorComando&lt;Comando
 
     @Override
     public void ejecutar(ComandoProveedor comandoProveedor)  {
-<span class="nc" id="L23">        System.out.println(&quot;Comando proveedor&quot;+ comandoProveedor);</span>
-<span class="nc" id="L24">        Proveedor proveedor = this.fabricaProveedor.crear(comandoProveedor);</span>
-<span class="nc" id="L25">        this.servicioActualizarProveedor.ejecutar(proveedor);</span>
+<span class="nc" id="L23">        Proveedor proveedor = this.fabricaProveedor.crear(comandoProveedor);</span>
+<span class="nc" id="L24">        this.servicioActualizarProveedor.ejecutar(proveedor);</span>
 
-<span class="nc" id="L27">    }</span>
+<span class="nc" id="L26">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

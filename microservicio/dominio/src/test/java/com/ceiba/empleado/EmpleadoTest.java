@@ -1,9 +1,9 @@
 package com.ceiba.empleado;
 
 import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.modelo.entidad.Perfil;
-import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

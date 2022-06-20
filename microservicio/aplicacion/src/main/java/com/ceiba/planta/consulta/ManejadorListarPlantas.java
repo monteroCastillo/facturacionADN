@@ -1,9 +1,7 @@
 package com.ceiba.planta.consulta;
 
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

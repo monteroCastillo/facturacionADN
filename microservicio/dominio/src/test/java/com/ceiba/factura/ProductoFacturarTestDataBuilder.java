@@ -2,7 +2,6 @@ package com.ceiba.factura;
 
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.producto.entidad.Producto;
 
 public class ProductoFacturarTestDataBuilder {
     private Integer cantidad;

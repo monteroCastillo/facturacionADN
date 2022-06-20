@@ -2,7 +2,6 @@ package com.ceiba.empleado.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
 
-
 import java.time.LocalDate;
 public class Empleado {
     private Long idEmpleado;

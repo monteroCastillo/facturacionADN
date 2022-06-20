@@ -1,7 +1,6 @@
 package com.ceiba.plantaporproveedor.modelo.entidad;
 
 import com.ceiba.planta.modelo.entidad.Planta;
-
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

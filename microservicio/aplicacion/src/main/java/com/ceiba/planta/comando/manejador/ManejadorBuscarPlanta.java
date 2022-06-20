@@ -1,6 +1,5 @@
 package com.ceiba.planta.comando.manejador;
 
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import org.springframework.stereotype.Component;

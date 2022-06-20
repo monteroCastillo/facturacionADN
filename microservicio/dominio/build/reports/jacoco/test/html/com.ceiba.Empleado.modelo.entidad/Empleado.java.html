@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Empleado.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.Empleado.modelo.entidad</a> &gt; <span class="el_source">Empleado.java</span></div><h1>Empleado.java</h1><pre class="source lang-java linenums">package com.ceiba.Empleado.modelo.entidad;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Empleado.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.empleado.modelo.entidad</a> &gt; <span class="el_source">Empleado.java</span></div><h1>Empleado.java</h1><pre class="source lang-java linenums">package com.ceiba.empleado.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-
 
 import java.time.LocalDate;
 public class Empleado {
@@ -13,83 +12,83 @@ public class Empleado {
     private LocalDate fechaRegistro;
     private Perfil perfil;
 
-<span class="nc" id="L16">    public Empleado() {</span>
-<span class="nc" id="L17">    }</span>
+<span class="fc" id="L15">    public Empleado() {</span>
+<span class="fc" id="L16">    }</span>
 
-<span class="nc" id="L19">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
-<span class="nc" id="L20">        this.idEmpleado = idEmpleado;</span>
-<span class="nc" id="L21">        this.nombre = nombre;</span>
-<span class="nc" id="L22">        this.direccion = direccion;</span>
-<span class="nc" id="L23">        this.telefono = telefono;</span>
-<span class="nc" id="L24">        this.email = email;</span>
-<span class="nc" id="L25">        this.fechaRegistro = fechaRegistro;</span>
-<span class="nc" id="L26">        this.perfil = perfil;</span>
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L18">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
+<span class="fc" id="L19">        this.idEmpleado = idEmpleado;</span>
+<span class="fc" id="L20">        this.nombre = nombre;</span>
+<span class="fc" id="L21">        this.direccion = direccion;</span>
+<span class="fc" id="L22">        this.telefono = telefono;</span>
+<span class="fc" id="L23">        this.email = email;</span>
+<span class="fc" id="L24">        this.fechaRegistro = fechaRegistro;</span>
+<span class="fc" id="L25">        this.perfil = perfil;</span>
+<span class="fc" id="L26">    }</span>
     public static Empleado reconstruir(Long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
-<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(idEmpleado, &quot;El id del empleado es requerido&quot;);</span>
-<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre del empleado es requerido&quot;);</span>
-<span class="fc" id="L31">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion del empleado es requerida&quot;);</span>
-<span class="nc" id="L32">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del empleado es requerido&quot;);</span>
-<span class="nc" id="L33">        ValidadorArgumento.validarObligatorio(email, &quot;El email del empleado es requerido&quot;);</span>
-<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(fechaRegistro, &quot;La fecha de registro es requerida&quot;);</span>
-<span class="nc" id="L35">        ValidadorArgumento.validarObligatorio(perfil, &quot;El perfil del empleado es requerido&quot;);</span>
-<span class="nc" id="L36">        return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);</span>
+<span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(idEmpleado, &quot;El id del empleado es requerido&quot;);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre del empleado es requerido&quot;);</span>
+<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion del empleado es requerida&quot;);</span>
+<span class="fc" id="L31">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del empleado es requerido&quot;);</span>
+<span class="fc" id="L32">        ValidadorArgumento.validarObligatorio(email, &quot;El email del empleado es requerido&quot;);</span>
+<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(fechaRegistro, &quot;La fecha de registro es requerida&quot;);</span>
+<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(perfil, &quot;El perfil del empleado es requerido&quot;);</span>
+<span class="fc" id="L35">        return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);</span>
     }
 
     public Perfil getPerfil() {
-<span class="nc" id="L40">        return perfil;</span>
+<span class="fc" id="L39">        return perfil;</span>
     }
 
     public void setPerfil(Perfil perfil) {
-<span class="nc" id="L44">        this.perfil = perfil;</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L43">        this.perfil = perfil;</span>
+<span class="nc" id="L44">    }</span>
 
     public long getIdEmpleado() {
-<span class="nc" id="L48">        return this.idEmpleado;</span>
+<span class="fc" id="L47">        return this.idEmpleado;</span>
     }
 
     public String getNombre() {
-<span class="nc" id="L52">        return this.nombre;</span>
+<span class="fc" id="L51">        return this.nombre;</span>
     }
 
     public String getDireccion() {
-<span class="nc" id="L56">        return this.direccion;</span>
+<span class="fc" id="L55">        return this.direccion;</span>
     }
 
     public String getTelefono() {
-<span class="nc" id="L60">        return this.telefono;</span>
+<span class="fc" id="L59">        return this.telefono;</span>
     }
 
     public String getEmail() {
-<span class="nc" id="L64">        return this.email;</span>
+<span class="fc" id="L63">        return this.email;</span>
     }
 
     public LocalDate getFechaRegistro() {
-<span class="nc" id="L68">        return this.fechaRegistro;</span>
+<span class="fc" id="L67">        return this.fechaRegistro;</span>
     }
 
     public void setIdEmpleado(long idEmpleado) {
-<span class="nc" id="L72">        this.idEmpleado = idEmpleado;</span>
-<span class="nc" id="L73">    }</span>
+<span class="nc" id="L71">        this.idEmpleado = idEmpleado;</span>
+<span class="nc" id="L72">    }</span>
 
     public void setNombre(String nombre) {
-<span class="nc" id="L76">        this.nombre = nombre;</span>
-<span class="nc" id="L77">    }</span>
+<span class="fc" id="L75">        this.nombre = nombre;</span>
+<span class="fc" id="L76">    }</span>
 
     public void setDireccion(String direccion) {
-<span class="nc" id="L80">        this.direccion = direccion;</span>
-<span class="nc" id="L81">    }</span>
+<span class="nc" id="L79">        this.direccion = direccion;</span>
+<span class="nc" id="L80">    }</span>
 
     public void setTelefono(String telefono) {
-<span class="nc" id="L84">        this.telefono = telefono;</span>
-<span class="nc" id="L85">    }</span>
+<span class="nc" id="L83">        this.telefono = telefono;</span>
+<span class="nc" id="L84">    }</span>
 
     public void setEmail(String email) {
-<span class="nc" id="L88">        this.email = email;</span>
-<span class="nc" id="L89">    }</span>
+<span class="nc" id="L87">        this.email = email;</span>
+<span class="nc" id="L88">    }</span>
 
     public void setFechaRegistro(final LocalDate fechaRegistro) {
-<span class="nc" id="L92">        this.fechaRegistro = fechaRegistro;</span>
-<span class="nc" id="L93">    }</span>
+<span class="nc" id="L91">        this.fechaRegistro = fechaRegistro;</span>
+<span class="nc" id="L92">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

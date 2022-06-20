@@ -2,7 +2,6 @@ package com.ceiba.factura.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.producto.entidad.Producto;
 
 import java.math.BigDecimal;
 

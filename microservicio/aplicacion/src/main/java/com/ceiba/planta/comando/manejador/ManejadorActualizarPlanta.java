@@ -5,7 +5,6 @@ import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.comando.fabrica.FabricaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.stereotype.Component;
 
 @Component
