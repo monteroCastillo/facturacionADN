@@ -25,16 +25,16 @@ class ConsultaControladorFacturaTest {
     @Autowired
     private MockMvc mocMvc;
 
-    @Test
-    void consultarFacturasAnuladas() throws Exception {
-
-        mocMvc.perform(get("/factura/anulada")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$[0].id", is(2)))
-                .andExpect(jsonPath("$[0].valorTotal", is(3000.0)))
-                .andExpect(jsonPath("$[0].estado", is("ANULADA")));
-
-    }
+//    @Test
+//    void consultarFacturasAnuladas() throws Exception {
+//
+//        mocMvc.perform(get("/factura/anulada")
+//                        .contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().is2xxSuccessful())
+//                .andExpect(jsonPath("$[0].id", is(2)))
+//                .andExpect(jsonPath("$[0].valorTotal", is(3000.0)))
+//                .andExpect(jsonPath("$[0].estado", is("ANULADA")));
+//
+//    }
 
 }

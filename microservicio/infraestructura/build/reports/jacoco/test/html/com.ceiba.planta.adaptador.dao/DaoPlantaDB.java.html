@@ -3,7 +3,6 @@
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -21,74 +20,53 @@ public class DaoPlantaDB implements DaoPlanta{
     @SqlStatement(namespace=&quot;planta&quot;, value=&quot;obtenerporid&quot;)
     private static String sqlObtener;
 
+    @SqlStatement(namespace=&quot;planta&quot;, value=&quot;listaConsulta&quot;)
+    private static String sqlObtenerPlantaProveedor;
 
-<span class="fc" id="L25">    public DaoPlantaDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L27">    }</span>
+
+<span class="fc" id="L27">    public DaoPlantaDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L28">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L29">    }</span>
     @Override
     public List&lt;Planta&gt; listar() {
-<span class="nc" id="L30">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanta());</span>
+<span class="nc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanta());</span>
     }
 
     @Override
     public Planta obtenerPlantaPorId(int idPlanta) {
-<span class="nc" id="L35">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L36">        paramSource.addValue(&quot;id&quot;, idPlanta);</span>
-<span class="nc" id="L37">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L39">            return list.get(0);</span>
+<span class="nc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L38">        paramSource.addValue(&quot;id&quot;, idPlanta);</span>
+<span class="nc" id="L39">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        if(list.size()==1){</span>
+<span class="nc" id="L41">            return list.get(0);</span>
         }
-<span class="nc" id="L41">        return null;</span>
+<span class="nc" id="L43">        return null;</span>
     }
 
     @Override
     public Planta obtener(int id) {
-<span class="nc" id="L46">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L47">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L48">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
-<span class="nc bnc" id="L49" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L50">            return list.get(0);</span>
+<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L50">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if(list.size()==1){</span>
+<span class="nc" id="L52">            return list.get(0);</span>
         }
-<span class="nc" id="L52">        return null;</span>
+<span class="nc" id="L54">        return null;</span>
+    }
+
+
+    public Planta obtenerPlantaProveedor(int id) {
+<span class="nc" id="L59">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L60">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L61">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if(list.size()==1){</span>
+<span class="nc" id="L63">            return list.get(0);</span>
+        }
+<span class="nc" id="L65">        return null;</span>
     }
 
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//public class daoPlanta implements RepositorioPlanta {
-
-
-//    private RepositorioPlantaMysql repoPlanta;
-//    @Override
-//    public int guardar(Planta planta) {
-//        repoPlanta.guardar(planta);
-//    }
-//
-//    @Override
-//    public void eliminar(int idPlanta) {
-//        repoPlanta.buscarPlantaPorID(idPlanta);
-//    }
-//
-//    @Override
-//    public List&lt;Planta&gt; buscarTodos() {
-//        return repoPlanta.buscarTodos();
-//    }
-//
-//    @Override
-//    public Planta buscarPlantaPorID(int idPlanta) {
-//        return null;
-//    }
-//}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

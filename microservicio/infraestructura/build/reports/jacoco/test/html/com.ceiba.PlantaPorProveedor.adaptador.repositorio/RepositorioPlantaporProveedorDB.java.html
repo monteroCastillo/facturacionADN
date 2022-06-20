@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioPlantaporProveedorDB.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.PlantaPorProveedor.adaptador.repositorio</a> &gt; <span class="el_source">RepositorioPlantaporProveedorDB.java</span></div><h1>RepositorioPlantaporProveedorDB.java</h1><pre class="source lang-java linenums">package com.ceiba.PlantaPorProveedor.adaptador.repositorio;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioPlantaporProveedorDB.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.plantaporproveedor.adaptador.repositorio</a> &gt; <span class="el_source">RepositorioPlantaporProveedorDB.java</span></div><h1>RepositorioPlantaporProveedorDB.java</h1><pre class="source lang-java linenums">package com.ceiba.plantaporproveedor.adaptador.repositorio;
 
-import com.ceiba.PlantaPorProveedor.modelo.entidad.PlantaPorProveedor;
-import com.ceiba.PlantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.plantaporproveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -25,27 +25,22 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
     private static String sqlEliminar;
 
 
-
-//    @Override
-//    public Long guardar(PlantaPorProveedor plantaPorProveedor) {
-//        return (this.customNamedParameterJdbcTemplate.crear(plantaPorProveedor, sqlCrear));
-//    }
-
     @Override
     public Long guardar(PlantaPorProveedor plantaPorProveedor) {
-<span class="nc" id="L36">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L37">        parameterSource.addValue(&quot;id&quot;, plantaPorProveedor.getId());</span>
-<span class="nc" id="L38">        parameterSource.addValue(&quot;id_proveedor&quot;, plantaPorProveedor.getIdProveedor());</span>
-<span class="nc" id="L39">        parameterSource.addValue(&quot;id_planta&quot;, plantaPorProveedor.getIdPlanta());</span>
-<span class="nc" id="L40">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
-<span class="nc" id="L41">        return idPlantaGuardada;</span>
+<span class="nc" id="L30">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L31">        parameterSource.addValue(&quot;id&quot;, plantaPorProveedor.getId());</span>
+<span class="nc" id="L32">        parameterSource.addValue(&quot;id_proveedor&quot;, plantaPorProveedor.getProveedor().getId());</span>
+<span class="nc" id="L33">        parameterSource.addValue(&quot;id_planta&quot;, plantaPorProveedor.getPlanta().getIdPlanta());</span>
+<span class="nc" id="L34">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
+
+<span class="nc" id="L36">        return idPlantaGuardada;</span>
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="nc" id="L46">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L47">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L48">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L49">    }</span>
+<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L42">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L43">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="nc" id="L44">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

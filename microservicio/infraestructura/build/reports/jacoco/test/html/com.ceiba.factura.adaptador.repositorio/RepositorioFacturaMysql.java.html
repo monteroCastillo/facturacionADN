@@ -9,11 +9,12 @@ import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+
 @Repository
 public class RepositorioFacturaMysql implements RepositorioFactura {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
-
     private final MapeoFactura mapeoFactura;
     private final RepositorioProductoFacturar repositorioProductoFacturar;
 
@@ -26,38 +27,39 @@ public class RepositorioFacturaMysql implements RepositorioFactura {
     @SqlStatement(namespace = &quot;factura&quot;, value = &quot;actualizarestado&quot;)
     private static String sqlActualizarEstado;
 
-<span class="fc" id="L29">    public RepositorioFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFactura mapeoFactura, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
-<span class="fc" id="L30">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L31">        this.mapeoFactura = mapeoFactura;</span>
-<span class="fc" id="L32">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L30">    public RepositorioFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFactura mapeoFactura, RepositorioProductoFacturar repositorioProductoFacturar) {</span>
+<span class="fc" id="L31">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L32">        this.mapeoFactura = mapeoFactura;</span>
+<span class="fc" id="L33">        this.repositorioProductoFacturar = repositorioProductoFacturar;</span>
+<span class="fc" id="L34">    }</span>
 
     @Override
     public Long guardar(Factura factura) {
-<span class="nc" id="L37">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L38">        paramSource.addValue(&quot;id_cliente&quot;, factura.getCliente().getId());</span>
-<span class="nc" id="L39">        paramSource.addValue(&quot;valor_total&quot;, factura.getValorTotal());</span>
-<span class="nc" id="L40">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().name());</span>
-<span class="nc" id="L41">        Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
-<span class="nc" id="L42">        repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);</span>
-<span class="nc" id="L43">        return idFacturaGuardada;</span>
+<span class="nc" id="L38">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L39">        paramSource.addValue(&quot;id_cliente&quot;, factura.getCliente().getId());</span>
+<span class="nc" id="L40">        paramSource.addValue(&quot;valor_total&quot;, factura.getValorTotal());</span>
+<span class="nc" id="L41">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().name());</span>
+<span class="nc" id="L42">        paramSource.addValue(&quot;fecha&quot;, LocalDate.now());</span>
+<span class="nc" id="L43">        Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="nc" id="L44">        repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);</span>
+<span class="nc" id="L45">        return idFacturaGuardada;</span>
     }
 
     @Override
     public Factura obtener(Long id) {
-<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L50">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="nc" id="L51">                .queryForObject(sqlObtenerPorId, paramSource, mapeoFactura));</span>
+<span class="nc" id="L50">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L51">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L52">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L53">                .queryForObject(sqlObtenerPorId, paramSource, mapeoFactura));</span>
     }
 
     @Override
     public void actualizarEstado(Factura factura) {
-<span class="nc" id="L56">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L57">        paramSource.addValue(&quot;id&quot;, factura.getId());</span>
-<span class="nc" id="L58">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().toString());</span>
-<span class="nc" id="L59">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
+<span class="nc" id="L58">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L59">        paramSource.addValue(&quot;id&quot;, factura.getId());</span>
+<span class="nc" id="L60">        paramSource.addValue(&quot;estado&quot;, factura.getEstado().toString());</span>
+<span class="nc" id="L61">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizarEstado, paramSource);</span>
 
-<span class="nc" id="L61">    }</span>
+<span class="nc" id="L63">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

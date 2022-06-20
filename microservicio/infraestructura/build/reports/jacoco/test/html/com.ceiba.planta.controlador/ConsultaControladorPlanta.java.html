@@ -2,9 +2,7 @@
 
 import com.ceiba.planta.comando.manejador.ManejadorBuscarPlanta;
 import com.ceiba.planta.consulta.ManejadorListarPlantas;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,19 +17,19 @@ public class ConsultaControladorPlanta {
     private final ManejadorListarPlantas manejadorListarPlantas;
     private final ManejadorBuscarPlanta manejadorBuscarPlanta;
 
-<span class="fc" id="L22">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta) {</span>
-<span class="fc" id="L23">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
-<span class="fc" id="L24">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta) {</span>
+<span class="fc" id="L21">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
+<span class="fc" id="L22">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
+<span class="fc" id="L23">    }</span>
 
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;Planta&gt; listar(){
-<span class="nc" id="L30">        return  this.manejadorListarPlantas.ejecutar();}</span>
+<span class="nc" id="L28">        return  this.manejadorListarPlantas.ejecutar();}</span>
 
     @GetMapping({&quot;/buscar/{id}&quot;})
     public Planta buscar(@PathVariable(&quot;id&quot;) int id) {
-<span class="nc" id="L34">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
+<span class="nc" id="L32">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
     }
 
 }

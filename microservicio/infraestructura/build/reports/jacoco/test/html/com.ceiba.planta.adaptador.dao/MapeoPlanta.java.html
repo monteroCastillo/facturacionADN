@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapeoPlanta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.planta.adaptador.dao</a> &gt; <span class="el_source">MapeoPlanta.java</span></div><h1>MapeoPlanta.java</h1><pre class="source lang-java linenums">package com.ceiba.planta.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
-
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-//public class MapeoPlanta implements RowMapper&lt;DtoPlanta&gt;, MapperResult {
-//
-//    @Override
-//    public DtoPlanta mapRow(ResultSet resultSet, int rowNum)throws SQLException{
-//
-//        var idPlanta = resultSet.getInt(&quot;id&quot;);
-//        var nombre = resultSet.getString(&quot;nombre&quot;);
-//        var descripcion = resultSet.getString(&quot;descripcion&quot;);
-//        var fechaIngreso = resultSet.getDate(&quot;fecha_ingreso&quot;).toLocalDate();
-//        var cantidad = resultSet.getInt(&quot;cantidad&quot;);
-//        var valor= resultSet.getBigDecimal(&quot;valor&quot;);
-//        var categoria = CategoriaPlanta.valueOf(resultSet.getString(&quot;categoria&quot;));
-//
-//        return new DtoPlanta(idPlanta,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);
-//    }
-//}
-
-<span class="nc" id="L29">public class MapeoPlanta implements RowMapper&lt;Planta&gt;, MapperResult {</span>
+<span class="nc" id="L10">public class MapeoPlanta implements RowMapper&lt;Planta&gt;, MapperResult {</span>
 
     @Override
     public Planta mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-<span class="nc" id="L34">        var idPlanta = resultSet.getInt(&quot;id&quot;);</span>
-<span class="nc" id="L35">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="nc" id="L36">        var descripcion = resultSet.getString(&quot;descripcion&quot;);</span>
-<span class="nc" id="L37">        var fechaIngreso = resultSet.getDate(&quot;fecha_ingreso&quot;).toLocalDate();</span>
-<span class="nc" id="L38">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
-<span class="nc" id="L39">        var valor= resultSet.getBigDecimal(&quot;valor&quot;);</span>
-<span class="nc" id="L40">        var categoria = CategoriaPlanta.valueOf(resultSet.getString(&quot;categoria&quot;));</span>
+<span class="nc" id="L15">        var idPlanta = resultSet.getInt(&quot;id&quot;);</span>
+<span class="nc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L17">        var descripcion = resultSet.getString(&quot;descripcion&quot;);</span>
+<span class="nc" id="L18">        var fechaIngreso = resultSet.getDate(&quot;fecha_ingreso&quot;).toLocalDate();</span>
+<span class="nc" id="L19">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
+<span class="nc" id="L20">        var valor= resultSet.getBigDecimal(&quot;valor&quot;);</span>
+<span class="nc" id="L21">        var categoria = CategoriaPlanta.valueOf(resultSet.getString(&quot;categoria&quot;));</span>
 
-<span class="nc" id="L42">        return Planta.reconstruir(idPlanta,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);</span>
+<span class="nc" id="L23">        return Planta.reconstruir(idPlanta,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

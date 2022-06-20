@@ -2,7 +2,6 @@
 
 import com.ceiba.proveedor.comando.manejador.ManejadorBuscarProveedor;
 import com.ceiba.proveedor.consulta.ManejadorListarProveedores;
-import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,19 +17,21 @@ public class ConsultaControladorProveedor {
     private final ManejadorListarProveedores manejadorListarProveedores;
     private final ManejadorBuscarProveedor manejadorBuscarProveedor;
 
-<span class="fc" id="L21">    public ConsultaControladorProveedor(ManejadorListarProveedores manejadorListarProveedores, ManejadorBuscarProveedor manejadorBuscarProveedor) {</span>
-<span class="fc" id="L22">        this.manejadorListarProveedores = manejadorListarProveedores;</span>
-<span class="fc" id="L23">        this.manejadorBuscarProveedor = manejadorBuscarProveedor;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorProveedor(ManejadorListarProveedores manejadorListarProveedores, ManejadorBuscarProveedor manejadorBuscarProveedor) {</span>
+<span class="fc" id="L21">        this.manejadorListarProveedores = manejadorListarProveedores;</span>
+<span class="fc" id="L22">        this.manejadorBuscarProveedor = manejadorBuscarProveedor;</span>
+<span class="fc" id="L23">    }</span>
 
 
     @GetMapping(&quot;/index&quot;)
-    public List&lt;DtoProveedor&gt; listar(){
-<span class="nc" id="L29">        return this.manejadorListarProveedores.ejecutar();}</span>
+    public List&lt;Proveedor&gt; listar(){
+<span class="nc" id="L28">        return this.manejadorListarProveedores.ejecutar();}</span>
 
     @GetMapping({&quot;/buscar/{id}&quot;})
-    public DtoProveedor buscar(@PathVariable(&quot;id&quot;) Long id) {
-<span class="nc" id="L33">        return this.manejadorBuscarProveedor.ejecutar(id);</span>
+    public Proveedor buscar(@PathVariable(&quot;id&quot;) Long id) {
+<span class="nc" id="L32">        return this.manejadorBuscarProveedor.ejecutar(id);</span>
     }
+
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

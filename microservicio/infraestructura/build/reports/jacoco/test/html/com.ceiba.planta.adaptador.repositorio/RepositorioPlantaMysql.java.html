@@ -5,7 +5,6 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -32,60 +31,54 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     private static String sqlActualizar;
 
 
-<span class="fc" id="L35">    public RepositorioPlantaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L36">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L34">    public RepositorioPlantaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L35">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
 
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L37">    }</span>
     public int guardar(Planta planta) {
-<span class="fc" id="L40">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L41">        parameterSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
-<span class="fc" id="L42">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
-<span class="fc" id="L43">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
-<span class="fc" id="L44">        parameterSource.addValue(&quot;fecha_ingreso&quot;,planta.getFechaIngreso());</span>
-<span class="fc" id="L45">        parameterSource.addValue(&quot;cantidad&quot;,planta.getCantidad());</span>
-<span class="fc" id="L46">        parameterSource.addValue(&quot;valor&quot;,planta.getValor());</span>
-<span class="fc" id="L47">        parameterSource.addValue(&quot;categoria&quot;,planta.getCategoria().name());</span>
-<span class="fc" id="L48">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
-<span class="fc" id="L49">        return Math.toIntExact(idPlantaGuardada);</span>
+<span class="nc" id="L39">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L40">        parameterSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
+<span class="nc" id="L41">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
+<span class="nc" id="L42">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
+<span class="nc" id="L43">        parameterSource.addValue(&quot;fecha_ingreso&quot;,planta.getFechaIngreso());</span>
+<span class="nc" id="L44">        parameterSource.addValue(&quot;cantidad&quot;,planta.getCantidad());</span>
+<span class="nc" id="L45">        parameterSource.addValue(&quot;valor&quot;,planta.getValor());</span>
+<span class="nc" id="L46">        parameterSource.addValue(&quot;categoria&quot;,planta.getCategoria().name());</span>
+<span class="nc" id="L47">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
+<span class="nc" id="L48">        return Math.toIntExact(idPlantaGuardada);</span>
     }
 
     @Override
     public void eliminar(int id) {
-<span class="nc" id="L54">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L55">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L56">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L57">    }</span>
+<span class="nc" id="L53">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L54">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L55">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="nc" id="L56">    }</span>
 
     @Override
     public List&lt;Planta&gt; buscarTodos() {
-<span class="nc" id="L61">        return null;</span>
+<span class="nc" id="L60">        return null;</span>
     }
 
 
-//    @Override
-//    public void actualizar(Planta planta) {
-//        this.customNamedParameterJdbcTemplate.actualizar(planta, sqlActualizar);
-//    }
-
     @Override
     public void actualizar(Planta planta) {
-<span class="nc" id="L72">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L73">        paramSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
-<span class="nc" id="L74">        paramSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
-<span class="nc" id="L75">        paramSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
-<span class="nc" id="L76">        paramSource.addValue(&quot;fecha_ingreso&quot;, planta.getFechaIngreso());</span>
-<span class="nc" id="L77">        paramSource.addValue(&quot;cantidad&quot;, planta.getCantidad());</span>
-<span class="nc" id="L78">        paramSource.addValue(&quot;valor&quot;,planta.getValor());</span>
-<span class="nc" id="L79">        paramSource.addValue(&quot;categoria&quot;, planta.getCategoria().name());</span>
-<span class="nc" id="L80">        System.out.println(&quot;El dato que le entra a actualizar &quot; + paramSource);</span>
-<span class="nc" id="L81">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);</span>
+<span class="nc" id="L66">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L67">        paramSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
+<span class="nc" id="L68">        paramSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
+<span class="nc" id="L69">        paramSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
+<span class="nc" id="L70">        paramSource.addValue(&quot;fecha_ingreso&quot;, planta.getFechaIngreso());</span>
+<span class="nc" id="L71">        paramSource.addValue(&quot;cantidad&quot;, planta.getCantidad());</span>
+<span class="nc" id="L72">        paramSource.addValue(&quot;valor&quot;,planta.getValor());</span>
+<span class="nc" id="L73">        paramSource.addValue(&quot;categoria&quot;, planta.getCategoria().name());</span>
+<span class="nc" id="L74">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);</span>
 
-<span class="nc" id="L83">    }</span>
+<span class="nc" id="L76">    }</span>
     @Override
     public boolean existe(int id) {
-<span class="nc" id="L86">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L87">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L88">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
+<span class="nc" id="L79">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L80">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L81">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

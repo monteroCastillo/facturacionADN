@@ -3,7 +3,6 @@
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.manejador.ManejadorCrearCliente;
-import com.ceiba.proveedor.comando.ComandoProveedor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,13 +13,13 @@ public class ComandoControladorCliente {
     private final ManejadorCrearCliente manejadorCrearCliente;
 
 
-<span class="fc" id="L17">    public ComandoControladorCliente(ManejadorCrearCliente manejadorCrearCliente) {</span>
-<span class="fc" id="L18">        this.manejadorCrearCliente = manejadorCrearCliente;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L16">    public ComandoControladorCliente(ManejadorCrearCliente manejadorCrearCliente) {</span>
+<span class="fc" id="L17">        this.manejadorCrearCliente = manejadorCrearCliente;</span>
+<span class="fc" id="L18">    }</span>
 
     @PostMapping(&quot;/crear&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoCliente comandoCliente) {
-<span class="nc" id="L23">        return manejadorCrearCliente.ejecutar(comandoCliente);</span>
+<span class="nc" id="L22">        return manejadorCrearCliente.ejecutar(comandoCliente);</span>
     }
 
 }

@@ -3,22 +3,23 @@
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.proveedor.modelo.dto.DtoProveedor;
 
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-<span class="nc" id="L10">public class MapeoProveedor implements RowMapper&lt;DtoProveedor&gt;, MapperResult {</span>
+<span class="fc" id="L11">public class MapeoProveedor implements RowMapper&lt;Proveedor&gt;, MapperResult {</span>
 
     @Override
-    public DtoProveedor mapRow(ResultSet resultSet, int rowNum) throws SQLException {
+    public Proveedor mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L15">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="nc" id="L17">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
-<span class="nc" id="L18">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
-<span class="nc" id="L19">        var paginaweb = resultSet.getString(&quot;paginaweb&quot;);</span>
+<span class="fc" id="L16">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L17">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="fc" id="L18">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+<span class="fc" id="L19">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
+<span class="fc" id="L20">        var paginaweb = resultSet.getString(&quot;paginaweb&quot;);</span>
 
-<span class="nc" id="L21">        return new DtoProveedor(id, nombre, direccion, telefono, paginaweb);</span>
+<span class="fc" id="L22">        return  Proveedor.reconstruir(id, nombre, direccion, telefono, paginaweb);</span>
     }
 
 

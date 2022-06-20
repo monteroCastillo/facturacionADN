@@ -6,8 +6,6 @@ import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.dao.DaoCliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.adaptador.dao.MapeoPlanta;
-import com.ceiba.planta.modelo.dto.DtoPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Component;
 
@@ -24,28 +22,23 @@ public class DaoClienteDB implements DaoCliente {
     private static String sqlObtener;
 
 
-<span class="fc" id="L27">    public DaoClienteDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
-<span class="fc" id="L28">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L29">    }</span>
+<span class="fc" id="L25">    public DaoClienteDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L26">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L27">    }</span>
 
-    @Override
-    public List&lt;DtoCliente&gt; listar() {
-<span class="nc" id="L33">        return null;</span>
-    }
+
+
 
     @Override
     public Cliente obtenerClientePorId(Long id) {
-<span class="nc" id="L38">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L39">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L40">        List&lt;Cliente&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoCliente());</span>
-<span class="nc bnc" id="L41" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L42">            return list.get(0);</span>
+<span class="nc" id="L34">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L35">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L36">        List&lt;Cliente&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoCliente());</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        if(list.size()==1){</span>
+<span class="nc" id="L38">            return list.get(0);</span>
         }
-<span class="nc" id="L44">        return null;</span>
+<span class="nc" id="L40">        return null;</span>
     }
-
-
-
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
