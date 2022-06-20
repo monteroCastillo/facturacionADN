@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ManejadorCrearPlantaPorProveedor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.plantaporproveedor.comando.manejador</a> &gt; <span class="el_source">ManejadorCrearPlantaPorProveedor.java</span></div><h1>ManejadorCrearPlantaPorProveedor.java</h1><pre class="source lang-java linenums">package com.ceiba.plantaporproveedor.comando.manejador;
+
+import com.ceiba.ComandoRespuesta;
+import com.ceiba.PlantaPorProveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.PlantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
+import com.ceiba.manejador.ManejadorComandoRespuesta;
+import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
+import com.ceiba.plantaporproveedor.comando.fabrica.FabricaPlantaPorProveedor;
+import com.ceiba.proveedor.comando.ComandoProveedor;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ManejadorCrearPlantaPorProveedor implements ManejadorComandoRespuesta&lt;ComandoPlantaPorProveedor, ComandoRespuesta&lt;Long&gt;&gt; {
+
+
+    private final ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor;
+
+    private final FabricaPlantaPorProveedor fabricaPlantaPorProveedor;
+
+<span class="nc" id="L21">    public ManejadorCrearPlantaPorProveedor(ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor, FabricaPlantaPorProveedor fabricaPlantaPorProveedor) {</span>
+<span class="nc" id="L22">        this.servicioCrearPlantaPorProveedor = servicioCrearPlantaPorProveedor;</span>
+<span class="nc" id="L23">        this.fabricaPlantaPorProveedor = fabricaPlantaPorProveedor;</span>
+<span class="nc" id="L24">    }</span>
+
+
+    @Override
+    public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlantaPorProveedor comando) {
+<span class="nc" id="L29">        PlantaPorProveedor plantaPorProveedor = this.fabricaPlantaPorProveedor.crear(comando);</span>
+
+<span class="nc" id="L31">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(plantaPorProveedor));</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ComandoPlanta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.planta.comando</a> &gt; <span class="el_source">ComandoPlanta.java</span></div><h1>ComandoPlanta.java</h1><pre class="source lang-java linenums">package com.ceiba.planta.comando;
+
+import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+@Getter
+@Setter
+<span class="fc" id="L14">@AllArgsConstructor</span>
+<span class="fc" id="L15">@NoArgsConstructor</span>
+public class ComandoPlanta {
+    private int idPlanta;
+    private String nombre;
+    private String descripcion;
+    private LocalDate fechaIngreso;
+    private int cantidad;
+    private BigDecimal valor;
+    private CategoriaPlanta categoria;
+
+    public int getIdPlanta() {
+<span class="fc" id="L26">        return idPlanta;</span>
+    }
+
+    public void setIdPlanta(int idPlanta) {
+<span class="fc" id="L30">        this.idPlanta = idPlanta;</span>
+<span class="fc" id="L31">    }</span>
+
+    public String getNombre() {
+<span class="fc" id="L34">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L38">        this.nombre = nombre;</span>
+<span class="fc" id="L39">    }</span>
+
+    public String getDescripcion() {
+<span class="fc" id="L42">        return descripcion;</span>
+    }
+
+    public void setDescripcion(String descripcion) {
+<span class="fc" id="L46">        this.descripcion = descripcion;</span>
+<span class="fc" id="L47">    }</span>
+
+    public LocalDate getFechaIngreso() {
+<span class="fc" id="L50">        return fechaIngreso;</span>
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+<span class="fc" id="L54">        this.fechaIngreso = fechaIngreso;</span>
+<span class="fc" id="L55">    }</span>
+
+    public int getCantidad() {
+<span class="fc" id="L58">        return cantidad;</span>
+    }
+
+    public void setCantidad(int cantidad) {
+<span class="fc" id="L62">        this.cantidad = cantidad;</span>
+<span class="fc" id="L63">    }</span>
+
+    public BigDecimal getValor() {
+<span class="fc" id="L66">        return valor;</span>
+    }
+
+    public void setValor(BigDecimal valor) {
+<span class="fc" id="L70">        this.valor = valor;</span>
+<span class="fc" id="L71">    }</span>
+
+    public CategoriaPlanta getCategoria() {
+<span class="fc" id="L74">        return categoria;</span>
+    }
+
+    public void setCategoria(CategoriaPlanta categoria) {
+<span class="fc" id="L78">        this.categoria = categoria;</span>
+<span class="fc" id="L79">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

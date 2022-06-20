@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioPlantaMysql.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.planta.repositorio</a> &gt; <span class="el_source">RepositorioPlantaMysql.java</span></div><h1>RepositorioPlantaMysql.java</h1><pre class="source lang-java linenums">package com.ceiba.planta.repositorio;
+
+
+import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
+import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.persona.adaptador.repositorio.MapeoPersona;
+import com.ceiba.persona.modelo.entidad.Persona;
+import com.ceiba.planta.entidad.Planta;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class RepositorioPlantaMysql implements RepositorioPlanta  {
+
+    private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
+
+
+
+//    @SqlStatement(namespace = &quot;planta&quot;, value = &quot;crear&quot;)
+//    private static String sqlCrear;
+
+    @SqlStatement(namespace = &quot;planta&quot;, value = &quot;obtenerporid&quot;)
+    private static String sqlObtenerPorId;
+//
+//    @SqlStatement(namespace = &quot;factura&quot;, value = &quot;actualizarestado&quot;)
+//    private static String sqlActualizarEstado;
+
+<span class="fc" id="L32">    public RepositorioPlantaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {</span>
+<span class="fc" id="L33">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+
+<span class="fc" id="L35">    }</span>
+
+
+    @Override
+    public Planta buscarPlantaPorID(int id_planta){
+<span class="nc" id="L40">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L41">        paramSource.addValue(&quot;id_planta&quot;, id_planta);</span>
+<span class="nc" id="L42">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt; this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L43">                .queryForObject(sqlObtenerPorId, paramSource, new MapeoPlanta()));</span>
+    }
+
+    @Override
+    public void guardar(Planta planta) {
+
+<span class="nc" id="L49">    }</span>
+
+    @Override
+    public void eliminar(int idPlanta) {
+
+<span class="nc" id="L54">    }</span>
+
+    @Override
+    public List&lt;Planta&gt; buscarTodos() {
+<span class="nc" id="L58">        return null;</span>
+    }
+
+
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

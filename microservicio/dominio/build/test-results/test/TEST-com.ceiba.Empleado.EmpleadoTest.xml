@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.Empleado.EmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-19T00:21:24" hostname="RODRIGO-MONTERO" time="0.035">
+  <properties/>
+  <testcase name="reconstruirSinTelefonodeberiaDeberiaLanzarError()" classname="com.ceiba.Empleado.EmpleadoTest" time="0.035"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

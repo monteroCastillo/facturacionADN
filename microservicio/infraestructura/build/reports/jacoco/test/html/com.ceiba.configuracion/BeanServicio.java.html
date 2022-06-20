@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BeanServicio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.configuracion</a> &gt; <span class="el_source">BeanServicio.java</span></div><h1>BeanServicio.java</h1><pre class="source lang-java linenums">package com.ceiba.configuracion;
+
+import com.ceiba.Empleado.servicio.ServicioActualizarEmpleado;
+import com.ceiba.PlantaPorProveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
+import com.ceiba.PlantaPorProveedor.servicio.ServicioCrearPlantaPorProveedor;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
+import com.ceiba.cliente.servicio.ServicioCrearCliente;
+import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
+import com.ceiba.factura.servicio.ServicioAnular;
+import com.ceiba.factura.servicio.ServicioFacturar;
+import com.ceiba.Empleado.puerto.repositorio.RepositorioEmpleado;
+import com.ceiba.Empleado.servicio.ServicioCrearEmpleado;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
+import com.ceiba.planta.servicio.ServicioActualizarPlanta;
+import com.ceiba.planta.servicio.ServicioCrearPlanta;
+import com.ceiba.planta.servicio.ServicioEliminarPlanta;
+import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
+import com.ceiba.proveedor.servicio.ServicioActualizarProveedor;
+import com.ceiba.proveedor.servicio.ServicioCrearProveedor;
+import com.ceiba.proveedor.servicio.ServicioEliminarProveedor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+@Configuration
+<span class="fc" id="L26">public class BeanServicio {</span>
+
+
+    @Bean
+    public ServicioFacturar servicioFacturar(RepositorioFactura repositorioFactura) {
+<span class="fc" id="L31">        return new ServicioFacturar(repositorioFactura);</span>
+    }
+
+    @Bean
+    public ServicioAnular servicioAnular(RepositorioFactura repositorioFactura) {
+<span class="fc" id="L36">        return new ServicioAnular(repositorioFactura);</span>
+    }
+
+    @Bean
+    public ServicioCrearEmpleado servicioCrearPersona(RepositorioEmpleado repositorioEmpleado){
+<span class="fc" id="L41">        return new ServicioCrearEmpleado(repositorioEmpleado);</span>
+    }
+
+    @Bean
+    ServicioActualizarEmpleado servicioActualizarEmpleado(RepositorioEmpleado repositorioEmpleado){
+<span class="fc" id="L46">        return  new ServicioActualizarEmpleado(repositorioEmpleado);</span>
+    }
+
+    @Bean
+    public ServicioCrearPlanta servicioCrearPlanta(RepositorioPlanta repositorioPlanta){
+<span class="fc" id="L51">        return new ServicioCrearPlanta(repositorioPlanta);</span>
+    }
+    @Bean
+    public ServicioEliminarPlanta servicioEliminarPlanta(RepositorioPlanta repositorioPlanta){
+<span class="fc" id="L55">        return new ServicioEliminarPlanta(repositorioPlanta);</span>
+    }
+    @Bean
+    public ServicioActualizarPlanta servicioActualizarPlanta(RepositorioPlanta repositorioPlanta){
+<span class="fc" id="L59">        return new ServicioActualizarPlanta(repositorioPlanta);</span>
+    }
+
+    @Bean
+    public ServicioCrearProveedor servicioCrearProveedor(RepositorioProveedor repositorioProveedor){
+<span class="fc" id="L64">        return  new ServicioCrearProveedor(repositorioProveedor);</span>
+    }
+    @Bean
+    public ServicioEliminarProveedor servicioEliminarProveedor(RepositorioProveedor repositorioProveedor){
+<span class="fc" id="L68">        return new ServicioEliminarProveedor(repositorioProveedor);</span>
+    }
+    @Bean
+    public ServicioActualizarProveedor servicioActualizarProveedor(RepositorioProveedor repositorioProveedor){
+<span class="fc" id="L72">        return new ServicioActualizarProveedor(repositorioProveedor);</span>
+    }
+
+    @Bean
+    public ServicioCrearCliente servicioCrearCliente(RepositorioCliente repositorioCliente){
+<span class="fc" id="L77">        return new ServicioCrearCliente(repositorioCliente);</span>
+    }
+
+    @Bean
+    public ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor(RepositorioPlantaPorProveedor repositorioPlantaPorProveedor){
+<span class="fc" id="L82">        return new ServicioCrearPlantaPorProveedor(repositorioPlantaPorProveedor);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

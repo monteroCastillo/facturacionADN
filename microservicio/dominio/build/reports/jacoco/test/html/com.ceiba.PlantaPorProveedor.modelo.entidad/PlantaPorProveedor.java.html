@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlantaPorProveedor.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">dominio</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.PlantaPorProveedor.modelo.entidad</a> &gt; <span class="el_source">PlantaPorProveedor.java</span></div><h1>PlantaPorProveedor.java</h1><pre class="source lang-java linenums">package com.ceiba.PlantaPorProveedor.modelo.entidad;
+
+import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
+
+public class PlantaPorProveedor {
+    private Long id;
+    private Proveedor idProveedor;
+    private Planta idPlanta;
+
+<span class="nc" id="L11">    public PlantaPorProveedor(Long id, Proveedor idProveedor, Planta idPlanta) {</span>
+<span class="nc" id="L12">        this.id = id;</span>
+<span class="nc" id="L13">        this.idProveedor = idProveedor;</span>
+<span class="nc" id="L14">        this.idPlanta = idPlanta;</span>
+<span class="nc" id="L15">    }</span>
+
+    public Long getId() {
+<span class="nc" id="L18">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L22">        this.id = id;</span>
+<span class="nc" id="L23">    }</span>
+
+    public Proveedor getIdProveedor() {
+<span class="nc" id="L26">        return idProveedor;</span>
+    }
+
+    public void setIdProveedor(Proveedor idProveedor) {
+<span class="nc" id="L30">        this.idProveedor = idProveedor;</span>
+<span class="nc" id="L31">    }</span>
+
+    public Planta getIdPlanta() {
+<span class="nc" id="L34">        return idPlanta;</span>
+    }
+
+    public void setIdPlanta(Planta idPlanta) {
+<span class="nc" id="L38">        this.idPlanta = idPlanta;</span>
+<span class="nc" id="L39">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
