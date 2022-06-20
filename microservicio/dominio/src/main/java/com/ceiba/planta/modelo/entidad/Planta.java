@@ -14,9 +14,6 @@ public class Planta {
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 
-    public Planta() {
-
-    }
 
     public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
         this.idPlanta = idPlanta;
