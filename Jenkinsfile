@@ -34,6 +34,13 @@ pipeline {
         echo "------------>Checkout<------------"
       }
     }
+    stage('Clean') {
+          steps{
+            echo "------------>Clean<------------"
+            sh 'chmod +x ./microservicio/gradlew'
+            sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+          }
+     }
 
     stage('Compile & Unit Tests') {
       steps{
@@ -43,7 +50,7 @@ pipeline {
         	  sh 'ls'
         	  echo "------------>Lista de carpetas -a <------------"
         	  sh 'ls -a'
-        	//  sh 'chmod +x ./microservicio/gradlew'
+        	  sh 'chmod +x ./microservicio/gradlew'
         	  sh './microservicio/gradlew --b ./microservicio/build.gradle clean test'
       }
     }
@@ -60,6 +67,8 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
+         //Construir sin tarea test que se ejecutó previamente
+         sh './microservicio/gradlew --b ./microservicio/build.gradle build -x test'
       }
     }
   }
