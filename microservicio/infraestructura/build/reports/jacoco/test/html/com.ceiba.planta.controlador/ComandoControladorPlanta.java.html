@@ -32,8 +32,8 @@ public class ComandoControladorPlanta {
 
     @DeleteMapping(value=&quot;/borrar/{id}&quot;)
     public void eliminar(@PathVariable int id) {
-<span class="nc" id="L35">        manejadorEliminarPlanta.ejecutar(id);</span>
-<span class="nc" id="L36">    }</span>
+<span class="fc" id="L35">        manejadorEliminarPlanta.ejecutar(id);</span>
+<span class="fc" id="L36">    }</span>
 
     @PutMapping(&quot;/actualizar&quot;)
     public void actualizar(@RequestBody ComandoPlanta comandoPlanta) {

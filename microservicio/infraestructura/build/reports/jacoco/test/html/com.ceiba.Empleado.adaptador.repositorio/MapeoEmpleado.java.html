@@ -3,27 +3,26 @@
 import com.ceiba.empleado.modelo.dto.DtoEmpleado;
 import com.ceiba.empleado.modelo.entidad.Perfil;
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import org.springframework.stereotype.Component;
-
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-<span class="fc" id="L14">public class MapeoEmpleado implements RowMapper&lt;DtoEmpleado&gt;, MapperResult {</span>
+<span class="fc" id="L13">public class MapeoEmpleado implements RowMapper&lt;DtoEmpleado&gt;, MapperResult {</span>
     @Override
     public DtoEmpleado mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-<span class="nc" id="L18">        var idPersona = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L19">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="nc" id="L20">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
-<span class="nc" id="L21">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
-<span class="nc" id="L22">        var email = resultSet.getString(&quot;email&quot;);</span>
-<span class="nc" id="L23">        var fechaRegistro = resultSet.getDate(&quot;fecha_registro&quot;).toLocalDate();</span>
-<span class="nc" id="L24">        var perfil= Perfil.valueOf(resultSet.getString(&quot;perfil&quot;));</span>
+<span class="nc" id="L17">        var idPersona = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L18">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L19">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+<span class="nc" id="L20">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
+<span class="nc" id="L21">        var email = resultSet.getString(&quot;email&quot;);</span>
+<span class="nc" id="L22">        var fechaRegistro = resultSet.getDate(&quot;fecha_registro&quot;).toLocalDate();</span>
+<span class="nc" id="L23">        var perfil= Perfil.valueOf(resultSet.getString(&quot;perfil&quot;));</span>
 
-<span class="nc" id="L26">        return new DtoEmpleado(idPersona, nombre, direccion, telefono,email, fechaRegistro, perfil);</span>
+<span class="nc" id="L25">        return new DtoEmpleado(idPersona, nombre, direccion, telefono,email, fechaRegistro, perfil);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
