@@ -55,9 +55,11 @@ public class Factura {
 
     private BigDecimal calcularvalorTotal(List<ProductoFacturar> productosFacturar) {
         return productosFacturar.stream()
-                .map(ProductoFacturar::calcularTotalConIva)
+                .map(ProductoFacturar::calcularTotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
+
+
 
     private void aplicarDescuento() {
         if (this.cliente.esTipoPreferencial()) {

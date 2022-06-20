@@ -41,6 +41,11 @@ public class ProductoFacturar {
                 .multiply(BigDecimal.valueOf(cantidad));
     }
 
+    public BigDecimal calcularTotal() {
+
+        return new BigDecimal(1);
+    }
+
     public Long getId() {
         return id;
     }
