@@ -34,13 +34,7 @@ pipeline {
         echo "------------>Checkout<------------"
       }
     }
-    stage('Clean') {
-          steps{
-            echo "------------>Clean<------------"
-            sh 'chmod +x ./microservicio/gradlew'
-            sh './microservicio/gradlew --b ./microservicio/build.gradle test'
-          }
-     }
+
 
     stage('Compile & Unit Tests') {
       steps{
