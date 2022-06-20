@@ -69,38 +69,3 @@ public class DaoPlantaDB implements DaoPlanta{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//public class daoPlanta implements RepositorioPlanta {
-
-
-//    private RepositorioPlantaMysql repoPlanta;
-//    @Override
-//    public int guardar(Planta planta) {
-//        repoPlanta.guardar(planta);
-//    }
-//
-//    @Override
-//    public void eliminar(int idPlanta) {
-//        repoPlanta.buscarPlantaPorID(idPlanta);
-//    }
-//
-//    @Override
-//    public List<Planta> buscarTodos() {
-//        return repoPlanta.buscarTodos();
-//    }
-//
-//    @Override
-//    public Planta buscarPlantaPorID(int idPlanta) {
-//        return null;
-//    }
-//}

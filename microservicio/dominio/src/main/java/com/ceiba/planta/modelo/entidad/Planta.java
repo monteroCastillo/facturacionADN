@@ -1,14 +1,10 @@
 package com.ceiba.planta.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 public class Planta {
-
 
     private int idPlanta;
     private String nombre;

@@ -13,9 +13,6 @@ public class ServicioCrearPlantaPorProveedor {
         this.repositorioPlantaPorProveedor = repositorioPlantaPorProveedor;
     }
 
-//    public Long ejecutar(PlantaPorProveedor plantaPorProveedor){
-//        return this.repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
-//    }
     public Long ejecutar(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
         var plantaPorProveedor = PlantaPorProveedor.crear(solicitudCrearPlantaPorProveedor);
 

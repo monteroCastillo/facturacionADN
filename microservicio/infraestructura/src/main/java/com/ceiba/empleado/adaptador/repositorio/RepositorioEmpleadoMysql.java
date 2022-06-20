@@ -15,8 +15,6 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-   // private RepositorioPersona repoPersona;
-
     @SqlStatement(namespace = "empleado", value = "crear")
     private static String sqlCrear;
 
