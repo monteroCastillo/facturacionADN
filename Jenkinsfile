@@ -1,4 +1,3 @@
-@Library('ceiba-jenkins-library') _
 
 pipeline {
   //Donde se va a ejecutar el Pipeline
@@ -28,26 +27,26 @@ pipeline {
 */
 
   //Aquí comienzan los “items” del Pipeline
-  stages{
-    stage('Checkout') {
-      steps{
-        echo "------------>Checkout<------------"
-      }
-    }
+    stages{
+     stage('Checkout') {
+       steps{
+         echo "------------>Checkout<------------"
+       }
+     }
 
 
     stage('Compile & Unit Tests') {
-      steps{
-         echo "------------>Compile & Unit Tests<------------"
-        	  echo pwd
-        	  echo "------------>Lista de carpetas<------------"
-        	  sh 'ls'
-        	  echo "------------>Lista de carpetas -a <------------"
-        	  sh 'ls -a'
-        	//  sh 'chmod +x ./microservicio/gradlew'
-        	  sh './microservicio/gradle --b ./microservicio/build.gradle clean test'
-      }
-    }
+          steps{
+            echo "------------>Compile & Unit Tests<------------"
+            echo pwd
+            echo "------------>Lista de carpetas<------------"
+            sh 'ls'
+            echo "------------>Lista de carpetas -a <------------"
+            sh 'ls -a'
+            sh 'chmod +x ./microservicio/gradlew'
+            sh './microservicio/gradlew --b ./microservicio/build.gradle clean test'
+          }
+        }
 
     stage('Static Code Analysis') {
         steps{
