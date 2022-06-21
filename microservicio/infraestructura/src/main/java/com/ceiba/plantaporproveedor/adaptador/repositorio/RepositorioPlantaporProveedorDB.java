@@ -16,12 +16,12 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
 
-    @SqlStatement(namespace = "plantaPorProveedor", value = "crear")
+    @SqlStatement(namespace = "plantaporproveedor", value = "crear")
     private static String sqlCrear;
 
 
 
-    @SqlStatement(namespace="plantaPorProveedor", value="eliminar")
+    @SqlStatement(namespace="plantaporproveedor", value="eliminar")
     private static String sqlEliminar;
 
 
