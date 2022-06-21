@@ -12,31 +12,31 @@ public class Empleado {
     private LocalDate fechaRegistro;
     private Perfil perfil;
 
-<span class="fc" id="L15">    public Empleado() {</span>
-<span class="fc" id="L16">    }</span>
+<span class="nc" id="L15">    public Empleado() {</span>
+<span class="nc" id="L16">    }</span>
 
-<span class="fc" id="L18">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
-<span class="fc" id="L19">        this.idEmpleado = idEmpleado;</span>
-<span class="fc" id="L20">        this.nombre = nombre;</span>
-<span class="fc" id="L21">        this.direccion = direccion;</span>
-<span class="fc" id="L22">        this.telefono = telefono;</span>
-<span class="fc" id="L23">        this.email = email;</span>
-<span class="fc" id="L24">        this.fechaRegistro = fechaRegistro;</span>
-<span class="fc" id="L25">        this.perfil = perfil;</span>
-<span class="fc" id="L26">    }</span>
+<span class="nc" id="L18">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
+<span class="nc" id="L19">        this.idEmpleado = idEmpleado;</span>
+<span class="nc" id="L20">        this.nombre = nombre;</span>
+<span class="nc" id="L21">        this.direccion = direccion;</span>
+<span class="nc" id="L22">        this.telefono = telefono;</span>
+<span class="nc" id="L23">        this.email = email;</span>
+<span class="nc" id="L24">        this.fechaRegistro = fechaRegistro;</span>
+<span class="nc" id="L25">        this.perfil = perfil;</span>
+<span class="nc" id="L26">    }</span>
     public static Empleado reconstruir(Long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
-<span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(idEmpleado, &quot;El id del empleado es requerido&quot;);</span>
-<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre del empleado es requerido&quot;);</span>
-<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion del empleado es requerida&quot;);</span>
-<span class="fc" id="L31">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del empleado es requerido&quot;);</span>
-<span class="fc" id="L32">        ValidadorArgumento.validarObligatorio(email, &quot;El email del empleado es requerido&quot;);</span>
-<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(fechaRegistro, &quot;La fecha de registro es requerida&quot;);</span>
-<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(perfil, &quot;El perfil del empleado es requerido&quot;);</span>
-<span class="fc" id="L35">        return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);</span>
+<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(idEmpleado, &quot;El id del empleado es requerido&quot;);</span>
+<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre del empleado es requerido&quot;);</span>
+<span class="nc" id="L30">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion del empleado es requerida&quot;);</span>
+<span class="nc" id="L31">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del empleado es requerido&quot;);</span>
+<span class="nc" id="L32">        ValidadorArgumento.validarObligatorio(email, &quot;El email del empleado es requerido&quot;);</span>
+<span class="nc" id="L33">        ValidadorArgumento.validarObligatorio(fechaRegistro, &quot;La fecha de registro es requerida&quot;);</span>
+<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(perfil, &quot;El perfil del empleado es requerido&quot;);</span>
+<span class="nc" id="L35">        return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);</span>
     }
 
     public Perfil getPerfil() {
-<span class="fc" id="L39">        return perfil;</span>
+<span class="nc" id="L39">        return perfil;</span>
     }
 
     public void setPerfil(Perfil perfil) {
@@ -44,27 +44,27 @@ public class Empleado {
 <span class="nc" id="L44">    }</span>
 
     public long getIdEmpleado() {
-<span class="fc" id="L47">        return this.idEmpleado;</span>
+<span class="nc" id="L47">        return this.idEmpleado;</span>
     }
 
     public String getNombre() {
-<span class="fc" id="L51">        return this.nombre;</span>
+<span class="nc" id="L51">        return this.nombre;</span>
     }
 
     public String getDireccion() {
-<span class="fc" id="L55">        return this.direccion;</span>
+<span class="nc" id="L55">        return this.direccion;</span>
     }
 
     public String getTelefono() {
-<span class="fc" id="L59">        return this.telefono;</span>
+<span class="nc" id="L59">        return this.telefono;</span>
     }
 
     public String getEmail() {
-<span class="fc" id="L63">        return this.email;</span>
+<span class="nc" id="L63">        return this.email;</span>
     }
 
     public LocalDate getFechaRegistro() {
-<span class="fc" id="L67">        return this.fechaRegistro;</span>
+<span class="nc" id="L67">        return this.fechaRegistro;</span>
     }
 
     public void setIdEmpleado(long idEmpleado) {
@@ -72,8 +72,8 @@ public class Empleado {
 <span class="nc" id="L72">    }</span>
 
     public void setNombre(String nombre) {
-<span class="fc" id="L75">        this.nombre = nombre;</span>
-<span class="fc" id="L76">    }</span>
+<span class="nc" id="L75">        this.nombre = nombre;</span>
+<span class="nc" id="L76">    }</span>
 
     public void setDireccion(String direccion) {
 <span class="nc" id="L79">        this.direccion = direccion;</span>
