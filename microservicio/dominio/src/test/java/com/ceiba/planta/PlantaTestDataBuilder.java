@@ -12,7 +12,6 @@ public class PlantaTestDataBuilder {
     private String descripcion;
     private LocalDate fechaIngreso;
     private int cantidad;
-
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 

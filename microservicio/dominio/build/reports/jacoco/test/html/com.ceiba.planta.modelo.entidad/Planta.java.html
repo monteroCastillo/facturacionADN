@@ -15,30 +15,30 @@ public class Planta {
     private CategoriaPlanta categoria;
 
 
-<span class="nc" id="L18">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
-<span class="nc" id="L19">        this.idPlanta = idPlanta;</span>
-<span class="nc" id="L20">        this.nombre = nombre;</span>
-<span class="nc" id="L21">        this.descripcion = descripcion;</span>
-<span class="nc" id="L22">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L23">        this.cantidad = cantidad;</span>
-<span class="nc" id="L24">        this.valor = valor;</span>
-<span class="nc" id="L25">        this.categoria = categoria;</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L18">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
+<span class="fc" id="L19">        this.idPlanta = idPlanta;</span>
+<span class="fc" id="L20">        this.nombre = nombre;</span>
+<span class="fc" id="L21">        this.descripcion = descripcion;</span>
+<span class="fc" id="L22">        this.fechaIngreso = fechaIngreso;</span>
+<span class="fc" id="L23">        this.cantidad = cantidad;</span>
+<span class="fc" id="L24">        this.valor = valor;</span>
+<span class="fc" id="L25">        this.categoria = categoria;</span>
+<span class="fc" id="L26">    }</span>
 
     public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
-<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;El id de la planta es requerido&quot;);</span>
-<span class="nc" id="L30">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre de la planta es requerido&quot;);</span>
-<span class="nc" id="L31">        ValidadorArgumento.validarObligatorio(descripcion, &quot;La descripcion de la planta es requerida&quot;);</span>
-<span class="nc" id="L32">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso de la planta es requerida&quot;);</span>
-<span class="nc" id="L33">        ValidadorArgumento.validarObligatorio(cantidad, &quot;La cantidad de plantas es requerida&quot;);</span>
-<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(cantidad, &quot;El valor  de la planta es requerido&quot;);</span>
-<span class="nc" id="L35">        ValidadorArgumento.validarObligatorio(categoria, &quot;La categoria de la planta es requerida&quot;);</span>
-<span class="nc" id="L36">        return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;El id de la planta es requerido&quot;);</span>
+<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre de la planta es requerido&quot;);</span>
+<span class="fc" id="L31">        ValidadorArgumento.validarObligatorio(descripcion, &quot;La descripcion de la planta es requerida&quot;);</span>
+<span class="fc" id="L32">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso de la planta es requerida&quot;);</span>
+<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(cantidad, &quot;La cantidad de plantas es requerida&quot;);</span>
+<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(valor, &quot;El valor  de la planta es requerido&quot;);</span>
+<span class="fc" id="L35">        ValidadorArgumento.validarObligatorio(categoria, &quot;La categoria de la planta es requerida&quot;);</span>
+<span class="fc" id="L36">        return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);</span>
     }
 
 
     public int getCantidad() {
-<span class="nc" id="L41">        return cantidad;</span>
+<span class="fc" id="L41">        return cantidad;</span>
     }
 
     public void setCantidad(int cantidad) {
@@ -46,7 +46,7 @@ public class Planta {
 <span class="nc" id="L46">    }</span>
 
     public BigDecimal getValor() {
-<span class="nc" id="L49">        return valor;</span>
+<span class="fc" id="L49">        return valor;</span>
     }
 
     public void setValor(BigDecimal valor) {
@@ -54,7 +54,7 @@ public class Planta {
 <span class="nc" id="L54">    }</span>
 
     public CategoriaPlanta getCategoria() {
-<span class="nc" id="L57">        return categoria;</span>
+<span class="fc" id="L57">        return categoria;</span>
     }
 
     public void setCategoria(CategoriaPlanta categoria) {
@@ -62,7 +62,7 @@ public class Planta {
 <span class="nc" id="L62">    }</span>
 
     public int getIdPlanta() {
-<span class="nc" id="L65">        return idPlanta;</span>
+<span class="fc" id="L65">        return idPlanta;</span>
     }
 
     public void setIdPlanta(int idPlanta) {
@@ -70,7 +70,7 @@ public class Planta {
 <span class="nc" id="L70">    }</span>
 
     public String getNombre() {
-<span class="nc" id="L73">        return nombre;</span>
+<span class="fc" id="L73">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
@@ -78,7 +78,7 @@ public class Planta {
 <span class="nc" id="L78">    }</span>
 
     public String getDescripcion() {
-<span class="nc" id="L81">        return descripcion;</span>
+<span class="fc" id="L81">        return descripcion;</span>
     }
 
     public void setDescripcion(String descripcion) {
@@ -86,7 +86,7 @@ public class Planta {
 <span class="nc" id="L86">    }</span>
 
     public LocalDate getFechaIngreso() {
-<span class="nc" id="L89">        return fechaIngreso;</span>
+<span class="fc" id="L89">        return fechaIngreso;</span>
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {

@@ -31,7 +31,7 @@ public class Planta {
         ValidadorArgumento.validarObligatorio(descripcion, "La descripcion de la planta es requerida");
         ValidadorArgumento.validarObligatorio(fechaIngreso, "La fecha de ingreso de la planta es requerida");
         ValidadorArgumento.validarObligatorio(cantidad, "La cantidad de plantas es requerida");
-        ValidadorArgumento.validarObligatorio(cantidad, "El valor  de la planta es requerido");
+        ValidadorArgumento.validarObligatorio(valor, "El valor  de la planta es requerido");
         ValidadorArgumento.validarObligatorio(categoria, "La categoria de la planta es requerida");
         return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
     }
