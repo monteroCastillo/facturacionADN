@@ -49,12 +49,13 @@ pipeline {
         }
 
     stage('Static Code Analysis') {
-        steps{
-            	sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:factura.vivero-rodrigo.montero',
-            sonarName:'CeibaADN-factura-vivero-rodrigo.montero',
-            sonarPathProperties:'./sonar-project.properties')
+          steps{
+            echo '------------>Análisis de código estático<------------'
+            withSonarQubeEnv('Sonar') {
+    			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+            }
+    	  }
         }
-    }
 
 
     stage('Build') {
