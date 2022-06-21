@@ -50,10 +50,10 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
 
     @Override
     public void eliminar(int id) {
-<span class="fc" id="L53">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L54">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="fc" id="L55">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="fc" id="L56">    }</span>
+<span class="nc" id="L53">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L54">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L55">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="nc" id="L56">    }</span>
 
     @Override
     public List&lt;Planta&gt; buscarTodos() {
