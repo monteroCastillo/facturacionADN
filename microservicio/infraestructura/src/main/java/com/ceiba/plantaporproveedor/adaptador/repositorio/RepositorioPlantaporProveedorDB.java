@@ -31,9 +31,7 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
         parameterSource.addValue("id", plantaPorProveedor.getId());
         parameterSource.addValue("id_proveedor", plantaPorProveedor.getProveedor().getId());
         parameterSource.addValue("id_planta", plantaPorProveedor.getPlanta().getIdPlanta());
-        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
-
-        return idPlantaGuardada;
+        return  this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
     }
 
     @Override

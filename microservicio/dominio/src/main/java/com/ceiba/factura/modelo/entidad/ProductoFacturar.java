@@ -6,11 +6,13 @@ import com.ceiba.planta.modelo.entidad.Planta;
 import java.math.BigDecimal;
 
 public class ProductoFacturar {
-    public static final Double VALOR_IVA = 0.19;
+    public static  Double VALOR_IVA = 0.19;
 
     private Long id;
     private final Integer cantidad;
     private final Planta planta;
+
+
 
     private ProductoFacturar(Integer cantidad, Planta planta) {
         this.cantidad = cantidad;
