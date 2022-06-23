@@ -5,6 +5,9 @@ import com.ceiba.factura.comando.ComandoAnular;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 import com.ceiba.factura.comando.manejador.ManejadorAnular;
 import com.ceiba.factura.comando.manejador.ManejadorFacturar;
+import com.ceiba.factura.comando.manejador.ManejadorMostrarFacturas;
+import com.ceiba.factura.modelo.entidad.Factura;
+import com.ceiba.planta.modelo.entidad.Planta;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -18,9 +21,12 @@ public class ComandoControladorFactura {
     private final ManejadorFacturar manejadorFacturar;
     private final ManejadorAnular manejadorAnular;
 
-    public ComandoControladorFactura(ManejadorFacturar manejadorFacturar, ManejadorAnular manejadorAnular) {
+    private final ManejadorMostrarFacturas manejadorMostrarFacturas;
+
+    public ComandoControladorFactura(ManejadorFacturar manejadorFacturar, ManejadorAnular manejadorAnular, ManejadorMostrarFacturas manejadorMostrarFacturas) {
         this.manejadorFacturar = manejadorFacturar;
         this.manejadorAnular = manejadorAnular;
+        this.manejadorMostrarFacturas = manejadorMostrarFacturas;
     }
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -34,6 +40,11 @@ public class ComandoControladorFactura {
     @Operation(summary = "Anular", description = "Metodo utilizado para anular una nueva factura")
     public void anular(@PathVariable("id-factura") Long idFactura) {
         this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));
+    }
+
+    @GetMapping({"/buscar/{id}"})
+    public Factura buscar(@PathVariable("id") Long id) {
+        return this.manejadorMostrarFacturas.ejecutar(id);
     }
 
 

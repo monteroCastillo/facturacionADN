@@ -27,9 +27,13 @@ public class DaoPlantaDB implements DaoPlanta{
     public DaoPlantaDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
-    @Override
-    public List<Planta> listar() {
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanta());
+
+
+    public List<Planta> plantaProveedor( Long proveedor) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", proveedor);
+        System.out.println("DATO QUE LE ENTRA A LA CONSULTA: " + paramSource);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerPlantaProveedor, paramSource, new MapeoPlanta());
     }
 
     @Override
@@ -42,6 +46,13 @@ public class DaoPlantaDB implements DaoPlanta{
         }
         return null;
     }
+
+    @Override
+    public List<Planta> listar() {
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanta());
+    }
+
+
 
     @Override
     public Planta obtener(int id) {

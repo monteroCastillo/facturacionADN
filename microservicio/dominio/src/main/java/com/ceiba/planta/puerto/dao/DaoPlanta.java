@@ -11,5 +11,7 @@ public interface DaoPlanta {
 
     Planta obtener(int id);
 
+    List<Planta> plantaProveedor(Long proveedor);
+
 
 }

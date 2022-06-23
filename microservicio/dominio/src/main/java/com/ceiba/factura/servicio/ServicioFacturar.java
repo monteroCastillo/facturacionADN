@@ -4,6 +4,8 @@ import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 
+import java.time.LocalDate;
+
 public class ServicioFacturar {
     private final RepositorioFactura repositorioFactura;
 
@@ -12,6 +14,7 @@ public class ServicioFacturar {
     }
 
     public Long ejecutar(SolicitudFacturar solicitudFacturar) {
+
         var factura = Factura.crear(solicitudFacturar);
         return repositorioFactura.guardar(factura);
     }

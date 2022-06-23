@@ -39,7 +39,8 @@ public class RepositorioFacturaMysql implements RepositorioFactura {
         paramSource.addValue("id_cliente", factura.getCliente().getId());
         paramSource.addValue("valor_total", factura.getValorTotal());
         paramSource.addValue("estado", factura.getEstado().name());
-        paramSource.addValue("fecha", LocalDate.now());
+        paramSource.addValue("fecha", factura.getFechaIngreso());
+        paramSource.addValue("fecha_domicilio", factura.getFechaDomicilio());
         Long idFacturaGuardada = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
         repositorioProductoFacturar.guardarPorFactura(factura, idFacturaGuardada);
         return idFacturaGuardada;

@@ -61,7 +61,6 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
         paramSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
 
-
     }
 
     @Override

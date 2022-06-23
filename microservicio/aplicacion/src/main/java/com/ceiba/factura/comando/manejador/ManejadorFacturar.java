@@ -20,7 +20,6 @@ public class ManejadorFacturar implements ManejadorComandoRespuesta<ComandoSolic
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoSolicitudFacturar comandoSolicitudFacturar) {
-
         return new ComandoRespuesta<>(servicioFacturar
                 .ejecutar(fabricaSolicitudFacturar.crear(comandoSolicitudFacturar)));
     }

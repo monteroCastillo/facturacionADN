@@ -28,9 +28,10 @@ public class MapeoFactura implements RowMapper<Factura>, MapperResult {
         var idCliente = resultSet.getLong("id_cliente");
         var valorTotal = resultSet.getBigDecimal("valor_total");
         var estado = EstadoFactura.valueOf(resultSet.getString("estado"));
-
+        var fechaIngreso  = resultSet.getDate("fecha").toLocalDate();
+        var fechaDomicilio = resultSet.getDate("fecha_domicilio").toLocalDate();
         return Factura.reconstruir(id, repositorioCliente.obtener(idCliente),
-                repositorioProductoFacturar.obtenerPorFactura(id), valorTotal, estado);
+                repositorioProductoFacturar.obtenerPorFactura(id), valorTotal, estado, fechaIngreso, fechaDomicilio);
     }
 
 }

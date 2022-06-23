@@ -1,8 +1,11 @@
 package com.ceiba.planta.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
+import com.ceiba.planta.utils.MensajesDeExcepcion;
 
 import java.math.BigDecimal;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 public class Planta {
 
@@ -20,6 +23,7 @@ public class Planta {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaIngreso = fechaIngreso;
+        calculaSabadoDomingo(fechaIngreso);
         this.cantidad = cantidad;
         this.valor = valor;
         this.categoria = categoria;
@@ -36,6 +40,14 @@ public class Planta {
         return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
     }
 
+    public void calculaSabadoDomingo(LocalDate date) {
+
+        LocalDate result = date;
+
+        if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){
+            throw new ExcepcionValorInvalido(MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());
+        }
+    }
 
     public int getCantidad() {
         return cantidad;

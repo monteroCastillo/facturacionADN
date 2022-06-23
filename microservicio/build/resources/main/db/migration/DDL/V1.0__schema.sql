@@ -22,6 +22,7 @@ create table factura (
  valor_total DECIMAL(10,2) not null,
  estado varchar(20) not null,
  fecha  DATE not null,
+ fecha_domicilio DATE not null,
  primary key (id)
 );
 

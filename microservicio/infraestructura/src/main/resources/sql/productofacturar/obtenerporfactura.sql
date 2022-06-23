@@ -1,3 +1,3 @@
-select  id, id_producto, cantidad
+select  id, id_planta, cantidad
 from producto_facturar
 where id_factura = :id_factura

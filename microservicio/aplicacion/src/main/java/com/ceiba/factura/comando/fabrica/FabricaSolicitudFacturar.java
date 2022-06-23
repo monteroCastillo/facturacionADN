@@ -24,7 +24,7 @@ public class FabricaSolicitudFacturar {
     }
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
-        return new SolicitudFacturar(repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),
+        return new SolicitudFacturar(comandoSolicitudFacturar.getFechaIngreso(),repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),
                obtenerProductos(comandoSolicitudFacturar.getComandoProductosFacturar())
         );
     }
