@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-06-21T15:07:49" hostname="RODRIGO-MONTERO" time="0.04">
+<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-06-23T01:02:51" hostname="RODRIGO-MONTERO" time="0.006">
   <properties/>
-  <testcase name="reconstruirSinPaginaWebdeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.033"/>
+  <testcase name="reconstruirSinPaginaWebdeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
-  <testcase name="reconstruirSinDirecciondeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
-  <testcase name="deberiaReconstruirProveedorExitosamente()" classname="com.ceiba.proveedor.ProveedorTest" time="0.0"/>
+  <testcase name="reconstruirSinDirecciondeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.0"/>
+  <testcase name="deberiaReconstruirProveedorExitosamente()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinTelefonodeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

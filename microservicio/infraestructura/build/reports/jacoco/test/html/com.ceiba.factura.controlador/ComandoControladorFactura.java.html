@@ -5,6 +5,9 @@ import com.ceiba.factura.comando.ComandoAnular;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 import com.ceiba.factura.comando.manejador.ManejadorAnular;
 import com.ceiba.factura.comando.manejador.ManejadorFacturar;
+import com.ceiba.factura.comando.manejador.ManejadorMostrarFacturas;
+import com.ceiba.factura.modelo.entidad.Factura;
+import com.ceiba.planta.modelo.entidad.Planta;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -18,23 +21,31 @@ public class ComandoControladorFactura {
     private final ManejadorFacturar manejadorFacturar;
     private final ManejadorAnular manejadorAnular;
 
-<span class="fc" id="L21">    public ComandoControladorFactura(ManejadorFacturar manejadorFacturar, ManejadorAnular manejadorAnular) {</span>
-<span class="fc" id="L22">        this.manejadorFacturar = manejadorFacturar;</span>
-<span class="fc" id="L23">        this.manejadorAnular = manejadorAnular;</span>
-<span class="fc" id="L24">    }</span>
+    private final ManejadorMostrarFacturas manejadorMostrarFacturas;
+
+<span class="fc" id="L26">    public ComandoControladorFactura(ManejadorFacturar manejadorFacturar, ManejadorAnular manejadorAnular, ManejadorMostrarFacturas manejadorMostrarFacturas) {</span>
+<span class="fc" id="L27">        this.manejadorFacturar = manejadorFacturar;</span>
+<span class="fc" id="L28">        this.manejadorAnular = manejadorAnular;</span>
+<span class="fc" id="L29">        this.manejadorMostrarFacturas = manejadorMostrarFacturas;</span>
+<span class="fc" id="L30">    }</span>
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(&quot;/guardar&quot;)
     @Operation(summary = &quot;Facturar&quot;, description = &quot;Metodo utilizado para crear una nueva factura&quot;)
     public ComandoRespuesta&lt;Long&gt; facturar(@RequestBody ComandoSolicitudFacturar comandoSolicitudFacturar) {
-<span class="nc" id="L30">        return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);</span>
+<span class="nc" id="L36">        return this.manejadorFacturar.ejecutar(comandoSolicitudFacturar);</span>
     }
 
     @PostMapping(&quot;anular/{id-factura}&quot;)
     @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para anular una nueva factura&quot;)
     public void anular(@PathVariable(&quot;id-factura&quot;) Long idFactura) {
-<span class="nc" id="L36">        this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));</span>
-<span class="nc" id="L37">    }</span>
+<span class="nc" id="L42">        this.manejadorAnular.ejecutar(new ComandoAnular(idFactura));</span>
+<span class="nc" id="L43">    }</span>
+
+    @GetMapping({&quot;/buscar/{id}&quot;})
+    public Factura buscar(@PathVariable(&quot;id&quot;) Long id) {
+<span class="nc" id="L47">        return this.manejadorMostrarFacturas.ejecutar(id);</span>
+    }
 
 
 }

@@ -4,8 +4,13 @@ import com.ceiba.factura.modelo.dto.ResumenFacturaDTO;
 import com.ceiba.factura.puerto.dao.DaoFactura;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.planta.adaptador.dao.MapeoPlanta;
+import com.ceiba.planta.modelo.entidad.Planta;
+import com.fasterxml.jackson.core.io.BigDecimalParser;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -17,15 +22,34 @@ public class DaoFacturaMysql implements DaoFactura {
     @SqlStatement(namespace = &quot;factura&quot;, value = &quot;obteneranuladas&quot;)
     private static String sqlObtenerAnuladas;
 
-<span class="fc" id="L20">    public DaoFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFacturaResumen mapeoFacturaResumen) {</span>
-<span class="fc" id="L21">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
-<span class="fc" id="L22">        this.mapeoFacturaResumen = mapeoFacturaResumen;</span>
-<span class="fc" id="L23">    }</span>
+    @SqlStatement(namespace = &quot;factura&quot;, value = &quot;obtenersumafactura&quot;)
+    private static String sqlObtenerSumaFactura;
+
+<span class="fc" id="L28">    public DaoFacturaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate, MapeoFacturaResumen mapeoFacturaResumen) {</span>
+<span class="fc" id="L29">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
+<span class="fc" id="L30">        this.mapeoFacturaResumen = mapeoFacturaResumen;</span>
+<span class="fc" id="L31">    }</span>
 
     @Override
     public List&lt;ResumenFacturaDTO&gt; obtenerResumenDeFacturasAnuladas() {
-<span class="nc" id="L27">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="nc" id="L28">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
+<span class="nc" id="L35">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L36">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
     }
+
+    @Override
+    public BigDecimal obtenerSumaFacturas(String fecha) {
+<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L42">        paramSource.addValue(&quot;fecha&quot;, fecha);</span>
+<span class="nc" id="L43">        System.out.println(&quot;DATO QUE LE ENTRA A LA CONSULTA: &quot; + paramSource);</span>
+<span class="nc" id="L44">        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);</span>
+    }
+
+    public List&lt;Planta&gt; plantaProveedor(Long proveedor) {
+<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, proveedor);</span>
+<span class="nc" id="L50">        System.out.println(&quot;DATO QUE LE ENTRA A LA CONSULTA: &quot; + paramSource);</span>
+<span class="nc" id="L51">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

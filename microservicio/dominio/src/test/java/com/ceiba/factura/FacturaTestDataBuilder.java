@@ -6,6 +6,7 @@ import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,9 @@ public class FacturaTestDataBuilder {
     private List<ProductoFacturar> productosFacturar;
     private BigDecimal valorTotal;
     private EstadoFactura estadoFactura;
+    private LocalDate fechaIngreso;
+    private LocalDate fechaDomicilio;
+
 
     public FacturaTestDataBuilder() {
         productosFacturar = new ArrayList<>();
@@ -69,7 +73,7 @@ public class FacturaTestDataBuilder {
 //    }
 
     public Factura reconstruir() {
-        return Factura.reconstruir(id, cliente, productosFacturar, valorTotal, estadoFactura);
+        return Factura.reconstruir(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);
     }
 
 }

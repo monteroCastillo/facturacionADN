@@ -5,14 +5,16 @@ import com.ceiba.cliente.modelo.entidad.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
-<span class="nc" id="L11">@AllArgsConstructor</span>
+<span class="nc" id="L12">@AllArgsConstructor</span>
 public class SolicitudFacturar {
+<span class="nc" id="L14">    private final LocalDate fechaIngreso;</span>
+<span class="nc" id="L15">    private final Cliente cliente;</span>
+<span class="nc" id="L16">    private final List&lt;ProductoFacturar&gt; productosFacturar;</span>
 
-<span class="nc" id="L14">    private final Cliente cliente;</span>
-<span class="nc" id="L15">    private final List&lt;ProductoFacturar&gt; productosFacturar;</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

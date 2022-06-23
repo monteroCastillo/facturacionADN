@@ -6,59 +6,61 @@ import com.ceiba.planta.modelo.entidad.Planta;
 import java.math.BigDecimal;
 
 public class ProductoFacturar {
-<span class="nc" id="L9">    public static final Double VALOR_IVA = 0.19;</span>
+<span class="nc" id="L9">    public static  Double VALOR_IVA = 0.19;</span>
 
     private Long id;
     private final Integer cantidad;
     private final Planta planta;
 
-<span class="nc" id="L15">    private ProductoFacturar(Integer cantidad, Planta planta) {</span>
-<span class="nc" id="L16">        this.cantidad = cantidad;</span>
-<span class="nc" id="L17">        this.planta = planta;</span>
-<span class="nc" id="L18">    }</span>
 
-<span class="nc" id="L20">    private ProductoFacturar(Long id, Integer cantidad, Planta planta) {</span>
-<span class="nc" id="L21">        this.cantidad = cantidad;</span>
-<span class="nc" id="L22">        this.planta = planta;</span>
-<span class="nc" id="L23">        this.id = id;</span>
-<span class="nc" id="L24">    }</span>
+
+<span class="nc" id="L17">    private ProductoFacturar(Integer cantidad, Planta planta) {</span>
+<span class="nc" id="L18">        this.cantidad = cantidad;</span>
+<span class="nc" id="L19">        this.planta = planta;</span>
+<span class="nc" id="L20">    }</span>
+
+<span class="nc" id="L22">    private ProductoFacturar(Long id, Integer cantidad, Planta planta) {</span>
+<span class="nc" id="L23">        this.cantidad = cantidad;</span>
+<span class="nc" id="L24">        this.planta = planta;</span>
+<span class="nc" id="L25">        this.id = id;</span>
+<span class="nc" id="L26">    }</span>
 
     public static ProductoFacturar crear(Integer cantidad, Planta planta) {
-<span class="nc" id="L27">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
-<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(planta, &quot;Producto es requerido&quot;);</span>
-<span class="nc" id="L29">        return new ProductoFacturar(cantidad, planta);</span>
+<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="nc" id="L30">        ValidadorArgumento.validarObligatorio(planta, &quot;Producto es requerido&quot;);</span>
+<span class="nc" id="L31">        return new ProductoFacturar(cantidad, planta);</span>
     }
 
     public static ProductoFacturar reconstruir(Long id, Integer cantidad, Planta planta) {
-<span class="nc" id="L33">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
-<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(planta, &quot;Planta es requerido&quot;);</span>
-<span class="nc" id="L35">        return new ProductoFacturar(id, cantidad, planta);</span>
+<span class="nc" id="L35">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="nc" id="L36">        ValidadorArgumento.validarObligatorio(planta, &quot;Planta es requerido&quot;);</span>
+<span class="nc" id="L37">        return new ProductoFacturar(id, cantidad, planta);</span>
     }
 
     private BigDecimal calcularSubTotal() {
-<span class="nc" id="L39">        return planta.getValor()</span>
-<span class="nc" id="L40">                .multiply(BigDecimal.valueOf(cantidad));</span>
+<span class="nc" id="L41">        return planta.getValor()</span>
+<span class="nc" id="L42">                .multiply(BigDecimal.valueOf(cantidad));</span>
     }
 
     public BigDecimal calcularTotal() {
 
-<span class="nc" id="L45">        return calcularSubTotal();</span>
+<span class="nc" id="L47">        return calcularSubTotal();</span>
     }
 
     public Long getId() {
-<span class="nc" id="L49">        return id;</span>
+<span class="nc" id="L51">        return id;</span>
     }
 
     public void setId(Long id) {
-<span class="nc" id="L53">        this.id = id;</span>
-<span class="nc" id="L54">    }</span>
+<span class="nc" id="L55">        this.id = id;</span>
+<span class="nc" id="L56">    }</span>
 
     public Integer getCantidad() {
-<span class="nc" id="L57">        return cantidad;</span>
+<span class="nc" id="L59">        return cantidad;</span>
     }
 
     public Planta getPlanta() {
-<span class="nc" id="L61">        return planta;</span>
+<span class="nc" id="L63">        return planta;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

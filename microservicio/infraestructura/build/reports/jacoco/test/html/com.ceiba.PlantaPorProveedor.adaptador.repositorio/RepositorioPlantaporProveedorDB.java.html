@@ -16,12 +16,12 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
 <span class="fc" id="L16">        this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;</span>
 <span class="fc" id="L17">    }</span>
 
-    @SqlStatement(namespace = &quot;plantaPorProveedor&quot;, value = &quot;crear&quot;)
+    @SqlStatement(namespace = &quot;plantaporproveedor&quot;, value = &quot;crear&quot;)
     private static String sqlCrear;
 
 
 
-    @SqlStatement(namespace=&quot;plantaPorProveedor&quot;, value=&quot;eliminar&quot;)
+    @SqlStatement(namespace=&quot;plantaporproveedor&quot;, value=&quot;eliminar&quot;)
     private static String sqlEliminar;
 
 
@@ -31,16 +31,14 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
 <span class="nc" id="L31">        parameterSource.addValue(&quot;id&quot;, plantaPorProveedor.getId());</span>
 <span class="nc" id="L32">        parameterSource.addValue(&quot;id_proveedor&quot;, plantaPorProveedor.getProveedor().getId());</span>
 <span class="nc" id="L33">        parameterSource.addValue(&quot;id_planta&quot;, plantaPorProveedor.getPlanta().getIdPlanta());</span>
-<span class="nc" id="L34">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
-
-<span class="nc" id="L36">        return idPlantaGuardada;</span>
+<span class="nc" id="L34">        return  this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
     }
 
     @Override
     public void eliminar(Long id) {
-<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L42">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L43">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L44">    }</span>
+<span class="nc" id="L39">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L40">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L41">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="nc" id="L42">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

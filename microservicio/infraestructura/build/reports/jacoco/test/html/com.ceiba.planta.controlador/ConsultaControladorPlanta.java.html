@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConsultaControladorPlanta.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">infraestructura</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.planta.controlador</a> &gt; <span class="el_source">ConsultaControladorPlanta.java</span></div><h1>ConsultaControladorPlanta.java</h1><pre class="source lang-java linenums">package com.ceiba.planta.controlador;
 
 import com.ceiba.planta.comando.manejador.ManejadorBuscarPlanta;
+import com.ceiba.planta.comando.manejador.ManejadorPlantaProveedor;
 import com.ceiba.planta.consulta.ManejadorListarPlantas;
 import com.ceiba.planta.modelo.entidad.Planta;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,20 +18,27 @@ public class ConsultaControladorPlanta {
     private final ManejadorListarPlantas manejadorListarPlantas;
     private final ManejadorBuscarPlanta manejadorBuscarPlanta;
 
-<span class="fc" id="L20">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta) {</span>
-<span class="fc" id="L21">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
-<span class="fc" id="L22">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
-<span class="fc" id="L23">    }</span>
+    private final ManejadorPlantaProveedor manejadorPlantaProveedor;
+
+<span class="fc" id="L23">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta, ManejadorPlantaProveedor manejadorPlantaProveedor) {</span>
+<span class="fc" id="L24">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
+<span class="fc" id="L25">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
+<span class="fc" id="L26">        this.manejadorPlantaProveedor = manejadorPlantaProveedor;</span>
+<span class="fc" id="L27">    }</span>
 
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;Planta&gt; listar(){
-<span class="nc" id="L28">        return  this.manejadorListarPlantas.ejecutar();}</span>
+<span class="nc" id="L32">        return  this.manejadorListarPlantas.ejecutar();}</span>
 
     @GetMapping({&quot;/buscar/{id}&quot;})
     public Planta buscar(@PathVariable(&quot;id&quot;) int id) {
-<span class="nc" id="L32">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
+<span class="nc" id="L36">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
     }
 
+    @GetMapping({&quot;/consulta/{id}&quot;})
+    public List&lt;Planta&gt; buscarPlantaProveedor(@PathVariable(&quot;id&quot;) Long id) {
+<span class="nc" id="L41">        return this.manejadorPlantaProveedor.ejecutar(id);</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

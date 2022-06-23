@@ -8,23 +8,23 @@ import java.util.List;
 
 
 public class ComandoFacturarTestDataBuilder {
-
-    private Long idCliente;
-    private List<ComandoProductoFacturar> comandoProductosFacturar;
-
-    public ComandoFacturarTestDataBuilder() {
-        this.comandoProductosFacturar = new ArrayList<>();
-    }
-
-    public ComandoFacturarTestDataBuilder crearPorDefecto() {
-        this.idCliente = 1l;
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(1, 5));
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(2, 7));
-        return this;
-
-    }
-
-    public ComandoSolicitudFacturar build() {
-        return new ComandoSolicitudFacturar(this.idCliente, comandoProductosFacturar);
-    }
+//
+//    private Long idCliente;
+//    private List<ComandoProductoFacturar> comandoProductosFacturar;
+//
+//    public ComandoFacturarTestDataBuilder() {
+//        this.comandoProductosFacturar = new ArrayList<>();
+//    }
+//
+//    public ComandoFacturarTestDataBuilder crearPorDefecto() {
+//        this.idCliente = 1l;
+//        this.comandoProductosFacturar.add(new ComandoProductoFacturar(1, 5));
+//        this.comandoProductosFacturar.add(new ComandoProductoFacturar(2, 7));
+//        return this;
+//
+//    }
+//
+//    public ComandoSolicitudFacturar build() {
+//        return new ComandoSolicitudFacturar(this.idCliente, comandoProductosFacturar);
+//    }
 }

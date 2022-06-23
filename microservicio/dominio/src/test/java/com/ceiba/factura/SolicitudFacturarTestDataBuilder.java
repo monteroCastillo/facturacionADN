@@ -4,7 +4,9 @@ package com.ceiba.factura;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
+import net.bytebuddy.asm.Advice;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +14,8 @@ public class SolicitudFacturarTestDataBuilder {
 
     private List<ProductoFacturar> productosFacturar;
     private Cliente cliente;
+
+    private LocalDate fechaIngreso;
 
     public SolicitudFacturarTestDataBuilder() {
         this.productosFacturar = new ArrayList<>();
@@ -32,8 +36,15 @@ public class SolicitudFacturarTestDataBuilder {
         return this;
     }
 
+    public SolicitudFacturarTestDataBuilder conFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+        return this;
+    }
+
+
+
     public SolicitudFacturar build() {
-        return new SolicitudFacturar(cliente, productosFacturar);
+        return new SolicitudFacturar( fechaIngreso, cliente, productosFacturar);
     }
 
 }
