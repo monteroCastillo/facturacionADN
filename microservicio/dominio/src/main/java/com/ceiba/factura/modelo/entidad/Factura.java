@@ -16,7 +16,6 @@ public class Factura {
 
     public static final double DESCUENTO_CLIENTE_PREFERENCIAL = 0.2;
     public static final double DESCUENTO_CLIENTE_ESPECIAL = 0.1;
-
     public static final double COBRO_ADICIONAL_FESTIVO = 0.15;
     private Long id;
     private Cliente cliente;
@@ -25,15 +24,6 @@ public class Factura {
     private EstadoFactura estado;
     private LocalDate fechaIngreso;
     private LocalDate fechaDomicilio;
-
-//    public Factura(Long id, Cliente cliente, List<ProductoFacturar> productosFacturar, BigDecimal valorTotal, EstadoFactura estado, LocalDate fechaIngreso) {
-//        this.id = id;
-//        this.cliente = cliente;
-//        this.productosFacturar = productosFacturar;
-//        this.valorTotal = valorTotal;
-//        this.estado = estado;
-//        this.fechaIngreso = fechaIngreso;
-//    }
 
     private Factura(LocalDate fechaIngreso, Cliente cliente, List<ProductoFacturar> productosFacturar ) {
         this.cliente = cliente;
@@ -54,7 +44,6 @@ public class Factura {
         this.estado = estadoFactura;
         this.fechaIngreso = fechaIngreso;
         this.fechaDomicilio = fechaDomicilio;
-
     }
 
     private BigDecimal calcularvalorTotal(List<ProductoFacturar> productosFacturar) {
@@ -62,7 +51,6 @@ public class Factura {
                 .map(ProductoFacturar::calcularTotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
-
     private void aplicarDescuento() {
         if (this.cliente.esTipoPreferencial()) {
             this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_PREFERENCIAL)));
@@ -70,14 +58,12 @@ public class Factura {
             this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_ESPECIAL)));
         }
     }
-
     public void anular() {
         if(this.cliente.esTipoComun()){
             throw new ExcepcionValorInvalido("No se puede anular la factura de un cliente comun");
         }
         this.estado = EstadoFactura.ANULADA;
     }
-
     public void validarDiaFestivo(LocalDate fecha){
         var anio = fecha.getYear();
         var mes = fecha.getMonthValue();
@@ -87,29 +73,24 @@ public class Factura {
             this.valorTotal = valorTotal.add(valorTotal.multiply(BigDecimal.valueOf(COBRO_ADICIONAL_FESTIVO)));
         }
     }
-
     public LocalDate validarSiguienteDiaHabil(LocalDate fecha){
         var anio = fecha.getYear();
 
         Date fecha2 = java.sql.Date.valueOf(fecha);
 
-        Date respuesta = new HolidayUtil(anio).getNextBusinessDay(fecha2,1);
+        Date respuesta = new  HolidayUtil(anio).getNextBusinessDay(fecha2,1);
 
         return  respuesta.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
-
     public Cliente getCliente() {
         return this.cliente;
     }
-
     public List<ProductoFacturar> getProductos() {
         return Collections.unmodifiableList(productosFacturar);
     }
-
     public BigDecimal getValorTotal() {
         return valorTotal;
     }
-
     public Long getId() {
         return id;
     }

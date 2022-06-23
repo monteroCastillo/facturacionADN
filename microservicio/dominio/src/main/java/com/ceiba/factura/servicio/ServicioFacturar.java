@@ -4,8 +4,6 @@ import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.SolicitudFacturar;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 
-import java.time.LocalDate;
-
 public class ServicioFacturar {
     private final RepositorioFactura repositorioFactura;
 
