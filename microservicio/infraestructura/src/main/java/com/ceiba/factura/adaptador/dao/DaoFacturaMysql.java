@@ -47,7 +47,6 @@ public class DaoFacturaMysql implements DaoFactura {
     public List<Planta> plantaProveedor(Long proveedor) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", proveedor);
-        System.out.println("DATO QUE LE ENTRA A LA CONSULTA: " + paramSource);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());
     }
 

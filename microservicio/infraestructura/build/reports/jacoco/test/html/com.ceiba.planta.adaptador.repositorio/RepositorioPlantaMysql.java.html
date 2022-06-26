@@ -36,16 +36,16 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
 
 <span class="fc" id="L37">    }</span>
     public int guardar(Planta planta) {
-<span class="nc" id="L39">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L40">        parameterSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
-<span class="nc" id="L41">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
-<span class="nc" id="L42">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
-<span class="nc" id="L43">        parameterSource.addValue(&quot;fecha_ingreso&quot;,planta.getFechaIngreso());</span>
-<span class="nc" id="L44">        parameterSource.addValue(&quot;cantidad&quot;,planta.getCantidad());</span>
-<span class="nc" id="L45">        parameterSource.addValue(&quot;valor&quot;,planta.getValor());</span>
-<span class="nc" id="L46">        parameterSource.addValue(&quot;categoria&quot;,planta.getCategoria().name());</span>
-<span class="nc" id="L47">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
-<span class="nc" id="L48">        return Math.toIntExact(idPlantaGuardada);</span>
+<span class="fc" id="L39">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L40">        parameterSource.addValue(&quot;id&quot;, planta.getIdPlanta());</span>
+<span class="fc" id="L41">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
+<span class="fc" id="L42">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
+<span class="fc" id="L43">        parameterSource.addValue(&quot;fecha_ingreso&quot;,planta.getFechaIngreso());</span>
+<span class="fc" id="L44">        parameterSource.addValue(&quot;cantidad&quot;,planta.getCantidad());</span>
+<span class="fc" id="L45">        parameterSource.addValue(&quot;valor&quot;,planta.getValor());</span>
+<span class="fc" id="L46">        parameterSource.addValue(&quot;categoria&quot;,planta.getCategoria().name());</span>
+<span class="fc" id="L47">        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
+<span class="fc" id="L48">        return Math.toIntExact(idPlantaGuardada);</span>
     }
 
     @Override

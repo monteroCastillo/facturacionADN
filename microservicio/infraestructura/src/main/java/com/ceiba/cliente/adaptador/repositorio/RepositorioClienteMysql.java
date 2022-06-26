@@ -46,7 +46,15 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 
     @Override
     public Long guardar(Cliente cliente) {
-        return (this.customNamedParameterJdbcTemplate.crear(cliente, sqlCrear));
+
+        MapSqlParameterSource parameterSource = new MapSqlParameterSource();
+        parameterSource.addValue("id", cliente.getId());
+        parameterSource.addValue("nombre", cliente.getNombre());
+        parameterSource.addValue("direccion", cliente.getDireccion());
+        parameterSource.addValue("telefono", cliente.getTelefono());
+        parameterSource.addValue("email", cliente.getEmail());
+        parameterSource.addValue("tipo_cliente", cliente.getTipoCliente().name());
+        return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));
     }
 
 }

@@ -20,6 +20,11 @@ public class FabricaSolicitudPlantaPorProveedor {
 
 
     public SolicitudCrearPlantaPorProveedor crear(ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor){
+
+        System.out.println("***Fabrica solicitud facturar PROVEEDOR *** "  +  comandoSolicitudPlantaPorProveedor);
+        System.out.println("***Fabrica solicitud facturar PROVEEDOR *** "  +  comandoSolicitudPlantaPorProveedor.getIdProveedor());
+        System.out.println("***Fabrica solicitud facturar PLANTA *** "  +  comandoSolicitudPlantaPorProveedor.getIdPlanta());
+
         return new SolicitudCrearPlantaPorProveedor(daoProveedor.obtenerProveedorPorId(comandoSolicitudPlantaPorProveedor.getIdProveedor()),
             daoPlanta.obtenerPlantaPorId(comandoSolicitudPlantaPorProveedor.getIdPlanta()));
 

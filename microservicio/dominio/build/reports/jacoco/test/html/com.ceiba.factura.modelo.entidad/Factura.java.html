@@ -16,7 +16,6 @@ public class Factura {
 
     public static final double DESCUENTO_CLIENTE_PREFERENCIAL = 0.2;
     public static final double DESCUENTO_CLIENTE_ESPECIAL = 0.1;
-
     public static final double COBRO_ADICIONAL_FESTIVO = 0.15;
     private Long id;
     private Cliente cliente;
@@ -26,141 +25,123 @@ public class Factura {
     private LocalDate fechaIngreso;
     private LocalDate fechaDomicilio;
 
-//    public Factura(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estado, LocalDate fechaIngreso) {
-//        this.id = id;
-//        this.cliente = cliente;
-//        this.productosFacturar = productosFacturar;
-//        this.valorTotal = valorTotal;
-//        this.estado = estado;
-//        this.fechaIngreso = fechaIngreso;
-//    }
+<span class="nc" id="L28">    public Factura(LocalDate fechaIngreso, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar ) {</span>
+<span class="nc" id="L29">        this.cliente = cliente;</span>
+<span class="nc" id="L30">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
+<span class="nc" id="L31">        this.valorTotal = calcularvalorTotal(productosFacturar);</span>
+<span class="nc" id="L32">        aplicarDescuento();</span>
+<span class="nc" id="L33">        this.estado = EstadoFactura.ACTIVA;</span>
+<span class="nc" id="L34">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L35">        validarDiaFestivo(fechaIngreso);</span>
+<span class="nc" id="L36">        this.fechaDomicilio = validarSiguienteDiaHabil(fechaIngreso);</span>
 
-<span class="nc" id="L38">    private Factura(LocalDate fechaIngreso, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar ) {</span>
-<span class="nc" id="L39">        this.cliente = cliente;</span>
-<span class="nc" id="L40">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
-<span class="nc" id="L41">        this.valorTotal = calcularvalorTotal(productosFacturar);</span>
-<span class="nc" id="L42">        aplicarDescuento();</span>
-<span class="nc" id="L43">        this.estado = EstadoFactura.ACTIVA;</span>
-<span class="nc" id="L44">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L45">        validarDiaFestivo(fechaIngreso);</span>
-<span class="nc" id="L46">        this.fechaDomicilio = validarSiguienteDiaHabil(fechaIngreso);</span>
-
-<span class="nc" id="L48">    }</span>
-<span class="nc" id="L49">    private Factura(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura, LocalDate fechaIngreso, LocalDate fechaDomicilio) {</span>
-<span class="nc" id="L50">        this.cliente = cliente;</span>
-<span class="nc" id="L51">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
-<span class="nc" id="L52">        this.id = id;</span>
-<span class="nc" id="L53">        this.valorTotal = valorTotal;</span>
-<span class="nc" id="L54">        this.estado = estadoFactura;</span>
-<span class="nc" id="L55">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L56">        this.fechaDomicilio = fechaDomicilio;</span>
-
-<span class="nc" id="L58">    }</span>
+<span class="nc" id="L38">    }</span>
+<span class="nc" id="L39">    private Factura(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura, LocalDate fechaIngreso, LocalDate fechaDomicilio) {</span>
+<span class="nc" id="L40">        this.cliente = cliente;</span>
+<span class="nc" id="L41">        this.productosFacturar = new ArrayList&lt;&gt;(productosFacturar);</span>
+<span class="nc" id="L42">        this.id = id;</span>
+<span class="nc" id="L43">        this.valorTotal = valorTotal;</span>
+<span class="nc" id="L44">        this.estado = estadoFactura;</span>
+<span class="nc" id="L45">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L46">        this.fechaDomicilio = fechaDomicilio;</span>
+<span class="nc" id="L47">    }</span>
 
     private BigDecimal calcularvalorTotal(List&lt;ProductoFacturar&gt; productosFacturar) {
-<span class="nc" id="L61">        return productosFacturar.stream()</span>
-<span class="nc" id="L62">                .map(ProductoFacturar::calcularTotal)</span>
-<span class="nc" id="L63">                .reduce(BigDecimal.ZERO, BigDecimal::add);</span>
+<span class="nc" id="L50">        return productosFacturar.stream()</span>
+<span class="nc" id="L51">                .map(ProductoFacturar::calcularTotal)</span>
+<span class="nc" id="L52">                .reduce(BigDecimal.ZERO, BigDecimal::add);</span>
     }
-
     private void aplicarDescuento() {
-<span class="nc bnc" id="L67" title="All 2 branches missed.">        if (this.cliente.esTipoPreferencial()) {</span>
-<span class="nc" id="L68">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_PREFERENCIAL)));</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        } else if (this.cliente.esTipoEspecial()) {</span>
-<span class="nc" id="L70">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_ESPECIAL)));</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">        if (this.cliente.esTipoPreferencial()) {</span>
+<span class="nc" id="L56">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_PREFERENCIAL)));</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">        } else if (this.cliente.esTipoEspecial()) {</span>
+<span class="nc" id="L58">            this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_ESPECIAL)));</span>
         }
-<span class="nc" id="L72">    }</span>
-
+<span class="nc" id="L60">    }</span>
     public void anular() {
-<span class="nc bnc" id="L75" title="All 2 branches missed.">        if(this.cliente.esTipoComun()){</span>
-<span class="nc" id="L76">            throw new ExcepcionValorInvalido(&quot;No se puede anular la factura de un cliente comun&quot;);</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        if(this.cliente.esTipoComun()){</span>
+<span class="nc" id="L63">            throw new ExcepcionValorInvalido(&quot;No se puede anular la factura de un cliente comun&quot;);</span>
         }
-<span class="nc" id="L78">        this.estado = EstadoFactura.ANULADA;</span>
-<span class="nc" id="L79">    }</span>
-
+<span class="nc" id="L65">        this.estado = EstadoFactura.ANULADA;</span>
+<span class="nc" id="L66">    }</span>
     public void validarDiaFestivo(LocalDate fecha){
-<span class="nc" id="L82">        var anio = fecha.getYear();</span>
-<span class="nc" id="L83">        var mes = fecha.getMonthValue();</span>
-<span class="nc" id="L84">        var dia = fecha.getDayOfMonth();</span>
+<span class="nc" id="L68">        var anio = fecha.getYear();</span>
+<span class="nc" id="L69">        var mes = fecha.getMonthValue();</span>
+<span class="nc" id="L70">        var dia = fecha.getDayOfMonth();</span>
 
-<span class="nc bnc" id="L86" title="All 2 branches missed.">        if(  new HolidayUtil(anio).isHoliday(mes-1, dia)) {</span>
-<span class="nc" id="L87">            this.valorTotal = valorTotal.add(valorTotal.multiply(BigDecimal.valueOf(COBRO_ADICIONAL_FESTIVO)));</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if(  new HolidayUtil(anio).isHoliday(mes-1, dia)) {</span>
+<span class="nc" id="L73">            this.valorTotal = valorTotal.add(valorTotal.multiply(BigDecimal.valueOf(COBRO_ADICIONAL_FESTIVO)));</span>
         }
-<span class="nc" id="L89">    }</span>
-
+<span class="nc" id="L75">    }</span>
     public LocalDate validarSiguienteDiaHabil(LocalDate fecha){
-<span class="nc" id="L92">        var anio = fecha.getYear();</span>
+<span class="nc" id="L77">        var anio = fecha.getYear();</span>
 
-<span class="nc" id="L94">        Date fecha2 = java.sql.Date.valueOf(fecha);</span>
+<span class="nc" id="L79">        Date fecha2 = java.sql.Date.valueOf(fecha);</span>
 
-<span class="nc" id="L96">        Date respuesta = new HolidayUtil(anio).getNextBusinessDay(fecha2,1);</span>
+<span class="nc" id="L81">        Date respuesta = new  HolidayUtil(anio).getNextBusinessDay(fecha2,1);</span>
 
-<span class="nc" id="L98">        return  respuesta.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();</span>
+<span class="nc" id="L83">        return  respuesta.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();</span>
     }
-
     public Cliente getCliente() {
-<span class="nc" id="L102">        return this.cliente;</span>
+<span class="nc" id="L86">        return this.cliente;</span>
     }
-
     public List&lt;ProductoFacturar&gt; getProductos() {
-<span class="nc" id="L106">        return Collections.unmodifiableList(productosFacturar);</span>
+<span class="nc" id="L89">        return Collections.unmodifiableList(productosFacturar);</span>
     }
-
     public BigDecimal getValorTotal() {
-<span class="nc" id="L110">        return valorTotal;</span>
+<span class="nc" id="L92">        return valorTotal;</span>
     }
-
     public Long getId() {
-<span class="nc" id="L114">        return id;</span>
+<span class="nc" id="L95">        return id;</span>
     }
 
     public static Factura crear(SolicitudFacturar solicitudFacturar) {
-<span class="nc" id="L118">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getFechaIngreso(), &quot;No se puede crear una factura sin fecha &quot;);</span>
-<span class="nc" id="L119">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), &quot;El cliente es requerido para facturar&quot;);</span>
-<span class="nc" id="L120">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), &quot;No se puede crear una factura sin productos&quot;);</span>
-<span class="nc" id="L121">        return new Factura(solicitudFacturar.getFechaIngreso(), solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());</span>
+<span class="nc" id="L99">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getFechaIngreso(), &quot;No se puede crear una factura sin fecha &quot;);</span>
+<span class="nc" id="L100">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L101">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L102">        return new Factura(solicitudFacturar.getFechaIngreso(), solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());</span>
     }
 
     public static Factura reconstruir(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura, LocalDate fechaIngreso, LocalDate fechaDomicilio) {
-<span class="nc" id="L125">        ValidadorArgumento.validarObligatorio(cliente, &quot;El cliente es requerido para facturar&quot;);</span>
-<span class="nc" id="L126">        ValidadorArgumento.validarObligatorio(productosFacturar, &quot;No se puede crear una factura sin productos&quot;);</span>
-<span class="nc" id="L127">        ValidadorArgumento.validarObligatorio(id, &quot;El id es requerido&quot;);</span>
-<span class="nc bnc" id="L128" title="All 2 branches missed.">        if (valorTotal.compareTo(BigDecimal.ZERO) &lt;= 0) {</span>
-<span class="nc" id="L129">            throw new ExcepcionValorInvalido(&quot;El total no puede ser menor a cero&quot;);</span>
+<span class="nc" id="L106">        ValidadorArgumento.validarObligatorio(cliente, &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L107">        ValidadorArgumento.validarObligatorio(productosFacturar, &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L108">        ValidadorArgumento.validarObligatorio(id, &quot;El id es requerido&quot;);</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (valorTotal.compareTo(BigDecimal.ZERO) &lt;= 0) {</span>
+<span class="nc" id="L110">            throw new ExcepcionValorInvalido(&quot;El total no puede ser menor a cero&quot;);</span>
         }
-<span class="nc" id="L131">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso es requerida&quot;);</span>
-<span class="nc" id="L132">        ValidadorArgumento.validarObligatorio(fechaDomicilio, &quot;La fecha de domicilio es requerida&quot;);</span>
+<span class="nc" id="L112">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso es requerida&quot;);</span>
+<span class="nc" id="L113">        ValidadorArgumento.validarObligatorio(fechaDomicilio, &quot;La fecha de domicilio es requerida&quot;);</span>
 
-<span class="nc" id="L134">        return new Factura(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);</span>
+<span class="nc" id="L115">        return new Factura(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);</span>
     }
 
 
     public Boolean esAnulada() {
-<span class="nc" id="L139">        return this.estado.equals(EstadoFactura.ANULADA);</span>
+<span class="nc" id="L120">        return this.estado.equals(EstadoFactura.ANULADA);</span>
     }
 
     public boolean esActiva() {
-<span class="nc" id="L143">        return this.estado.equals(EstadoFactura.ACTIVA);</span>
+<span class="nc" id="L124">        return this.estado.equals(EstadoFactura.ACTIVA);</span>
     }
 
     public EstadoFactura getEstado() {
-<span class="nc" id="L147">        return estado;</span>
+<span class="nc" id="L128">        return estado;</span>
     }
 
     public LocalDate getFechaIngreso() {
-<span class="nc" id="L151">        return fechaIngreso;</span>
+<span class="nc" id="L132">        return fechaIngreso;</span>
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
-<span class="nc" id="L155">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L156">    }</span>
+<span class="nc" id="L136">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L137">    }</span>
 
     public LocalDate getFechaDomicilio() {
-<span class="nc" id="L159">        return fechaDomicilio;</span>
+<span class="nc" id="L140">        return fechaDomicilio;</span>
     }
 
     public void setFechaDomicilio(LocalDate fechaDomicilio) {
-<span class="nc" id="L163">        this.fechaDomicilio = fechaDomicilio;</span>
-<span class="nc" id="L164">    }</span>
+<span class="nc" id="L144">        this.fechaDomicilio = fechaDomicilio;</span>
+<span class="nc" id="L145">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

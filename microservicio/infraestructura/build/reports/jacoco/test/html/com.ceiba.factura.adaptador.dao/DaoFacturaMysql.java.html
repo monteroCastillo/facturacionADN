@@ -32,8 +32,8 @@ public class DaoFacturaMysql implements DaoFactura {
 
     @Override
     public List&lt;ResumenFacturaDTO&gt; obtenerResumenDeFacturasAnuladas() {
-<span class="nc" id="L35">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="nc" id="L36">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
+<span class="fc" id="L35">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="fc" id="L36">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
     }
 
     @Override
@@ -47,8 +47,7 @@ public class DaoFacturaMysql implements DaoFactura {
     public List&lt;Planta&gt; plantaProveedor(Long proveedor) {
 <span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
 <span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, proveedor);</span>
-<span class="nc" id="L50">        System.out.println(&quot;DATO QUE LE ENTRA A LA CONSULTA: &quot; + paramSource);</span>
-<span class="nc" id="L51">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());</span>
+<span class="nc" id="L50">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());</span>
     }
 
 }

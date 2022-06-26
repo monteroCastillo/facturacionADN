@@ -26,7 +26,7 @@ public class ManejadorCrearPlantaPorProveedor implements ManejadorComandoRespues
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor) {
 
-
+        System.out.println("***** ComandosolicitarPlantaPorProveedor  *******" + comandoSolicitudPlantaPorProveedor);
         return new ComandoRespuesta<>(servicioCrearPlantaPorProveedor
                 .ejecutar(fabricaSolicitudPlantaPorProveedor.crear(comandoSolicitudPlantaPorProveedor)));
     }

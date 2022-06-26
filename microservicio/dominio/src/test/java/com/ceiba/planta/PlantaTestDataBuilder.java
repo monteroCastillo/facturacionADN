@@ -2,6 +2,7 @@ package com.ceiba.planta;
 
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -16,13 +17,13 @@ public class PlantaTestDataBuilder {
     private CategoriaPlanta categoria;
 
     public PlantaTestDataBuilder conPlantaPorDefecto() {
-        this.idPlanta = idPlanta;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.fechaIngreso = fechaIngreso;
-        this.cantidad = cantidad;
-        this.valor = valor;
-        this.categoria = categoria;
+        this.idPlanta = 1;
+        this.nombre = "rosa";
+        this.descripcion = "flor roja";
+        this.fechaIngreso = LocalDate.now();
+        this.cantidad = 50;
+        this.valor = new BigDecimal(5000);
+        this.categoria = CategoriaPlanta.PLANTASDEFLOR;
         return this;
     }
 
@@ -63,6 +64,9 @@ public class PlantaTestDataBuilder {
     public PlantaTestDataBuilder conCategoria(CategoriaPlanta categoria) {
         this.categoria = categoria;
         return this;
+    }
+    public Planta build( ) {
+        return new Planta(idPlanta, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }
 
 }

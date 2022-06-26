@@ -25,7 +25,7 @@ public class Factura {
     private LocalDate fechaIngreso;
     private LocalDate fechaDomicilio;
 
-    private Factura(LocalDate fechaIngreso, Cliente cliente, List<ProductoFacturar> productosFacturar ) {
+    public Factura(LocalDate fechaIngreso, Cliente cliente, List<ProductoFacturar> productosFacturar ) {
         this.cliente = cliente;
         this.productosFacturar = new ArrayList<>(productosFacturar);
         this.valorTotal = calcularvalorTotal(productosFacturar);
@@ -96,6 +96,9 @@ public class Factura {
     }
 
     public static Factura crear(SolicitudFacturar solicitudFacturar) {
+        System.out.println("------Valor desde entidad Factura------ .getFechaIngreso: " + solicitudFacturar.getFechaIngreso());
+        System.out.println("------Valor desde entidad Factura------ .getCliente: " + solicitudFacturar.getCliente());
+        System.out.println("------Valor desde entidad Factura------ .getProductosFacturar(): " + solicitudFacturar.getProductosFacturar());
         ValidadorArgumento.validarObligatorio(solicitudFacturar.getFechaIngreso(), "No se puede crear una factura sin fecha ");
         ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), "El cliente es requerido para facturar");
         ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), "No se puede crear una factura sin productos");

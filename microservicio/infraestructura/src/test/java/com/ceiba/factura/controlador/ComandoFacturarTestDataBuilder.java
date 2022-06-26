@@ -3,28 +3,26 @@ package com.ceiba.factura.controlador;
 import com.ceiba.factura.comando.ComandoProductoFacturar;
 import com.ceiba.factura.comando.ComandoSolicitudFacturar;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ComandoFacturarTestDataBuilder {
-//
-//    private Long idCliente;
-//    private List<ComandoProductoFacturar> comandoProductosFacturar;
-//
-//    public ComandoFacturarTestDataBuilder() {
-//        this.comandoProductosFacturar = new ArrayList<>();
-//    }
-//
-//    public ComandoFacturarTestDataBuilder crearPorDefecto() {
-//        this.idCliente = 1l;
-//        this.comandoProductosFacturar.add(new ComandoProductoFacturar(1, 5));
-//        this.comandoProductosFacturar.add(new ComandoProductoFacturar(2, 7));
-//        return this;
-//
-//    }
-//
-//    public ComandoSolicitudFacturar build() {
-//        return new ComandoSolicitudFacturar(this.idCliente, comandoProductosFacturar);
-//    }
+    private LocalDate fechaIngreso;
+    private Long id;
+    private List<ComandoProductoFacturar> comandoProductosFacturar;
+    public ComandoFacturarTestDataBuilder() {
+        this.comandoProductosFacturar = new ArrayList<>();
+    }
+    public ComandoFacturarTestDataBuilder crearPorDefecto() {
+        this.id = 111L;
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(12, 5));
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(13, 7));
+        this.fechaIngreso = LocalDate.now();
+        return this;
+    }
+    public ComandoSolicitudFacturar build() {
+        return new ComandoSolicitudFacturar(this.fechaIngreso, this.id, comandoProductosFacturar);
+    }
 }

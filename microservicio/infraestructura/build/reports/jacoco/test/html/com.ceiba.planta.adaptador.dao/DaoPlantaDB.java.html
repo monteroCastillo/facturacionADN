@@ -38,11 +38,11 @@ public class DaoPlantaDB implements DaoPlanta{
 
     @Override
     public Planta obtenerPlantaPorId(int idPlanta) {
-<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L42">        paramSource.addValue(&quot;id&quot;, idPlanta);</span>
-<span class="nc" id="L43">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
-<span class="nc bnc" id="L44" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L45">            return list.get(0);</span>
+<span class="fc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L42">        paramSource.addValue(&quot;id&quot;, idPlanta);</span>
+<span class="fc" id="L43">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if(list.size()==1){</span>
+<span class="fc" id="L45">            return list.get(0);</span>
         }
 <span class="nc" id="L47">        return null;</span>
     }
@@ -56,11 +56,11 @@ public class DaoPlantaDB implements DaoPlanta{
 
     @Override
     public Planta obtener(int id) {
-<span class="nc" id="L59">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L60">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L61">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
-<span class="nc bnc" id="L62" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L63">            return list.get(0);</span>
+<span class="fc" id="L59">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L60">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L61">        List&lt;Planta&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());</span>
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if(list.size()==1){</span>
+<span class="fc" id="L63">            return list.get(0);</span>
         }
 <span class="nc" id="L65">        return null;</span>
     }

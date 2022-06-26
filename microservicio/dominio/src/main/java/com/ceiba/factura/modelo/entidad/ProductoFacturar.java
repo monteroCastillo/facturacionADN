@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 
 public class ProductoFacturar {
     public static final  Double VALOR_IVA = 0.19;
-
     private Long id;
     private final Integer cantidad;
     private final Planta planta;
@@ -15,7 +14,7 @@ public class ProductoFacturar {
         this.cantidad = cantidad;
         this.planta = planta;
     }
-    private ProductoFacturar(Long id, Integer cantidad, Planta planta) {
+    public ProductoFacturar(Long id, Integer cantidad, Planta planta) {
         this.cantidad = cantidad;
         this.planta = planta;
         this.id = id;

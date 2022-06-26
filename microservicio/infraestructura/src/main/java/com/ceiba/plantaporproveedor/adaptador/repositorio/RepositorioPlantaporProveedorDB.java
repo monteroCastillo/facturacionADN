@@ -1,7 +1,10 @@
 package com.ceiba.plantaporproveedor.adaptador.repositorio;
 
+
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
+import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.plantaporproveedor.adaptador.dao.MapeoPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 import com.ceiba.plantaporproveedor.puerto.repositorio.RepositorioPlantaPorProveedor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -19,11 +22,11 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
     @SqlStatement(namespace = "plantaporproveedor", value = "crear")
     private static String sqlCrear;
 
-
-
     @SqlStatement(namespace="plantaporproveedor", value="eliminar")
     private static String sqlEliminar;
 
+    @SqlStatement(namespace="plantaporproveedor", value="obtenerporid")
+    private static String sqlObtenerPorId;
 
     @Override
     public Long guardar(PlantaPorProveedor plantaPorProveedor) {
@@ -40,4 +43,13 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
         paramSource.addValue("id", id);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
+    @Override
+    public PlantaPorProveedor obtener(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -> this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
+                .queryForObject(sqlObtenerPorId, paramSource,new MapeoPlantaPorProveedor()));
+
+    }
+
 }

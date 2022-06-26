@@ -21,8 +21,12 @@ public class PlantaPorProveedor {
     }
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
-        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor(), "El id del proveedor es necesario");
-                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta(), "El id de la planta es necesario");
+
+        System.out.println("****Mensaje desde la entidad PROVEEDOR ****" + solicitudCrearPlantaPorProveedor.getProveedor());
+        System.out.println("****Mensaje desde la entidad PLANTA  ******" + solicitudCrearPlantaPorProveedor.getPlanta());
+
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor().getId(), "El id del proveedor es necesario");
+                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta().getIdPlanta(), "El id de la planta es necesario");
                         return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getProveedor(),solicitudCrearPlantaPorProveedor.getPlanta());
     }
 

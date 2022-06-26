@@ -5,17 +5,13 @@ import com.ceiba.dominio.ValidadorArgumento;
 public class Cliente {
 
     private Long id;
-    private final String nombre;
+    private  String nombre;
+    private  String direccion;
+    private  String telefono;
+    private  String email;
+    private  TipoCliente tipoCliente;
 
-    private final String direccion;
-
-    private final String telefono;
-
-    private final String email;
-
-    private final TipoCliente tipoCliente;
-
-
+    public Cliente(){}
 
     public Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
         this.id = id;

@@ -35,6 +35,9 @@ public class PlantaPorProveedorTestDataBuilder {
         return this;
     }
 
+    public PlantaPorProveedor build( ) {
+        return new PlantaPorProveedor(id, proveedor, planta);
+    }
 
 
 }

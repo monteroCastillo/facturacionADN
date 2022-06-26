@@ -21,7 +21,7 @@ public class ComandoControladorPlantaPorProveedor {
 
     @PostMapping(&quot;/guardar&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor) {
-<span class="nc" id="L24">        return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoSolicitudPlantaPorProveedor);</span>
+<span class="fc" id="L24">        return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoSolicitudPlantaPorProveedor);</span>
     }
 
     @DeleteMapping(&quot;/eliminar/{id}&quot;)

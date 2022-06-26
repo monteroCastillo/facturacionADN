@@ -13,13 +13,13 @@ public class ConsultaControladorEmpleado {
 
     private final ManejadorListarEmpleados manejadorListarEmpleados;
 
-
-<span class="fc" id="L17">    public ConsultaControladorEmpleado(ManejadorListarEmpleados manejadorListarEmpleados) {</span>
-<span class="fc" id="L18">        this.manejadorListarEmpleados = manejadorListarEmpleados;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L16">    public ConsultaControladorEmpleado(ManejadorListarEmpleados manejadorListarEmpleados) {</span>
+<span class="fc" id="L17">        this.manejadorListarEmpleados = manejadorListarEmpleados;</span>
+<span class="fc" id="L18">    }</span>
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;DtoEmpleado&gt; listar(){
-<span class="nc" id="L23">        return this.manejadorListarEmpleados.ejecutar();}</span>
+<span class="nc" id="L22">        return this.manejadorListarEmpleados.ejecutar();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

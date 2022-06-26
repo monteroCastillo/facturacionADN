@@ -47,4 +47,8 @@ public class ProveedorTestDataBuilder {
         this.paginaWeb = paginaWeb;
         return this;
     }
+
+    public Proveedor build( ) {
+        return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
+    }
 }

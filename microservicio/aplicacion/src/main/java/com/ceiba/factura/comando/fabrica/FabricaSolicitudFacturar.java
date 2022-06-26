@@ -12,8 +12,6 @@ import java.util.List;
 
 @Component
 public class FabricaSolicitudFacturar {
-
-
     private final RepositorioCliente repositorioCliente;
     private final DaoPlanta daoPlanta;
 
@@ -24,6 +22,8 @@ public class FabricaSolicitudFacturar {
     }
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
+        System.out.println("**************comandoSolicitudFacturar***** " + comandoSolicitudFacturar);
+        System.out.println("**************comandoSolicitudFacturar***** " + comandoSolicitudFacturar.getIdCliente());
         return new SolicitudFacturar(comandoSolicitudFacturar.getFechaIngreso(),repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),
                obtenerProductos(comandoSolicitudFacturar.getComandoProductosFacturar())
         );

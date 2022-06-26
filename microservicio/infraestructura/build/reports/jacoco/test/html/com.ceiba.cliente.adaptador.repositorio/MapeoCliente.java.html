@@ -7,18 +7,18 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-<span class="nc" id="L10">public class MapeoCliente implements RowMapper&lt;Cliente&gt;, MapperResult {</span>
+<span class="fc" id="L10">public class MapeoCliente implements RowMapper&lt;Cliente&gt;, MapperResult {</span>
 
     @Override
     public Cliente mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="nc" id="L15">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="nc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="nc" id="L17">        var tipoCliente = TipoCliente.valueOf(resultSet.getString(&quot;tipo_cliente&quot;));</span>
-<span class="nc" id="L18">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
-<span class="nc" id="L19">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
-<span class="nc" id="L20">        var email = resultSet.getString(&quot;email&quot;);</span>
-<span class="nc" id="L21">        return Cliente.reconstruir(id, nombre,direccion, telefono, email, tipoCliente);</span>
+<span class="fc" id="L15">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="fc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="fc" id="L17">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+<span class="fc" id="L18">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
+<span class="fc" id="L19">        var email = resultSet.getString(&quot;email&quot;);</span>
+<span class="fc" id="L20">        var tipoCliente = TipoCliente.valueOf(resultSet.getString(&quot;tipo_cliente&quot;));</span>
+<span class="fc" id="L21">        return Cliente.reconstruir(id, nombre,direccion, telefono, email, tipoCliente);</span>
     }
 
 }

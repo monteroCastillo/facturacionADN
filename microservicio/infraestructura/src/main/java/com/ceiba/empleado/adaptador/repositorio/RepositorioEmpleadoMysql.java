@@ -33,9 +33,9 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
     }
 
     @Override
-    public DtoEmpleado buscarPersonaPorID(Long id_empleado){
+    public DtoEmpleado buscarPersonaPorID(Long idEmpleado){
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id_empleado", id_empleado);
+        paramSource.addValue("id_empleado", idEmpleado);
         return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -> this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
                 .queryForObject(sqlObtenerPorId, paramSource, new MapeoEmpleado()));
     }
@@ -53,8 +53,6 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 
     }
-
-
     @Override
     public boolean existe(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
@@ -62,7 +60,6 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
 
     }
-
     @Override
     public Empleado obtener(Long idPersona) {
         return null;
@@ -78,8 +75,7 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
         paramSource.addValue("email", empleado.getEmail());
         paramSource.addValue("fecha_registro", empleado.getFechaRegistro());
         paramSource.addValue("perfil", empleado.getPerfil().name());
-        Long idEmpleadoGuardado = this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
+        return  this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);
 
-        return idEmpleadoGuardado;
     }
 }

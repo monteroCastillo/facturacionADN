@@ -3,5 +3,6 @@ insert into empleado( id,
                       direccion,
                       telefono,
                       email,
-                      fecha_registro
-                    ) values (:id, :nombre, :direccion, :telefono, :email, :fecha_registro)
+                      fecha_registro,
+                      perfil
+                    ) values (:id, :nombre, :direccion, :telefono, :email, :fecha_registro, :perfil)

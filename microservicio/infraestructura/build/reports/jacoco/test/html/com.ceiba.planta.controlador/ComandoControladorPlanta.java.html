@@ -27,7 +27,7 @@ public class ComandoControladorPlanta {
 
     @PostMapping(&quot;/crear&quot;)
     public ComandoRespuesta&lt;Integer&gt; crear(@RequestBody ComandoPlanta comandoPlanta) {
-<span class="nc" id="L30">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
+<span class="fc" id="L30">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
     }
 
     @DeleteMapping(value=&quot;/borrar/{id}&quot;)

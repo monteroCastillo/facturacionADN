@@ -9,8 +9,6 @@ import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
-
 @Repository
 public class RepositorioFacturaMysql implements RepositorioFactura {
 

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/clientes")
-public class ConsultaControladorCliente {
+public class  ConsultaControladorCliente {
 
     private final ManejadorBuscarCliente manejadorBuscarCliente;
 

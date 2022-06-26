@@ -30,7 +30,7 @@ public class ConsultaControladorFactura {
     @GetMapping(&quot;anulada&quot;)
     @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para consultar las facturas anuladas&quot;)
     public List&lt;ResumenFacturaDTO&gt; obtenerAnuladas() {
-<span class="nc" id="L33">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
+<span class="fc" id="L33">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
     }
 
     @GetMapping({&quot;/sumarFacturas/{id}&quot;})
