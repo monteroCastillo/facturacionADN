@@ -17,7 +17,7 @@ public class PlantaTest {
                 .conId(123)
                 .conNombre("Girasol")
                 .conDescripcion("Color Amarillo")
-                .conFechaIngreso(LocalDate.now())
+                .conFechaIngreso(LocalDate.of(2022,06,22))
                 .conCantidad(180)
                 .conValor(new BigDecimal(15000))
                 .conCategoria(CategoriaPlanta.PLANTASDEFLOR).
@@ -26,7 +26,7 @@ public class PlantaTest {
         Assertions.assertEquals(123, planta.getIdPlanta());
         Assertions.assertEquals("Girasol", planta.getNombre());
         Assertions.assertEquals("Color Amarillo", planta.getDescripcion());
-        Assertions.assertEquals(LocalDate.now(), planta.getFechaIngreso());
+        Assertions.assertEquals(LocalDate.of(2022,06,22), planta.getFechaIngreso());
         Assertions.assertEquals(180, planta.getCantidad());
         Assertions.assertEquals(new BigDecimal(15000),planta.getValor());
         Assertions.assertEquals(CategoriaPlanta.PLANTASDEFLOR, planta.getCategoria());

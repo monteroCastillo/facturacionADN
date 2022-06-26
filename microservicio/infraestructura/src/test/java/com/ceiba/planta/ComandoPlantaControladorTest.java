@@ -45,13 +45,10 @@ public class ComandoPlantaControladorTest {
 
         String jsonResult = resultado.getResponse().getContentAsString();
         var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
-        System.out.println("****** respuesta ******" + respuesta.getValor().intValue());
 
         var plantaGuardada = daoPlanta.obtener(respuesta.getValor().intValue());
 
         Assertions.assertEquals("manzanilla", plantaGuardada.getNombre());
-//        Assertions.assertEquals(235000l, facturaGuardada.getValorTotal().longValue());
-//        Assertions.assertEquals(2, facturaGuardada.getProductos().size());
 
     }
 

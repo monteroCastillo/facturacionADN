@@ -44,9 +44,5 @@ public class ComandoControladorPlantaPorProveedorTest {
 
         String jsonResult = resultado.getResponse().getContentAsString();
         var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
-
-
-
-
     }
 }

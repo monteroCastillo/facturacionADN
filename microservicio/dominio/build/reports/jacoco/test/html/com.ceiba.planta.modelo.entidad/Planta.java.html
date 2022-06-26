@@ -17,92 +17,95 @@ public class Planta {
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 
+<span class="nc" id="L20">    public Planta(){</span>
 
-<span class="fc" id="L21">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
-<span class="fc" id="L22">        this.idPlanta = idPlanta;</span>
-<span class="fc" id="L23">        this.nombre = nombre;</span>
-<span class="fc" id="L24">        this.descripcion = descripcion;</span>
-<span class="fc" id="L25">        this.fechaIngreso = fechaIngreso;</span>
-<span class="fc" id="L26">        calculaSabadoDomingo(fechaIngreso);</span>
-<span class="fc" id="L27">        this.cantidad = cantidad;</span>
-<span class="fc" id="L28">        this.valor = valor;</span>
-<span class="fc" id="L29">        this.categoria = categoria;</span>
-<span class="fc" id="L30">    }</span>
+<span class="nc" id="L22">    }</span>
+
+<span class="fc" id="L24">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
+<span class="fc" id="L25">        this.idPlanta = idPlanta;</span>
+<span class="fc" id="L26">        this.nombre = nombre;</span>
+<span class="fc" id="L27">        this.descripcion = descripcion;</span>
+<span class="fc" id="L28">        this.fechaIngreso = fechaIngreso;</span>
+<span class="fc" id="L29">        calculaSabadoDomingo(fechaIngreso);</span>
+<span class="fc" id="L30">        this.cantidad = cantidad;</span>
+<span class="fc" id="L31">        this.valor = valor;</span>
+<span class="fc" id="L32">        this.categoria = categoria;</span>
+<span class="fc" id="L33">    }</span>
 
     public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
-<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;El id de la planta es requerido&quot;);</span>
-<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre de la planta es requerido&quot;);</span>
-<span class="fc" id="L35">        ValidadorArgumento.validarObligatorio(descripcion, &quot;La descripcion de la planta es requerida&quot;);</span>
-<span class="fc" id="L36">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso de la planta es requerida&quot;);</span>
-<span class="fc" id="L37">        ValidadorArgumento.validarObligatorio(cantidad, &quot;La cantidad de plantas es requerida&quot;);</span>
-<span class="fc" id="L38">        ValidadorArgumento.validarObligatorio(valor, &quot;El valor  de la planta es requerido&quot;);</span>
-<span class="fc" id="L39">        ValidadorArgumento.validarObligatorio(categoria, &quot;La categoria de la planta es requerida&quot;);</span>
-<span class="fc" id="L40">        return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);</span>
+<span class="fc" id="L36">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;El id de la planta es requerido&quot;);</span>
+<span class="fc" id="L37">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre de la planta es requerido&quot;);</span>
+<span class="fc" id="L38">        ValidadorArgumento.validarObligatorio(descripcion, &quot;La descripcion de la planta es requerida&quot;);</span>
+<span class="fc" id="L39">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso de la planta es requerida&quot;);</span>
+<span class="fc" id="L40">        ValidadorArgumento.validarObligatorio(cantidad, &quot;La cantidad de plantas es requerida&quot;);</span>
+<span class="fc" id="L41">        ValidadorArgumento.validarObligatorio(valor, &quot;El valor  de la planta es requerido&quot;);</span>
+<span class="fc" id="L42">        ValidadorArgumento.validarObligatorio(categoria, &quot;La categoria de la planta es requerida&quot;);</span>
+<span class="fc" id="L43">        return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);</span>
     }
 
     public void calculaSabadoDomingo(LocalDate date) {
 
-<span class="fc" id="L45">        LocalDate result = date;</span>
+<span class="fc" id="L48">        LocalDate result = date;</span>
 
-<span class="pc bpc" id="L47" title="2 of 4 branches missed.">        if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){</span>
-<span class="nc" id="L48">            throw new ExcepcionValorInvalido(MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());</span>
+<span class="pc bpc" id="L50" title="2 of 4 branches missed.">        if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){</span>
+<span class="nc" id="L51">            throw new ExcepcionValorInvalido(MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());</span>
         }
-<span class="fc" id="L50">    }</span>
+<span class="fc" id="L53">    }</span>
 
     public int getCantidad() {
-<span class="fc" id="L53">        return cantidad;</span>
+<span class="fc" id="L56">        return cantidad;</span>
     }
 
     public void setCantidad(int cantidad) {
-<span class="nc" id="L57">        this.cantidad = cantidad;</span>
-<span class="nc" id="L58">    }</span>
+<span class="nc" id="L60">        this.cantidad = cantidad;</span>
+<span class="nc" id="L61">    }</span>
 
     public BigDecimal getValor() {
-<span class="fc" id="L61">        return valor;</span>
+<span class="fc" id="L64">        return valor;</span>
     }
 
     public void setValor(BigDecimal valor) {
-<span class="nc" id="L65">        this.valor = valor;</span>
-<span class="nc" id="L66">    }</span>
+<span class="nc" id="L68">        this.valor = valor;</span>
+<span class="nc" id="L69">    }</span>
 
     public CategoriaPlanta getCategoria() {
-<span class="fc" id="L69">        return categoria;</span>
+<span class="fc" id="L72">        return categoria;</span>
     }
 
     public void setCategoria(CategoriaPlanta categoria) {
-<span class="nc" id="L73">        this.categoria = categoria;</span>
-<span class="nc" id="L74">    }</span>
+<span class="nc" id="L76">        this.categoria = categoria;</span>
+<span class="nc" id="L77">    }</span>
 
     public int getIdPlanta() {
-<span class="fc" id="L77">        return idPlanta;</span>
+<span class="fc" id="L80">        return idPlanta;</span>
     }
 
     public void setIdPlanta(int idPlanta) {
-<span class="nc" id="L81">        this.idPlanta = idPlanta;</span>
-<span class="nc" id="L82">    }</span>
+<span class="nc" id="L84">        this.idPlanta = idPlanta;</span>
+<span class="nc" id="L85">    }</span>
 
     public String getNombre() {
-<span class="fc" id="L85">        return nombre;</span>
+<span class="fc" id="L88">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="nc" id="L89">        this.nombre = nombre;</span>
-<span class="nc" id="L90">    }</span>
+<span class="nc" id="L92">        this.nombre = nombre;</span>
+<span class="nc" id="L93">    }</span>
 
     public String getDescripcion() {
-<span class="fc" id="L93">        return descripcion;</span>
+<span class="fc" id="L96">        return descripcion;</span>
     }
 
     public void setDescripcion(String descripcion) {
-<span class="nc" id="L97">        this.descripcion = descripcion;</span>
-<span class="nc" id="L98">    }</span>
+<span class="nc" id="L100">        this.descripcion = descripcion;</span>
+<span class="nc" id="L101">    }</span>
 
     public LocalDate getFechaIngreso() {
-<span class="fc" id="L101">        return fechaIngreso;</span>
+<span class="fc" id="L104">        return fechaIngreso;</span>
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
-<span class="nc" id="L105">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L106">    }</span>
+<span class="nc" id="L108">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L109">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -96,52 +96,55 @@ public class Factura {
     }
 
     public static Factura crear(SolicitudFacturar solicitudFacturar) {
-<span class="nc" id="L99">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getFechaIngreso(), &quot;No se puede crear una factura sin fecha &quot;);</span>
-<span class="nc" id="L100">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), &quot;El cliente es requerido para facturar&quot;);</span>
-<span class="nc" id="L101">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), &quot;No se puede crear una factura sin productos&quot;);</span>
-<span class="nc" id="L102">        return new Factura(solicitudFacturar.getFechaIngreso(), solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());</span>
+<span class="nc" id="L99">        System.out.println(&quot;------Valor desde entidad Factura------ .getFechaIngreso: &quot; + solicitudFacturar.getFechaIngreso());</span>
+<span class="nc" id="L100">        System.out.println(&quot;------Valor desde entidad Factura------ .getCliente: &quot; + solicitudFacturar.getCliente());</span>
+<span class="nc" id="L101">        System.out.println(&quot;------Valor desde entidad Factura------ .getProductosFacturar(): &quot; + solicitudFacturar.getProductosFacturar());</span>
+<span class="nc" id="L102">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getFechaIngreso(), &quot;No se puede crear una factura sin fecha &quot;);</span>
+<span class="nc" id="L103">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getCliente(), &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L104">        ValidadorArgumento.validarObligatorio(solicitudFacturar.getProductosFacturar(), &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L105">        return new Factura(solicitudFacturar.getFechaIngreso(), solicitudFacturar.getCliente(), solicitudFacturar.getProductosFacturar());</span>
     }
 
     public static Factura reconstruir(Long id, Cliente cliente, List&lt;ProductoFacturar&gt; productosFacturar, BigDecimal valorTotal, EstadoFactura estadoFactura, LocalDate fechaIngreso, LocalDate fechaDomicilio) {
-<span class="nc" id="L106">        ValidadorArgumento.validarObligatorio(cliente, &quot;El cliente es requerido para facturar&quot;);</span>
-<span class="nc" id="L107">        ValidadorArgumento.validarObligatorio(productosFacturar, &quot;No se puede crear una factura sin productos&quot;);</span>
-<span class="nc" id="L108">        ValidadorArgumento.validarObligatorio(id, &quot;El id es requerido&quot;);</span>
-<span class="nc bnc" id="L109" title="All 2 branches missed.">        if (valorTotal.compareTo(BigDecimal.ZERO) &lt;= 0) {</span>
-<span class="nc" id="L110">            throw new ExcepcionValorInvalido(&quot;El total no puede ser menor a cero&quot;);</span>
+<span class="nc" id="L109">        ValidadorArgumento.validarObligatorio(cliente, &quot;El cliente es requerido para facturar&quot;);</span>
+<span class="nc" id="L110">        ValidadorArgumento.validarObligatorio(productosFacturar, &quot;No se puede crear una factura sin productos&quot;);</span>
+<span class="nc" id="L111">        ValidadorArgumento.validarObligatorio(id, &quot;El id es requerido&quot;);</span>
+<span class="nc bnc" id="L112" title="All 2 branches missed.">        if (valorTotal.compareTo(BigDecimal.ZERO) &lt;= 0) {</span>
+<span class="nc" id="L113">            throw new ExcepcionValorInvalido(&quot;El total no puede ser menor a cero&quot;);</span>
         }
-<span class="nc" id="L112">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso es requerida&quot;);</span>
-<span class="nc" id="L113">        ValidadorArgumento.validarObligatorio(fechaDomicilio, &quot;La fecha de domicilio es requerida&quot;);</span>
+<span class="nc" id="L115">        ValidadorArgumento.validarObligatorio(fechaIngreso, &quot;La fecha de ingreso es requerida&quot;);</span>
+<span class="nc" id="L116">        ValidadorArgumento.validarObligatorio(fechaDomicilio, &quot;La fecha de domicilio es requerida&quot;);</span>
 
-<span class="nc" id="L115">        return new Factura(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);</span>
+<span class="nc" id="L118">        return new Factura(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);</span>
     }
 
 
     public Boolean esAnulada() {
-<span class="nc" id="L120">        return this.estado.equals(EstadoFactura.ANULADA);</span>
+<span class="nc" id="L123">        return this.estado.equals(EstadoFactura.ANULADA);</span>
     }
 
     public boolean esActiva() {
-<span class="nc" id="L124">        return this.estado.equals(EstadoFactura.ACTIVA);</span>
+<span class="nc" id="L127">        return this.estado.equals(EstadoFactura.ACTIVA);</span>
     }
 
     public EstadoFactura getEstado() {
-<span class="nc" id="L128">        return estado;</span>
+<span class="nc" id="L131">        return estado;</span>
     }
 
     public LocalDate getFechaIngreso() {
-<span class="nc" id="L132">        return fechaIngreso;</span>
+<span class="nc" id="L135">        return fechaIngreso;</span>
     }
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
-<span class="nc" id="L136">        this.fechaIngreso = fechaIngreso;</span>
-<span class="nc" id="L137">    }</span>
+<span class="nc" id="L139">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L140">    }</span>
 
     public LocalDate getFechaDomicilio() {
-<span class="nc" id="L140">        return fechaDomicilio;</span>
+<span class="nc" id="L143">        return fechaDomicilio;</span>
     }
 
     public void setFechaDomicilio(LocalDate fechaDomicilio) {
-<span class="nc" id="L144">        this.fechaDomicilio = fechaDomicilio;</span>
-<span class="nc" id="L145">    }</span>
+<span class="nc" id="L147">        this.fechaDomicilio = fechaDomicilio;</span>
+<span class="nc" id="L148">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

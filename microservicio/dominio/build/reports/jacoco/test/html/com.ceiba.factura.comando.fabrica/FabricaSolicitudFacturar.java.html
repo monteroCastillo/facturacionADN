@@ -12,18 +12,18 @@ import java.util.List;
 
 @Component
 public class FabricaSolicitudFacturar {
-
-
     private final RepositorioCliente repositorioCliente;
     private final DaoPlanta daoPlanta;
 
-<span class="nc" id="L20">    public FabricaSolicitudFacturar( RepositorioCliente repositorioCliente, DaoPlanta daoPlanta) {</span>
+<span class="nc" id="L18">    public FabricaSolicitudFacturar( RepositorioCliente repositorioCliente, DaoPlanta daoPlanta) {</span>
 
-<span class="nc" id="L22">        this.repositorioCliente = repositorioCliente;</span>
-<span class="nc" id="L23">        this.daoPlanta = daoPlanta;</span>
-<span class="nc" id="L24">    }</span>
+<span class="nc" id="L20">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L21">        this.daoPlanta = daoPlanta;</span>
+<span class="nc" id="L22">    }</span>
 
     public SolicitudFacturar crear(ComandoSolicitudFacturar comandoSolicitudFacturar) {
+<span class="nc" id="L25">        System.out.println(&quot;**************comandoSolicitudFacturar***** &quot; + comandoSolicitudFacturar);</span>
+<span class="nc" id="L26">        System.out.println(&quot;**************comandoSolicitudFacturar***** &quot; + comandoSolicitudFacturar.getIdCliente());</span>
 <span class="nc" id="L27">        return new SolicitudFacturar(comandoSolicitudFacturar.getFechaIngreso(),repositorioCliente.obtener(comandoSolicitudFacturar.getIdCliente()),</span>
 <span class="nc" id="L28">               obtenerProductos(comandoSolicitudFacturar.getComandoProductosFacturar())</span>
         );

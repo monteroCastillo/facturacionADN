@@ -2,7 +2,6 @@ package com.ceiba.planta;
 
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -20,7 +19,7 @@ public class PlantaTestDataBuilder {
         this.idPlanta = 1;
         this.nombre = "rosa";
         this.descripcion = "flor roja";
-        this.fechaIngreso = LocalDate.now();
+        this.fechaIngreso = LocalDate.of(2022,06,22);
         this.cantidad = 50;
         this.valor = new BigDecimal(5000);
         this.categoria = CategoriaPlanta.PLANTASDEFLOR;
