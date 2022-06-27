@@ -2,9 +2,6 @@ package com.ceiba.planta;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.RespuestaComando;
-import com.ceiba.factura.controlador.ComandoFacturarTestDataBuilder;
-import com.ceiba.factura.controlador.RespuestaFacturar;
-import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.controlador.ComandoControladorPlanta;
 import com.ceiba.planta.puerto.dao.DaoPlanta;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,7 +15,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

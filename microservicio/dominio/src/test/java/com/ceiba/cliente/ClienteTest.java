@@ -17,6 +17,8 @@ public class ClienteTest {
                 .conTelefono("55555")
                 .conEmail("cliente@gmail.com")
                 .conTipoCliente(TipoCliente.COMUN)
+                .conTipoCliente(TipoCliente.PREFERENCIAL)
+                .conTipoCliente(TipoCliente.ESPECIAL)
                 .reconstruir();
 
         Assertions.assertEquals(1l, cliente.getId());
@@ -25,7 +27,49 @@ public class ClienteTest {
         Assertions.assertEquals("55555", cliente.getTelefono());
         Assertions.assertEquals("cliente@gmail.com", cliente.getEmail());
         Assertions.assertEquals(TipoCliente.COMUN, cliente.getTipoCliente());
+
     }
+
+    @Test
+    void deberiaReconstruirClienteExitosamenteValidandoTipoClientePreferencial() {
+        var cliente = new ClienteTestDataBuilder()
+                .conId(1l)
+                .conNombre("Cliente 1")
+                .conDireccion("Av 6")
+                .conTelefono("55555")
+                .conEmail("cliente@gmail.com")
+                .conTipoCliente(TipoCliente.PREFERENCIAL)
+                .reconstruir();
+
+        Assertions.assertEquals(1l, cliente.getId());
+        Assertions.assertEquals("Cliente 1", cliente.getNombre());
+        Assertions.assertEquals("Av 6", cliente.getDireccion());
+        Assertions.assertEquals("55555", cliente.getTelefono());
+        Assertions.assertEquals("cliente@gmail.com", cliente.getEmail());
+        Assertions.assertEquals(TipoCliente.PREFERENCIAL, cliente.getTipoCliente());
+    }
+
+    @Test
+    void deberiaReconstruirClienteExitosamenteValidandoTipoCliente() {
+        var cliente = new ClienteTestDataBuilder()
+                .conId(1l)
+                .conNombre("Cliente 1")
+                .conDireccion("Av 6")
+                .conTelefono("55555")
+                .conEmail("cliente@gmail.com")
+                .conTipoCliente(TipoCliente.ESPECIAL)
+                .reconstruir();
+
+        Assertions.assertEquals(1l, cliente.getId());
+        Assertions.assertEquals("Cliente 1", cliente.getNombre());
+        Assertions.assertEquals("Av 6", cliente.getDireccion());
+        Assertions.assertEquals("55555", cliente.getTelefono());
+        Assertions.assertEquals("cliente@gmail.com", cliente.getEmail());
+        Assertions.assertEquals(TipoCliente.ESPECIAL, cliente.getTipoCliente());
+    }
+
+
+
     @Test
     void reconstruirSinIdDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new ClienteTestDataBuilder()
