@@ -48,4 +48,7 @@ public class ClienteTestDataBuilder {
         this.tipoCliente = tipoCliente;
         return this;
     }
+    public Cliente build(){
+        return new Cliente(id, nombre, direccion,telefono,email,tipoCliente);
+    }
 }

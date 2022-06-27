@@ -3,7 +3,7 @@ package com.ceiba.factura.utils;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
+@SuppressWarnings("java:S106")
 public class HolidayUtil {
     private int year;
     private int easterMonth;

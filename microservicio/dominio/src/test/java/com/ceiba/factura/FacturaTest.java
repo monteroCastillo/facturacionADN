@@ -1,0 +1,51 @@
+package com.ceiba.factura;
+
+import com.ceiba.cliente.ClienteTestDataBuilder;
+import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.factura.modelo.entidad.EstadoFactura;
+import com.ceiba.factura.modelo.entidad.ProductoFacturar;
+import com.ceiba.planta.PlantaTestDataBuilder;
+import com.ceiba.planta.modelo.entidad.Planta;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FacturaTest {
+
+    @Test
+    void deberiaConstruirUnaFacturaExitosamente(){
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+
+
+        Cliente cliente = new ClienteTestDataBuilder()
+                .conClientePorDefecto()
+                .build();
+        List<ProductoFacturar> productosFacturar = new ArrayList<>();
+        productosFacturar.add(0,ProductoFacturar.crear(5,planta));
+
+
+
+        var factura = new FacturaTestDataBuilder()
+
+                .conId(1l)
+                .conCliente(cliente)
+                .conProductos(productosFacturar)
+                .conValorTotal(new BigDecimal(120000))
+                .conEstado(EstadoFactura.ACTIVA)
+                .conFechaIngreso(LocalDate.of(2022,06,23))
+                .conFechaDomicilio(LocalDate.of(2022,06,24))
+                .reconstruir();
+        Assertions.assertEquals(1l,factura.getId());
+        Assertions.assertEquals(cliente, factura.getCliente());
+        Assertions.assertEquals(productosFacturar, factura.getProductos());
+        Assertions.assertEquals(new BigDecimal(120000), factura.getValorTotal());
+        Assertions.assertEquals(EstadoFactura.ACTIVA, factura.getEstado());
+        Assertions.assertEquals(LocalDate.of(2022,06,23), factura.getFechaIngreso());
+        Assertions.assertEquals(LocalDate.of(2022,06,24), factura.getFechaDomicilio());
+
+    }
+}

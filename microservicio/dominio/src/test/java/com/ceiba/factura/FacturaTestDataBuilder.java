@@ -52,6 +52,16 @@ public class FacturaTestDataBuilder {
         this.estadoFactura = estadoFactura;
         return this;
     }
+    public FacturaTestDataBuilder conFechaIngreso(LocalDate fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+        return this;
+    }
+    public FacturaTestDataBuilder conFechaDomicilio(LocalDate fechaDomicilio) {
+        this.fechaDomicilio = fechaDomicilio;
+        return this;
+    }
+
+
     public Factura reconstruir() {
         return Factura.reconstruir(id, cliente, productosFacturar, valorTotal, estadoFactura, fechaIngreso, fechaDomicilio);
     }

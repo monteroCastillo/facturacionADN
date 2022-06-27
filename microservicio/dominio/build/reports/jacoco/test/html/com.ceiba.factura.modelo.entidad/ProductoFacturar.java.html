@@ -6,28 +6,28 @@ import com.ceiba.planta.modelo.entidad.Planta;
 import java.math.BigDecimal;
 
 public class ProductoFacturar {
-<span class="nc" id="L9">    public static final  Double VALOR_IVA = 0.19;</span>
+<span class="fc" id="L9">    public static final  Double VALOR_IVA = 0.19;</span>
     private Long id;
     private final Integer cantidad;
     private final Planta planta;
-<span class="nc" id="L13">    private ProductoFacturar(Integer cantidad, Planta planta) {</span>
-<span class="nc" id="L14">        this.cantidad = cantidad;</span>
-<span class="nc" id="L15">        this.planta = planta;</span>
-<span class="nc" id="L16">    }</span>
-<span class="nc" id="L17">    public ProductoFacturar(Long id, Integer cantidad, Planta planta) {</span>
-<span class="nc" id="L18">        this.cantidad = cantidad;</span>
-<span class="nc" id="L19">        this.planta = planta;</span>
-<span class="nc" id="L20">        this.id = id;</span>
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L13">    private ProductoFacturar(Integer cantidad, Planta planta) {</span>
+<span class="fc" id="L14">        this.cantidad = cantidad;</span>
+<span class="fc" id="L15">        this.planta = planta;</span>
+<span class="fc" id="L16">    }</span>
+<span class="fc" id="L17">    public ProductoFacturar(Long id, Integer cantidad, Planta planta) {</span>
+<span class="fc" id="L18">        this.cantidad = cantidad;</span>
+<span class="fc" id="L19">        this.planta = planta;</span>
+<span class="fc" id="L20">        this.id = id;</span>
+<span class="fc" id="L21">    }</span>
     public static ProductoFacturar crear(Integer cantidad, Planta planta) {
-<span class="nc" id="L23">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
-<span class="nc" id="L24">        ValidadorArgumento.validarObligatorio(planta, &quot;Producto es requerido&quot;);</span>
-<span class="nc" id="L25">        return new ProductoFacturar(cantidad, planta);</span>
+<span class="fc" id="L23">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(planta, &quot;Producto es requerido&quot;);</span>
+<span class="fc" id="L25">        return new ProductoFacturar(cantidad, planta);</span>
     }
     public static ProductoFacturar reconstruir(Long id, Integer cantidad, Planta planta) {
-<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
-<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(planta, &quot;Planta es requerido&quot;);</span>
-<span class="nc" id="L30">        return new ProductoFacturar(id, cantidad, planta);</span>
+<span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(cantidad, &quot;Cantidad es requerida&quot;);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(planta, &quot;Planta es requerido&quot;);</span>
+<span class="fc" id="L30">        return new ProductoFacturar(id, cantidad, planta);</span>
     }
     private BigDecimal calcularSubTotal() {
 <span class="nc" id="L33">        return planta.getValor()</span>
@@ -38,7 +38,7 @@ public class ProductoFacturar {
 <span class="nc" id="L38">        return calcularSubTotal();</span>
     }
     public Long getId() {
-<span class="nc" id="L41">        return id;</span>
+<span class="fc" id="L41">        return id;</span>
     }
 
     public void setId(Long id) {
@@ -50,7 +50,7 @@ public class ProductoFacturar {
     }
 
     public Planta getPlanta() {
-<span class="nc" id="L53">        return planta;</span>
+<span class="fc" id="L53">        return planta;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
