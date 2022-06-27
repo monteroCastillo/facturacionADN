@@ -17,8 +17,6 @@ public class ClienteTest {
                 .conTelefono("55555")
                 .conEmail("cliente@gmail.com")
                 .conTipoCliente(TipoCliente.COMUN)
-                .conTipoCliente(TipoCliente.PREFERENCIAL)
-                .conTipoCliente(TipoCliente.ESPECIAL)
                 .reconstruir();
 
         Assertions.assertEquals(1l, cliente.getId());
