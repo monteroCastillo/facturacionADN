@@ -1,6 +1,5 @@
 package com.ceiba.cliente.adaptador.repositorio;
 
-
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
@@ -22,6 +21,9 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 
     @SqlStatement(namespace="cliente", value="eliminar")
     private static String sqlEliminar;
+
+    @SqlStatement(namespace="cliente", value="existe")
+    private static String sqlExiste;
 
     public RepositorioClienteMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -55,6 +57,13 @@ public class RepositorioClienteMysql implements RepositorioCliente {
         parameterSource.addValue("email", cliente.getEmail());
         parameterSource.addValue("tipo_cliente", cliente.getTipoCliente().name());
         return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));
+    }
+
+    @Override
+    public boolean existe(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);
     }
 
 }

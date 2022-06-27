@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/apiEmpleado")
 public class ComandoControladorEmpleado {
     private final ManejadorCrearEmpleado manejadorCrearEmpleado;
-    private final ManejadorActualizarEmpleado manejadorActualizarEmpleado;
 
-    public ComandoControladorEmpleado(ManejadorCrearEmpleado manejadorCrearEmpleado, ManejadorActualizarEmpleado manejadorActualizarEmpleado) {
+
+    public ComandoControladorEmpleado(ManejadorCrearEmpleado manejadorCrearEmpleado) {
         this.manejadorCrearEmpleado = manejadorCrearEmpleado;
-        this.manejadorActualizarEmpleado = manejadorActualizarEmpleado;
+
     }
     @PostMapping({"/guardar"})
     public ComandoRespuesta<Long> guardar(@RequestBody ComandoEmpleado comandoEmpleado) {

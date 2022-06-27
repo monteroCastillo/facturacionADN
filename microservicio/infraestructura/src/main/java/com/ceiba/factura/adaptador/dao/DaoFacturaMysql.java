@@ -6,7 +6,6 @@ import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.planta.adaptador.dao.MapeoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
-import com.fasterxml.jackson.core.io.BigDecimalParser;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
@@ -43,10 +42,6 @@ public class DaoFacturaMysql implements DaoFactura {
         return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);
     }
 
-    public List<Planta> plantaProveedor(Long proveedor) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", proveedor);
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());
-    }
+
 
 }

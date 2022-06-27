@@ -29,7 +29,8 @@ public class ConsultaControladorPlanta {
 
     @GetMapping("/index")
     public List<Planta> listar(){
-        return  this.manejadorListarPlantas.ejecutar();}
+        return  this.manejadorListarPlantas.ejecutar();
+    }
 
     @GetMapping({"/buscar/{id}"})
     public Planta buscar(@PathVariable("id") int id) {

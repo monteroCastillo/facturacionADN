@@ -25,7 +25,8 @@ public class ConsultaControladorProveedor {
 
     @GetMapping("/index")
     public List<Proveedor> listar(){
-        return this.manejadorListarProveedores.ejecutar();}
+        return this.manejadorListarProveedores.ejecutar();
+    }
 
     @GetMapping({"/buscar/{id}"})
     public Proveedor buscar(@PathVariable("id") Long id) {

@@ -9,14 +9,19 @@ public class ServicioCrearPlantaPorProveedor {
     private final RepositorioPlantaPorProveedor repositorioPlantaPorProveedor;
 
 
-<span class="nc" id="L12">    public ServicioCrearPlantaPorProveedor(RepositorioPlantaPorProveedor repositorioPlantaPorProveedor) {</span>
-<span class="nc" id="L13">        this.repositorioPlantaPorProveedor = repositorioPlantaPorProveedor;</span>
-<span class="nc" id="L14">    }</span>
+<span class="fc" id="L12">    public ServicioCrearPlantaPorProveedor(RepositorioPlantaPorProveedor repositorioPlantaPorProveedor) {</span>
+<span class="fc" id="L13">        this.repositorioPlantaPorProveedor = repositorioPlantaPorProveedor;</span>
+<span class="fc" id="L14">    }</span>
 
-    public Long ejecutar(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
-<span class="nc" id="L17">        var plantaPorProveedor = PlantaPorProveedor.crear(solicitudCrearPlantaPorProveedor);</span>
+    public Long ejecutar(PlantaPorProveedor plantaPorProveedor){
 
-<span class="nc" id="L19">        return repositorioPlantaPorProveedor.guardar(plantaPorProveedor);</span>
+<span class="fc" id="L18">        return repositorioPlantaPorProveedor.guardar(plantaPorProveedor);</span>
     }
+
+//    public Long ejecutar(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
+//        var plantaPorProveedor = PlantaPorProveedor.crear(solicitudCrearPlantaPorProveedor);
+//
+//        return repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
+//    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

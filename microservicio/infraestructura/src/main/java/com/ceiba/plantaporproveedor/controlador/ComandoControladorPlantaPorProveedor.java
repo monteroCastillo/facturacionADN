@@ -1,6 +1,7 @@
 package com.ceiba.plantaporproveedor.controlador;
 
 import com.ceiba.ComandoRespuesta;
+import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.manejador.ManejadorCrearPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.manejador.ManejadorEliminarPlantaPorProveedor;
@@ -20,8 +21,8 @@ public class ComandoControladorPlantaPorProveedor {
     }
 
     @PostMapping("/guardar")
-    public ComandoRespuesta<Long> crear(@RequestBody ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor) {
-        return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoSolicitudPlantaPorProveedor);
+    public ComandoRespuesta<Long> crear(@RequestBody ComandoPlantaPorProveedor comandoPlantaPorProveedor) {
+        return this.manejadorCrearPlantaPorProveedor.ejecutar(comandoPlantaPorProveedor);
     }
 
     @DeleteMapping("/eliminar/{id}")

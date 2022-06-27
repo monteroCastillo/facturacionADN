@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.producto.ProductoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-27T17:40:55" hostname="RODRIGO-MONTERO" time="0.009">
+<testsuite name="com.ceiba.producto.ProductoTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-06-27T20:48:16" hostname="RODRIGO-MONTERO" time="0.005">
   <properties/>
-  <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.002"/>
+  <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.001"/>
   <testcase name="reconstruirSinAplicaIvadeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.001"/>
   <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.producto.ProductoTest" time="0.001"/>
   <testcase name="deberiaReconstruirProductoExitosamente()" classname="com.ceiba.producto.ProductoTest" time="0.001"/>

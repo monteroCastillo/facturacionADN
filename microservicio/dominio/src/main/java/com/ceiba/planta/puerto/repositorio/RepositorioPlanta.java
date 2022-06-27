@@ -11,8 +11,6 @@ public interface RepositorioPlanta {
 
     void eliminar(int idPlanta);
 
-    List<Planta> buscarTodos();
-
     boolean existe(int id);
 
     void actualizar(Planta planta);

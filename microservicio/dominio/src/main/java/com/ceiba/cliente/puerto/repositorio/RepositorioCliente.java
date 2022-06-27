@@ -11,4 +11,6 @@ public interface RepositorioCliente {
 
     Long guardar(Cliente cliente);
 
+    boolean existe(Long id);
+
 }

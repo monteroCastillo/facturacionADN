@@ -45,11 +45,6 @@ public class RepositorioProveedorDB implements RepositorioProveedor {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-    @Override
-    public List<Proveedor> buscarTodos() {
-        return null;
-    }
-
 
     @Override
     public void actualizar(Proveedor proveedor) {

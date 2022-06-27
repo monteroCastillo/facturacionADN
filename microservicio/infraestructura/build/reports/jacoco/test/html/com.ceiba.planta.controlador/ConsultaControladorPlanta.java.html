@@ -29,16 +29,17 @@ public class ConsultaControladorPlanta {
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;Planta&gt; listar(){
-<span class="fc" id="L32">        return  this.manejadorListarPlantas.ejecutar();}</span>
+<span class="fc" id="L32">        return  this.manejadorListarPlantas.ejecutar();</span>
+    }
 
     @GetMapping({&quot;/buscar/{id}&quot;})
     public Planta buscar(@PathVariable(&quot;id&quot;) int id) {
-<span class="nc" id="L36">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
+<span class="nc" id="L37">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
     }
 
     @GetMapping({&quot;/consulta/{id}&quot;})
     public List&lt;Planta&gt; buscarPlantaProveedor(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L41">        return this.manejadorPlantaProveedor.ejecutar(id);</span>
+<span class="fc" id="L42">        return this.manejadorPlantaProveedor.ejecutar(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

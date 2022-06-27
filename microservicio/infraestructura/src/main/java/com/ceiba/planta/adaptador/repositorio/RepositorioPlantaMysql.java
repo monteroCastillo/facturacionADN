@@ -8,8 +8,6 @@ import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 public class RepositorioPlantaMysql implements RepositorioPlanta  {
 
@@ -55,10 +53,7 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-    @Override
-    public List<Planta> buscarTodos() {
-        return null;
-    }
+
 
 
     @Override

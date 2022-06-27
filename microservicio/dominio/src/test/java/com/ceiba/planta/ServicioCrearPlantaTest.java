@@ -22,6 +22,6 @@ public class ServicioCrearPlantaTest {
         ServicioCrearPlanta servicioCrearPlanta = new ServicioCrearPlanta(repositorioPlanta);
         // act - assert
         assertEquals(ID,servicioCrearPlanta.ejecutar(planta));
-        //BasePrueba.assertThrows(() -> servicioCrearPlanta.ejecutar(planta), ExcepcionValorInvalido.class, MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());
+       // BasePrueba.assertThrows(() -> servicioCrearPlanta.ejecutar(planta), ExcepcionValorInvalido.class, MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());
     }
 }

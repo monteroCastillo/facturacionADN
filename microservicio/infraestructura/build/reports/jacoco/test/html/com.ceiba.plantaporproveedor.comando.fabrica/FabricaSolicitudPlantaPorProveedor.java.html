@@ -19,8 +19,8 @@ public class FabricaSolicitudPlantaPorProveedor {
 <span class="fc" id="L19">    }</span>
     public SolicitudCrearPlantaPorProveedor crear(ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor){
 
-<span class="fc" id="L22">        return new SolicitudCrearPlantaPorProveedor(daoProveedor.obtenerProveedorPorId(comandoSolicitudPlantaPorProveedor.getIdProveedor()),</span>
-<span class="fc" id="L23">            daoPlanta.obtenerPlantaPorId(comandoSolicitudPlantaPorProveedor.getIdPlanta()));</span>
+<span class="nc" id="L22">        return new SolicitudCrearPlantaPorProveedor(daoProveedor.obtenerProveedorPorId(comandoSolicitudPlantaPorProveedor.getIdProveedor()),</span>
+<span class="nc" id="L23">            daoPlanta.obtenerPlantaPorId(comandoSolicitudPlantaPorProveedor.getIdPlanta()));</span>
 
     }
 

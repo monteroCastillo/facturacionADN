@@ -16,4 +16,6 @@ public class ComandoPlantaPorProveedor {
     private Proveedor idProveedor;
     private Planta idPlanta;
 
+    public ComandoPlantaPorProveedor(Long id, Long idProveedor, int idPlanta) {
+    }
 }

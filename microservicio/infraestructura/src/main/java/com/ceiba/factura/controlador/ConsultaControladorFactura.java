@@ -3,7 +3,6 @@ package com.ceiba.factura.controlador;
 import com.ceiba.factura.comando.manejador.ManejadorSumarFacturas;
 import com.ceiba.factura.consulta.ManejadorConsultarFacturasAnuladas;
 import com.ceiba.factura.modelo.dto.ResumenFacturaDTO;
-import com.ceiba.planta.modelo.entidad.Planta;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;

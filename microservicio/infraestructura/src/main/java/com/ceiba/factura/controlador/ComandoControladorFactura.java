@@ -7,7 +7,6 @@ import com.ceiba.factura.comando.manejador.ManejadorAnular;
 import com.ceiba.factura.comando.manejador.ManejadorFacturar;
 import com.ceiba.factura.comando.manejador.ManejadorMostrarFacturas;
 import com.ceiba.factura.modelo.entidad.Factura;
-import com.ceiba.planta.modelo.entidad.Planta;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
