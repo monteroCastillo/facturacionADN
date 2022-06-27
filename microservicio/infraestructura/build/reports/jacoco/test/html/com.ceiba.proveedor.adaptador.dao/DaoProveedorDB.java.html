@@ -37,9 +37,9 @@ public class DaoProveedorDB implements DaoProveedor {
 <span class="fc" id="L37">        paramSource.addValue(&quot;id&quot;, id);</span>
 <span class="fc" id="L38">        List&lt;Proveedor&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoProveedor());</span>
 <span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if(list.size()==1){</span>
-<span class="fc" id="L40">            return list.get(0);</span>
+<span class="nc" id="L40">            return list.get(0);</span>
         }
-<span class="nc" id="L42">        return null;</span>
+<span class="fc" id="L42">        return null;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

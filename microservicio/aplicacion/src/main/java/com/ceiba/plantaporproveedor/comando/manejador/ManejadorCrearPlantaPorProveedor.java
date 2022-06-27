@@ -3,7 +3,6 @@ package com.ceiba.plantaporproveedor.comando.manejador;
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
-import com.ceiba.plantaporproveedor.comando.ComandoSolicitudPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.fabrica.FabricaPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 import com.ceiba.plantaporproveedor.servicio.ServicioCrearPlantaPorProveedor;

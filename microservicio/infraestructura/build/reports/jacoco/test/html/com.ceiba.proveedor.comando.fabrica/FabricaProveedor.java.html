@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 <span class="fc" id="L8">public class FabricaProveedor {</span>
 
     public Proveedor crear(ComandoProveedor comandoProveedor){
-<span class="fc" id="L11">        return new Proveedor(</span>
-<span class="fc" id="L12">                comandoProveedor.getId(),</span>
-<span class="fc" id="L13">                comandoProveedor.getNombre(),</span>
-<span class="fc" id="L14">                comandoProveedor.getDireccion(),</span>
-<span class="fc" id="L15">                comandoProveedor.getTelefono(),</span>
-<span class="fc" id="L16">                comandoProveedor.getPaginaWeb()</span>
+<span class="nc" id="L11">        return new Proveedor(</span>
+<span class="nc" id="L12">                comandoProveedor.getId(),</span>
+<span class="nc" id="L13">                comandoProveedor.getNombre(),</span>
+<span class="nc" id="L14">                comandoProveedor.getDireccion(),</span>
+<span class="nc" id="L15">                comandoProveedor.getTelefono(),</span>
+<span class="nc" id="L16">                comandoProveedor.getPaginaWeb()</span>
         );
     }
 }

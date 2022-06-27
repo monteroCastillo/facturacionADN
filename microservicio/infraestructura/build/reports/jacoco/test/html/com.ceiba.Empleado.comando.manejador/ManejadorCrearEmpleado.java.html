@@ -23,8 +23,8 @@ public class ManejadorCrearEmpleado implements ManejadorComandoRespuesta &lt;Com
 <span class="fc" id="L23">    }</span>
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoEmpleado comando) {
-<span class="fc" id="L26">        Empleado empleado = this.fabricaEmpleado.crear(comando);</span>
-<span class="fc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearEmpleado.ejecutar(empleado));</span>
+<span class="nc" id="L26">        Empleado empleado = this.fabricaEmpleado.crear(comando);</span>
+<span class="nc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearEmpleado.ejecutar(empleado));</span>
 
     }
 

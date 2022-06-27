@@ -55,9 +55,9 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
 <span class="nc" id="L55">    }</span>
     @Override
     public boolean existe(Long id) {
-<span class="fc" id="L58">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L59">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="fc" id="L60">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
+<span class="nc" id="L58">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L59">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L60">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
 
     }
     @Override
@@ -67,15 +67,15 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
 
     @Override
     public Long guardar(Empleado empleado) {
-<span class="fc" id="L70">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L71">        paramSource.addValue(&quot;id&quot;, empleado.getIdEmpleado());</span>
-<span class="fc" id="L72">        paramSource.addValue(&quot;nombre&quot;, empleado.getNombre());</span>
-<span class="fc" id="L73">        paramSource.addValue(&quot;direccion&quot;, empleado.getDireccion());</span>
-<span class="fc" id="L74">        paramSource.addValue(&quot;telefono&quot;, empleado.getTelefono());</span>
-<span class="fc" id="L75">        paramSource.addValue(&quot;email&quot;, empleado.getEmail());</span>
-<span class="fc" id="L76">        paramSource.addValue(&quot;fecha_registro&quot;, empleado.getFechaRegistro());</span>
-<span class="fc" id="L77">        paramSource.addValue(&quot;perfil&quot;, empleado.getPerfil().name());</span>
-<span class="fc" id="L78">        return  this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
+<span class="nc" id="L70">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L71">        paramSource.addValue(&quot;id&quot;, empleado.getIdEmpleado());</span>
+<span class="nc" id="L72">        paramSource.addValue(&quot;nombre&quot;, empleado.getNombre());</span>
+<span class="nc" id="L73">        paramSource.addValue(&quot;direccion&quot;, empleado.getDireccion());</span>
+<span class="nc" id="L74">        paramSource.addValue(&quot;telefono&quot;, empleado.getTelefono());</span>
+<span class="nc" id="L75">        paramSource.addValue(&quot;email&quot;, empleado.getEmail());</span>
+<span class="nc" id="L76">        paramSource.addValue(&quot;fecha_registro&quot;, empleado.getFechaRegistro());</span>
+<span class="nc" id="L77">        paramSource.addValue(&quot;perfil&quot;, empleado.getPerfil().name());</span>
+<span class="nc" id="L78">        return  this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
 
     }
 }

@@ -31,10 +31,10 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 
     @Override
     public Cliente obtener(Long id) {
-<span class="fc" id="L34">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L35">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="fc" id="L36">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
-<span class="fc" id="L37">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
+<span class="nc" id="L34">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L35">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L36">        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -&gt;</span>
+<span class="nc" id="L37">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
                         paramSource, new MapeoCliente()));
     }
 
@@ -49,14 +49,14 @@ public class RepositorioClienteMysql implements RepositorioCliente {
     @Override
     public Long guardar(Cliente cliente) {
 
-<span class="fc" id="L52">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L53">        parameterSource.addValue(&quot;id&quot;, cliente.getId());</span>
-<span class="fc" id="L54">        parameterSource.addValue(&quot;nombre&quot;, cliente.getNombre());</span>
-<span class="fc" id="L55">        parameterSource.addValue(&quot;direccion&quot;, cliente.getDireccion());</span>
-<span class="fc" id="L56">        parameterSource.addValue(&quot;telefono&quot;, cliente.getTelefono());</span>
-<span class="fc" id="L57">        parameterSource.addValue(&quot;email&quot;, cliente.getEmail());</span>
-<span class="fc" id="L58">        parameterSource.addValue(&quot;tipo_cliente&quot;, cliente.getTipoCliente().name());</span>
-<span class="fc" id="L59">        return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));</span>
+<span class="nc" id="L52">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L53">        parameterSource.addValue(&quot;id&quot;, cliente.getId());</span>
+<span class="nc" id="L54">        parameterSource.addValue(&quot;nombre&quot;, cliente.getNombre());</span>
+<span class="nc" id="L55">        parameterSource.addValue(&quot;direccion&quot;, cliente.getDireccion());</span>
+<span class="nc" id="L56">        parameterSource.addValue(&quot;telefono&quot;, cliente.getTelefono());</span>
+<span class="nc" id="L57">        parameterSource.addValue(&quot;email&quot;, cliente.getEmail());</span>
+<span class="nc" id="L58">        parameterSource.addValue(&quot;tipo_cliente&quot;, cliente.getTipoCliente().name());</span>
+<span class="nc" id="L59">        return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));</span>
     }
 
     @Override

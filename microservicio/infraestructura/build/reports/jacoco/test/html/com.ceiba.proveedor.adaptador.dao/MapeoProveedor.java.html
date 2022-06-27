@@ -12,13 +12,13 @@ import java.sql.SQLException;
     @Override
     public Proveedor mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="fc" id="L15">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="fc" id="L17">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
-<span class="fc" id="L18">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
-<span class="fc" id="L19">        var paginaweb = resultSet.getString(&quot;paginaweb&quot;);</span>
+<span class="nc" id="L15">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L16">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L17">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+<span class="nc" id="L18">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
+<span class="nc" id="L19">        var paginaweb = resultSet.getString(&quot;paginaweb&quot;);</span>
 
-<span class="fc" id="L21">        return  Proveedor.reconstruir(id, nombre, direccion, telefono, paginaweb);</span>
+<span class="nc" id="L21">        return  Proveedor.reconstruir(id, nombre, direccion, telefono, paginaweb);</span>
     }
 
 
