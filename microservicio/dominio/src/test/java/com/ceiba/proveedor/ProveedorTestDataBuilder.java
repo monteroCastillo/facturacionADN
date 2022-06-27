@@ -48,7 +48,7 @@ public class ProveedorTestDataBuilder {
         return this;
     }
 
-    public Proveedor build( ) {
+    public Proveedor build() {
         return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
     }
 }

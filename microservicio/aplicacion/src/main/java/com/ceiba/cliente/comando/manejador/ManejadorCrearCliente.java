@@ -22,7 +22,6 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta<ComandoC
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoCliente comando) {
-        System.out.println("**********" + comando);
         Cliente cliente = this.fabricaCliente.crear(comando);
         return  new ComandoRespuesta<>(this.servicioCrearCliente.ejecutar(cliente));
     }

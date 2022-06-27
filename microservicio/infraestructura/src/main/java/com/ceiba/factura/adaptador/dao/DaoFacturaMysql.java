@@ -40,7 +40,6 @@ public class DaoFacturaMysql implements DaoFactura {
     public BigDecimal obtenerSumaFacturas(String fecha) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("fecha", fecha);
-        System.out.println("DATO QUE LE ENTRA A LA CONSULTA: " + paramSource);
         return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);
     }
 

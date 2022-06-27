@@ -24,10 +24,6 @@ public class DaoClienteDB implements DaoCliente {
     public DaoClienteDB(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }
-
-
-
-
     @Override
     public Cliente obtenerClientePorId(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();

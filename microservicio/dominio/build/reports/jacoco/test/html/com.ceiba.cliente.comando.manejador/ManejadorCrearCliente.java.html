@@ -22,9 +22,8 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta&lt;Coman
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoCliente comando) {
-<span class="nc" id="L25">        System.out.println(&quot;**********&quot; + comando);</span>
-<span class="nc" id="L26">        Cliente cliente = this.fabricaCliente.crear(comando);</span>
-<span class="nc" id="L27">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(cliente));</span>
+<span class="nc" id="L25">        Cliente cliente = this.fabricaCliente.crear(comando);</span>
+<span class="nc" id="L26">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(cliente));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

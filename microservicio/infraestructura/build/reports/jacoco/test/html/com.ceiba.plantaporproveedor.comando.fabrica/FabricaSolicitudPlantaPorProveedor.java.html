@@ -17,16 +17,10 @@ public class FabricaSolicitudPlantaPorProveedor {
 <span class="fc" id="L17">        this.daoProveedor = daoProveedor;</span>
 <span class="fc" id="L18">        this.daoPlanta = daoPlanta;</span>
 <span class="fc" id="L19">    }</span>
-
-
     public SolicitudCrearPlantaPorProveedor crear(ComandoSolicitudPlantaPorProveedor comandoSolicitudPlantaPorProveedor){
 
-<span class="fc" id="L24">        System.out.println(&quot;***Fabrica solicitud facturar PROVEEDOR *** &quot;  +  comandoSolicitudPlantaPorProveedor);</span>
-<span class="fc" id="L25">        System.out.println(&quot;***Fabrica solicitud facturar PROVEEDOR *** &quot;  +  comandoSolicitudPlantaPorProveedor.getIdProveedor());</span>
-<span class="fc" id="L26">        System.out.println(&quot;***Fabrica solicitud facturar PLANTA *** &quot;  +  comandoSolicitudPlantaPorProveedor.getIdPlanta());</span>
-
-<span class="fc" id="L28">        return new SolicitudCrearPlantaPorProveedor(daoProveedor.obtenerProveedorPorId(comandoSolicitudPlantaPorProveedor.getIdProveedor()),</span>
-<span class="fc" id="L29">            daoPlanta.obtenerPlantaPorId(comandoSolicitudPlantaPorProveedor.getIdPlanta()));</span>
+<span class="fc" id="L22">        return new SolicitudCrearPlantaPorProveedor(daoProveedor.obtenerProveedorPorId(comandoSolicitudPlantaPorProveedor.getIdProveedor()),</span>
+<span class="fc" id="L23">            daoPlanta.obtenerPlantaPorId(comandoSolicitudPlantaPorProveedor.getIdPlanta()));</span>
 
     }
 

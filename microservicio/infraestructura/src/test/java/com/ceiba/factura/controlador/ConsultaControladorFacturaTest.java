@@ -41,4 +41,13 @@ class ConsultaControladorFacturaTest {
 
     }
 
+    @Test
+    void consultarSumaFacturas() throws Exception {
+        LocalDate fecha = LocalDate.of(2022,6,17);
+
+        mocMvc.perform(get("/factura/sumarFacturas/{fecha}",fecha)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().is2xxSuccessful());
+
+    }
 }

@@ -33,9 +33,9 @@ public class ConsultaControladorFactura {
 <span class="fc" id="L33">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
     }
 
-    @GetMapping({&quot;/sumarFacturas/{id}&quot;})
-    public BigDecimal buscarPlantaProveedor(@PathVariable(&quot;id&quot;) String fecha) {
-<span class="nc" id="L38">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
+    @GetMapping({&quot;/sumarFacturas/{fecha}&quot;})
+    public BigDecimal buscarPlantaProveedor(@PathVariable(&quot;fecha&quot;) String fecha) {
+<span class="fc" id="L38">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

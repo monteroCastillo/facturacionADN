@@ -33,8 +33,8 @@ public class ConsultaControladorFactura {
         return manejadorConsultarFacturasAnuladas.ejecutar();
     }
 
-    @GetMapping({"/sumarFacturas/{id}"})
-    public BigDecimal buscarPlantaProveedor(@PathVariable("id") String fecha) {
+    @GetMapping({"/sumarFacturas/{fecha}"})
+    public BigDecimal buscarPlantaProveedor(@PathVariable("fecha") String fecha) {
         return this.manejadorSumarFacturas.ejecutar(fecha);
     }
 }

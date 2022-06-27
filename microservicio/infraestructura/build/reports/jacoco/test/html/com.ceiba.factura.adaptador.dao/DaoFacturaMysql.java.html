@@ -38,16 +38,15 @@ public class DaoFacturaMysql implements DaoFactura {
 
     @Override
     public BigDecimal obtenerSumaFacturas(String fecha) {
-<span class="nc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L42">        paramSource.addValue(&quot;fecha&quot;, fecha);</span>
-<span class="nc" id="L43">        System.out.println(&quot;DATO QUE LE ENTRA A LA CONSULTA: &quot; + paramSource);</span>
-<span class="nc" id="L44">        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);</span>
+<span class="fc" id="L41">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L42">        paramSource.addValue(&quot;fecha&quot;, fecha);</span>
+<span class="fc" id="L43">        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);</span>
     }
 
     public List&lt;Planta&gt; plantaProveedor(Long proveedor) {
-<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, proveedor);</span>
-<span class="nc" id="L50">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());</span>
+<span class="nc" id="L47">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L48">        paramSource.addValue(&quot;id&quot;, proveedor);</span>
+<span class="nc" id="L49">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtenerSumaFactura, paramSource, new MapeoPlanta());</span>
     }
 
 }
