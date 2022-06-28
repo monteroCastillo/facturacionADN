@@ -134,4 +134,13 @@ public class ClienteTest {
                         .reconstruir(), ExcepcionValorObligatorio.class,
                 "Tipo de cliente es requerido");
     }
+
+    @Test
+    void validarTipoCliente(){
+        Assertions.assertAll(
+                ()-> Assertions.assertEquals( TipoCliente.COMUN, TipoCliente.COMUN),
+                ()-> Assertions.assertEquals(TipoCliente.ESPECIAL, TipoCliente.ESPECIAL),
+                ()-> Assertions.assertEquals(TipoCliente.PREFERENCIAL, TipoCliente.PREFERENCIAL)
+        );
+    }
 }

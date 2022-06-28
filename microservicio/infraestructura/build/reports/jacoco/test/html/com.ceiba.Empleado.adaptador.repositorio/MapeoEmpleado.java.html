@@ -14,15 +14,15 @@ import java.sql.SQLException;
     @Override
     public DtoEmpleado mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-<span class="fc" id="L17">        var idPersona = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L18">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="fc" id="L19">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
-<span class="fc" id="L20">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
-<span class="fc" id="L21">        var email = resultSet.getString(&quot;email&quot;);</span>
-<span class="fc" id="L22">        var fechaRegistro = resultSet.getDate(&quot;fecha_registro&quot;).toLocalDate();</span>
-<span class="fc" id="L23">        var perfil= Perfil.valueOf(resultSet.getString(&quot;perfil&quot;));</span>
+<span class="nc" id="L17">        var idPersona = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L18">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L19">        var direccion = resultSet.getString(&quot;direccion&quot;);</span>
+<span class="nc" id="L20">        var telefono = resultSet.getString(&quot;telefono&quot;);</span>
+<span class="nc" id="L21">        var email = resultSet.getString(&quot;email&quot;);</span>
+<span class="nc" id="L22">        var fechaRegistro = resultSet.getDate(&quot;fecha_registro&quot;).toLocalDate();</span>
+<span class="nc" id="L23">        var perfil= Perfil.valueOf(resultSet.getString(&quot;perfil&quot;));</span>
 
-<span class="fc" id="L25">        return new DtoEmpleado(idPersona, nombre, direccion, telefono,email, fechaRegistro, perfil);</span>
+<span class="nc" id="L25">        return new DtoEmpleado(idPersona, nombre, direccion, telefono,email, fechaRegistro, perfil);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

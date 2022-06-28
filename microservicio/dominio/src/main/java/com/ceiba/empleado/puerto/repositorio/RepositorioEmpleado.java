@@ -7,7 +7,6 @@ public interface RepositorioEmpleado {
 
     Empleado obtener(Long idEmpleado);
     Long guardar(Empleado empleado);
-    DtoEmpleado buscarPersonaPorID(Long idEmpleado);
 
     void actualizar(Empleado empleado);
     boolean existe(Long id);

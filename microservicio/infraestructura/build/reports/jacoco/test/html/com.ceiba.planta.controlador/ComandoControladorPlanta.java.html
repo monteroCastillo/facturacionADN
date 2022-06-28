@@ -27,13 +27,13 @@ public class ComandoControladorPlanta {
 
     @PostMapping(&quot;/crear&quot;)
     public ComandoRespuesta&lt;Integer&gt; crear(@RequestBody ComandoPlanta comandoPlanta) {
-<span class="fc" id="L30">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
+<span class="nc" id="L30">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
     }
 
     @DeleteMapping(value=&quot;/borrar/{id}&quot;)
     public void eliminar(@PathVariable int id) {
-<span class="fc" id="L35">        manejadorEliminarPlanta.ejecutar(id);</span>
-<span class="fc" id="L36">    }</span>
+<span class="nc" id="L35">        manejadorEliminarPlanta.ejecutar(id);</span>
+<span class="nc" id="L36">    }</span>
 
     @PutMapping(&quot;/actualizar&quot;)
     public void actualizar(@RequestBody ComandoPlanta comandoPlanta) {

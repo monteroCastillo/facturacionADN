@@ -33,14 +33,6 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
     }
 
     @Override
-    public DtoEmpleado buscarPersonaPorID(Long idEmpleado){
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id_empleado", idEmpleado);
-        return EjecucionBaseDeDatos.obtenerUnObjetoONull(() -> this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()
-                .queryForObject(sqlObtenerPorId, paramSource, new MapeoEmpleado()));
-    }
-
-    @Override
     public void actualizar(Empleado empleado) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", empleado.getIdEmpleado());

@@ -29,15 +29,15 @@ public class DaoFacturaMysql implements DaoFactura {
 
     @Override
     public List&lt;ResumenFacturaDTO&gt; obtenerResumenDeFacturasAnuladas() {
-<span class="fc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
-<span class="fc" id="L33">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
+<span class="nc" id="L32">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate()</span>
+<span class="nc" id="L33">                .query(sqlObtenerAnuladas, mapeoFacturaResumen);</span>
     }
 
     @Override
     public BigDecimal obtenerSumaFacturas(String fecha) {
-<span class="fc" id="L38">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L39">        paramSource.addValue(&quot;fecha&quot;, fecha);</span>
-<span class="fc" id="L40">        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);</span>
+<span class="nc" id="L38">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L39">        paramSource.addValue(&quot;fecha&quot;, fecha);</span>
+<span class="nc" id="L40">        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerSumaFactura, paramSource, BigDecimal.class);</span>
     }
 
 

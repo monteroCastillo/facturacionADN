@@ -10,10 +10,11 @@ public class PlantaPorProveedorTest {
     void deberiaReconstruirPlantaPorProveedorExitosamente(){
 
         var plantaPorProveedor = new PlantaPorProveedorTestDataBuilder()
+                .conId(2l)
                 .conProveedor(22l)
                 .conPlanta(12)
                 .reconstruir();
-
+        Assertions.assertEquals(2l, plantaPorProveedor.getId());
         Assertions.assertEquals(22l, plantaPorProveedor.getIdProveedor());
         Assertions.assertEquals(12,plantaPorProveedor.getIdPlanta() );
     }

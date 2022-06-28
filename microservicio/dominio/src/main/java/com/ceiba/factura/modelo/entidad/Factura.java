@@ -46,12 +46,12 @@ public class Factura {
         this.fechaDomicilio = fechaDomicilio;
     }
 
-    private BigDecimal calcularvalorTotal(List<ProductoFacturar> productosFacturar) {
+    public BigDecimal calcularvalorTotal(List<ProductoFacturar> productosFacturar) {
         return productosFacturar.stream()
                 .map(ProductoFacturar::calcularTotal)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
-    private void aplicarDescuento() {
+    public void aplicarDescuento() {
         if (this.cliente.esTipoPreferencial()) {
             this.valorTotal = valorTotal.subtract(valorTotal.multiply(BigDecimal.valueOf(DESCUENTO_CLIENTE_PREFERENCIAL)));
         } else if (this.cliente.esTipoEspecial()) {

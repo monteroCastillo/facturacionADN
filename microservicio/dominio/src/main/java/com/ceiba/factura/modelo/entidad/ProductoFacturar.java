@@ -29,7 +29,7 @@ public class ProductoFacturar {
         ValidadorArgumento.validarObligatorio(planta, "Planta es requerido");
         return new ProductoFacturar(id, cantidad, planta);
     }
-    private BigDecimal calcularSubTotal() {
+    public BigDecimal calcularSubTotal() {
         return planta.getValor()
                 .multiply(BigDecimal.valueOf(cantidad));
     }

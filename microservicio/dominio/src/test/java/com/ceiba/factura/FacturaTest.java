@@ -2,6 +2,7 @@ package com.ceiba.factura;
 
 import com.ceiba.cliente.ClienteTestDataBuilder;
 import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.TipoCliente;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
 import com.ceiba.planta.PlantaTestDataBuilder;
@@ -48,4 +49,49 @@ public class FacturaTest {
         Assertions.assertEquals(LocalDate.of(2022,06,24), factura.getFechaDomicilio());
 
     }
+
+    @Test
+    void validarDiaFestivoExitosamente(){
+        var factura = new FacturaTestDataBuilder().conFacturaPorDefecto()
+                .reconstruir();
+        factura.validarDiaFestivo(LocalDate.of(2022,06,27));
+        Assertions.assertEquals(1l, factura.getId());
+    }
+
+    @Test
+    void validarDiaHabilSiguienteExitosamente(){
+        var factura = new FacturaTestDataBuilder().conFacturaPorDefecto()
+                .reconstruir();
+        LocalDate diaSiguiente = factura.validarSiguienteDiaHabil(LocalDate.of(2022,06,24));
+        Assertions.assertEquals(LocalDate.of(2022,06,28), diaSiguiente);
+    }
+
+    @Test
+    void validarAplicardescuentoExitosamente(){
+        Cliente cliente2 = new ClienteTestDataBuilder()
+                .conClientePorDefecto()
+                .conTipoCliente(TipoCliente.ESPECIAL)
+                .build();
+
+        var factura = new FacturaTestDataBuilder().conFacturaPorDefecto()
+                .conCliente(cliente2)
+                .reconstruir();
+        factura.aplicarDescuento();
+        Assertions.assertEquals(BigDecimal.valueOf(108000.0), factura.getValorTotal());
+    }
+
+    @Test
+    void validarCalcularValorTotalExitosamente(){
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        List<ProductoFacturar> productosFacturar = new ArrayList<>();
+        productosFacturar.add(0,ProductoFacturar.crear(5,planta));
+
+        var factura = new FacturaTestDataBuilder().conFacturaPorDefecto()
+                .reconstruir();
+        factura.calcularvalorTotal(productosFacturar);
+        Assertions.assertEquals(BigDecimal.valueOf(120000),factura.getValorTotal() );
+    }
+
+
+
 }

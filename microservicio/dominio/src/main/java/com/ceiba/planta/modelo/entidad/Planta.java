@@ -17,9 +17,7 @@ public class Planta {
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 
-    public Planta(){
 
-    }
 
     public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
         this.idPlanta = idPlanta;
@@ -43,9 +41,7 @@ public class Planta {
         return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
     }
 
-    public void calculaSabadoDomingo(LocalDate date) {
-
-        LocalDate result = date;
+    public void calculaSabadoDomingo(LocalDate result) {
 
         if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){
             throw new ExcepcionValorInvalido(MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());

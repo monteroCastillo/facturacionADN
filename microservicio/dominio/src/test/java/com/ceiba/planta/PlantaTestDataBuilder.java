@@ -26,6 +26,7 @@ public class PlantaTestDataBuilder {
         return this;
     }
 
+
     public Planta reconstruir() {
         return Planta.reconstruir(idPlanta, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }

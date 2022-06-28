@@ -1,6 +1,7 @@
 package com.ceiba.factura.controlador;
 
 import com.ceiba.ApplicationMock;
+import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.puerto.repositorio.RepositorioFactura;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
@@ -14,9 +15,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.time.LocalDate;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(ComandoControladorFactura.class)
@@ -63,5 +64,18 @@ class ComandoControladorFacturaTest {
 
         Assertions.assertTrue(facturaAnulada.esAnulada());
     }
+
+    @Test
+    void busqueDeFacturaExitosa() throws Exception {
+
+        mocMvc.perform(get("/factura/buscar/13")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+        var factura = repositorioFactura.obtener(55l);
+
+        Assertions.assertEquals(EstadoFactura.ANULADA,factura.getEstado());
+    }
+
 
 }

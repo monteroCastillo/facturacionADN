@@ -4,7 +4,6 @@ import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
-import com.ceiba.planta.utils.MensajesDeExcepcion;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -93,6 +92,15 @@ public class PlantaTest {
                         .conValor(BigDecimal.valueOf(15000)).
                         reconstruir(), ExcepcionValorObligatorio.class,
                 "La categoria de la planta es requerida");
+    }
+    @Test
+    void CalculaSabadoDomingoExitosamente2(){
+        BasePrueba.assertThrows(() -> new PlantaTestDataBuilder().conPlantaPorDefecto()
+                        .reconstruir()
+                        .calculaSabadoDomingo(LocalDate.of(2022,06,26))
+                ,ExcepcionValorInvalido.class,
+                "Hoy es fin de semana y no se puede recibir mercancia");
+
     }
 
 }

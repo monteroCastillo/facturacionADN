@@ -1,8 +1,7 @@
 package com.ceiba.plantaporproveedor.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import com.ceiba.planta.modelo.entidad.Planta;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
+
 
 public class PlantaPorProveedor {
     private Long id;
@@ -21,14 +20,11 @@ public class PlantaPorProveedor {
     }
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
-        System.out.println("**********  Entidad plantaPorProveedor ***" +solicitudCrearPlantaPorProveedor.getIdProveedor());
 
         ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdProveedor(), "El id del proveedor es necesario");
                 ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdPlanta(), "El id de la planta es necesario");
                         return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getIdProveedor(),solicitudCrearPlantaPorProveedor.getIdPlanta());
     }
-
-
     public static PlantaPorProveedor reconstruir(Long id, Long idProveedor, int idPlanta) {
         ValidadorArgumento.validarObligatorio(idProveedor, "Proveedor es requerido");
         ValidadorArgumento.validarObligatorio(idPlanta, "Planta es requerida");

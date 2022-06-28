@@ -7,12 +7,12 @@ public class ServicioCrearCliente {
 
     private final RepositorioCliente repositorioCliente;
 
-<span class="fc" id="L10">    public ServicioCrearCliente(RepositorioCliente repositorioCliente) {</span>
-<span class="fc" id="L11">        this.repositorioCliente = repositorioCliente;</span>
-<span class="fc" id="L12">    }</span>
+<span class="nc" id="L10">    public ServicioCrearCliente(RepositorioCliente repositorioCliente) {</span>
+<span class="nc" id="L11">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L12">    }</span>
 
     public Long ejecutar(Cliente cliente){
-<span class="fc" id="L15">        return this.repositorioCliente.guardar(cliente);</span>
+<span class="nc" id="L15">        return this.repositorioCliente.guardar(cliente);</span>
     }
 
 }

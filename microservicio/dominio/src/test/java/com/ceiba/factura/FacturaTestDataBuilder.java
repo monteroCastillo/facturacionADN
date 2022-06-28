@@ -1,16 +1,19 @@
 package com.ceiba.factura;
 
+import com.ceiba.cliente.ClienteTestDataBuilder;
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.factura.modelo.entidad.EstadoFactura;
 import com.ceiba.factura.modelo.entidad.Factura;
 import com.ceiba.factura.modelo.entidad.ProductoFacturar;
+import com.ceiba.planta.PlantaTestDataBuilder;
+import com.ceiba.planta.modelo.entidad.Planta;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FacturaTestDataBuilder {
+public class FacturaTestDataBuilder  {
     private Long id;
     private Cliente cliente;
     private List<ProductoFacturar> productosFacturar;
@@ -18,6 +21,26 @@ public class FacturaTestDataBuilder {
     private EstadoFactura estadoFactura;
     private LocalDate fechaIngreso;
     private LocalDate fechaDomicilio;
+
+
+    public FacturaTestDataBuilder conFacturaPorDefecto(){
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+
+        Cliente cliente = new ClienteTestDataBuilder()
+                .conClientePorDefecto()
+                .build();
+        List<ProductoFacturar> productosFacturar = new ArrayList<>();
+        productosFacturar.add(0,ProductoFacturar.crear(5,planta));
+
+            this.id = 1l;
+            this.cliente=cliente;
+            this.productosFacturar = productosFacturar;
+            this.valorTotal = new BigDecimal(120000);
+            this.estadoFactura = EstadoFactura.ACTIVA;
+            this.fechaIngreso = LocalDate.of(2022,06,23);
+            this.fechaDomicilio =LocalDate.of(2022,06,24);
+            return  this;
+    }
 
 
     public FacturaTestDataBuilder() {
