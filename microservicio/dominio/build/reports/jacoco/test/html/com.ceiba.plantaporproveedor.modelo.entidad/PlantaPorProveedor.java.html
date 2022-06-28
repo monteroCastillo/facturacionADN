@@ -6,56 +6,57 @@ import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 public class PlantaPorProveedor {
     private Long id;
-    private Proveedor proveedor;
-    private Planta planta;
+    private Long idProveedor;
+    private int idPlanta;
 
-<span class="fc" id="L12">    public PlantaPorProveedor(Long id, Proveedor proveedor, Planta planta) {</span>
+<span class="fc" id="L12">    public PlantaPorProveedor(Long id, Long idProveedor, int idPlanta) {</span>
 <span class="fc" id="L13">        this.id = id;</span>
-<span class="fc" id="L14">        this.proveedor = proveedor;</span>
-<span class="fc" id="L15">        this.planta = planta;</span>
+<span class="fc" id="L14">        this.idProveedor = idProveedor;</span>
+<span class="fc" id="L15">        this.idPlanta = idPlanta;</span>
 <span class="fc" id="L16">    }</span>
 
-<span class="nc" id="L18">    public PlantaPorProveedor(Proveedor proveedor, Planta planta) {</span>
-<span class="nc" id="L19">        this.proveedor = proveedor;</span>
-<span class="nc" id="L20">        this.planta = planta;</span>
+<span class="nc" id="L18">    public PlantaPorProveedor(Long idProveedor, int idPlanta) {</span>
+<span class="nc" id="L19">        this.idProveedor = idProveedor;</span>
+<span class="nc" id="L20">        this.idPlanta = idPlanta;</span>
 <span class="nc" id="L21">    }</span>
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
+<span class="nc" id="L24">        System.out.println(&quot;**********  Entidad plantaPorProveedor ***&quot; +solicitudCrearPlantaPorProveedor.getIdProveedor());</span>
 
-<span class="nc" id="L25">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor().getId(), &quot;El id del proveedor es necesario&quot;);</span>
-<span class="nc" id="L26">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta().getIdPlanta(), &quot;El id de la planta es necesario&quot;);</span>
-<span class="nc" id="L27">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getProveedor(),solicitudCrearPlantaPorProveedor.getPlanta());</span>
+<span class="nc" id="L26">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdProveedor(), &quot;El id del proveedor es necesario&quot;);</span>
+<span class="nc" id="L27">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdPlanta(), &quot;El id de la planta es necesario&quot;);</span>
+<span class="nc" id="L28">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getIdProveedor(),solicitudCrearPlantaPorProveedor.getIdPlanta());</span>
     }
 
 
-    public static PlantaPorProveedor reconstruir(Long id, Proveedor proveedor, Planta planta) {
-<span class="fc" id="L32">        ValidadorArgumento.validarObligatorio(proveedor, &quot;proveedor es requerido&quot;);</span>
-<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(planta, &quot;Planta es requerida&quot;);</span>
-<span class="fc" id="L34">        return new PlantaPorProveedor(id, proveedor, planta);</span>
+    public static PlantaPorProveedor reconstruir(Long id, Long idProveedor, int idPlanta) {
+<span class="fc" id="L33">        ValidadorArgumento.validarObligatorio(idProveedor, &quot;Proveedor es requerido&quot;);</span>
+<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;Planta es requerida&quot;);</span>
+<span class="fc" id="L35">        return new PlantaPorProveedor(id, idProveedor, idPlanta);</span>
     }
 
     public Long getId() {
-<span class="nc" id="L38">        return id;</span>
+<span class="nc" id="L39">        return id;</span>
     }
 
     public void setId(Long id) {
-<span class="nc" id="L42">        this.id = id;</span>
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L43">        this.id = id;</span>
+<span class="nc" id="L44">    }</span>
 
-    public Proveedor getProveedor() {
-<span class="fc" id="L46">        return proveedor;</span>
+    public Long getIdProveedor() {
+<span class="fc" id="L47">        return idProveedor;</span>
     }
 
-    public void setProveedor(Proveedor proveedor) {
-<span class="nc" id="L50">        this.proveedor = proveedor;</span>
-<span class="nc" id="L51">    }</span>
+    public void setIdProveedor(Long idProveedor) {
+<span class="nc" id="L51">        this.idProveedor = idProveedor;</span>
+<span class="nc" id="L52">    }</span>
 
-    public Planta getPlanta() {
-<span class="fc" id="L54">        return planta;</span>
+    public int getIdPlanta() {
+<span class="fc" id="L55">        return idPlanta;</span>
     }
 
-    public void setPlanta(Planta planta) {
-<span class="nc" id="L58">        this.planta = planta;</span>
-<span class="nc" id="L59">    }</span>
+    public void setIdPlanta(int idPlanta) {
+<span class="nc" id="L59">        this.idPlanta = idPlanta;</span>
+<span class="nc" id="L60">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

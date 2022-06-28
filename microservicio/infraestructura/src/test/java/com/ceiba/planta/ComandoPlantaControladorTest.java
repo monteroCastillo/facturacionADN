@@ -59,5 +59,16 @@ public class ComandoPlantaControladorTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void existe() throws Exception {
+        // arrange
+        int id = 1;
+        // act - assert
+        mocMvc.perform(delete("/apiPlanta/borrar/{id}", id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 
 }

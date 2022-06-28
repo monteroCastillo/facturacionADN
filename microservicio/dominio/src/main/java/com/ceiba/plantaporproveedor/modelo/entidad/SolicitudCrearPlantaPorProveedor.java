@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class SolicitudCrearPlantaPorProveedor {
-    private final Proveedor proveedor;
-    private final Planta planta;
+    private final Long idProveedor;
+    private final int idPlanta;
 
 }

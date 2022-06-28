@@ -2,7 +2,6 @@ package com.ceiba.empleado;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.empleado.comando.ComandoEmpleado;
-import com.ceiba.empleado.comando.manejador.ManejadorActualizarEmpleado;
 import com.ceiba.empleado.comando.manejador.ManejadorCrearEmpleado;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +18,6 @@ public class ComandoControladorEmpleado {
     @PostMapping({"/guardar"})
     public ComandoRespuesta<Long> guardar(@RequestBody ComandoEmpleado comandoEmpleado) {
        return manejadorCrearEmpleado.ejecutar(comandoEmpleado);
-
     }
-
 
 }

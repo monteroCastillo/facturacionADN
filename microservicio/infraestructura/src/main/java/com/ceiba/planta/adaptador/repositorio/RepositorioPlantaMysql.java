@@ -53,9 +53,6 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
-
-
-
     @Override
     public void actualizar(Planta planta) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();

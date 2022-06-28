@@ -1,12 +1,9 @@
 package com.ceiba.plantaporproveedor;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.Proveedor.ComandoProveedorTestDataBuilder;
 import com.ceiba.RespuestaComando;
-import com.ceiba.plantaporproveedor.adaptador.repositorio.RepositorioPlantaporProveedorDB;
 import com.ceiba.plantaporproveedor.controlador.ComandoControladorPlantaPorProveedor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,18 +29,27 @@ public class ComandoControladorPlantaPorProveedorTest {
     @Autowired
     private MockMvc mocMvc;
 
-    @Autowired
-    private RepositorioPlantaporProveedorDB repositorioPlantaporProveedorDB;
-
     @Test
     void crearPlantaPorProveedorExitosa() throws Exception {
         var comando = new ComandoPlantaPorProveedorTestDataBuilder().crearPorDefecto().build();
-//        var resultado = mocMvc.perform(post("/apiPlantaPorProveedor/guardar")
-//                        .contentType(MediaType.APPLICATION_JSON)
-//                        .content(objectMapper.writeValueAsString(comando)))
-//               .andExpect(status().is2xxSuccessful()).andReturn();
-//
-//        String jsonResult = resultado.getResponse().getContentAsString();
-//        var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
+        var resultado = mocMvc.perform(post("/apiPlantaPorProveedor/crear")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(comando)))
+               .andExpect(status().is2xxSuccessful()).andReturn();
+
+        String jsonResult = resultado.getResponse().getContentAsString();
+        var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
     }
+
+    @Test
+    public void eliminar() throws Exception {
+        // arrange
+        Long id = 1l;
+        // act - assert
+        mocMvc.perform(delete("/apiPlantaPorProveedor/eliminar/{id}", id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 }

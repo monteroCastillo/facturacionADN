@@ -25,8 +25,10 @@ public class ManejadorCrearPlantaPorProveedor implements ManejadorComandoRespues
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlantaPorProveedor comando) {
-<span class="nc" id="L28">        PlantaPorProveedor plantaPorProveedor = this.fabricaPlantaPorProveedor.crear(comando);</span>
-<span class="nc" id="L29">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(plantaPorProveedor));</span>
+<span class="fc" id="L28">        System.out.println(&quot;***** COMANDO PLANTA POR PROVEEDOR &quot; +comando);</span>
+<span class="fc" id="L29">        System.out.println(&quot;***** Manejador crear planta por proveedor SERVICIO &quot; +servicioCrearPlantaPorProveedor);</span>
+<span class="fc" id="L30">        PlantaPorProveedor plantaPorProveedor = this.fabricaPlantaPorProveedor.crear(comando);</span>
+<span class="fc" id="L31">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(plantaPorProveedor));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

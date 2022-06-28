@@ -10,6 +10,7 @@ public class FabricaPlantaPorProveedor {
     public PlantaPorProveedor crear(ComandoPlantaPorProveedor comandoPlantaPorProveedor){
 
         return new PlantaPorProveedor(
+
                 comandoPlantaPorProveedor.getId(),
                 comandoPlantaPorProveedor.getIdProveedor(),
                 comandoPlantaPorProveedor.getIdPlanta()

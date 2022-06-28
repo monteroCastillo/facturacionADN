@@ -7,7 +7,6 @@ import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 @Repository
 public class RepositorioProveedorDB implements RepositorioProveedor {
 

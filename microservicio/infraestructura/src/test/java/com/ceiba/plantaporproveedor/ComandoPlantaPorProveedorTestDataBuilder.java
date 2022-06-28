@@ -10,13 +10,13 @@ public class ComandoPlantaPorProveedorTestDataBuilder {
     private int idPlanta;
 
     public ComandoPlantaPorProveedorTestDataBuilder crearPorDefecto(){
-        this.id = 1L;
+        this.id = 50L;
         this.idProveedor = 22l;
         this.idPlanta = 12;
         return this;
     }
 
     public ComandoPlantaPorProveedor build(){
-        return new ComandoPlantaPorProveedor(id, idProveedor, idPlanta);
+        return  new ComandoPlantaPorProveedor(this.id, this.idProveedor, this.idPlanta);
     }
 }

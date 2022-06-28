@@ -9,34 +9,34 @@ import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 public class PlantaPorProveedorTestDataBuilder {
     private Long id;
-    private Proveedor proveedor;
-    private Planta planta;
+    private Long idProveedor;
+    private int idPlanta;
 
     public PlantaPorProveedorTestDataBuilder conPlantaPorProveedorPorDefecto(){
         this.id= 1L;
-        this.proveedor = new ProveedorTestDataBuilder().conProveedorPorDefecto().reconstruir();
-        this.planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
+        this.idProveedor = 22l;
+        this.idPlanta = 12;
         return this;
     }
-    public PlantaPorProveedor reconstruir(){ return PlantaPorProveedor.reconstruir(id, proveedor,planta);}
+    public PlantaPorProveedor reconstruir(){ return PlantaPorProveedor.reconstruir(id, idProveedor,idPlanta);}
 
     public PlantaPorProveedorTestDataBuilder conId(Long id){
         this.id = id;
         return this;
     }
 
-    public PlantaPorProveedorTestDataBuilder conProveedor(Proveedor proveedor){
-        this.proveedor = proveedor;
+    public PlantaPorProveedorTestDataBuilder conProveedor(Long idProveedor){
+        this.idProveedor = idProveedor;
         return this;
     }
 
-    public PlantaPorProveedorTestDataBuilder conPlanta(Planta planta){
-        this.planta = planta;
+    public PlantaPorProveedorTestDataBuilder conPlanta(int idPlanta){
+        this.idPlanta = idPlanta;
         return this;
     }
 
     public PlantaPorProveedor build( ) {
-        return new PlantaPorProveedor(id, proveedor, planta);
+        return new PlantaPorProveedor(id, idProveedor, idPlanta);
     }
 
 

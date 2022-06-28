@@ -4,8 +4,6 @@ import com.ceiba.factura.modelo.dto.ResumenFacturaDTO;
 import com.ceiba.factura.puerto.dao.DaoFactura;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.planta.adaptador.dao.MapeoPlanta;
-import com.ceiba.planta.modelo.entidad.Planta;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
