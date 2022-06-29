@@ -8,31 +8,31 @@ public class PlantaPorProveedor {
     private Long idProveedor;
     private int idPlanta;
 
-<span class="nc" id="L11">    public PlantaPorProveedor(Long id, Long idProveedor, int idPlanta) {</span>
-<span class="nc" id="L12">        this.id = id;</span>
-<span class="nc" id="L13">        this.idProveedor = idProveedor;</span>
-<span class="nc" id="L14">        this.idPlanta = idPlanta;</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L11">    public PlantaPorProveedor(Long id, Long idProveedor, int idPlanta) {</span>
+<span class="fc" id="L12">        this.id = id;</span>
+<span class="fc" id="L13">        this.idProveedor = idProveedor;</span>
+<span class="fc" id="L14">        this.idPlanta = idPlanta;</span>
+<span class="fc" id="L15">    }</span>
 
-<span class="nc" id="L17">    public PlantaPorProveedor(Long idProveedor, int idPlanta) {</span>
-<span class="nc" id="L18">        this.idProveedor = idProveedor;</span>
-<span class="nc" id="L19">        this.idPlanta = idPlanta;</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L17">    public PlantaPorProveedor(Long idProveedor, int idPlanta) {</span>
+<span class="fc" id="L18">        this.idProveedor = idProveedor;</span>
+<span class="fc" id="L19">        this.idPlanta = idPlanta;</span>
+<span class="fc" id="L20">    }</span>
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
 
-<span class="nc" id="L24">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdProveedor(), &quot;El id del proveedor es necesario&quot;);</span>
-<span class="nc" id="L25">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdPlanta(), &quot;El id de la planta es necesario&quot;);</span>
-<span class="nc" id="L26">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getIdProveedor(),solicitudCrearPlantaPorProveedor.getIdPlanta());</span>
+<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdProveedor(), &quot;El id del proveedor es necesario&quot;);</span>
+<span class="fc" id="L25">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdPlanta(), &quot;El id de la planta es necesario&quot;);</span>
+<span class="fc" id="L26">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getIdProveedor(),solicitudCrearPlantaPorProveedor.getIdPlanta());</span>
     }
     public static PlantaPorProveedor reconstruir(Long id, Long idProveedor, int idPlanta) {
-<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(idProveedor, &quot;Proveedor es requerido&quot;);</span>
-<span class="nc" id="L30">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;Planta es requerida&quot;);</span>
-<span class="nc" id="L31">        return new PlantaPorProveedor(id, idProveedor, idPlanta);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(idProveedor, &quot;Proveedor es requerido&quot;);</span>
+<span class="fc" id="L30">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;Planta es requerida&quot;);</span>
+<span class="fc" id="L31">        return new PlantaPorProveedor(id, idProveedor, idPlanta);</span>
     }
 
     public Long getId() {
-<span class="nc" id="L35">        return id;</span>
+<span class="fc" id="L35">        return id;</span>
     }
 
     public void setId(Long id) {
@@ -40,7 +40,7 @@ public class PlantaPorProveedor {
 <span class="nc" id="L40">    }</span>
 
     public Long getIdProveedor() {
-<span class="nc" id="L43">        return idProveedor;</span>
+<span class="fc" id="L43">        return idProveedor;</span>
     }
 
     public void setIdProveedor(Long idProveedor) {
@@ -48,7 +48,7 @@ public class PlantaPorProveedor {
 <span class="nc" id="L48">    }</span>
 
     public int getIdPlanta() {
-<span class="nc" id="L51">        return idPlanta;</span>
+<span class="fc" id="L51">        return idPlanta;</span>
     }
 
     public void setIdPlanta(int idPlanta) {

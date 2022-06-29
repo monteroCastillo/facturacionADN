@@ -1,5 +1,4 @@
 package com.ceiba.plantaporproveedor;
-
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import org.junit.jupiter.api.Assertions;
@@ -46,9 +45,10 @@ public class PlantaPorProveedorTest {
 
                         .conPlanta(12)
                         .crear(),ExcepcionValorObligatorio.class,
-                "Proveedor es requerido");
+                "El id del proveedor es necesario");
 
     }
+
 
 
 }

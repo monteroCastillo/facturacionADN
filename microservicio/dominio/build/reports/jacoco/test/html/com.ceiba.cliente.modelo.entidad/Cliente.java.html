@@ -21,17 +21,17 @@ public class Cliente {
 <span class="fc" id="L21">    }</span>
 
     public static Cliente reconstruir(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
-<span class="nc" id="L24">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion es requerido&quot;);</span>
-<span class="nc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del cliente es requerido&quot;);</span>
-<span class="nc" id="L26">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerido&quot;);</span>
-<span class="nc" id="L27">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del cliente es requerido&quot;);</span>
-<span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(email, &quot;El Email  del cliente es requerido&quot;);</span>
-<span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(tipoCliente, &quot;Tipo de cliente es requerido&quot;);</span>
-<span class="nc" id="L30">        return new Cliente(id, nombre, direccion, telefono, email, tipoCliente);</span>
+<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion es requerido&quot;);</span>
+<span class="fc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del cliente es requerido&quot;);</span>
+<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerido&quot;);</span>
+<span class="fc" id="L27">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del cliente es requerido&quot;);</span>
+<span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(email, &quot;El Email  del cliente es requerido&quot;);</span>
+<span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(tipoCliente, &quot;Tipo de cliente es requerido&quot;);</span>
+<span class="fc" id="L30">        return new Cliente(id, nombre, direccion, telefono, email, tipoCliente);</span>
     }
 
     public Long getId() {
-<span class="nc" id="L34">        return id;</span>
+<span class="fc" id="L34">        return id;</span>
     }
 
     public void setId(Long id) {
@@ -39,31 +39,31 @@ public class Cliente {
 <span class="nc" id="L39">    }</span>
 
     public String getNombre() {
-<span class="nc" id="L42">        return nombre;</span>
+<span class="fc" id="L42">        return nombre;</span>
     }
 
     public String getDireccion() {
-<span class="nc" id="L46">        return direccion;</span>
+<span class="fc" id="L46">        return direccion;</span>
     }
 
     public String getTelefono() {
-<span class="nc" id="L50">        return telefono;</span>
+<span class="fc" id="L50">        return telefono;</span>
     }
 
     public String getEmail() {
-<span class="nc" id="L54">        return email;</span>
+<span class="fc" id="L54">        return email;</span>
     }
 
     public TipoCliente getTipoCliente() {
-<span class="nc" id="L58">        return tipoCliente;</span>
+<span class="fc" id="L58">        return tipoCliente;</span>
     }
 
     public boolean esTipoPreferencial() {
-<span class="nc" id="L62">        return this.tipoCliente.equals(TipoCliente.PREFERENCIAL);</span>
+<span class="fc" id="L62">        return this.tipoCliente.equals(TipoCliente.PREFERENCIAL);</span>
     }
 
     public boolean esTipoEspecial() {
-<span class="nc" id="L66">        return this.tipoCliente.equals(TipoCliente.ESPECIAL);</span>
+<span class="fc" id="L66">        return this.tipoCliente.equals(TipoCliente.ESPECIAL);</span>
     }
 
     public boolean esTipoComun() {
