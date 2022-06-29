@@ -19,16 +19,16 @@ public class Planta {
 
 
 
-<span class="fc" id="L22">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
-<span class="fc" id="L23">        this.idPlanta = idPlanta;</span>
-<span class="fc" id="L24">        this.nombre = nombre;</span>
-<span class="fc" id="L25">        this.descripcion = descripcion;</span>
-<span class="fc" id="L26">        this.fechaIngreso = fechaIngreso;</span>
-<span class="fc" id="L27">        calculaSabadoDomingo(fechaIngreso);</span>
-<span class="fc" id="L28">        this.cantidad = cantidad;</span>
-<span class="fc" id="L29">        this.valor = valor;</span>
-<span class="fc" id="L30">        this.categoria = categoria;</span>
-<span class="fc" id="L31">    }</span>
+<span class="nc" id="L22">    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {</span>
+<span class="nc" id="L23">        this.idPlanta = idPlanta;</span>
+<span class="nc" id="L24">        this.nombre = nombre;</span>
+<span class="nc" id="L25">        this.descripcion = descripcion;</span>
+<span class="nc" id="L26">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L27">        calculaSabadoDomingo(fechaIngreso);</span>
+<span class="nc" id="L28">        this.cantidad = cantidad;</span>
+<span class="nc" id="L29">        this.valor = valor;</span>
+<span class="nc" id="L30">        this.categoria = categoria;</span>
+<span class="nc" id="L31">    }</span>
 
     public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
 <span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(idPlanta, &quot;El id de la planta es requerido&quot;);</span>
@@ -43,10 +43,10 @@ public class Planta {
 
     public void calculaSabadoDomingo(LocalDate result) {
 
-<span class="pc bpc" id="L46" title="2 of 4 branches missed.">        if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){</span>
+<span class="nc bnc" id="L46" title="All 4 branches missed.">        if ((result.getDayOfWeek() == DayOfWeek.SATURDAY || result.getDayOfWeek() == DayOfWeek.SUNDAY)){</span>
 <span class="nc" id="L47">            throw new ExcepcionValorInvalido(MensajesDeExcepcion.ES_FIN_DE_SEMANA.getMensaje());</span>
         }
-<span class="fc" id="L49">    }</span>
+<span class="nc" id="L49">    }</span>
 
     public int getCantidad() {
 <span class="nc" id="L52">        return cantidad;</span>
@@ -57,7 +57,7 @@ public class Planta {
 <span class="nc" id="L57">    }</span>
 
     public BigDecimal getValor() {
-<span class="fc" id="L60">        return valor;</span>
+<span class="nc" id="L60">        return valor;</span>
     }
 
     public void setValor(BigDecimal valor) {

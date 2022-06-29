@@ -37,16 +37,7 @@ public class RepositorioClienteMysql implements RepositorioCliente {
                 this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,
                         paramSource, new MapeoCliente()));
     }
-
-    @Override
-    public void eliminar(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-
-    }
-
-    @Override
+      @Override
     public Long guardar(Cliente cliente) {
 
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();

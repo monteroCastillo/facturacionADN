@@ -15,15 +15,15 @@ public class Empleado {
 <span class="nc" id="L15">    public Empleado() {</span>
 <span class="nc" id="L16">    }</span>
 
-<span class="nc" id="L18">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
-<span class="nc" id="L19">        this.idEmpleado = idEmpleado;</span>
-<span class="nc" id="L20">        this.nombre = nombre;</span>
-<span class="nc" id="L21">        this.direccion = direccion;</span>
-<span class="nc" id="L22">        this.telefono = telefono;</span>
-<span class="nc" id="L23">        this.email = email;</span>
-<span class="nc" id="L24">        this.fechaRegistro = fechaRegistro;</span>
-<span class="nc" id="L25">        this.perfil = perfil;</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L18">    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {</span>
+<span class="fc" id="L19">        this.idEmpleado = idEmpleado;</span>
+<span class="fc" id="L20">        this.nombre = nombre;</span>
+<span class="fc" id="L21">        this.direccion = direccion;</span>
+<span class="fc" id="L22">        this.telefono = telefono;</span>
+<span class="fc" id="L23">        this.email = email;</span>
+<span class="fc" id="L24">        this.fechaRegistro = fechaRegistro;</span>
+<span class="fc" id="L25">        this.perfil = perfil;</span>
+<span class="fc" id="L26">    }</span>
     public static Empleado reconstruir(Long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
 <span class="nc" id="L28">        ValidadorArgumento.validarObligatorio(idEmpleado, &quot;El id del empleado es requerido&quot;);</span>
 <span class="nc" id="L29">        ValidadorArgumento.validarObligatorio(nombre, &quot;El nombre del empleado es requerido&quot;);</span>
@@ -44,7 +44,7 @@ public class Empleado {
 <span class="nc" id="L44">    }</span>
 
     public long getIdEmpleado() {
-<span class="nc" id="L47">        return this.idEmpleado;</span>
+<span class="fc" id="L47">        return this.idEmpleado;</span>
     }
 
     public String getNombre() {

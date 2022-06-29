@@ -1,12 +1,9 @@
 package com.ceiba.cliente;
 
-import com.ceiba.BasePrueba;
-import com.ceiba.cliente.ClienteTestDataBuilder;
+
 import com.ceiba.cliente.modelo.entidad.Cliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
-
-import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

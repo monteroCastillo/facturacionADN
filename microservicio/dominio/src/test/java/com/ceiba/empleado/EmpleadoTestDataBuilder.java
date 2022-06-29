@@ -14,13 +14,13 @@ public class EmpleadoTestDataBuilder {
     private Perfil perfil;
 
     public EmpleadoTestDataBuilder conEmpleadoPorDefecto() {
-        this.idEmpleado = idEmpleado;
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.email = email;
-        this.fechaRegistro = fechaRegistro;
-        this.perfil = perfil;
+        this.idEmpleado = 123l;
+        this.nombre = "Shirley";
+        this.direccion = "Av 6";
+        this.telefono = "4545456";
+        this.email = "shi@gmail.com";
+        this.fechaRegistro = LocalDate.of(2022,05,22);
+        this.perfil = Perfil.ADMINISTRADOR;
         return this;
     }
 
@@ -61,6 +61,10 @@ public class EmpleadoTestDataBuilder {
     public EmpleadoTestDataBuilder conPerfil(Perfil perfil) {
         this.perfil = perfil;
         return this;
+    }
+
+    public Empleado build(){
+        return new Empleado(idEmpleado,nombre,direccion,telefono,email,fechaRegistro,perfil);
     }
 
 }

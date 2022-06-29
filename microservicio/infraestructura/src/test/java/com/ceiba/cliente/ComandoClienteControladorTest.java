@@ -2,6 +2,7 @@ package com.ceiba.cliente;
 
 import com.ceiba.ApplicationMock;
 import com.ceiba.RespuestaComando;
+import com.ceiba.cliente.adaptador.repositorio.RepositorioClienteMysql;
 import com.ceiba.cliente.controlador.ComandoControladorCliente;
 import com.ceiba.cliente.puerto.dao.DaoCliente;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,6 +33,9 @@ public class ComandoClienteControladorTest {
     @Autowired
     private DaoCliente daoCliente;
 
+    @Autowired
+    private RepositorioClienteMysql repositorioClienteMysql;
+
     @Test
     void crearClienteExitoso() throws Exception{
         var comandoClienteTestDataBuilder = new ComandoClienteTestDataBuilder().build();
@@ -44,7 +49,7 @@ public class ComandoClienteControladorTest {
         var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
         var clienteGuardado = daoCliente.obtenerClientePorId(respuesta.getValor());
 
-        System.out.println("Cliente guardado: " +clienteGuardado);
+
 
         Assertions.assertEquals(1L, clienteGuardado.getId());
         Assertions.assertEquals("cliente", clienteGuardado.getNombre());
@@ -54,5 +59,17 @@ public class ComandoClienteControladorTest {
         Assertions.assertEquals("COMUN", clienteGuardado.getTipoCliente().name());
 
     }
+
+    @Test
+    public void eliminar() throws Exception {
+        // arrange
+        Long id = 1l;
+        // act - assert
+        mocMvc.perform(delete("/apiPlanta/borrar/{id}", id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 
 }

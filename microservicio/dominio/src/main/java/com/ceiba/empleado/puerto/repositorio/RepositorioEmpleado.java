@@ -1,6 +1,5 @@
 package com.ceiba.empleado.puerto.repositorio;
 
-import com.ceiba.empleado.modelo.dto.DtoEmpleado;
 import com.ceiba.empleado.modelo.entidad.Empleado;
 
 public interface RepositorioEmpleado {

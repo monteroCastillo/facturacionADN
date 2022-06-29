@@ -20,6 +20,8 @@ public class PlantaPorProveedorTestDataBuilder {
     }
     public PlantaPorProveedor reconstruir(){ return PlantaPorProveedor.reconstruir(id, idProveedor,idPlanta);}
 
+    public PlantaPorProveedor crear(){ return PlantaPorProveedor.reconstruir(id, idProveedor,idPlanta);}
+
     public PlantaPorProveedorTestDataBuilder conId(Long id){
         this.id = id;
         return this;

@@ -7,8 +7,6 @@ public interface RepositorioCliente {
 
     Cliente obtener(Long id);
 
-    void eliminar(Long id);
-
     Long guardar(Cliente cliente);
 
     boolean existe(Long id);

@@ -1,11 +1,9 @@
 package com.ceiba.empleado.adaptador.repositorio;
 
 
-import com.ceiba.empleado.modelo.dto.DtoEmpleado;
 import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.puerto.repositorio.RepositorioEmpleado;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
-import com.ceiba.infraestructura.jdbc.EjecucionBaseDeDatos;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
