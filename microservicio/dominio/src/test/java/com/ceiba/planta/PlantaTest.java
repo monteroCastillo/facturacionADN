@@ -94,7 +94,7 @@ public class PlantaTest {
                 "La categoria de la planta es requerida");
     }
     @Test
-    void CalculaSabadoDomingoExitosamente2(){
+    void CalculaSabadoDomingoExitosamente(){
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder().conPlantaPorDefecto()
                         .reconstruir()
                         .calculaSabadoDomingo(LocalDate.of(2022,06,26))

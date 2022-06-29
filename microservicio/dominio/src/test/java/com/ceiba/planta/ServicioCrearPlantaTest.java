@@ -1,11 +1,9 @@
 package com.ceiba.planta;
 
-import com.ceiba.BasePrueba;
-import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
+
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
-import com.ceiba.planta.utils.MensajesDeExcepcion;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

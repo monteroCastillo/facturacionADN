@@ -10,21 +10,21 @@ public class ServicioCrearEmpleado {
   private  final RepositorioEmpleado repositorioEmpleado;
 
 
-<span class="fc" id="L13">    public ServicioCrearEmpleado(RepositorioEmpleado repositorioEmpleado) {</span>
+<span class="nc" id="L13">    public ServicioCrearEmpleado(RepositorioEmpleado repositorioEmpleado) {</span>
 
-<span class="fc" id="L15">        this.repositorioEmpleado = repositorioEmpleado;</span>
-<span class="fc" id="L16">    }</span>
+<span class="nc" id="L15">        this.repositorioEmpleado = repositorioEmpleado;</span>
+<span class="nc" id="L16">    }</span>
 
     public Long ejecutar(Empleado empleado){
-<span class="fc" id="L19">        validarExistenciaPrevia(empleado);</span>
-<span class="fc" id="L20">        return this.repositorioEmpleado.guardar(empleado);</span>
+<span class="nc" id="L19">        validarExistenciaPrevia(empleado);</span>
+<span class="nc" id="L20">        return this.repositorioEmpleado.guardar(empleado);</span>
     }
     private void validarExistenciaPrevia(Empleado empleado)  {
-<span class="fc" id="L23">        boolean existe = this.repositorioEmpleado.existe(empleado.getIdEmpleado());</span>
-<span class="pc bpc" id="L24" title="1 of 2 branches missed.">        if(existe){</span>
+<span class="nc" id="L23">        boolean existe = this.repositorioEmpleado.existe(empleado.getIdEmpleado());</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">        if(existe){</span>
 <span class="nc" id="L25">            throw new ExcepcionValorInvalido(MensajesDeExcepcion.YA_EXISTE_UNA_PERSONA_REGISTRADA_CON_ESTE_ID.getMensaje());</span>
         }
 
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L28">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

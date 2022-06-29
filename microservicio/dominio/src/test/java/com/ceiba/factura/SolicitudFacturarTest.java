@@ -31,4 +31,22 @@ public class SolicitudFacturarTest {
                 .build();
         Assertions.assertEquals(LocalDate.of(2022,06,22), solicitudFacturar.getFechaIngreso());
     }
+
+    @Test
+    void solicitudFacturarCrearTestExitosamente(){
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Cliente cliente = new ClienteTestDataBuilder()
+                .conClientePorDefecto()
+                .build();
+
+        List<ProductoFacturar> productosFacturar = new ArrayList<>();
+        productosFacturar.add(0,ProductoFacturar.crear(5,planta));
+
+        var solicitudFacturar = new SolicitudFacturarTestDataBuilder()
+                .conFechaIngreso(LocalDate.of(2022,06,22))
+                .conProductoFacturar(new ProductoFacturar(1l,5,planta))
+                .conCliente(cliente)
+                .crear();
+        Assertions.assertEquals(LocalDate.of(2022,06,22), solicitudFacturar.getFechaIngreso());
+    }
 }

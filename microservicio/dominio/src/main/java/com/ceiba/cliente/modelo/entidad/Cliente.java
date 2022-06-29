@@ -11,8 +11,6 @@ public class Cliente {
     private  String email;
     private  TipoCliente tipoCliente;
 
-    public Cliente(){}
-
     public Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
         this.id = id;
         this.nombre = nombre;

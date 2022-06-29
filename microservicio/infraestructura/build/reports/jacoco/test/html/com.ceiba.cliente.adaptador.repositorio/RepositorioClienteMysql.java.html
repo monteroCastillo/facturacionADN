@@ -37,33 +37,24 @@ public class RepositorioClienteMysql implements RepositorioCliente {
 <span class="fc" id="L37">                this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlObtenerPorId,</span>
                         paramSource, new MapeoCliente()));
     }
-
-    @Override
-    public void eliminar(Long id) {
-<span class="nc" id="L43">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L44">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L45">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-
-<span class="nc" id="L47">    }</span>
-
-    @Override
+      @Override
     public Long guardar(Cliente cliente) {
 
-<span class="nc" id="L52">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L53">        parameterSource.addValue(&quot;id&quot;, cliente.getId());</span>
-<span class="nc" id="L54">        parameterSource.addValue(&quot;nombre&quot;, cliente.getNombre());</span>
-<span class="nc" id="L55">        parameterSource.addValue(&quot;direccion&quot;, cliente.getDireccion());</span>
-<span class="nc" id="L56">        parameterSource.addValue(&quot;telefono&quot;, cliente.getTelefono());</span>
-<span class="nc" id="L57">        parameterSource.addValue(&quot;email&quot;, cliente.getEmail());</span>
-<span class="nc" id="L58">        parameterSource.addValue(&quot;tipo_cliente&quot;, cliente.getTipoCliente().name());</span>
-<span class="nc" id="L59">        return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));</span>
+<span class="fc" id="L43">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L44">        parameterSource.addValue(&quot;id&quot;, cliente.getId());</span>
+<span class="fc" id="L45">        parameterSource.addValue(&quot;nombre&quot;, cliente.getNombre());</span>
+<span class="fc" id="L46">        parameterSource.addValue(&quot;direccion&quot;, cliente.getDireccion());</span>
+<span class="fc" id="L47">        parameterSource.addValue(&quot;telefono&quot;, cliente.getTelefono());</span>
+<span class="fc" id="L48">        parameterSource.addValue(&quot;email&quot;, cliente.getEmail());</span>
+<span class="fc" id="L49">        parameterSource.addValue(&quot;tipo_cliente&quot;, cliente.getTipoCliente().name());</span>
+<span class="fc" id="L50">        return (this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear));</span>
     }
 
     @Override
     public boolean existe(Long id) {
-<span class="nc" id="L64">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L65">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L66">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
+<span class="nc" id="L55">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L56">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L57">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
     }
 
 }

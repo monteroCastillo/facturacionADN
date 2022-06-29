@@ -31,11 +31,11 @@ public class PlantaPorProveedorTest {
     void deberiaCrearPlantaPorProveedorExitosamente(){
 
         var plantaPorProveedor = new PlantaPorProveedorTestDataBuilder()
-                .conId(2l)
+
                 .conProveedor(22l)
                 .conPlanta(12)
                 .crear();
-        Assertions.assertEquals(2l, plantaPorProveedor.getId());
+
         Assertions.assertEquals(22l, plantaPorProveedor.getIdProveedor());
         Assertions.assertEquals(12,plantaPorProveedor.getIdPlanta() );
     }
@@ -43,7 +43,7 @@ public class PlantaPorProveedorTest {
     @Test
     void crearSinProveedorDeberiaLanzarError(){
         BasePrueba.assertThrows(() -> new PlantaPorProveedorTestDataBuilder()
-                        .conId(2l)
+
                         .conPlanta(12)
                         .crear(),ExcepcionValorObligatorio.class,
                 "Proveedor es requerido");

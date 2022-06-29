@@ -47,4 +47,8 @@ public class SolicitudFacturarTestDataBuilder {
         return new SolicitudFacturar( fechaIngreso, cliente, productosFacturar);
     }
 
+    public SolicitudFacturar crear() {
+        return new SolicitudFacturar( fechaIngreso, cliente, productosFacturar);
+    }
+
 }

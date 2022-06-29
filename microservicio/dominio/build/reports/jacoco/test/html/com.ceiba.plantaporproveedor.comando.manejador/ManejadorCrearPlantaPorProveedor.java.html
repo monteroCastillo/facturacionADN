@@ -27,6 +27,6 @@ public class ManejadorCrearPlantaPorProveedor implements ManejadorComandoRespues
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlantaPorProveedor comando) {
 <span class="nc" id="L28">        PlantaPorProveedor plantaPorProveedor = this.fabricaPlantaPorProveedor.crear(comando);</span>
 <span class="nc" id="L29">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(plantaPorProveedor));</span>
-<span class="nc" id="L30">    }</span>
-<span class="nc" id="L31">}</span>
+    }
+}
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

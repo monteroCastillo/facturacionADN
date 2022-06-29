@@ -21,11 +21,11 @@ public class ManejadorCrearPlanta implements ManejadorComandoRespuesta&lt;Comand
 
     @Override
     public ComandoRespuesta&lt;Integer&gt; ejecutar(ComandoPlanta comando) {
-<span class="nc" id="L24"></span>
+
 <span class="nc" id="L25">        Planta planta = this.fabricaPlanta.crear(comando);</span>
-        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(planta));
-<span class="nc" id="L27">    }</span>
-<span class="nc" id="L28"></span>
+<span class="nc" id="L26">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(planta));</span>
+    }
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
