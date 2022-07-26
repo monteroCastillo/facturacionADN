@@ -16,6 +16,7 @@ public class ClienteTestDataBuilder {
         this.nombre = "Cliente 1";
         this.direccion = "Av 6";
         this.telefono = "55555";
+        this.email = "cliente@gmail.com";
         this.tipoCliente = TipoCliente.COMUN;
         return this;
     }
@@ -48,7 +49,7 @@ public class ClienteTestDataBuilder {
         this.tipoCliente = tipoCliente;
         return this;
     }
-    public Cliente build(){
-        return new Cliente(id, nombre, direccion,telefono,email,tipoCliente);
-    }
+//    public Cliente reconstruir(){
+//        return  Cliente.reconstruir(id, nombre, direccion,telefono,email,tipoCliente);
+//    }
 }

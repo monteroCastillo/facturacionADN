@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.empleado.EmpleadoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-07T21:03:19" hostname="RODRIGO-MONTERO" time="0.011">
+<testsuite name="com.ceiba.empleado.EmpleadoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-26T20:30:27" hostname="RODRIGO-MONTERO" time="0.009">
   <properties/>
-  <testcase name="deberiaReconstruirPersonaExitosamente()" classname="com.ceiba.empleado.EmpleadoTest" time="0.003"/>
+  <testcase name="deberiaReconstruirPersonaExitosamente()" classname="com.ceiba.empleado.EmpleadoTest" time="0.001"/>
   <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.empleado.EmpleadoTest" time="0.001"/>
   <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.empleado.EmpleadoTest" time="0.001"/>
   <testcase name="reconstruirSinDirecciondeberiaDeberiaLanzarError()" classname="com.ceiba.empleado.EmpleadoTest" time="0.001"/>

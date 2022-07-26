@@ -11,7 +11,7 @@ public class Cliente {
     private  String email;
     private  TipoCliente tipoCliente;
 
-<span class="fc" id="L14">    public Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {</span>
+<span class="fc" id="L14">    private Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {</span>
 <span class="fc" id="L15">        this.id = id;</span>
 <span class="fc" id="L16">        this.nombre = nombre;</span>
 <span class="fc" id="L17">        this.direccion = direccion;</span>
@@ -21,53 +21,63 @@ public class Cliente {
 <span class="fc" id="L21">    }</span>
 
     public static Cliente reconstruir(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
-<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion es requerido&quot;);</span>
+<span class="fc" id="L24">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerido&quot;);</span>
 <span class="fc" id="L25">        ValidadorArgumento.validarObligatorio(nombre, &quot;Nombre del cliente es requerido&quot;);</span>
-<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(id, &quot;Id del cliente es requerido&quot;);</span>
+<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(direccion, &quot;La direccion es requerido&quot;);</span>
 <span class="fc" id="L27">        ValidadorArgumento.validarObligatorio(telefono, &quot;El telefono del cliente es requerido&quot;);</span>
 <span class="fc" id="L28">        ValidadorArgumento.validarObligatorio(email, &quot;El Email  del cliente es requerido&quot;);</span>
 <span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(tipoCliente, &quot;Tipo de cliente es requerido&quot;);</span>
 <span class="fc" id="L30">        return new Cliente(id, nombre, direccion, telefono, email, tipoCliente);</span>
     }
 
+    public static Cliente crear(SolicitudCrearCliente solicitudCrearCliente){
+<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getNombre(), &quot;Nombre del cliente es requerido&quot;);</span>
+<span class="nc" id="L35">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getDireccion(), &quot;La direccion es requerido&quot;);</span>
+<span class="nc" id="L36">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTelefono(), &quot;El telefono del cliente es requerido&quot;);</span>
+<span class="nc" id="L37">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getEmail(), &quot;El Email  del cliente es requerido&quot;);</span>
+<span class="nc" id="L38">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTipoCliente(), &quot;Tipo de cliente es requerido&quot;);</span>
+<span class="nc" id="L39">        return new Cliente(solicitudCrearCliente.getId(), solicitudCrearCliente.getNombre(),solicitudCrearCliente.getDireccion(),</span>
+<span class="nc" id="L40">                solicitudCrearCliente.getTelefono(), solicitudCrearCliente.getEmail(), solicitudCrearCliente.getTipoCliente());</span>
+    }
+
     public Long getId() {
-<span class="fc" id="L34">        return id;</span>
+<span class="fc" id="L44">        return id;</span>
     }
 
     public void setId(Long id) {
-<span class="nc" id="L38">        this.id = id;</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L48">        this.id = id;</span>
+<span class="nc" id="L49">    }</span>
 
     public String getNombre() {
-<span class="fc" id="L42">        return nombre;</span>
+<span class="fc" id="L52">        return nombre;</span>
     }
 
     public String getDireccion() {
-<span class="fc" id="L46">        return direccion;</span>
+<span class="fc" id="L56">        return direccion;</span>
     }
 
     public String getTelefono() {
-<span class="fc" id="L50">        return telefono;</span>
+<span class="fc" id="L60">        return telefono;</span>
     }
 
     public String getEmail() {
-<span class="fc" id="L54">        return email;</span>
+<span class="fc" id="L64">        return email;</span>
     }
 
     public TipoCliente getTipoCliente() {
-<span class="fc" id="L58">        return tipoCliente;</span>
+<span class="fc" id="L68">        return tipoCliente;</span>
     }
 
     public boolean esTipoPreferencial() {
-<span class="fc" id="L62">        return this.tipoCliente.equals(TipoCliente.PREFERENCIAL);</span>
+<span class="fc" id="L72">        return this.tipoCliente.equals(TipoCliente.PREFERENCIAL);</span>
     }
 
     public boolean esTipoEspecial() {
-<span class="fc" id="L66">        return this.tipoCliente.equals(TipoCliente.ESPECIAL);</span>
+<span class="fc" id="L76">        return this.tipoCliente.equals(TipoCliente.ESPECIAL);</span>
     }
 
     public boolean esTipoComun() {
-<span class="nc" id="L70">        return this.tipoCliente.equals(TipoCliente.COMUN);</span>
+<span class="nc" id="L80">        return this.tipoCliente.equals(TipoCliente.COMUN);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

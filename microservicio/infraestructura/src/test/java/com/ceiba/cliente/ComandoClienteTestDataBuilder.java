@@ -23,8 +23,8 @@ public class ComandoClienteTestDataBuilder {
 
     }
 
-    public Cliente build(){
+    public Cliente reconstruir(){
 
-        return new Cliente(id, nombre, direccion, telefono, email, tipoCliente);
+        return  Cliente.reconstruir(id, nombre, direccion, telefono, email, tipoCliente);
     }
 }

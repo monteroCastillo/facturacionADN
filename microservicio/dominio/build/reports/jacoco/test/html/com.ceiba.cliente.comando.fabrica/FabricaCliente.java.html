@@ -2,20 +2,24 @@
 
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
+import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="nc" id="L8">public class FabricaCliente {</span>
+public class FabricaCliente {
 
-    public Cliente crear(ComandoCliente comandoCliente){
-<span class="nc" id="L11">        return new Cliente(</span>
-<span class="nc" id="L12">          comandoCliente.getId(),</span>
-<span class="nc" id="L13">          comandoCliente.getNombre(),</span>
-<span class="nc" id="L14">          comandoCliente.getDireccion(),</span>
-<span class="nc" id="L15">          comandoCliente.getTelefono(),</span>
-<span class="nc" id="L16">          comandoCliente.getEmail(),</span>
-<span class="nc" id="L17">          comandoCliente.getTipoCliente()</span>
-        );
+    private final RepositorioCliente repositorioCliente;
+
+
+<span class="nc" id="L15">    public FabricaCliente(RepositorioCliente repositorioCliente){</span>
+<span class="nc" id="L16">        this.repositorioCliente = repositorioCliente;</span>
+<span class="nc" id="L17">    }</span>
+
+    public SolicitudCrearCliente guardarCliente(ComandoCliente comandoCliente){
+<span class="nc" id="L20">        return new SolicitudCrearCliente(comandoCliente.getId(), comandoCliente.getNombre(), comandoCliente.getDireccion(), comandoCliente.getTelefono(), comandoCliente.getEmail(), comandoCliente.getTipoCliente());</span>
+
     }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

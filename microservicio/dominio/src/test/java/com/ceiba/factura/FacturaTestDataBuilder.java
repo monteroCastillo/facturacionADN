@@ -28,7 +28,7 @@ public class FacturaTestDataBuilder  {
 
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
-                .build();
+                .reconstruir();
         List<ProductoFacturar> productosFacturar = new ArrayList<>();
         productosFacturar.add(0,ProductoFacturar.crear(5,planta));
 

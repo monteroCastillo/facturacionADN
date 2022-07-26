@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cliente.ServicioCrearClienteTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-07T21:03:18" hostname="RODRIGO-MONTERO" time="1.266">
+<testsuite name="com.ceiba.cliente.ServicioCrearClienteTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-26T20:30:26" hostname="RODRIGO-MONTERO" time="1.161">
   <properties/>
-  <testcase name="validarCreacionCliente()" classname="com.ceiba.cliente.ServicioCrearClienteTest" time="1.264"/>
-  <testcase name="validarExistencia()" classname="com.ceiba.cliente.ServicioCrearClienteTest" time="0.002"/>
+  <testcase name="validarExistencia()" classname="com.ceiba.cliente.ServicioCrearClienteTest" time="1.161"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -24,7 +24,7 @@ public class FacturaTest {
 
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
-                .build();
+                .reconstruir();
         List<ProductoFacturar> productosFacturar = new ArrayList<>();
         productosFacturar.add(0,ProductoFacturar.crear(5,planta));
 
@@ -71,7 +71,7 @@ public class FacturaTest {
         Cliente cliente2 = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
                 .conTipoCliente(TipoCliente.ESPECIAL)
-                .build();
+                .reconstruir();
 
         var factura = new FacturaTestDataBuilder().conFacturaPorDefecto()
                 .conCliente(cliente2)

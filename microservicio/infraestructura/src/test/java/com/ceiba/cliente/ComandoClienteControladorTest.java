@@ -38,7 +38,7 @@ public class ComandoClienteControladorTest {
 
     @Test
     void crearClienteExitoso() throws Exception{
-        var comandoClienteTestDataBuilder = new ComandoClienteTestDataBuilder().build();
+        var comandoClienteTestDataBuilder = new ComandoClienteTestDataBuilder().reconstruir();
 
         var resultado = mocMvc.perform(post("/apiCliente/crear")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -54,8 +54,8 @@ public class ComandoClienteControladorTest {
         Assertions.assertEquals(1L, clienteGuardado.getId());
         Assertions.assertEquals("cliente", clienteGuardado.getNombre());
         Assertions.assertEquals("Av 6", clienteGuardado.getDireccion());
-        Assertions.assertEquals("55555", clienteGuardado.getTelefono());
         Assertions.assertEquals("cliente@gmail.com", clienteGuardado.getEmail());
+        Assertions.assertEquals("55555", clienteGuardado.getTelefono());
         Assertions.assertEquals("COMUN", clienteGuardado.getTipoCliente().name());
 
     }

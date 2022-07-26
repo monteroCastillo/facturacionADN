@@ -4,6 +4,7 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.fabrica.FabricaCliente;
 import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,6 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta<ComandoC
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoCliente comando) {
-        Cliente cliente = this.fabricaCliente.crear(comando);
-        return  new ComandoRespuesta<>(this.servicioCrearCliente.ejecutar(cliente));
+        return  new ComandoRespuesta<>(this.servicioCrearCliente.ejecutar(fabricaCliente.guardarCliente(comando)));
     }
 }

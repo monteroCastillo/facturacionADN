@@ -19,7 +19,7 @@ public class SolicitudFacturarTest {
         Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
-                .build();
+                .reconstruir();
 
         List<ProductoFacturar> productosFacturar = new ArrayList<>();
         productosFacturar.add(0,ProductoFacturar.crear(5,planta));
@@ -37,7 +37,7 @@ public class SolicitudFacturarTest {
         Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
-                .build();
+                .reconstruir();
 
         List<ProductoFacturar> productosFacturar = new ArrayList<>();
         productosFacturar.add(0,ProductoFacturar.crear(5,planta));

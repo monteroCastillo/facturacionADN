@@ -1,6 +1,7 @@
 package com.ceiba.cliente.servicio;
 
 import com.ceiba.cliente.modelo.entidad.Cliente;
+import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 
 public class ServicioCrearCliente {
@@ -11,8 +12,10 @@ public class ServicioCrearCliente {
         this.repositorioCliente = repositorioCliente;
     }
 
-    public Long ejecutar(Cliente cliente){
-        return this.repositorioCliente.guardar(cliente);
+    public Long ejecutar(SolicitudCrearCliente solicitudCrearCliente){
+
+        var cliente = Cliente.crear(solicitudCrearCliente);
+        return repositorioCliente.guardar(cliente);
     }
 
 }

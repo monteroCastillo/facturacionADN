@@ -11,7 +11,7 @@ public class Cliente {
     private  String email;
     private  TipoCliente tipoCliente;
 
-    public Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
+    private Cliente(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -21,13 +21,23 @@ public class Cliente {
     }
 
     public static Cliente reconstruir(Long id, String nombre, String direccion, String telefono, String email, TipoCliente tipoCliente) {
-        ValidadorArgumento.validarObligatorio(direccion, "La direccion es requerido");
-        ValidadorArgumento.validarObligatorio(nombre, "Nombre del cliente es requerido");
         ValidadorArgumento.validarObligatorio(id, "Id del cliente es requerido");
+        ValidadorArgumento.validarObligatorio(nombre, "Nombre del cliente es requerido");
+        ValidadorArgumento.validarObligatorio(direccion, "La direccion es requerido");
         ValidadorArgumento.validarObligatorio(telefono, "El telefono del cliente es requerido");
         ValidadorArgumento.validarObligatorio(email, "El Email  del cliente es requerido");
         ValidadorArgumento.validarObligatorio(tipoCliente, "Tipo de cliente es requerido");
         return new Cliente(id, nombre, direccion, telefono, email, tipoCliente);
+    }
+
+    public static Cliente crear(SolicitudCrearCliente solicitudCrearCliente){
+        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getNombre(), "Nombre del cliente es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getDireccion(), "La direccion es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTelefono(), "El telefono del cliente es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getEmail(), "El Email  del cliente es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTipoCliente(), "Tipo de cliente es requerido");
+        return new Cliente(solicitudCrearCliente.getId(), solicitudCrearCliente.getNombre(),solicitudCrearCliente.getDireccion(),
+                solicitudCrearCliente.getTelefono(), solicitudCrearCliente.getEmail(), solicitudCrearCliente.getTipoCliente());
     }
 
     public Long getId() {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.proveedor.ServicioActualizarProveedorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-07T21:03:20" hostname="RODRIGO-MONTERO" time="0.028">
+<testsuite name="com.ceiba.proveedor.ServicioActualizarProveedorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-26T20:30:27" hostname="RODRIGO-MONTERO" time="0.025">
   <properties/>
-  <testcase name="validarActualizacionProveedorTest()" classname="com.ceiba.proveedor.ServicioActualizarProveedorTest" time="0.026"/>
+  <testcase name="validarActualizacionProveedorTest()" classname="com.ceiba.proveedor.ServicioActualizarProveedorTest" time="0.024"/>
   <testcase name="validarProveedorExistenciaPreviaTest()" classname="com.ceiba.proveedor.ServicioActualizarProveedorTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

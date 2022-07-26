@@ -31,11 +31,11 @@ public class ConsultaPlantaControladorTest {
     private MockMvc mockMvc;
 
     @Test
-    void consultarEmpleados() throws Exception{
+    void consultarPlantas() throws Exception{
         mockMvc.perform(get("/plantas/index")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$[0].idPlanta", is(12)))
+
                 .andExpect(jsonPath("$[0].nombre", is("Margarita")))
                 .andExpect(jsonPath("$[0].descripcion", is("flor amarilla")));
     }
