@@ -11,7 +11,7 @@ public class ServicioCrearPlanta {
         this.repositorioPlanta = repositorioPlanta;
     }
 
-    public int ejecutar(Planta planta){
+    public Long ejecutar(Planta planta){
         return this.repositorioPlanta.guardar(planta);
     }
 }

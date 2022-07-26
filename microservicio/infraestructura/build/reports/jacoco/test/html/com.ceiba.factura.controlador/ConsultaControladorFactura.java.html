@@ -5,14 +5,11 @@ import com.ceiba.factura.consulta.ManejadorConsultarFacturasAnuladas;
 import com.ceiba.factura.modelo.dto.ResumenFacturaDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping(&quot;/factura&quot;)
 @Tag(name = &quot;Controlador consulta factura&quot;)
@@ -21,20 +18,20 @@ public class ConsultaControladorFactura {
     private final ManejadorConsultarFacturasAnuladas manejadorConsultarFacturasAnuladas;
     private final ManejadorSumarFacturas manejadorSumarFacturas;
 
-<span class="fc" id="L24">    public ConsultaControladorFactura(ManejadorConsultarFacturasAnuladas manejadorConsultarFacturasAnuladas, ManejadorSumarFacturas manejadorSumarFacturas) {</span>
-<span class="fc" id="L25">        this.manejadorConsultarFacturasAnuladas = manejadorConsultarFacturasAnuladas;</span>
-<span class="fc" id="L26">        this.manejadorSumarFacturas = manejadorSumarFacturas;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L21">    public ConsultaControladorFactura(ManejadorConsultarFacturasAnuladas manejadorConsultarFacturasAnuladas, ManejadorSumarFacturas manejadorSumarFacturas) {</span>
+<span class="fc" id="L22">        this.manejadorConsultarFacturasAnuladas = manejadorConsultarFacturasAnuladas;</span>
+<span class="fc" id="L23">        this.manejadorSumarFacturas = manejadorSumarFacturas;</span>
+<span class="fc" id="L24">    }</span>
 
     @GetMapping(&quot;anulada&quot;)
     @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para consultar las facturas anuladas&quot;)
     public List&lt;ResumenFacturaDTO&gt; obtenerAnuladas() {
-<span class="fc" id="L32">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
+<span class="fc" id="L29">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
     }
 
     @GetMapping({&quot;/sumarFacturas/{fecha}&quot;})
     public BigDecimal buscarPlantaProveedor(@PathVariable(&quot;fecha&quot;) String fecha) {
-<span class="fc" id="L37">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
+<span class="fc" id="L34">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

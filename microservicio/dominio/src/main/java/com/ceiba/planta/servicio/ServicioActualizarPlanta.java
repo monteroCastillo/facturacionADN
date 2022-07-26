@@ -19,7 +19,7 @@ public class ServicioActualizarPlanta {
     }
 
     private void validarExistenciaPrevia(Planta planta){
-        boolean existe = this.repositorioPlanta.existe(planta.getIdPlanta());
+        boolean existe = this.repositorioPlanta.existe(planta.getId());
         if(!existe) {
             throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());
         }

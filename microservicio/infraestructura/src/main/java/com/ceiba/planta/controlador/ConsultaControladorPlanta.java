@@ -4,13 +4,10 @@ import com.ceiba.planta.comando.manejador.ManejadorBuscarPlanta;
 import com.ceiba.planta.comando.manejador.ManejadorPlantaProveedor;
 import com.ceiba.planta.consulta.ManejadorListarPlantas;
 import com.ceiba.planta.modelo.entidad.Planta;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping("/plantas")
 public class ConsultaControladorPlanta {
@@ -33,7 +30,7 @@ public class ConsultaControladorPlanta {
     }
 
     @GetMapping({"/buscar/{id}"})
-    public Planta buscar(@PathVariable("id") int id) {
+    public Planta buscar(@PathVariable("id") Long id) {
         return this.manejadorBuscarPlanta.ejecutar(id);
     }
 

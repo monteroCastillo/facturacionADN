@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ServicioCrearPlantaTest {
     @Test
     public void validarCreacionPlanta(){
-        int ID = 1;
+        Long ID = 1l;
         Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
         RepositorioPlanta repositorioPlanta = Mockito.mock(RepositorioPlanta.class);
-        Mockito.when(repositorioPlanta.existe(Mockito.anyInt())).thenReturn(false);
+        Mockito.when(repositorioPlanta.existe(Mockito.anyLong())).thenReturn(false);
         Mockito.when(repositorioPlanta.guardar(planta)).thenReturn(ID);
         ServicioCrearPlanta servicioCrearPlanta = new ServicioCrearPlanta(repositorioPlanta);
         // act - assert

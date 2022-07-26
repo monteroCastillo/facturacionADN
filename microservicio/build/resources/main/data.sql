@@ -17,6 +17,7 @@ INSERT INTO PRODUCTO_FACTURAR VALUES(1,12,13,58);
 
 INSERT INTO PROVEEDOR VALUES(22, 'plantas y plantas', 'Av vasquez Cobo', '5656565', 'plantasyplantas.com.co');
 INSERT INTO PROVEEDOR VALUES(23, 'Vivero Marinela', 'Calle 23 # 25-46', '2481476', 'viveromarinela.com.co');
+INSERT INTO PROVEEDOR VALUES(24, 'Loha Garden', 'Cra 56 # 8-35', '3749865', 'lohagarden.com.co');
 
 INSERT INTO PLANTAPORPROVEEDOR VALUES(1, 22, 12);
 INSERT INTO PLANTAPORPROVEEDOR VALUES(2, 22, 13);

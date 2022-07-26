@@ -7,9 +7,9 @@ import java.util.List;
 public interface DaoPlanta {
     List<Planta> listar();
 
-    Planta obtenerPlantaPorId(int id);
+    Planta obtenerPlantaPorId(Long id);
 
-    Planta obtener(int id);
+    Planta obtener(Long id);
 
     List<Planta> plantaProveedor(Long proveedor);
 

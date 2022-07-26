@@ -10,6 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ComandoProductoFacturar {
-    private int idPlanta;
+    private Long id;
     private Integer cantidad;
 }

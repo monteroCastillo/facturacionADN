@@ -5,7 +5,7 @@ import com.ceiba.planta.servicio.ServicioEliminarPlanta;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorEliminarPlanta implements ManejadorComando<Integer> {
+public class ManejadorEliminarPlanta implements ManejadorComando<Long> {
     private final ServicioEliminarPlanta servicioEliminarPlanta;
 
     public ManejadorEliminarPlanta(ServicioEliminarPlanta servicioEliminarPlanta) {
@@ -14,7 +14,7 @@ public class ManejadorEliminarPlanta implements ManejadorComando<Integer> {
 
 
     @Override
-    public void ejecutar(Integer id) {
+    public void ejecutar(Long id) {
         this.servicioEliminarPlanta.ejecutar(id);
     }
 }

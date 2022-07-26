@@ -8,18 +8,73 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-@Getter
-<span class="nc" id="L12">@Setter</span>
-<span class="nc" id="L13">@AllArgsConstructor</span>
-<span class="nc" id="L14">@NoArgsConstructor</span>
-public class ComandoPlanta {
-<span class="nc" id="L16">    private int idPlanta;</span>
-<span class="nc" id="L17">    private String nombre;</span>
-<span class="nc" id="L18">    private String descripcion;</span>
-<span class="nc" id="L19">    private LocalDate fechaIngreso;</span>
-<span class="nc" id="L20">    private int cantidad;</span>
-<span class="nc" id="L21">    private BigDecimal valor;</span>
-<span class="nc" id="L22">    private CategoriaPlanta categoria;</span>
 
+<span class="nc" id="L12">@AllArgsConstructor</span>
+<span class="nc" id="L13">@NoArgsConstructor</span>
+public class ComandoPlanta {
+    private Long id;
+    private String nombre;
+    private String descripcion;
+    private LocalDate fechaIngreso;
+    private int cantidad;
+    private BigDecimal valor;
+    private CategoriaPlanta categoria;
+
+
+    public Long getId() {
+<span class="nc" id="L25">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L29">        this.id = id;</span>
+<span class="nc" id="L30">    }</span>
+
+    public String getNombre() {
+<span class="nc" id="L33">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="nc" id="L37">        this.nombre = nombre;</span>
+<span class="nc" id="L38">    }</span>
+
+    public String getDescripcion() {
+<span class="nc" id="L41">        return descripcion;</span>
+    }
+
+    public void setDescripcion(String descripcion) {
+<span class="nc" id="L45">        this.descripcion = descripcion;</span>
+<span class="nc" id="L46">    }</span>
+
+    public LocalDate getFechaIngreso() {
+<span class="nc" id="L49">        return fechaIngreso;</span>
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+<span class="nc" id="L53">        this.fechaIngreso = fechaIngreso;</span>
+<span class="nc" id="L54">    }</span>
+
+    public int getCantidad() {
+<span class="nc" id="L57">        return cantidad;</span>
+    }
+
+    public void setCantidad(int cantidad) {
+<span class="nc" id="L61">        this.cantidad = cantidad;</span>
+<span class="nc" id="L62">    }</span>
+
+    public BigDecimal getValor() {
+<span class="nc" id="L65">        return valor;</span>
+    }
+
+    public void setValor(BigDecimal valor) {
+<span class="nc" id="L69">        this.valor = valor;</span>
+<span class="nc" id="L70">    }</span>
+
+    public CategoriaPlanta getCategoria() {
+<span class="nc" id="L73">        return categoria;</span>
+    }
+
+    public void setCategoria(CategoriaPlanta categoria) {
+<span class="nc" id="L77">        this.categoria = categoria;</span>
+<span class="nc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

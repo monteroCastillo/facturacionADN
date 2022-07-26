@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.planta.ServicioCrearPlantaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-29T03:19:02" hostname="RODRIGO-MONTERO" time="0.002">
+<testsuite name="com.ceiba.planta.ServicioCrearPlantaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-07T21:03:20" hostname="RODRIGO-MONTERO" time="0.002">
   <properties/>
   <testcase name="validarCreacionPlanta()" classname="com.ceiba.planta.ServicioCrearPlantaTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>

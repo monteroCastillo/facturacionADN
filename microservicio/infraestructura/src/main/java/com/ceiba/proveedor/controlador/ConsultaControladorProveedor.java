@@ -3,13 +3,10 @@ package com.ceiba.proveedor.controlador;
 import com.ceiba.proveedor.comando.manejador.ManejadorBuscarProveedor;
 import com.ceiba.proveedor.consulta.ManejadorListarProveedores;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin()
 @RestController
 @RequestMapping("/proveedores")
 public class ConsultaControladorProveedor {

@@ -43,7 +43,7 @@ public class RepositorioProductoFacturarMysql implements RepositorioProductoFact
     private void guardar(ProductoFacturar productoFacturar, Long idFactura) {
 <span class="fc" id="L44">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
 <span class="fc" id="L45">        paramSource.addValue(&quot;id_factura&quot;, idFactura);</span>
-<span class="fc" id="L46">        paramSource.addValue(&quot;id_planta&quot;, productoFacturar.getPlanta().getIdPlanta());</span>
+<span class="fc" id="L46">        paramSource.addValue(&quot;id_planta&quot;, productoFacturar.getPlanta().getId());</span>
 <span class="fc" id="L47">        paramSource.addValue(&quot;cantidad&quot;, productoFacturar.getCantidad());</span>
 <span class="fc" id="L48">        this.customNamedParameterJdbcTemplate.crear(paramSource, sqlCrear);</span>
 <span class="fc" id="L49">    }</span>

@@ -22,8 +22,8 @@ public class ManejadorCrearProveedor  implements ManejadorComandoRespuesta&lt;Co
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoProveedor comando) {
-<span class="fc" id="L25">        Proveedor proveedor = this.fabricaProveedor.crear(comando);</span>
 
+<span class="fc" id="L26">        Proveedor proveedor = this.fabricaProveedor.crear(comando);</span>
 <span class="fc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearProveedor.ejecutar(proveedor));</span>
     }
 }

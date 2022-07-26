@@ -33,21 +33,20 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
 
     }
-    public int guardar(Planta planta) {
+    public Long guardar(Planta planta) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
-        parameterSource.addValue("id", planta.getIdPlanta());
+        parameterSource.addValue("id", planta.getId());
         parameterSource.addValue("nombre", planta.getNombre());
         parameterSource.addValue("descripcion", planta.getDescripcion());
-        parameterSource.addValue("fecha_ingreso",planta.getFechaIngreso());
-        parameterSource.addValue("cantidad",planta.getCantidad());
-        parameterSource.addValue("valor",planta.getValor());
-        parameterSource.addValue("categoria",planta.getCategoria().name());
-        Long idPlantaGuardada = this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
-        return Math.toIntExact(idPlantaGuardada);
+        parameterSource.addValue("fecha_ingreso", planta.getFechaIngreso());
+        parameterSource.addValue("cantidad", planta.getCantidad());
+        parameterSource.addValue("valor", planta.getValor());
+        parameterSource.addValue("categoria", planta.getCategoria().name());
+        return this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
     }
 
     @Override
-    public void eliminar(int id) {
+    public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
@@ -56,7 +55,7 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
     @Override
     public void actualizar(Planta planta) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", planta.getIdPlanta());
+        paramSource.addValue("id", planta.getId());
         paramSource.addValue("nombre", planta.getNombre());
         paramSource.addValue("descripcion", planta.getDescripcion());
         paramSource.addValue("fecha_ingreso", planta.getFechaIngreso());
@@ -67,7 +66,7 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
 
     }
     @Override
-    public boolean existe(int id) {
+    public boolean existe(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);

@@ -6,10 +6,9 @@ import com.ceiba.proveedor.comando.manejador.ManejadorActualizarProveedor;
 import com.ceiba.proveedor.comando.manejador.ManejadorCrearProveedor;
 import com.ceiba.proveedor.comando.manejador.ManejadorEliminarProveedor;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin()
 @RestController
 @RequestMapping(&quot;/apiProveedor&quot;)
-@CrossOrigin(origins = &quot;http://localhost:4200&quot;)
 public class ComandoControladorProveedor {
 
     private final ManejadorCrearProveedor manejadorCrearProveedor;
@@ -17,26 +16,26 @@ public class ComandoControladorProveedor {
 
     private final ManejadorActualizarProveedor manejadorActualizarProveedor;
 
-<span class="fc" id="L20">    public ComandoControladorProveedor(ManejadorCrearProveedor manejadorCrearProveedor, ManejadorEliminarProveedor manejadorEliminarProveedor, ManejadorActualizarProveedor manejadorActualizarProveedor) {</span>
-<span class="fc" id="L21">        this.manejadorCrearProveedor = manejadorCrearProveedor;</span>
-<span class="fc" id="L22">        this.manejadorEliminarProveedor = manejadorEliminarProveedor;</span>
-<span class="fc" id="L23">        this.manejadorActualizarProveedor = manejadorActualizarProveedor;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L19">    public ComandoControladorProveedor(ManejadorCrearProveedor manejadorCrearProveedor, ManejadorEliminarProveedor manejadorEliminarProveedor, ManejadorActualizarProveedor manejadorActualizarProveedor) {</span>
+<span class="fc" id="L20">        this.manejadorCrearProveedor = manejadorCrearProveedor;</span>
+<span class="fc" id="L21">        this.manejadorEliminarProveedor = manejadorEliminarProveedor;</span>
+<span class="fc" id="L22">        this.manejadorActualizarProveedor = manejadorActualizarProveedor;</span>
+<span class="fc" id="L23">    }</span>
 
     @PostMapping(&quot;/guardar&quot;)
     public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoProveedor comandoProveedor) {
-<span class="fc" id="L28">        return manejadorCrearProveedor.ejecutar(comandoProveedor);</span>
+<span class="fc" id="L27">        return manejadorCrearProveedor.ejecutar(comandoProveedor);</span>
     }
 
     @DeleteMapping(value=&quot;/eliminar/{id}&quot;)
     public void eliminar(@PathVariable Long id) {
-<span class="nc" id="L33">        manejadorEliminarProveedor.ejecutar(id);</span>
-<span class="nc" id="L34">    }</span>
+<span class="nc" id="L32">        manejadorEliminarProveedor.ejecutar(id);</span>
+<span class="nc" id="L33">    }</span>
 
     @PutMapping(&quot;/actualizar&quot;)
     public void actualizar(@RequestBody ComandoProveedor comandoProveedor) {
-<span class="nc" id="L38">        manejadorActualizarProveedor.ejecutar(comandoProveedor);</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L37">        manejadorActualizarProveedor.ejecutar(comandoProveedor);</span>
+<span class="nc" id="L38">    }</span>
 
 
 }

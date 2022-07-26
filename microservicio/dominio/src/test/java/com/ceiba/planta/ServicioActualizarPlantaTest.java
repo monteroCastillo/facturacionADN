@@ -16,7 +16,7 @@ public class ServicioActualizarPlantaTest {
         // arrange
         Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
         RepositorioPlanta repositorioPlanta = Mockito.mock(RepositorioPlanta.class);
-        Mockito.when(repositorioPlanta.existe(Mockito.anyInt())).thenReturn(true);
+        Mockito.when(repositorioPlanta.existe(Mockito.anyLong())).thenReturn(true);
         ServicioActualizarPlanta servicioActualizarPlanta = new ServicioActualizarPlanta(repositorioPlanta);
         // act - assert
         servicioActualizarPlanta.ejecutar(planta);

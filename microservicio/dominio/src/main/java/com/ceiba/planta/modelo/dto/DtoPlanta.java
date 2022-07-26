@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class DtoPlanta {
 
-    private final int idPlanta;
+    private final Long id;
     private final String nombre;
     private final String descripcion;
     private final LocalDate fechaIngreso;

@@ -8,18 +8,73 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-@Getter
-<span class="fc" id="L12">@Setter</span>
-<span class="nc" id="L13">@AllArgsConstructor</span>
-<span class="fc" id="L14">@NoArgsConstructor</span>
-public class ComandoPlanta {
-<span class="fc" id="L16">    private int idPlanta;</span>
-<span class="fc" id="L17">    private String nombre;</span>
-<span class="fc" id="L18">    private String descripcion;</span>
-<span class="fc" id="L19">    private LocalDate fechaIngreso;</span>
-<span class="fc" id="L20">    private int cantidad;</span>
-<span class="fc" id="L21">    private BigDecimal valor;</span>
-<span class="fc" id="L22">    private CategoriaPlanta categoria;</span>
 
+<span class="nc" id="L12">@AllArgsConstructor</span>
+<span class="fc" id="L13">@NoArgsConstructor</span>
+public class ComandoPlanta {
+    private Long id;
+    private String nombre;
+    private String descripcion;
+    private LocalDate fechaIngreso;
+    private int cantidad;
+    private BigDecimal valor;
+    private CategoriaPlanta categoria;
+
+
+    public Long getId() {
+<span class="fc" id="L25">        return id;</span>
+    }
+
+    public void setId(Long id) {
+<span class="fc" id="L29">        this.id = id;</span>
+<span class="fc" id="L30">    }</span>
+
+    public String getNombre() {
+<span class="fc" id="L33">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="fc" id="L37">        this.nombre = nombre;</span>
+<span class="fc" id="L38">    }</span>
+
+    public String getDescripcion() {
+<span class="fc" id="L41">        return descripcion;</span>
+    }
+
+    public void setDescripcion(String descripcion) {
+<span class="fc" id="L45">        this.descripcion = descripcion;</span>
+<span class="fc" id="L46">    }</span>
+
+    public LocalDate getFechaIngreso() {
+<span class="fc" id="L49">        return fechaIngreso;</span>
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+<span class="fc" id="L53">        this.fechaIngreso = fechaIngreso;</span>
+<span class="fc" id="L54">    }</span>
+
+    public int getCantidad() {
+<span class="fc" id="L57">        return cantidad;</span>
+    }
+
+    public void setCantidad(int cantidad) {
+<span class="fc" id="L61">        this.cantidad = cantidad;</span>
+<span class="fc" id="L62">    }</span>
+
+    public BigDecimal getValor() {
+<span class="fc" id="L65">        return valor;</span>
+    }
+
+    public void setValor(BigDecimal valor) {
+<span class="fc" id="L69">        this.valor = valor;</span>
+<span class="fc" id="L70">    }</span>
+
+    public CategoriaPlanta getCategoria() {
+<span class="fc" id="L73">        return categoria;</span>
+    }
+
+    public void setCategoria(CategoriaPlanta categoria) {
+<span class="fc" id="L77">        this.categoria = categoria;</span>
+<span class="fc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

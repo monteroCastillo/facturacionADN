@@ -32,7 +32,7 @@ public class FabricaSolicitudFacturar {
 <span class="fc" id="L32">        return comandoProductosFacturar.stream().map(comandoPlanta -&gt;</span>
 <span class="fc" id="L33">                        ProductoFacturar.crear(</span>
 <span class="fc" id="L34">                                comandoPlanta.getCantidad(),</span>
-<span class="fc" id="L35">                                daoPlanta.obtener(comandoPlanta.getIdPlanta())))</span>
+<span class="fc" id="L35">                                daoPlanta.obtener(comandoPlanta.getId())))</span>
 <span class="fc" id="L36">                .toList();</span>
     }
 }

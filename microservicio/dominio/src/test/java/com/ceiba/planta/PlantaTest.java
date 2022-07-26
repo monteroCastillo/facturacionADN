@@ -15,7 +15,7 @@ public class PlantaTest {
     @Test
     void deberiaReconstruirPlantaExitosamente() {
         var planta = new PlantaTestDataBuilder()
-                .conId(123)
+                .conId(123l)
                 .conNombre("Girasol")
                 .conDescripcion("Color Amarillo")
                 .conFechaIngreso(LocalDate.of(2022,06,22))
@@ -24,7 +24,7 @@ public class PlantaTest {
                 .conCategoria(CategoriaPlanta.PLANTASDEFLOR).
                 reconstruir();
 
-        Assertions.assertEquals(123, planta.getIdPlanta());
+        Assertions.assertEquals(123, planta.getId());
         Assertions.assertEquals("Girasol", planta.getNombre());
         Assertions.assertEquals("Color Amarillo", planta.getDescripcion());
         Assertions.assertEquals(LocalDate.of(2022,06,22), planta.getFechaIngreso());
@@ -36,7 +36,7 @@ public class PlantaTest {
     @Test
     void reconstruirSinNombreDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder()
-                        .conId(123)
+                        .conId(123l)
                         .conDescripcion("Color Amarillo")
                         .conFechaIngreso(LocalDate.now())
                         .conCantidad(180)
@@ -48,7 +48,7 @@ public class PlantaTest {
     @Test
     void reconstruirSinDescripcionDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder()
-                        .conId(123)
+                        .conId(123l)
                         .conNombre("Girasol")
                         .conFechaIngreso(LocalDate.of(2022,05,22))
                         .conCantidad(180)
@@ -60,7 +60,7 @@ public class PlantaTest {
     @Test
     void reconstruirSinFechaIngresoDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder()
-                        .conId(123)
+                        .conId(123l)
                         .conNombre("Girasol")
                         .conDescripcion("Color Amarillo")
                         .conCantidad(180)
@@ -72,7 +72,7 @@ public class PlantaTest {
     @Test
     void reconstruirSinValorDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder()
-                        .conId(123)
+                        .conId(123l)
                         .conNombre("Girasol")
                         .conDescripcion("Color Amarillo")
                         .conFechaIngreso(LocalDate.now())
@@ -84,7 +84,7 @@ public class PlantaTest {
     @Test
     void reconstruirSinCategoriaDeberiaLanzarError() {
         BasePrueba.assertThrows(() -> new PlantaTestDataBuilder()
-                        .conId(123)
+                        .conId(123l)
                         .conNombre("Girasol")
                         .conDescripcion("Color Amarillo")
                         .conFechaIngreso(LocalDate.now())

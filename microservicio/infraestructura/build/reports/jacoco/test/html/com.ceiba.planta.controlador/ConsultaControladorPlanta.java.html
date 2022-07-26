@@ -4,13 +4,10 @@ import com.ceiba.planta.comando.manejador.ManejadorBuscarPlanta;
 import com.ceiba.planta.comando.manejador.ManejadorPlantaProveedor;
 import com.ceiba.planta.consulta.ManejadorListarPlantas;
 import com.ceiba.planta.modelo.entidad.Planta;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin
 @RestController
 @RequestMapping(&quot;/plantas&quot;)
 public class ConsultaControladorPlanta {
@@ -20,26 +17,26 @@ public class ConsultaControladorPlanta {
 
     private final ManejadorPlantaProveedor manejadorPlantaProveedor;
 
-<span class="fc" id="L23">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta, ManejadorPlantaProveedor manejadorPlantaProveedor) {</span>
-<span class="fc" id="L24">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
-<span class="fc" id="L25">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
-<span class="fc" id="L26">        this.manejadorPlantaProveedor = manejadorPlantaProveedor;</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L20">    public ConsultaControladorPlanta(ManejadorListarPlantas manejadorListarPlantas, ManejadorBuscarPlanta manejadorBuscarPlanta, ManejadorPlantaProveedor manejadorPlantaProveedor) {</span>
+<span class="fc" id="L21">        this.manejadorListarPlantas = manejadorListarPlantas;</span>
+<span class="fc" id="L22">        this.manejadorBuscarPlanta = manejadorBuscarPlanta;</span>
+<span class="fc" id="L23">        this.manejadorPlantaProveedor = manejadorPlantaProveedor;</span>
+<span class="fc" id="L24">    }</span>
 
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;Planta&gt; listar(){
-<span class="fc" id="L32">        return  this.manejadorListarPlantas.ejecutar();</span>
+<span class="fc" id="L29">        return  this.manejadorListarPlantas.ejecutar();</span>
     }
 
     @GetMapping({&quot;/buscar/{id}&quot;})
-    public Planta buscar(@PathVariable(&quot;id&quot;) int id) {
-<span class="nc" id="L37">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
+    public Planta buscar(@PathVariable(&quot;id&quot;) Long id) {
+<span class="nc" id="L34">        return this.manejadorBuscarPlanta.ejecutar(id);</span>
     }
 
     @GetMapping({&quot;/consulta/{id}&quot;})
     public List&lt;Planta&gt; buscarPlantaProveedor(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L42">        return this.manejadorPlantaProveedor.ejecutar(id);</span>
+<span class="fc" id="L39">        return this.manejadorPlantaProveedor.ejecutar(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

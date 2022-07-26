@@ -4,11 +4,11 @@ import com.ceiba.planta.modelo.entidad.Planta;
 
 public interface RepositorioPlanta {
 
-    int guardar(Planta planta);
+    Long guardar(Planta planta);
 
-    void eliminar(int idPlanta);
+    void eliminar(Long id);
 
-    boolean existe(int id);
+    boolean existe(Long id);
 
     void actualizar(Planta planta);
 

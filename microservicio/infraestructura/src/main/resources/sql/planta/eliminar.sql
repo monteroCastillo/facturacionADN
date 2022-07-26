@@ -1,2 +1,1 @@
-delete
-from planta where id = :id
+delete from planta where id = :id

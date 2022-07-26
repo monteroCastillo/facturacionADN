@@ -7,9 +7,10 @@ import com.ceiba.planta.comando.manejador.ManejadorCrearPlanta;
 import com.ceiba.planta.comando.manejador.ManejadorEliminarPlanta;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping(&quot;/apiPlanta&quot;)
-@CrossOrigin(origins = &quot;http://localhost:4200&quot;)
+@CrossOrigin
 public class ComandoControladorPlanta {
 
     private final ManejadorCrearPlanta manejadorCrearPlanta;
@@ -18,27 +19,27 @@ public class ComandoControladorPlanta {
 
     private final ManejadorActualizarPlanta manejadorActualizarPlanta;
 
-<span class="fc" id="L21">    public ComandoControladorPlanta(ManejadorCrearPlanta manejadorCrearPlanta, ManejadorEliminarPlanta manejadorEliminarPlanta, ManejadorActualizarPlanta manejadorActualizarPlanta) {</span>
-<span class="fc" id="L22">        this.manejadorCrearPlanta = manejadorCrearPlanta;</span>
-<span class="fc" id="L23">        this.manejadorEliminarPlanta = manejadorEliminarPlanta;</span>
-<span class="fc" id="L24">        this.manejadorActualizarPlanta = manejadorActualizarPlanta;</span>
-<span class="fc" id="L25">    }</span>
+<span class="fc" id="L22">    public ComandoControladorPlanta(ManejadorCrearPlanta manejadorCrearPlanta, ManejadorEliminarPlanta manejadorEliminarPlanta, ManejadorActualizarPlanta manejadorActualizarPlanta) {</span>
+<span class="fc" id="L23">        this.manejadorCrearPlanta = manejadorCrearPlanta;</span>
+<span class="fc" id="L24">        this.manejadorEliminarPlanta = manejadorEliminarPlanta;</span>
+<span class="fc" id="L25">        this.manejadorActualizarPlanta = manejadorActualizarPlanta;</span>
+<span class="fc" id="L26">    }</span>
 
 
     @PostMapping(&quot;/crear&quot;)
-    public ComandoRespuesta&lt;Integer&gt; crear(@RequestBody ComandoPlanta comandoPlanta) {
-<span class="fc" id="L30">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
+    public ComandoRespuesta&lt;Long&gt; crear(@RequestBody ComandoPlanta comandoPlanta) {
+<span class="fc" id="L31">        return manejadorCrearPlanta.ejecutar(comandoPlanta);</span>
     }
 
     @DeleteMapping(value=&quot;/borrar/{id}&quot;)
-    public void eliminar(@PathVariable int id) {
-<span class="fc" id="L35">        manejadorEliminarPlanta.ejecutar(id);</span>
-<span class="fc" id="L36">    }</span>
+    public void eliminar(@PathVariable Long id) {
+<span class="fc" id="L36">        manejadorEliminarPlanta.ejecutar(id);</span>
+<span class="fc" id="L37">    }</span>
 
     @PutMapping(&quot;/actualizar&quot;)
     public void actualizar(@RequestBody ComandoPlanta comandoPlanta) {
-<span class="nc" id="L40">        manejadorActualizarPlanta.ejecutar(comandoPlanta);</span>
-<span class="nc" id="L41">    }</span>
+<span class="nc" id="L41">        manejadorActualizarPlanta.ejecutar(comandoPlanta);</span>
+<span class="nc" id="L42">    }</span>
 
 
 }

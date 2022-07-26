@@ -11,5 +11,5 @@ public class ServicioEliminarPlanta {
         this.repositorioPlanta = repositorioPlanta;
     }
 
-    public void ejecutar(int id){this.repositorioPlanta.eliminar(id);}
+    public void ejecutar(Long id){this.repositorioPlanta.eliminar(id);}
 }

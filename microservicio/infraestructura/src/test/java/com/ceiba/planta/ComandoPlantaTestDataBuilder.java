@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class ComandoPlantaTestDataBuilder {
 
-    private int idPlanta;
+    private Long id;
     private String nombre;
     private String descripcion;
     private LocalDate fechaIngreso;
@@ -18,7 +18,7 @@ public class ComandoPlantaTestDataBuilder {
 
 
     public ComandoPlantaTestDataBuilder crearPorDefecto(){
-        this.idPlanta =1;
+        this.id =1l;
         this.nombre ="manzanilla";
         this.descripcion="planta aromatica";
         this.fechaIngreso =LocalDate.of(2022,06,24);
@@ -28,6 +28,6 @@ public class ComandoPlantaTestDataBuilder {
         return this;
     }
 
-    public Planta build(){return new Planta(idPlanta, nombre, descripcion, fechaIngreso, cantidad, valor2, categoria); }
+    public Planta build(){return new Planta(id, nombre, descripcion, fechaIngreso, cantidad, valor2, categoria); }
 
 }

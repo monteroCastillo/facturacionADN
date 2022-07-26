@@ -1,11 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.planta.ConsultaPlantaControladorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-29T03:19:26" hostname="RODRIGO-MONTERO" time="1.257">
+<testsuite name="com.ceiba.planta.ConsultaPlantaControladorTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2022-07-07T21:03:41" hostname="RODRIGO-MONTERO" time="1.122">
   <properties/>
-  <testcase name="consultarEmpleados()" classname="com.ceiba.planta.ConsultaPlantaControladorTest" time="0.227"/>
-  <testcase name="consultarPlantaPorProveedor()" classname="com.ceiba.planta.ConsultaPlantaControladorTest" time="0.237"/>
-  <system-out><![CDATA[2022-06-28 22:19:25.420  INFO 13328 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.planta.ConsultaPlantaControladorTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2022-06-28 22:19:25.420  INFO 13328 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2022-06-28 22:19:25.420  INFO 13328 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1b03b0c2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55e2c6ca, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@66a44fa4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6febc148, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6968e9d7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a7fa6a6, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e620522, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5fb26827, org.springframework.test.context.event.EventPublishingTestExecutionListener@71ba1457, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@26a7c650, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@58929cb3, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@14ad34d6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@351492b8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@2d99470c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@61223108]
+  <testcase name="consultarEmpleados()" classname="com.ceiba.planta.ConsultaPlantaControladorTest" time="0.22">
+    <failure message="java.lang.AssertionError: No value at JSON path &quot;$[0].idPlanta&quot;" type="java.lang.AssertionError">java.lang.AssertionError: No value at JSON path &quot;$[0].idPlanta&quot;
+	at org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:304)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:73)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$0(JsonPathResultMatchers.java:87)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:212)
+	at com.ceiba.planta.ConsultaPlantaControladorTest.consultarEmpleados(ConsultaPlantaControladorTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy2/jdk.proxy2.$Proxy5.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: com.jayway.jsonpath.PathNotFoundException: No results for path: $[0]['idPlanta']
+	at app//com.jayway.jsonpath.internal.path.EvaluationContextImpl.getValue(EvaluationContextImpl.java:133)
+	at app//com.jayway.jsonpath.JsonPath.read(JsonPath.java:185)
+	at app//com.jayway.jsonpath.JsonPath.read(JsonPath.java:386)
+	at app//com.jayway.jsonpath.JsonPath.read(JsonPath.java:370)
+	at app//org.springframework.test.util.JsonPathExpectationsHelper.evaluateJsonPath(JsonPathExpectationsHelper.java:301)
+	... 87 more
+</failure>
+  </testcase>
+  <testcase name="consultarPlantaPorProveedor()" classname="com.ceiba.planta.ConsultaPlantaControladorTest" time="0.216"/>
+  <system-out><![CDATA[2022-07-07 16:03:40.943  INFO 19808 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.planta.ConsultaPlantaControladorTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-07-07 16:03:40.945  INFO 19808 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-07-07 16:03:40.945  INFO 19808 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@ff9be70, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3f353ae6, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2c2ebebe, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@328b43f6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@70c371e9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6637971d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3f350e2b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@57c97ec8, org.springframework.test.context.event.EventPublishingTestExecutionListener@3cee11e1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@66bbf61e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@71e8e8b4, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6d4be77f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@21e6822e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@18548b0a, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2ecf7dfc]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -15,22 +113,59 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.7)
 
-2022-06-28 22:19:25.439  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Starting ConsultaPlantaControladorTest using Java 17.0.2 on RODRIGO-MONTERO with PID 13328 (started by rodrigo.montero in D:\Adn\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-06-28 22:19:25.439  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : No active profile set, falling back to 1 default profile: "default"
-2022-06-28 22:19:25.597  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-28 22:19:25.598  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-28 22:19:25.727  INFO 13328 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-28 22:19:25.733  INFO 13328 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-28 22:19:25.740  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.004s)
-2022-06-28 22:19:25.744  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 1.1
-2022-06-28 22:19:25.746  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
-2022-06-28 22:19:26.121  INFO 13328 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 22:19:26.121  INFO 13328 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 22:19:26.121  INFO 13328 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-28 22:19:26.131  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Started ConsultaPlantaControladorTest in 0.704 seconds (JVM running for 21.682)
-2022-06-28 22:19:26.146  INFO 13328 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-28 22:19:26.358  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-28 22:19:26.359  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-07-07 16:03:40.964  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Starting ConsultaPlantaControladorTest using Java 17.0.3 on RODRIGO-MONTERO with PID 19808 (started by rodrigo.montero in D:\Adn\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-07-07 16:03:40.964  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : No active profile set, falling back to 1 default profile: "default"
+2022-07-07 16:03:41.073  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-07-07 16:03:41.074  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-07-07 16:03:41.179  INFO 19808 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-07-07 16:03:41.184  INFO 19808 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-07-07 16:03:41.189  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.002s)
+2022-07-07 16:03:41.193  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 1.1
+2022-07-07 16:03:41.194  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
+2022-07-07 16:03:41.528  INFO 19808 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-07-07 16:03:41.529  INFO 19808 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-07-07 16:03:41.529  INFO 19808 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-07-07 16:03:41.537  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Started ConsultaPlantaControladorTest in 0.588 seconds (JVM running for 19.197)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /plantas/index
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.ceiba.planta.controlador.ConsultaControladorPlanta
+           Method = com.ceiba.planta.controlador.ConsultaControladorPlanta#listar()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [X-XSS-Protection:"1; mode=block", X-Content-Type-Options:"nosniff", Pragma:"no-cache", X-Frame-Options:"SAMEORIGIN", Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":12,"nombre":"Margarita","descripcion":"flor amarilla","fechaIngreso":"2022-06-08","cantidad":50,"valor":12000.00,"categoria":"PLANTASDEFLOR"},{"id":13,"nombre":"Jazmin","descripcion":"Planta con buen olor en las noches","fechaIngreso":"2022-06-10","cantidad":10,"valor":25000.00,"categoria":"PLANTASDEFLOR"},{"id":14,"nombre":"gardenias","descripcion":"Flor de clima tropical","fechaIngreso":"2022-06-15","cantidad":17,"valor":26000.00,"categoria":"PLANTASDEFLOR"}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2022-07-07 16:03:41.549  INFO 19808 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-07-07 16:03:41.757  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-07-07 16:03:41.758  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -40,25 +175,25 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.7)
 
-2022-06-28 22:19:26.417  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Starting ConsultaPlantaControladorTest using Java 17.0.2 on RODRIGO-MONTERO with PID 13328 (started by rodrigo.montero in D:\Adn\java-arquitectura-hexagonal\microservicio\infraestructura)
-2022-06-28 22:19:26.417  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : No active profile set, falling back to 1 default profile: "default"
-2022-06-28 22:19:26.615  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
-2022-06-28 22:19:26.616  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
-2022-06-28 22:19:26.761  INFO 13328 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2022-06-28 22:19:26.767  INFO 13328 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
-2022-06-28 22:19:26.772  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.002s)
-2022-06-28 22:19:26.775  INFO 13328 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2022-06-28 22:19:26.781  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2022-06-28 22:19:26.784  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
-2022-06-28 22:19:26.797  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - data
-2022-06-28 22:19:26.808  INFO 13328 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.029s)
-2022-06-28 22:19:27.135  INFO 13328 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-06-28 22:19:27.135  INFO 13328 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-06-28 22:19:27.135  INFO 13328 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-06-28 22:19:27.151  INFO 13328 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Started ConsultaPlantaControladorTest in 0.786 seconds (JVM running for 22.703)
-2022-06-28 22:19:27.164  INFO 13328 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
-2022-06-28 22:19:27.377  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
-2022-06-28 22:19:27.379  INFO 13328 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+2022-07-07 16:03:41.785  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Starting ConsultaPlantaControladorTest using Java 17.0.3 on RODRIGO-MONTERO with PID 19808 (started by rodrigo.montero in D:\Adn\java-arquitectura-hexagonal\microservicio\infraestructura)
+2022-07-07 16:03:41.785  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : No active profile set, falling back to 1 default profile: "default"
+2022-07-07 16:03:41.896  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-07-07 16:03:41.898  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-07-07 16:03:42.011  INFO 19808 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-07-07 16:03:42.016  INFO 19808 --- [    Test worker] o.f.c.i.database.base.DatabaseType       : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-07-07 16:03:42.020  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.001s)
+2022-07-07 16:03:42.021  INFO 19808 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2022-07-07 16:03:42.026  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-07-07 16:03:42.028  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-07-07 16:03:42.041  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - data
+2022-07-07 16:03:42.050  INFO 19808 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.025s)
+2022-07-07 16:03:42.434  INFO 19808 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-07-07 16:03:42.434  INFO 19808 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-07-07 16:03:42.435  INFO 19808 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-07-07 16:03:42.443  INFO 19808 --- [    Test worker] c.c.p.ConsultaPlantaControladorTest      : Started ConsultaPlantaControladorTest in 0.682 seconds (JVM running for 20.103)
+2022-07-07 16:03:42.454  INFO 19808 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-07-07 16:03:42.659  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-07-07 16:03:42.660  INFO 19808 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

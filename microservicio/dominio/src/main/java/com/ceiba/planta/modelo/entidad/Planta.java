@@ -9,7 +9,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 public class Planta {
 
-    private int idPlanta;
+    private Long id;
     private String nombre;
     private String descripcion;
     private LocalDate fechaIngreso;
@@ -17,8 +17,8 @@ public class Planta {
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 
-    public Planta(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
-        this.idPlanta = idPlanta;
+    public Planta(Long id, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
+        this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaIngreso = fechaIngreso;
@@ -28,15 +28,15 @@ public class Planta {
         this.categoria = categoria;
     }
 
-    public static Planta reconstruir(int idPlanta, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
-        ValidadorArgumento.validarObligatorio(idPlanta, "El id de la planta es requerido");
+    public static Planta reconstruir(Long id, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria){
+        ValidadorArgumento.validarObligatorio(id, "El id de la planta es requerido");
         ValidadorArgumento.validarObligatorio(nombre, "El nombre de la planta es requerido");
         ValidadorArgumento.validarObligatorio(descripcion, "La descripcion de la planta es requerida");
         ValidadorArgumento.validarObligatorio(fechaIngreso, "La fecha de ingreso de la planta es requerida");
         ValidadorArgumento.validarObligatorio(cantidad, "La cantidad de plantas es requerida");
         ValidadorArgumento.validarObligatorio(valor, "El valor  de la planta es requerido");
         ValidadorArgumento.validarObligatorio(categoria, "La categoria de la planta es requerida");
-        return new Planta(idPlanta, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
+        return new Planta(id, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
     }
 
     public void calculaSabadoDomingo(LocalDate result) {
@@ -70,12 +70,12 @@ public class Planta {
         this.categoria = categoria;
     }
 
-    public int getIdPlanta() {
-        return idPlanta;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdPlanta(int idPlanta) {
-        this.idPlanta = idPlanta;
+    public void setid(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {

@@ -13,7 +13,7 @@ public class MapeoPlanta implements RowMapper<Planta>, MapperResult {
     @Override
     public Planta mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-        var idPlanta = resultSet.getInt("id");
+        var id = resultSet.getLong("id");
         var nombre = resultSet.getString("nombre");
         var descripcion = resultSet.getString("descripcion");
         var fechaIngreso = resultSet.getDate("fecha_ingreso").toLocalDate();
@@ -21,6 +21,6 @@ public class MapeoPlanta implements RowMapper<Planta>, MapperResult {
         var valor= resultSet.getBigDecimal("valor");
         var categoria = CategoriaPlanta.valueOf(resultSet.getString("categoria"));
 
-        return Planta.reconstruir(idPlanta,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);
+        return Planta.reconstruir(id,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);
     }
 }

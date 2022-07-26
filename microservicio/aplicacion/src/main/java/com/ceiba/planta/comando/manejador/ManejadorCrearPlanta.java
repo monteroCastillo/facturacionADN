@@ -9,7 +9,7 @@ import com.ceiba.planta.servicio.ServicioCrearPlanta;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManejadorCrearPlanta implements ManejadorComandoRespuesta<ComandoPlanta, ComandoRespuesta<Integer>> {
+public class ManejadorCrearPlanta implements ManejadorComandoRespuesta<ComandoPlanta, ComandoRespuesta<Long>> {
     private final ServicioCrearPlanta servicioCrearPlanta;
 
     private final FabricaPlanta fabricaPlanta;
@@ -20,7 +20,7 @@ public class ManejadorCrearPlanta implements ManejadorComandoRespuesta<ComandoPl
     }
 
     @Override
-    public ComandoRespuesta<Integer> ejecutar(ComandoPlanta comando) {
+    public ComandoRespuesta<Long> ejecutar(ComandoPlanta comando) {
 
         Planta planta = this.fabricaPlanta.crear(comando);
         return  new ComandoRespuesta<>(this.servicioCrearPlanta.ejecutar(planta));

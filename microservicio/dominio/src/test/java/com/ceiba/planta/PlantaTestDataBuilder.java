@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class PlantaTestDataBuilder {
-    private int idPlanta;
+    private Long id;
     private String nombre;
     private String descripcion;
     private LocalDate fechaIngreso;
@@ -16,7 +16,7 @@ public class PlantaTestDataBuilder {
     private CategoriaPlanta categoria;
 
     public PlantaTestDataBuilder conPlantaPorDefecto() {
-        this.idPlanta = 1;
+        this.id = 1l;
         this.nombre = "rosa";
         this.descripcion = "flor roja";
         this.fechaIngreso = LocalDate.of(2022,06,22);
@@ -28,11 +28,11 @@ public class PlantaTestDataBuilder {
 
 
     public Planta reconstruir() {
-        return Planta.reconstruir(idPlanta, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
+        return Planta.reconstruir(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }
 
-    public PlantaTestDataBuilder conId(int idPlanta) {
-        this.idPlanta = idPlanta;
+    public PlantaTestDataBuilder conId(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -66,7 +66,7 @@ public class PlantaTestDataBuilder {
         return this;
     }
     public Planta build( ) {
-        return new Planta(idPlanta, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
+        return new Planta(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }
 
 }

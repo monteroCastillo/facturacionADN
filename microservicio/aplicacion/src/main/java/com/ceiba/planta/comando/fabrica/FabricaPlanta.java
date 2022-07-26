@@ -9,7 +9,7 @@ public class FabricaPlanta {
 
     public Planta crear(ComandoPlanta comandoPlanta){
       return new Planta(
-             comandoPlanta.getIdPlanta(),
+             comandoPlanta.getId(),
              comandoPlanta.getNombre(),
              comandoPlanta.getDescripcion(),
              comandoPlanta.getFechaIngreso(),

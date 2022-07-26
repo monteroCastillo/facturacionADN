@@ -23,7 +23,7 @@ public class MapeoProductoFacturar implements RowMapper<ProductoFacturar>, Mappe
     public ProductoFacturar mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         var id = resultSet.getLong("id");
-        var idPlanta = resultSet.getInt("id_planta");
+        var idPlanta = resultSet.getLong("id_planta");
         var cantidad = resultSet.getInt("cantidad");
 
         return ProductoFacturar.reconstruir(id, cantidad, daoPlanta.obtener(idPlanta));

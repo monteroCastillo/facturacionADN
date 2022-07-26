@@ -34,8 +34,6 @@ create table producto_facturar (
  primary key (id)
 );
 
-
-
 create table empleado (
    id int(11) not null auto_increment,
    nombre varchar(20) not null,
@@ -56,6 +54,7 @@ create table planta(
     valor DECIMAL(10,2) not null,
     categoria varchar(500)not null,
     primary key (id)
+
 );
 
 
@@ -69,12 +68,14 @@ create table proveedor(
 );
 
 create table plantaporproveedor(
-    id int(11) not null auto_increment,
-    id_proveedor int(11) not null,
-    id_planta int(11) not null,
+    id int(11)  auto_increment,
+    id_proveedor int(11) ,
+    id_planta int(11) ,
     primary key (id),
     FOREIGN KEY (id_proveedor) REFERENCES proveedor(id),
     FOREIGN KEY (id_planta) REFERENCES planta(id)
+    ON UPDATE  CASCADE
+    ON DELETE CASCADE
 );
 
 ALTER TABLE factura
@@ -88,7 +89,7 @@ ALTER TABLE producto_facturar
 ADD CONSTRAINT planta_fk
   FOREIGN KEY (id_planta)
   REFERENCES planta (id)
-  ON DELETE NO ACTION
+  ON DELETE CASCADE
   ON UPDATE NO ACTION;
 
 ALTER TABLE producto_facturar

@@ -13,7 +13,7 @@ public class ManejadorBuscarPlanta {
         this.daoPlanta = daoPlanta;
     }
 
-    public Planta ejecutar(int id){
+    public Planta ejecutar(Long id){
         return this.daoPlanta.obtenerPlantaPorId(id);
     }
 }

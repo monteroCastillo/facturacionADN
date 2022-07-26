@@ -42,7 +42,7 @@ public class ComandoPlantaControladorTest {
         String jsonResult = resultado.getResponse().getContentAsString();
         var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
 
-        var plantaGuardada = daoPlanta.obtener(respuesta.getValor().intValue());
+        var plantaGuardada = daoPlanta.obtener(respuesta.getValor().longValue());
 
         Assertions.assertEquals("manzanilla", plantaGuardada.getNombre());
 
@@ -51,7 +51,7 @@ public class ComandoPlantaControladorTest {
     @Test
     public void eliminar() throws Exception {
         // arrange
-        int id = 1;
+        Long id = 1l;
         // act - assert
         mocMvc.perform(delete("/apiPlanta/borrar/{id}", id)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -62,7 +62,7 @@ public class ComandoPlantaControladorTest {
     @Test
     public void existe() throws Exception {
         // arrange
-        int id = 1;
+        Long id = 1l;
         // act - assert
         mocMvc.perform(delete("/apiPlanta/borrar/{id}", id)
                         .contentType(MediaType.APPLICATION_JSON)

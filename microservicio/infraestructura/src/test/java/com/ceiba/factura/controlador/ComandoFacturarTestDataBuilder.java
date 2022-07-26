@@ -17,8 +17,8 @@ public class ComandoFacturarTestDataBuilder {
     }
     public ComandoFacturarTestDataBuilder crearPorDefecto() {
         this.id = 111L;
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(12, 5));
-        this.comandoProductosFacturar.add(new ComandoProductoFacturar(13, 7));
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(12l, 5));
+        this.comandoProductosFacturar.add(new ComandoProductoFacturar(13l, 7));
         this.fechaIngreso = LocalDate.of(2022,06,22);
         return this;
     }
