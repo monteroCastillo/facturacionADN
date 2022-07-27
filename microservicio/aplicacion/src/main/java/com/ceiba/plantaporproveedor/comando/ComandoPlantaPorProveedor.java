@@ -13,8 +13,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ComandoPlantaPorProveedor {
     private Long id;
-    private Proveedor proveedor;
-    private Planta planta;
+    private Long idProveedor;
+    private Long idPlanta;
 
 
 }

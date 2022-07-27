@@ -1,7 +1,7 @@
 package com.ceiba.cliente.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-
+@SuppressWarnings("java:S2974")
 public class Cliente {
 
     private Long id;

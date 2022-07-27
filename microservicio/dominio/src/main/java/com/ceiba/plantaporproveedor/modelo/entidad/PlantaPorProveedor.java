@@ -4,7 +4,7 @@ import com.ceiba.dominio.ValidadorArgumento;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
-
+@SuppressWarnings("java:S2974")
 public class PlantaPorProveedor {
     private Long id;
     private Proveedor proveedor;

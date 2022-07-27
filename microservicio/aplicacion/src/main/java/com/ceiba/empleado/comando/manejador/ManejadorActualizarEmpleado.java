@@ -2,7 +2,6 @@ package com.ceiba.empleado.comando.manejador;
 
 import com.ceiba.empleado.comando.ComandoEmpleado;
 import com.ceiba.empleado.comando.fabrica.FabricaEmpleado;
-import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.servicio.ServicioActualizarEmpleado;
 import com.ceiba.manejador.ManejadorComando;
 import org.springframework.stereotype.Component;

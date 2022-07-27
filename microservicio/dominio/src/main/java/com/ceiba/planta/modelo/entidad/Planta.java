@@ -7,6 +7,7 @@ import com.ceiba.planta.utils.MensajesDeExcepcion;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+@SuppressWarnings("java:S2974")
 public class Planta {
 
     private Long id;

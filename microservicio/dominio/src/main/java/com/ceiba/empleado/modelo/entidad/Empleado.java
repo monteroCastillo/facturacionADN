@@ -1,9 +1,10 @@
 package com.ceiba.empleado.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-import com.ceiba.empleado.servicio.ServicioCrearEmpleado;
+
 
 import java.time.LocalDate;
+@SuppressWarnings("java:S2974")
 public class Empleado {
     private Long idEmpleado;
     private String nombre;
