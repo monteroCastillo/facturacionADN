@@ -2,6 +2,7 @@ package com.ceiba.proveedor.servicio;
 
 
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.modelo.entidad.SolicitudProveedor;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 
 public class ServicioCrearProveedor {
@@ -12,7 +13,8 @@ public class ServicioCrearProveedor {
         this.repositorioProveedor = repositorioProveedor;
     }
 
-    public Long ejecutar(Proveedor proveedor){
+    public Long ejecutar(SolicitudProveedor solicitudProveedor){
+        var proveedor = Proveedor.crear(solicitudProveedor);
         return this.repositorioProveedor.guardar(proveedor);
     }
 }

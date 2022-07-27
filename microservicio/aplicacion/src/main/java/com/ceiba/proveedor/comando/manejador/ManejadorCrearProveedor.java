@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 public class ManejadorCrearProveedor  implements ManejadorComandoRespuesta<ComandoProveedor, ComandoRespuesta<Long>> {
 
     private final ServicioCrearProveedor servicioCrearProveedor;
-
     private final FabricaProveedor fabricaProveedor;
 
     public ManejadorCrearProveedor(ServicioCrearProveedor servicioCrearProveedor, FabricaProveedor fabricaProveedor) {
@@ -22,8 +21,6 @@ public class ManejadorCrearProveedor  implements ManejadorComandoRespuesta<Coman
 
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoProveedor comando) {
-
-        Proveedor proveedor = this.fabricaProveedor.crear(comando);
-        return new ComandoRespuesta<>(this.servicioCrearProveedor.ejecutar(proveedor));
+        return new ComandoRespuesta<>(this.servicioCrearProveedor.ejecutar(fabricaProveedor.guardarProveedor(comando)));
     }
 }

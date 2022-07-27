@@ -36,7 +36,7 @@ public class ComandoControladorProveedorTest {
 
     @Test
     void crearProveedorExitoso() throws Exception{
-        var comandoProveedorTestDataBuilder = new ComandoProveedorTestDataBuilder().crearPorDefecto().build();
+        var comandoProveedorTestDataBuilder = new ComandoProveedorTestDataBuilder().crearPorDefecto().reconstruir();
 
         var resultado = mocMvc.perform(post("/apiProveedor/guardar")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -48,7 +48,7 @@ public class ComandoControladorProveedorTest {
 
         var proveedorGuardado = daoProveedor.obtenerProveedorPorId(respuesta.getValor());
 
-        Assertions.assertEquals(1L, proveedorGuardado.getId());
+        Assertions.assertEquals(24L, proveedorGuardado.getId());
         Assertions.assertEquals("plantas y plantas", proveedorGuardado.getNombre());
         Assertions.assertEquals("Av vasquez Cobo", proveedorGuardado.getDireccion());
         Assertions.assertEquals("5656565", proveedorGuardado.getTelefono());

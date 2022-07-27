@@ -19,10 +19,6 @@ public class ProveedorTestDataBuilder {
         return this;
     }
 
-    public Proveedor reconstruir() {
-        return Proveedor.reconstruir(id, nombre, direccion, telefono, paginaWeb);
-    }
-
     public ProveedorTestDataBuilder conId(Long id) {
         this.id = id;
         return this;
@@ -47,8 +43,8 @@ public class ProveedorTestDataBuilder {
         this.paginaWeb = paginaWeb;
         return this;
     }
-
-    public Proveedor build() {
-        return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
+    public Proveedor reconstruir() {
+        return Proveedor.reconstruir(id, nombre, direccion, telefono, paginaWeb);
     }
+
 }

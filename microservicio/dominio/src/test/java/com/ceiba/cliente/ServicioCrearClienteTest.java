@@ -1,16 +1,14 @@
 package com.ceiba.cliente;
 
 
-import com.ceiba.BasePrueba;
+
 import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
 import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
-
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class ServicioCrearClienteTest {
 

@@ -35,9 +35,7 @@ public class ComandoEmpleadoControladorTest {
 
     @Test
     void crearEmpleadoExitoso() throws Exception{
-        var comandoEmpleadoTestDataBuilder = new ComandoEmpleadoTestDataBuilder().build();
-
-
+        var comandoEmpleadoTestDataBuilder = new ComandoEmpleadoTestDataBuilder().reconstruir();
         var resultado = mocMvc.perform(post("/apiEmpleado/guardar")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(comandoEmpleadoTestDataBuilder)))
@@ -56,6 +54,5 @@ public class ComandoEmpleadoControladorTest {
         Assertions.assertEquals("Laura@hotmail.com", empleadoGuardado.getEmail());
         Assertions.assertEquals(hoy, empleadoGuardado.getFechaRegistro());
         Assertions.assertEquals("ADMINISTRADOR", empleadoGuardado.getPerfil().name());
-
     }
 }

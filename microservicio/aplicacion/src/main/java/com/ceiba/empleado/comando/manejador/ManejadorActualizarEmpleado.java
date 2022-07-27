@@ -20,8 +20,8 @@ public class ManejadorActualizarEmpleado implements ManejadorComando<ComandoEmpl
     }
 
     @Override
-    public void ejecutar(ComandoEmpleado comandoProveedor) {
-        Empleado empleado = this.fabricaEmpleado.crear(comandoProveedor);
-        this.servicioActualizarEmpleado.ejecutar(empleado);
+    public void ejecutar(ComandoEmpleado comando) {
+
+        this.servicioActualizarEmpleado.ejecutar(fabricaEmpleado.guardarEmpleado(comando));
     }
 }

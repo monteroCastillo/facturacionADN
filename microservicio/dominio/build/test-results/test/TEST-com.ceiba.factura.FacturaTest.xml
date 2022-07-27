@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.factura.FacturaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-07-26T20:30:27" hostname="RODRIGO-MONTERO" time="0.017">
+<testsuite name="com.ceiba.factura.FacturaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-07-27T09:27:44" hostname="RODRIGO-MONTERO" time="0.019">
   <properties/>
-  <testcase name="validarDiaHabilSiguienteExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.01"/>
-  <testcase name="validarCalcularValorTotalExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.002"/>
+  <testcase name="validarDiaHabilSiguienteExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.013"/>
+  <testcase name="validarCalcularValorTotalExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
   <testcase name="validarAplicardescuentoExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
   <testcase name="deberiaConstruirUnaFacturaExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>
   <testcase name="validarDiaFestivoExitosamente()" classname="com.ceiba.factura.FacturaTest" time="0.001"/>

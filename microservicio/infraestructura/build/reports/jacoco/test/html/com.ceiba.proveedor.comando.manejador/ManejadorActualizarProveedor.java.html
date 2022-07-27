@@ -2,27 +2,26 @@
 
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.proveedor.comando.ComandoProveedor;
-import com.ceiba.proveedor.comando.fabrica.FabricaProveedor;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.comando.fabrica.FabricaActualizarProveedor;
 import com.ceiba.proveedor.servicio.ServicioActualizarProveedor;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ManejadorActualizarProveedor implements ManejadorComando&lt;ComandoProveedor&gt; {
 
-    private final FabricaProveedor fabricaProveedor;
+    private final FabricaActualizarProveedor fabricaActualizarProveedor;
     private final ServicioActualizarProveedor servicioActualizarProveedor;
 
-<span class="fc" id="L16">    public ManejadorActualizarProveedor(FabricaProveedor fabricaProveedor, ServicioActualizarProveedor servicioActualizarProveedor) {</span>
-<span class="fc" id="L17">        this.fabricaProveedor = fabricaProveedor;</span>
-<span class="fc" id="L18">        this.servicioActualizarProveedor = servicioActualizarProveedor;</span>
-<span class="fc" id="L19">    }</span>
+<span class="fc" id="L15">    public ManejadorActualizarProveedor(FabricaActualizarProveedor fabricaActualizarProveedor, ServicioActualizarProveedor servicioActualizarProveedor) {</span>
+<span class="fc" id="L16">        this.fabricaActualizarProveedor = fabricaActualizarProveedor;</span>
+<span class="fc" id="L17">        this.servicioActualizarProveedor = servicioActualizarProveedor;</span>
+<span class="fc" id="L18">    }</span>
 
     @Override
     public void ejecutar(ComandoProveedor comandoProveedor)  {
-<span class="nc" id="L23">        Proveedor proveedor = this.fabricaProveedor.crear(comandoProveedor);</span>
-<span class="nc" id="L24">        this.servicioActualizarProveedor.ejecutar(proveedor);</span>
 
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L23">        this.servicioActualizarProveedor.ejecutar(fabricaActualizarProveedor.actualizarProveedor(comandoProveedor));</span>
+
+<span class="nc" id="L25">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

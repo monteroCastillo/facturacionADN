@@ -1,7 +1,7 @@
 package com.ceiba.proveedor.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
-
+@SuppressWarnings("java:S2974")
 public class Proveedor {
     private Long id;
     private String nombre;
@@ -9,11 +9,16 @@ public class Proveedor {
     private String telefono;
     private String paginaWeb;
 
-    public Proveedor() {
+    private Proveedor(Long id, String nombre, String direccion, String telefono, String paginaWeb) {
+        this.id = id;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.paginaWeb = paginaWeb;
     }
 
-    public Proveedor(Long id, String nombre, String direccion, String telefono, String paginaWeb) {
-        this.id = id;
+    private Proveedor( String nombre, String direccion, String telefono, String paginaWeb) {
+
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -30,6 +35,15 @@ public class Proveedor {
         return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
     }
 
+    public static Proveedor crear(SolicitudProveedor solicitudProveedor){
+        ValidadorArgumento.validarObligatorio(solicitudProveedor.getNombre(), "el nombre del proveedor es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudProveedor.getDireccion(), "La direccion del proveedor es requerida");
+        ValidadorArgumento.validarObligatorio(solicitudProveedor.getTelefono(), "El telefono del proveedor es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudProveedor.getPaginaWeb(), "La pagina web del proveedor es requerida");
+
+        return  new Proveedor(solicitudProveedor.getNombre(), solicitudProveedor.getDireccion(), solicitudProveedor.getTelefono(), solicitudProveedor.getPaginaWeb());
+
+    }
 
     public Long getId() {
         return id;

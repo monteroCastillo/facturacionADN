@@ -50,55 +50,29 @@ public class Planta {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public BigDecimal getValor() {
         return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
     }
 
     public CategoriaPlanta getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(CategoriaPlanta categoria) {
-        this.categoria = categoria;
-    }
-
     public Long getId() {
         return id;
-    }
-
-    public void setid(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getDescripcion() {
         return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(LocalDate fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
-    }
+
 }

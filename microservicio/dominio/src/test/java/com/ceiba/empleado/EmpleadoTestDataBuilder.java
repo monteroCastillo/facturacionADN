@@ -24,10 +24,6 @@ public class EmpleadoTestDataBuilder {
         return this;
     }
 
-    public Empleado reconstruir() {
-        return Empleado.reconstruir(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);
-    }
-
     public EmpleadoTestDataBuilder conId(Long idEmpleado) {
         this.idEmpleado = idEmpleado;
         return this;
@@ -63,8 +59,8 @@ public class EmpleadoTestDataBuilder {
         return this;
     }
 
-    public Empleado build(){
-        return new Empleado(idEmpleado,nombre,direccion,telefono,email,fechaRegistro,perfil);
+    public Empleado reconstruir(){
+        return  Empleado.reconstruir(idEmpleado,nombre,direccion,telefono,email,fechaRegistro,perfil);
     }
 
 }

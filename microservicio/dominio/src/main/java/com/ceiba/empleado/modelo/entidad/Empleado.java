@@ -1,6 +1,7 @@
 package com.ceiba.empleado.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.empleado.servicio.ServicioCrearEmpleado;
 
 import java.time.LocalDate;
 public class Empleado {
@@ -12,10 +13,9 @@ public class Empleado {
     private LocalDate fechaRegistro;
     private Perfil perfil;
 
-    public Empleado() {
-    }
 
-    public Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
+
+    private Empleado(long idEmpleado, String nombre, String direccion, String telefono, String email, LocalDate fechaRegistro, Perfil perfil) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -33,6 +33,16 @@ public class Empleado {
         ValidadorArgumento.validarObligatorio(fechaRegistro, "La fecha de registro es requerida");
         ValidadorArgumento.validarObligatorio(perfil, "El perfil del empleado es requerido");
         return new Empleado(idEmpleado, nombre, direccion, telefono, email, fechaRegistro, perfil);
+    }
+
+    public static Empleado crear(SolicitudCrearEmpleado solicitudCrearEmpleado){
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getNombre(), "No se puede crear un empleado sin nombre");
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getDireccion(), "No se puede crear un empleado sin direccion");
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getTelefono(), "El telefono del empleado es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getEmail(), "El email del empleado es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getFechaRegistro(), "La fecha de registro es requerida");
+        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getPerfil(), "El perfil del empleado es requerido");
+        return new Empleado(solicitudCrearEmpleado.getIdEmpleado(), solicitudCrearEmpleado.getNombre(), solicitudCrearEmpleado.getDireccion(), solicitudCrearEmpleado.getTelefono(), solicitudCrearEmpleado.getEmail(), solicitudCrearEmpleado.getFechaRegistro(), solicitudCrearEmpleado.getPerfil());
     }
 
     public Perfil getPerfil() {

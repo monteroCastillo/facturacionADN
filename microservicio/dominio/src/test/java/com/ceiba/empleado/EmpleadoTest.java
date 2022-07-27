@@ -12,17 +12,6 @@ import java.time.LocalDate;
 
 public class EmpleadoTest {
 
-
-    @Test
-    void testNombrePersona(){
-        Empleado empleado = new Empleado();
-        empleado.setNombre("Andres");
-        String esperado = "Andres";
-        String real = empleado.getNombre();
-        Assertions.assertEquals(esperado, real);
-
-    }
-
     @Test
     void deberiaReconstruirPersonaExitosamente() {
 

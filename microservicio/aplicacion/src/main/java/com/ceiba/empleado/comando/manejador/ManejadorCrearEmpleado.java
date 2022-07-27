@@ -14,17 +14,13 @@ public class ManejadorCrearEmpleado implements ManejadorComandoRespuesta <Comand
     private final ServicioCrearEmpleado servicioCrearEmpleado;
     private final FabricaEmpleado fabricaEmpleado;
 
-
-
-
     public ManejadorCrearEmpleado(FabricaEmpleado fabricaEmpleado, ServicioCrearEmpleado servicioCrearEmpleado) {
          this.fabricaEmpleado = fabricaEmpleado;
         this.servicioCrearEmpleado = servicioCrearEmpleado;
     }
     @Override
     public ComandoRespuesta<Long> ejecutar(ComandoEmpleado comando) {
-        Empleado empleado = this.fabricaEmpleado.crear(comando);
-        return new ComandoRespuesta<>(this.servicioCrearEmpleado.ejecutar(empleado));
+        return new ComandoRespuesta<>(this.servicioCrearEmpleado.ejecutar(fabricaEmpleado.guardarEmpleado(comando)));
 
     }
 

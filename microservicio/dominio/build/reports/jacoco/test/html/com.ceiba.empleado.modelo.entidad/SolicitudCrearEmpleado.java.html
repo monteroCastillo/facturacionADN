@@ -3,10 +3,18 @@
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDate;
+
 @Getter
-<span class="nc" id="L7">@AllArgsConstructor</span>
+<span class="nc" id="L9">@AllArgsConstructor</span>
 public class SolicitudCrearEmpleado {
 
-<span class="nc" id="L10">    private final Empleado empleado;</span>
+<span class="nc" id="L12">    private Long idEmpleado;</span>
+<span class="nc" id="L13">    private String nombre;</span>
+<span class="nc" id="L14">    private String direccion;</span>
+<span class="nc" id="L15">    private String telefono;</span>
+<span class="nc" id="L16">    private String email;</span>
+<span class="nc" id="L17">    private LocalDate fechaRegistro;</span>
+<span class="nc" id="L18">    private Perfil perfil;</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

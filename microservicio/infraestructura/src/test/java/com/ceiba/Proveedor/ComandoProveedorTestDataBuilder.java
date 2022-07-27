@@ -18,7 +18,7 @@ public class ComandoProveedorTestDataBuilder {
         return this;
     }
 
-    public Proveedor build() {
-        return new Proveedor(id, nombre, direccion, telefono, paginaWeb);
+    public Proveedor reconstruir() {
+        return  Proveedor.reconstruir(id, nombre, direccion, telefono, paginaWeb);
     }
 }

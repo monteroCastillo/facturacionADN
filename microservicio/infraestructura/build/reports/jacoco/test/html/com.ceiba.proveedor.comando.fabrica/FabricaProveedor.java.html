@@ -2,19 +2,21 @@
 
 import com.ceiba.proveedor.comando.ComandoProveedor;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.modelo.entidad.SolicitudProveedor;
+import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L8">public class FabricaProveedor {</span>
+public class FabricaProveedor {
 
-    public Proveedor crear(ComandoProveedor comandoProveedor){
-<span class="fc" id="L11">        return new Proveedor(</span>
-<span class="fc" id="L12">                comandoProveedor.getId(),</span>
-<span class="fc" id="L13">                comandoProveedor.getNombre(),</span>
-<span class="fc" id="L14">                comandoProveedor.getDireccion(),</span>
-<span class="fc" id="L15">                comandoProveedor.getTelefono(),</span>
-<span class="fc" id="L16">                comandoProveedor.getPaginaWeb()</span>
-        );
+    private final RepositorioProveedor repositorioProveedor;
+
+<span class="fc" id="L14">    public FabricaProveedor(RepositorioProveedor repositorioProveedor) {</span>
+<span class="fc" id="L15">        this.repositorioProveedor = repositorioProveedor;</span>
+<span class="fc" id="L16">    }</span>
+
+    public SolicitudProveedor guardarProveedor(ComandoProveedor comandoProveedor){
+<span class="fc" id="L19">        return new SolicitudProveedor(comandoProveedor.getId(), comandoProveedor.getNombre(), comandoProveedor.getDireccion(), comandoProveedor.getTelefono(), comandoProveedor.getPaginaWeb());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

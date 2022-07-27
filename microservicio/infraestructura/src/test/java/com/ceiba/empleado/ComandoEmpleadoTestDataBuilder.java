@@ -25,8 +25,7 @@ public class ComandoEmpleadoTestDataBuilder {
         this.perfil = Perfil.ADMINISTRADOR;
     }
 
-    public Empleado build(){
-    return
-            new Empleado(idEmpleado, nombre, direccion, telefono, email,fechaRegistro, perfil);
+    public Empleado reconstruir(){
+    return Empleado.reconstruir(idEmpleado, nombre, direccion, telefono, email,fechaRegistro, perfil);
     }
 }

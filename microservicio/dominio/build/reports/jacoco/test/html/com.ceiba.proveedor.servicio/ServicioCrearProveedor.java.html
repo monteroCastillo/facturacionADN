@@ -2,18 +2,20 @@
 
 
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.modelo.entidad.SolicitudProveedor;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 
 public class ServicioCrearProveedor {
 
     private final RepositorioProveedor repositorioProveedor;
 
-<span class="nc" id="L11">    public ServicioCrearProveedor(RepositorioProveedor repositorioProveedor) {</span>
-<span class="nc" id="L12">        this.repositorioProveedor = repositorioProveedor;</span>
-<span class="nc" id="L13">    }</span>
+<span class="nc" id="L12">    public ServicioCrearProveedor(RepositorioProveedor repositorioProveedor) {</span>
+<span class="nc" id="L13">        this.repositorioProveedor = repositorioProveedor;</span>
+<span class="nc" id="L14">    }</span>
 
-    public Long ejecutar(Proveedor proveedor){
-<span class="nc" id="L16">        return this.repositorioProveedor.guardar(proveedor);</span>
+    public Long ejecutar(SolicitudProveedor solicitudProveedor){
+<span class="nc" id="L17">        var proveedor = Proveedor.crear(solicitudProveedor);</span>
+<span class="nc" id="L18">        return this.repositorioProveedor.guardar(proveedor);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

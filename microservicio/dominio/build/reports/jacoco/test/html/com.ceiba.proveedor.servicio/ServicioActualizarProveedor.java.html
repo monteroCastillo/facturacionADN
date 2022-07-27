@@ -3,28 +3,30 @@
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.empleado.utils.MensajesDeExcepcion;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.modelo.entidad.SolicitudProveedor;
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 
 public class ServicioActualizarProveedor {
 
     private final RepositorioProveedor repositorioProveedor;
 
-<span class="fc" id="L12">    public ServicioActualizarProveedor(RepositorioProveedor repositorioProveedor) {</span>
-<span class="fc" id="L13">        this.repositorioProveedor = repositorioProveedor;</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L13">    public ServicioActualizarProveedor(RepositorioProveedor repositorioProveedor) {</span>
+<span class="fc" id="L14">        this.repositorioProveedor = repositorioProveedor;</span>
+<span class="fc" id="L15">    }</span>
 
 
 
-    public void ejecutar(Proveedor proveedor){
-<span class="fc" id="L19">        validarExistenciaPrevia(proveedor);</span>
-<span class="fc" id="L20">        this.repositorioProveedor.actualizar(proveedor);</span>
-<span class="fc" id="L21">    }</span>
+    public void ejecutar(SolicitudProveedor solicitudProveedor){
+<span class="nc" id="L20">        validarExistenciaPrevia(solicitudProveedor);</span>
+<span class="nc" id="L21">        var proveedor = Proveedor.crear(solicitudProveedor);</span>
+<span class="nc" id="L22">        this.repositorioProveedor.actualizar(proveedor);</span>
+<span class="nc" id="L23">    }</span>
 
-    private void validarExistenciaPrevia(Proveedor proveedor){
-<span class="fc" id="L24">        boolean existe = this.repositorioProveedor.existe(proveedor.getId());</span>
-<span class="pc bpc" id="L25" title="1 of 2 branches missed.">        if(!existe) {</span>
-<span class="nc" id="L26">            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());</span>
+    private void validarExistenciaPrevia(SolicitudProveedor solicitudProveedor){
+<span class="nc" id="L26">        boolean existe = this.repositorioProveedor.existe(solicitudProveedor.getId());</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        if(!existe) {</span>
+<span class="nc" id="L28">            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());</span>
         }
-<span class="fc" id="L28">    }</span>
+<span class="nc" id="L30">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
