@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.comando.fabrica.FabricaPlanta;
-import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
 import org.springframework.stereotype.Component;
 

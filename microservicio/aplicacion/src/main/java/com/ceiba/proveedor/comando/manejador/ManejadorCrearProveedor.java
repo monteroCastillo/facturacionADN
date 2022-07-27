@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.proveedor.comando.ComandoProveedor;
 import com.ceiba.proveedor.comando.fabrica.FabricaProveedor;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import com.ceiba.proveedor.servicio.ServicioCrearProveedor;
 import org.springframework.stereotype.Component;
 

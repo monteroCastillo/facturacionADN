@@ -7,16 +7,10 @@ import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FabricaPlanta {
-
-    private final RepositorioPlanta repositorioPlanta;
-
-<span class="nc" id="L14">    public FabricaPlanta(RepositorioPlanta repositorioPlanta) {</span>
-<span class="nc" id="L15">        this.repositorioPlanta = repositorioPlanta;</span>
-<span class="nc" id="L16">    }</span>
+<span class="nc" id="L10">public class FabricaPlanta {</span>
 
     public SolicitudCrearPlanta guardarPlanta(ComandoPlanta comando){
-<span class="nc" id="L19">        return new SolicitudCrearPlanta(comando.getId(), comando.getNombre(), comando.getDescripcion(), comando.getFechaIngreso(),comando.getCantidad(),comando.getValor(), comando.getCategoria());</span>
+<span class="nc" id="L13">        return new SolicitudCrearPlanta(comando.getId(), comando.getNombre(), comando.getDescripcion(), comando.getFechaIngreso(),comando.getCantidad(),comando.getValor(), comando.getCategoria());</span>
     }
 
 }

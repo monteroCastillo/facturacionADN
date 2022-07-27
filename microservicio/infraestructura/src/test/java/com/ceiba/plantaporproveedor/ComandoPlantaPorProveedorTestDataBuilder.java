@@ -1,22 +1,24 @@
 package com.ceiba.plantaporproveedor;
 
+import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 
 public class ComandoPlantaPorProveedorTestDataBuilder {
     private Long id;
-    private Long idProveedor;
-    private int idPlanta;
+    private Proveedor proveedor;
+    private Planta planta;
 
     public ComandoPlantaPorProveedorTestDataBuilder crearPorDefecto(){
         this.id = 50L;
-        this.idProveedor = 22l;
-        this.idPlanta = 12;
+        this.planta = planta;
+        this.proveedor = proveedor;
         return this;
     }
 
-    public ComandoPlantaPorProveedor build(){
-        return  new ComandoPlantaPorProveedor(this.id, this.idProveedor, this.idPlanta);
+    public ComandoPlantaPorProveedor reconstruir(){
+        return  new ComandoPlantaPorProveedor(this.id,proveedor, planta);
     }
 }

@@ -2,7 +2,7 @@ package com.ceiba.proveedor.modelo.entidad;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+
 
 @Getter
 @AllArgsConstructor

@@ -33,8 +33,8 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
     public Long guardar(PlantaPorProveedor plantaPorProveedor) {
         MapSqlParameterSource parameterSource = new MapSqlParameterSource();
         parameterSource.addValue("id", plantaPorProveedor.getId());
-        parameterSource.addValue("id_proveedor", plantaPorProveedor.getIdProveedor());
-        parameterSource.addValue("id_planta", plantaPorProveedor.getIdPlanta());
+        parameterSource.addValue("id_proveedor", plantaPorProveedor.getProveedor().getId());
+        parameterSource.addValue("id_planta", plantaPorProveedor.getPlanta().getId());
         return  this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);
     }
 

@@ -3,7 +3,6 @@
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.comando.fabrica.FabricaPlanta;
-import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
 import org.springframework.stereotype.Component;
 
@@ -15,14 +14,14 @@ public class ManejadorActualizarPlanta implements ManejadorComando&lt;ComandoPla
     private final ServicioActualizarPlanta servicioActualizarPlanta;
 
 
-<span class="nc" id="L18">    public ManejadorActualizarPlanta(FabricaPlanta fabricaPlanta, ServicioActualizarPlanta servicioActualizarPlanta) {</span>
-<span class="nc" id="L19">        this.fabricaPlanta = fabricaPlanta;</span>
-<span class="nc" id="L20">        this.servicioActualizarPlanta = servicioActualizarPlanta;</span>
-<span class="nc" id="L21">    }</span>
+<span class="nc" id="L17">    public ManejadorActualizarPlanta(FabricaPlanta fabricaPlanta, ServicioActualizarPlanta servicioActualizarPlanta) {</span>
+<span class="nc" id="L18">        this.fabricaPlanta = fabricaPlanta;</span>
+<span class="nc" id="L19">        this.servicioActualizarPlanta = servicioActualizarPlanta;</span>
+<span class="nc" id="L20">    }</span>
 
     @Override
     public void ejecutar(ComandoPlanta comandoPlanta) {
-<span class="nc" id="L25">        this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L24">        this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));</span>
+<span class="nc" id="L25">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

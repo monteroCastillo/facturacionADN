@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.plantaporproveedor.ServicioCrearPlantaPorProveedorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-27T10:20:22" hostname="RODRIGO-MONTERO" time="0.029">
-  <properties/>
-  <testcase name="validarCreacionPlantaPorProveedor()" classname="com.ceiba.plantaporproveedor.ServicioCrearPlantaPorProveedorTest" time="0.029"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

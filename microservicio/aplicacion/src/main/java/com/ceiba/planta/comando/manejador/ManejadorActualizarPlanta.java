@@ -3,7 +3,6 @@ package com.ceiba.planta.comando.manejador;
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.comando.fabrica.FabricaPlanta;
-import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
 import org.springframework.stereotype.Component;
 

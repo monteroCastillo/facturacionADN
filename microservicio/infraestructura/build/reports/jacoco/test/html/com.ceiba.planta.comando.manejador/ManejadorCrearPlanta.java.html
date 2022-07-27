@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.comando.fabrica.FabricaPlanta;
-import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.servicio.ServicioCrearPlanta;
 import org.springframework.stereotype.Component;
 
@@ -14,14 +13,14 @@ public class ManejadorCrearPlanta implements ManejadorComandoRespuesta&lt;Comand
 
     private final FabricaPlanta fabricaPlanta;
 
-<span class="fc" id="L17">    public ManejadorCrearPlanta(ServicioCrearPlanta servicioCrearPlanta, FabricaPlanta fabricaPlanta) {</span>
-<span class="fc" id="L18">        this.servicioCrearPlanta = servicioCrearPlanta;</span>
-<span class="fc" id="L19">        this.fabricaPlanta = fabricaPlanta;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L16">    public ManejadorCrearPlanta(ServicioCrearPlanta servicioCrearPlanta, FabricaPlanta fabricaPlanta) {</span>
+<span class="fc" id="L17">        this.servicioCrearPlanta = servicioCrearPlanta;</span>
+<span class="fc" id="L18">        this.fabricaPlanta = fabricaPlanta;</span>
+<span class="fc" id="L19">    }</span>
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlanta comando) {
-<span class="fc" id="L24">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(fabricaPlanta.guardarPlanta(comando)));</span>
+<span class="fc" id="L23">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(fabricaPlanta.guardarPlanta(comando)));</span>
     }
 
 

@@ -1,19 +1,27 @@
 package com.ceiba.plantaporproveedor.comando.fabrica;
 
+import com.ceiba.planta.puerto.dao.DaoPlanta;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
-import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
+import com.ceiba.plantaporproveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
+import com.ceiba.proveedor.puerto.dao.DaoProveedor;
+import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 import org.springframework.stereotype.Component;
 
 @Component
 public class FabricaPlantaPorProveedor {
 
-    public PlantaPorProveedor crear(ComandoPlantaPorProveedor comandoPlantaPorProveedor){
+    private final DaoPlanta daoPlanta;
 
-        return new PlantaPorProveedor(
+    private final DaoProveedor daoProveedor;
 
-                comandoPlantaPorProveedor.getId(),
-                comandoPlantaPorProveedor.getIdProveedor(),
-                comandoPlantaPorProveedor.getIdPlanta()
-        );
+    public FabricaPlantaPorProveedor(DaoPlanta daoPlanta, DaoProveedor daoProveedor) {
+        this.daoPlanta = daoPlanta;
+        this.daoProveedor = daoProveedor;
+    }
+
+    public SolicitudCrearPlantaPorProveedor guardarPlantaPorProveedor(ComandoPlantaPorProveedor comando){
+        return  new SolicitudCrearPlantaPorProveedor(comando.getId(), comando.getProveedor(), comando.getPlanta());
+
     }
 }

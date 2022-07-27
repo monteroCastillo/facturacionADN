@@ -31,11 +31,11 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
 
     @Override
     public Long guardar(PlantaPorProveedor plantaPorProveedor) {
-<span class="fc" id="L34">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L35">        parameterSource.addValue(&quot;id&quot;, plantaPorProveedor.getId());</span>
-<span class="fc" id="L36">        parameterSource.addValue(&quot;id_proveedor&quot;, plantaPorProveedor.getIdProveedor());</span>
-<span class="fc" id="L37">        parameterSource.addValue(&quot;id_planta&quot;, plantaPorProveedor.getIdPlanta());</span>
-<span class="fc" id="L38">        return  this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
+<span class="nc" id="L34">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L35">        parameterSource.addValue(&quot;id&quot;, plantaPorProveedor.getId());</span>
+<span class="nc" id="L36">        parameterSource.addValue(&quot;id_proveedor&quot;, plantaPorProveedor.getProveedor().getId());</span>
+<span class="nc" id="L37">        parameterSource.addValue(&quot;id_planta&quot;, plantaPorProveedor.getPlanta().getId());</span>
+<span class="nc" id="L38">        return  this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
     }
 
     @Override

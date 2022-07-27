@@ -9,12 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class FabricaPlanta {
 
-    private final RepositorioPlanta repositorioPlanta;
-
-    public FabricaPlanta(RepositorioPlanta repositorioPlanta) {
-        this.repositorioPlanta = repositorioPlanta;
-    }
-
     public SolicitudCrearPlanta guardarPlanta(ComandoPlanta comando){
         return new SolicitudCrearPlanta(comando.getId(), comando.getNombre(), comando.getDescripcion(), comando.getFechaIngreso(),comando.getCantidad(),comando.getValor(), comando.getCategoria());
     }

@@ -1,31 +1,33 @@
 package com.ceiba.plantaporproveedor.modelo.entidad;
 
 import com.ceiba.dominio.ValidadorArgumento;
+import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.proveedor.modelo.entidad.Proveedor;
 
 
 public class PlantaPorProveedor {
     private Long id;
-    private Long idProveedor;
-    private int idPlanta;
+    private Proveedor proveedor;
+    private Planta planta;
 
-    public PlantaPorProveedor(Long id, Long idProveedor, int idPlanta) {
+    private PlantaPorProveedor(Long id, Proveedor proveedor, Planta planta) {
         this.id = id;
-        this.idProveedor = idProveedor;
-        this.idPlanta = idPlanta;
+        this.proveedor = proveedor;
+        this.planta = planta;
     }
 
-    public PlantaPorProveedor(Long idProveedor, int idPlanta) {
-        this.idProveedor = idProveedor;
-        this.idPlanta = idPlanta;
+    private PlantaPorProveedor(Proveedor proveedor, Planta planta) {
+        this.proveedor = proveedor;
+        this.planta = planta;
     }
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
 
-        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdProveedor(), "El id del proveedor es necesario");
-                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getIdPlanta(), "El id de la planta es necesario");
-                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getIdProveedor(),solicitudCrearPlantaPorProveedor.getIdPlanta());
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor(), "El proveedor es necesario");
+                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta(), "El id de la planta es necesario");
+                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getProveedor(),solicitudCrearPlantaPorProveedor.getPlanta());
     }
-    public static PlantaPorProveedor reconstruir(Long id, Long idProveedor, int idPlanta) {
+    public static PlantaPorProveedor reconstruir(Long id, Proveedor idProveedor, Planta idPlanta) {
         ValidadorArgumento.validarObligatorio(idProveedor, "Proveedor es requerido");
         ValidadorArgumento.validarObligatorio(idPlanta, "Planta es requerida");
         return new PlantaPorProveedor(id, idProveedor, idPlanta);
@@ -35,23 +37,11 @@ public class PlantaPorProveedor {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Proveedor getProveedor() {
+        return proveedor;
     }
 
-    public Long getIdProveedor() {
-        return idProveedor;
-    }
-
-    public void setIdProveedor(Long idProveedor) {
-        this.idProveedor = idProveedor;
-    }
-
-    public int getIdPlanta() {
-        return idPlanta;
-    }
-
-    public void setIdPlanta(int idPlanta) {
-        this.idPlanta = idPlanta;
+    public Planta getPlanta() {
+        return planta;
     }
 }
