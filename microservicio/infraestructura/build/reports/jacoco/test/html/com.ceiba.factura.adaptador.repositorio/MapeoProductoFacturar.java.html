@@ -22,11 +22,11 @@ public class MapeoProductoFacturar implements RowMapper&lt;ProductoFacturar&gt;,
     @Override
     public ProductoFacturar mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-<span class="fc" id="L25">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L26">        var idPlanta = resultSet.getLong(&quot;id_planta&quot;);</span>
-<span class="fc" id="L27">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
+<span class="nc" id="L25">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L26">        var idPlanta = resultSet.getLong(&quot;id_planta&quot;);</span>
+<span class="nc" id="L27">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
 
-<span class="fc" id="L29">        return ProductoFacturar.reconstruir(id, cantidad, daoPlanta.obtener(idPlanta));</span>
+<span class="nc" id="L29">        return ProductoFacturar.reconstruir(id, cantidad, daoPlanta.obtener(idPlanta));</span>
     }
 
 }

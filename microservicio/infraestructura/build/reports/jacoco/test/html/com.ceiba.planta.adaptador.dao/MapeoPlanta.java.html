@@ -8,20 +8,20 @@ import org.springframework.jdbc.core.RowMapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-<span class="fc" id="L11">public class MapeoPlanta implements RowMapper&lt;Planta&gt;, MapperResult {</span>
+<span class="nc" id="L11">public class MapeoPlanta implements RowMapper&lt;Planta&gt;, MapperResult {</span>
 
     @Override
     public Planta mapRow(ResultSet resultSet, int rowNum)throws SQLException{
 
-<span class="fc" id="L16">        var id = resultSet.getLong(&quot;id&quot;);</span>
-<span class="fc" id="L17">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
-<span class="fc" id="L18">        var descripcion = resultSet.getString(&quot;descripcion&quot;);</span>
-<span class="fc" id="L19">        var fechaIngreso = resultSet.getDate(&quot;fecha_ingreso&quot;).toLocalDate();</span>
-<span class="fc" id="L20">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
-<span class="fc" id="L21">        var valor= resultSet.getBigDecimal(&quot;valor&quot;);</span>
-<span class="fc" id="L22">        var categoria = CategoriaPlanta.valueOf(resultSet.getString(&quot;categoria&quot;));</span>
+<span class="nc" id="L16">        var id = resultSet.getLong(&quot;id&quot;);</span>
+<span class="nc" id="L17">        var nombre = resultSet.getString(&quot;nombre&quot;);</span>
+<span class="nc" id="L18">        var descripcion = resultSet.getString(&quot;descripcion&quot;);</span>
+<span class="nc" id="L19">        var fechaIngreso = resultSet.getDate(&quot;fecha_ingreso&quot;).toLocalDate();</span>
+<span class="nc" id="L20">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
+<span class="nc" id="L21">        var valor= resultSet.getBigDecimal(&quot;valor&quot;);</span>
+<span class="nc" id="L22">        var categoria = CategoriaPlanta.valueOf(resultSet.getString(&quot;categoria&quot;));</span>
 
-<span class="fc" id="L24">        return Planta.reconstruir(id,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);</span>
+<span class="nc" id="L24">        return Planta.reconstruir(id,nombre,descripcion,fechaIngreso, cantidad, valor, categoria);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

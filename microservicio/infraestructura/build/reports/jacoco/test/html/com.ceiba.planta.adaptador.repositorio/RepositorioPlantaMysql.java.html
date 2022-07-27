@@ -34,15 +34,15 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
 
 <span class="fc" id="L35">    }</span>
     public Long guardar(Planta planta) {
-<span class="fc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L38">        parameterSource.addValue(&quot;id&quot;, planta.getId());</span>
-<span class="fc" id="L39">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
-<span class="fc" id="L40">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
-<span class="fc" id="L41">        parameterSource.addValue(&quot;fecha_ingreso&quot;, planta.getFechaIngreso());</span>
-<span class="fc" id="L42">        parameterSource.addValue(&quot;cantidad&quot;, planta.getCantidad());</span>
-<span class="fc" id="L43">        parameterSource.addValue(&quot;valor&quot;, planta.getValor());</span>
-<span class="fc" id="L44">        parameterSource.addValue(&quot;categoria&quot;, planta.getCategoria().name());</span>
-<span class="fc" id="L45">        return this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
+<span class="nc" id="L37">        MapSqlParameterSource parameterSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L38">        parameterSource.addValue(&quot;id&quot;, planta.getId());</span>
+<span class="nc" id="L39">        parameterSource.addValue(&quot;nombre&quot;, planta.getNombre());</span>
+<span class="nc" id="L40">        parameterSource.addValue(&quot;descripcion&quot;, planta.getDescripcion());</span>
+<span class="nc" id="L41">        parameterSource.addValue(&quot;fecha_ingreso&quot;, planta.getFechaIngreso());</span>
+<span class="nc" id="L42">        parameterSource.addValue(&quot;cantidad&quot;, planta.getCantidad());</span>
+<span class="nc" id="L43">        parameterSource.addValue(&quot;valor&quot;, planta.getValor());</span>
+<span class="nc" id="L44">        parameterSource.addValue(&quot;categoria&quot;, planta.getCategoria().name());</span>
+<span class="nc" id="L45">        return this.customNamedParameterJdbcTemplate.crear(parameterSource, sqlCrear);</span>
     }
 
     @Override

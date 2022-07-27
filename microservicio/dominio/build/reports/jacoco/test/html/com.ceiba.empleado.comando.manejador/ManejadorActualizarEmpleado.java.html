@@ -2,7 +2,6 @@
 
 import com.ceiba.empleado.comando.ComandoEmpleado;
 import com.ceiba.empleado.comando.fabrica.FabricaEmpleado;
-import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.servicio.ServicioActualizarEmpleado;
 import com.ceiba.manejador.ManejadorComando;
 import org.springframework.stereotype.Component;
@@ -14,15 +13,15 @@ public class ManejadorActualizarEmpleado implements ManejadorComando&lt;ComandoE
     private final FabricaEmpleado fabricaEmpleado;
     private final ServicioActualizarEmpleado servicioActualizarEmpleado;
 
-<span class="nc" id="L17">    public ManejadorActualizarEmpleado(FabricaEmpleado fabricaEmpleado, ServicioActualizarEmpleado servicioActualizarEmpleado) {</span>
-<span class="nc" id="L18">        this.fabricaEmpleado = fabricaEmpleado;</span>
-<span class="nc" id="L19">        this.servicioActualizarEmpleado = servicioActualizarEmpleado;</span>
-<span class="nc" id="L20">    }</span>
+<span class="nc" id="L16">    public ManejadorActualizarEmpleado(FabricaEmpleado fabricaEmpleado, ServicioActualizarEmpleado servicioActualizarEmpleado) {</span>
+<span class="nc" id="L17">        this.fabricaEmpleado = fabricaEmpleado;</span>
+<span class="nc" id="L18">        this.servicioActualizarEmpleado = servicioActualizarEmpleado;</span>
+<span class="nc" id="L19">    }</span>
 
     @Override
     public void ejecutar(ComandoEmpleado comando) {
 
-<span class="nc" id="L25">        this.servicioActualizarEmpleado.ejecutar(fabricaEmpleado.guardarEmpleado(comando));</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L24">        this.servicioActualizarEmpleado.ejecutar(fabricaEmpleado.guardarEmpleado(comando));</span>
+<span class="nc" id="L25">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

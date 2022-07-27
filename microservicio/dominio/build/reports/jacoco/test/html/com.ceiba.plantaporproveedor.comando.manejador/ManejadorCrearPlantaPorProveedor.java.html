@@ -4,7 +4,6 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.plantaporproveedor.comando.ComandoPlantaPorProveedor;
 import com.ceiba.plantaporproveedor.comando.fabrica.FabricaPlantaPorProveedor;
-import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
 import com.ceiba.plantaporproveedor.servicio.ServicioCrearPlantaPorProveedor;
 import org.springframework.stereotype.Component;
 
@@ -18,15 +17,14 @@ public class ManejadorCrearPlantaPorProveedor implements ManejadorComandoRespues
 
 
 
-<span class="nc" id="L21">    public ManejadorCrearPlantaPorProveedor(FabricaPlantaPorProveedor fabricaPlantaPorProveedor, ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor) {</span>
-<span class="nc" id="L22">        this.fabricaPlantaPorProveedor = fabricaPlantaPorProveedor;</span>
-<span class="nc" id="L23">        this.servicioCrearPlantaPorProveedor = servicioCrearPlantaPorProveedor;</span>
-<span class="nc" id="L24">    }</span>
+<span class="nc" id="L20">    public ManejadorCrearPlantaPorProveedor(FabricaPlantaPorProveedor fabricaPlantaPorProveedor, ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor) {</span>
+<span class="nc" id="L21">        this.fabricaPlantaPorProveedor = fabricaPlantaPorProveedor;</span>
+<span class="nc" id="L22">        this.servicioCrearPlantaPorProveedor = servicioCrearPlantaPorProveedor;</span>
+<span class="nc" id="L23">    }</span>
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlantaPorProveedor comando) {
-        //PlantaPorProveedor plantaPorProveedor = this.fabricaPlantaPorProveedor.crear(comando);
-<span class="nc" id="L29">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(fabricaPlantaPorProveedor.guardarPlantaPorProveedor(comando)));</span>
+<span class="nc" id="L27">        return new ComandoRespuesta&lt;&gt;(this.servicioCrearPlantaPorProveedor.ejecutar(fabricaPlantaPorProveedor.guardarPlantaPorProveedor(comando)));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

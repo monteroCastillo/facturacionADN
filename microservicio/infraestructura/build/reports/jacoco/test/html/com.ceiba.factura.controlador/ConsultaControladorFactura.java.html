@@ -26,12 +26,12 @@ public class ConsultaControladorFactura {
     @GetMapping(&quot;anulada&quot;)
     @Operation(summary = &quot;Anular&quot;, description = &quot;Metodo utilizado para consultar las facturas anuladas&quot;)
     public List&lt;ResumenFacturaDTO&gt; obtenerAnuladas() {
-<span class="fc" id="L29">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
+<span class="nc" id="L29">        return manejadorConsultarFacturasAnuladas.ejecutar();</span>
     }
 
     @GetMapping({&quot;/sumarFacturas/{fecha}&quot;})
     public BigDecimal buscarPlantaProveedor(@PathVariable(&quot;fecha&quot;) String fecha) {
-<span class="fc" id="L34">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
+<span class="nc" id="L34">        return this.manejadorSumarFacturas.ejecutar(fecha);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -22,12 +22,12 @@ public class ConsultaControladorProveedor {
 
     @GetMapping(&quot;/index&quot;)
     public List&lt;Proveedor&gt; listar(){
-<span class="fc" id="L25">        return this.manejadorListarProveedores.ejecutar();</span>
+<span class="nc" id="L25">        return this.manejadorListarProveedores.ejecutar();</span>
     }
 
     @GetMapping({&quot;/buscar/{id}&quot;})
     public Proveedor buscar(@PathVariable(&quot;id&quot;) Long id) {
-<span class="fc" id="L30">        return this.manejadorBuscarProveedor.ejecutar(id);</span>
+<span class="nc" id="L30">        return this.manejadorBuscarProveedor.ejecutar(id);</span>
     }
 
 
