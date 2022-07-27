@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-27T09:27:44" hostname="RODRIGO-MONTERO" time="0.005">
+<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-27T10:20:22" hostname="RODRIGO-MONTERO" time="0.005">
   <properties/>
   <testcase name="reconstruirSinPaginaWebdeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>

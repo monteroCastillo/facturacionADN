@@ -32,7 +32,7 @@ public class ComandoPlantaControladorTest {
 
     @Test
     void crear() throws Exception {
-        var comando = new ComandoPlantaTestDataBuilder().crearPorDefecto().build();
+        var comando = new ComandoPlantaTestDataBuilder().crearPorDefecto().reconstruir();
 
         var resultado = mocMvc.perform(post("/apiPlanta/crear")
                         .contentType(MediaType.APPLICATION_JSON)

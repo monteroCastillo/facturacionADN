@@ -24,7 +24,7 @@ public class FacturaTestDataBuilder  {
 
 
     public FacturaTestDataBuilder conFacturaPorDefecto(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
 
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()

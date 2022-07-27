@@ -3,27 +3,29 @@
 import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
 import com.ceiba.empleado.utils.MensajesDeExcepcion;
 import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.planta.modelo.entidad.SolicitudCrearPlanta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 
 public class ServicioActualizarPlanta {
 
     private final RepositorioPlanta repositorioPlanta;
 
-<span class="fc" id="L12">    public ServicioActualizarPlanta(RepositorioPlanta repositorioPlanta) {</span>
-<span class="fc" id="L13">        this.repositorioPlanta = repositorioPlanta;</span>
-<span class="fc" id="L14">    }</span>
+<span class="nc" id="L13">    public ServicioActualizarPlanta(RepositorioPlanta repositorioPlanta) {</span>
+<span class="nc" id="L14">        this.repositorioPlanta = repositorioPlanta;</span>
+<span class="nc" id="L15">    }</span>
 
-    public void ejecutar(Planta planta){
-<span class="fc" id="L17">        validarExistenciaPrevia(planta);</span>
-<span class="fc" id="L18">        this.repositorioPlanta.actualizar(planta);</span>
-<span class="fc" id="L19">    }</span>
+    public void ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
+<span class="nc" id="L18">        validarExistenciaPrevia(solicitudCrearPlanta);</span>
+<span class="nc" id="L19">        var planta = Planta.crear(solicitudCrearPlanta);</span>
+<span class="nc" id="L20">        this.repositorioPlanta.actualizar(planta);</span>
+<span class="nc" id="L21">    }</span>
 
-    private void validarExistenciaPrevia(Planta planta){
-<span class="fc" id="L22">        boolean existe = this.repositorioPlanta.existe(planta.getId());</span>
-<span class="pc bpc" id="L23" title="1 of 2 branches missed.">        if(!existe) {</span>
-<span class="nc" id="L24">            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());</span>
+    private void validarExistenciaPrevia(SolicitudCrearPlanta solicitudCrearPlanta){
+<span class="nc" id="L24">        boolean existe = this.repositorioPlanta.existe(solicitudCrearPlanta.getId());</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if(!existe) {</span>
+<span class="nc" id="L26">            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());</span>
         }
-<span class="fc" id="L26">    }</span>
+<span class="nc" id="L28">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

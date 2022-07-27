@@ -21,9 +21,7 @@ public class ManejadorCrearPlanta implements ManejadorComandoRespuesta&lt;Comand
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoPlanta comando) {
-
-<span class="nc" id="L25">        Planta planta = this.fabricaPlanta.crear(comando);</span>
-<span class="nc" id="L26">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(planta));</span>
+<span class="nc" id="L24">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearPlanta.ejecutar(fabricaPlanta.guardarPlanta(comando)));</span>
     }
 
 

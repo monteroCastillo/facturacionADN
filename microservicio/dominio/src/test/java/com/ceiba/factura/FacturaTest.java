@@ -19,7 +19,7 @@ public class FacturaTest {
 
     @Test
     void deberiaConstruirUnaFacturaExitosamente(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
 
 
         Cliente cliente = new ClienteTestDataBuilder()
@@ -82,7 +82,7 @@ public class FacturaTest {
 
     @Test
     void validarCalcularValorTotalExitosamente(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
         List<ProductoFacturar> productosFacturar = new ArrayList<>();
         productosFacturar.add(0,ProductoFacturar.crear(5,planta));
 

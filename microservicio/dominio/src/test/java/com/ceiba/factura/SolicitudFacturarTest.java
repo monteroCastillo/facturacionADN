@@ -16,7 +16,7 @@ public class SolicitudFacturarTest {
 
     @Test
     void solicitudFacturarTestExitosamente(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
                 .reconstruir();
@@ -34,7 +34,7 @@ public class SolicitudFacturarTest {
 
     @Test
     void solicitudFacturarCrearTestExitosamente(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
         Cliente cliente = new ClienteTestDataBuilder()
                 .conClientePorDefecto()
                 .reconstruir();

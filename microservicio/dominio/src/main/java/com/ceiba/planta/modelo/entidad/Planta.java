@@ -17,8 +17,18 @@ public class Planta {
     private  BigDecimal valor;
     private CategoriaPlanta categoria;
 
-    public Planta(Long id, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
+    private Planta(Long id, String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
         this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fechaIngreso = fechaIngreso;
+        calculaSabadoDomingo(fechaIngreso);
+        this.cantidad = cantidad;
+        this.valor = valor;
+        this.categoria = categoria;
+    }
+    private Planta( String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
+
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaIngreso = fechaIngreso;
@@ -37,6 +47,17 @@ public class Planta {
         ValidadorArgumento.validarObligatorio(valor, "El valor  de la planta es requerido");
         ValidadorArgumento.validarObligatorio(categoria, "La categoria de la planta es requerida");
         return new Planta(id, nombre, descripcion,fechaIngreso,cantidad, valor, categoria);
+    }
+
+    public static Planta crear(SolicitudCrearPlanta solicitudCrearPlanta){
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getNombre(), "El nombre de la planta es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getDescripcion(), "La descripcion de la planta es requerida");
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getFechaIngreso(), "La fecha de ingreso de la planta es requerida");
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getCantidad(), "La cantidad de plantas es requerida");
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getValor(), "El valor  de la planta es requerido");
+        ValidadorArgumento.validarObligatorio(solicitudCrearPlanta.getCategoria(), "La categoria de la planta es requerida");
+
+        return new Planta(solicitudCrearPlanta.getNombre(), solicitudCrearPlanta.getDescripcion(), solicitudCrearPlanta.getFechaIngreso(), solicitudCrearPlanta.getCantidad(), solicitudCrearPlanta.getValor(), solicitudCrearPlanta.getCategoria());
     }
 
     public void calculaSabadoDomingo(LocalDate result) {

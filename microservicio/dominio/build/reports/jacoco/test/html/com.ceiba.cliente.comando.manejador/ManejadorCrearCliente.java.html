@@ -3,8 +3,6 @@
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.comando.fabrica.FabricaCliente;
-import com.ceiba.cliente.modelo.entidad.Cliente;
-import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
 import com.ceiba.cliente.servicio.ServicioCrearCliente;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import org.springframework.stereotype.Component;
@@ -16,14 +14,14 @@ public class ManejadorCrearCliente implements ManejadorComandoRespuesta&lt;Coman
 
     private final FabricaCliente fabricaCliente;
 
-<span class="nc" id="L19">    public ManejadorCrearCliente(ServicioCrearCliente servicioCrearCliente, FabricaCliente fabricaCliente) {</span>
-<span class="nc" id="L20">        this.servicioCrearCliente = servicioCrearCliente;</span>
-<span class="nc" id="L21">        this.fabricaCliente = fabricaCliente;</span>
-<span class="nc" id="L22">    }</span>
+<span class="nc" id="L17">    public ManejadorCrearCliente(ServicioCrearCliente servicioCrearCliente, FabricaCliente fabricaCliente) {</span>
+<span class="nc" id="L18">        this.servicioCrearCliente = servicioCrearCliente;</span>
+<span class="nc" id="L19">        this.fabricaCliente = fabricaCliente;</span>
+<span class="nc" id="L20">    }</span>
 
     @Override
     public ComandoRespuesta&lt;Long&gt; ejecutar(ComandoCliente comando) {
-<span class="nc" id="L26">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(fabricaCliente.guardarCliente(comando)));</span>
+<span class="nc" id="L24">        return  new ComandoRespuesta&lt;&gt;(this.servicioCrearCliente.ejecutar(fabricaCliente.guardarCliente(comando)));</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

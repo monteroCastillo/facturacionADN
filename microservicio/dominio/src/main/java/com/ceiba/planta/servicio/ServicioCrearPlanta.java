@@ -1,6 +1,7 @@
 package com.ceiba.planta.servicio;
 
 import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.planta.modelo.entidad.SolicitudCrearPlanta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 
 public class ServicioCrearPlanta {
@@ -11,7 +12,8 @@ public class ServicioCrearPlanta {
         this.repositorioPlanta = repositorioPlanta;
     }
 
-    public Long ejecutar(Planta planta){
+    public Long ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
+        var planta = Planta.crear(solicitudCrearPlanta);
         return this.repositorioPlanta.guardar(planta);
     }
 }

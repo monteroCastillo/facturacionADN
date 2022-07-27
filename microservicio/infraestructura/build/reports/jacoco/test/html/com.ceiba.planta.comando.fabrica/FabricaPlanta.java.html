@@ -2,21 +2,22 @@
 
 import com.ceiba.planta.comando.ComandoPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.planta.modelo.entidad.SolicitudCrearPlanta;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import org.springframework.stereotype.Component;
 
 @Component
-<span class="fc" id="L8">public class FabricaPlanta {</span>
+public class FabricaPlanta {
 
-    public Planta crear(ComandoPlanta comandoPlanta){
-<span class="fc" id="L11">      return new Planta(</span>
-<span class="fc" id="L12">             comandoPlanta.getId(),</span>
-<span class="fc" id="L13">             comandoPlanta.getNombre(),</span>
-<span class="fc" id="L14">             comandoPlanta.getDescripcion(),</span>
-<span class="fc" id="L15">             comandoPlanta.getFechaIngreso(),</span>
-<span class="fc" id="L16">             comandoPlanta.getCantidad(),</span>
-<span class="fc" id="L17">             comandoPlanta.getValor(),</span>
-<span class="fc" id="L18">             comandoPlanta.getCategoria()</span>
-      );
+    private final RepositorioPlanta repositorioPlanta;
+
+<span class="fc" id="L14">    public FabricaPlanta(RepositorioPlanta repositorioPlanta) {</span>
+<span class="fc" id="L15">        this.repositorioPlanta = repositorioPlanta;</span>
+<span class="fc" id="L16">    }</span>
+
+    public SolicitudCrearPlanta guardarPlanta(ComandoPlanta comando){
+<span class="fc" id="L19">        return new SolicitudCrearPlanta(comando.getId(), comando.getNombre(), comando.getDescripcion(), comando.getFechaIngreso(),comando.getCantidad(),comando.getValor(), comando.getCategoria());</span>
     }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

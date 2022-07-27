@@ -28,6 +28,6 @@ public class ComandoPlantaTestDataBuilder {
         return this;
     }
 
-    public Planta build(){return new Planta(id, nombre, descripcion, fechaIngreso, cantidad, valor2, categoria); }
+    public Planta reconstruir(){return  Planta.reconstruir(id, nombre, descripcion, fechaIngreso, cantidad, valor2, categoria); }
 
 }

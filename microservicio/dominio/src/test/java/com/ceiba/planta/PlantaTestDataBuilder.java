@@ -27,10 +27,6 @@ public class PlantaTestDataBuilder {
     }
 
 
-    public Planta reconstruir() {
-        return Planta.reconstruir(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
-    }
-
     public PlantaTestDataBuilder conId(Long id) {
         this.id = id;
         return this;
@@ -65,8 +61,9 @@ public class PlantaTestDataBuilder {
         this.categoria = categoria;
         return this;
     }
-    public Planta build( ) {
-        return new Planta(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
+
+    public Planta reconstruir() {
+        return Planta.reconstruir(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }
 
 }

@@ -12,7 +12,7 @@ public class ProductoFacturarTest {
     @Test
     void construirProductoFacturaTestExitosamente(){
 
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
 
         var productoFacturar = new ProductoFacturarTestDataBuilder()
                 .conId(1l)
@@ -25,7 +25,7 @@ public class ProductoFacturarTest {
 
     @Test
     void calcularSubTotalExitosamente(){
-        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().build();
+        Planta planta = new PlantaTestDataBuilder().conPlantaPorDefecto().reconstruir();
 
         var productoFacturar = new ProductoFacturarTestDataBuilder()
                 .conId(1l)

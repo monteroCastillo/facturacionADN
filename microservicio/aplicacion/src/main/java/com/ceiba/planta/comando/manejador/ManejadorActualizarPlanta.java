@@ -22,7 +22,6 @@ public class ManejadorActualizarPlanta implements ManejadorComando<ComandoPlanta
 
     @Override
     public void ejecutar(ComandoPlanta comandoPlanta) {
-        Planta planta = this.fabricaPlanta.crear(comandoPlanta);
-        this.servicioActualizarPlanta.ejecutar(planta);
+        this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));
     }
 }
