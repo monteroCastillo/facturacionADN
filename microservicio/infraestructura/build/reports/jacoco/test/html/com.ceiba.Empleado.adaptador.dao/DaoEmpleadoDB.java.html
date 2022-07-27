@@ -28,16 +28,16 @@ public class DaoEmpleadoDB implements DaoEmpleado {
 
     @Override
     public List&lt;DtoEmpleado&gt; listar() {
-<span class="nc" id="L31">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoEmpleado());</span>
+<span class="fc" id="L31">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoEmpleado());</span>
     }
 
     @Override
     public DtoEmpleado obtenerEmpleadoPorId(Long id) {
-<span class="nc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L37">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L38">        List&lt;DtoEmpleado&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoEmpleado());</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        if(list.size()==1){</span>
-<span class="nc" id="L40">            return list.get(0);</span>
+<span class="fc" id="L36">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L37">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L38">        List&lt;DtoEmpleado&gt; list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoEmpleado());</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">        if(list.size()==1){</span>
+<span class="fc" id="L40">            return list.get(0);</span>
         }
 <span class="nc" id="L42">        return null;</span>
     }

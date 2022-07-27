@@ -17,6 +17,6 @@ public class ComandoPlantaPorProveedorTestDataBuilder {
     }
 
     public ComandoPlantaPorProveedor build(){
-        return new ComandoPlantaPorProveedor(this.id,idProveedor, idPlanta);
+        return new ComandoPlantaPorProveedor(this.id, this.idProveedor, this.idPlanta);
     }
 }

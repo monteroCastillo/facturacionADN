@@ -40,10 +40,10 @@ public class RepositorioPlantaporProveedorDB implements RepositorioPlantaPorProv
 
     @Override
     public void eliminar(Long id) {
-<span class="nc" id="L43">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="nc" id="L44">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="nc" id="L45">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L43">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="fc" id="L44">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="fc" id="L45">        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);</span>
+<span class="fc" id="L46">    }</span>
 
     @Override
     public boolean existe(Long id) {

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cliente.ClienteTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-07-27T19:28:09" hostname="RODRIGO-MONTERO" time="0.042">
+<testsuite name="com.ceiba.cliente.ClienteTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-07-27T19:48:05" hostname="RODRIGO-MONTERO" time="0.043">
   <properties/>
-  <testcase name="deberiaReconstruirClienteExitosamenteValidandoTipoCliente()" classname="com.ceiba.cliente.ClienteTest" time="0.025"/>
+  <testcase name="deberiaReconstruirClienteExitosamenteValidandoTipoCliente()" classname="com.ceiba.cliente.ClienteTest" time="0.027"/>
   <testcase name="reconstruirSinDireccionDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.006"/>
   <testcase name="validarTipoCliente()" classname="com.ceiba.cliente.ClienteTest" time="0.003"/>
   <testcase name="reconstruirSinEmailDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
   <testcase name="reconstruirSinTelefonoDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
   <testcase name="reconstruirSinTipoClienteDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
   <testcase name="deberiaReconstruirClienteExitosamente()" classname="com.ceiba.cliente.ClienteTest" time="0.0"/>
-  <testcase name="reconstruirSinIdDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
-  <testcase name="reconstruirSinNombreDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
-  <testcase name="deberiaReconstruirClienteExitosamenteValidandoTipoClientePreferencial()" classname="com.ceiba.cliente.ClienteTest" time="0.001"/>
+  <testcase name="reconstruirSinIdDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.0"/>
+  <testcase name="reconstruirSinNombreDeberiaLanzarError()" classname="com.ceiba.cliente.ClienteTest" time="0.0"/>
+  <testcase name="deberiaReconstruirClienteExitosamenteValidandoTipoClientePreferencial()" classname="com.ceiba.cliente.ClienteTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
