@@ -4,7 +4,6 @@ package com.ceiba.plantaporproveedor;
 import com.ceiba.planta.PlantaTestDataBuilder;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.plantaporproveedor.modelo.entidad.PlantaPorProveedor;
-import com.ceiba.plantaporproveedor.modelo.entidad.SolicitudCrearPlantaPorProveedor;
 import com.ceiba.proveedor.ProveedorTestDataBuilder;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
 

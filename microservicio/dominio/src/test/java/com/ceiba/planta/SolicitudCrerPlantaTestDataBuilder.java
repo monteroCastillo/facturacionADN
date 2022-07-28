@@ -2,6 +2,7 @@ package com.ceiba.planta;
 
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
 import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.planta.modelo.entidad.SolicitudCrearPlanta;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -62,8 +63,8 @@ public class SolicitudCrerPlantaTestDataBuilder {
         return this;
     }
 
-    public Planta reconstruir() {
-        return Planta.reconstruir(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
+    public SolicitudCrearPlanta construir() {
+        return new SolicitudCrearPlanta(id, nombre, descripcion, fechaIngreso, cantidad, valor, categoria);
     }
 
 }

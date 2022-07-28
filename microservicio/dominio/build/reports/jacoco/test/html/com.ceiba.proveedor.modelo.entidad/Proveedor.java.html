@@ -17,13 +17,13 @@ public class Proveedor {
 <span class="fc" id="L17">        this.paginaWeb = paginaWeb;</span>
 <span class="fc" id="L18">    }</span>
 
-<span class="nc" id="L20">    private Proveedor( String nombre, String direccion, String telefono, String paginaWeb) {</span>
+<span class="fc" id="L20">    private Proveedor( String nombre, String direccion, String telefono, String paginaWeb) {</span>
 
-<span class="nc" id="L22">        this.nombre = nombre;</span>
-<span class="nc" id="L23">        this.direccion = direccion;</span>
-<span class="nc" id="L24">        this.telefono = telefono;</span>
-<span class="nc" id="L25">        this.paginaWeb = paginaWeb;</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L22">        this.nombre = nombre;</span>
+<span class="fc" id="L23">        this.direccion = direccion;</span>
+<span class="fc" id="L24">        this.telefono = telefono;</span>
+<span class="fc" id="L25">        this.paginaWeb = paginaWeb;</span>
+<span class="fc" id="L26">    }</span>
 
     public static Proveedor reconstruir(Long id, String nombre, String direccion, String telefono, String paginaWeb ){
 <span class="fc" id="L29">        ValidadorArgumento.validarObligatorio(id, &quot;El id del proveedor es requerido&quot;);</span>
@@ -36,12 +36,12 @@ public class Proveedor {
     }
 
     public static Proveedor crear(SolicitudProveedor solicitudProveedor){
-<span class="nc" id="L39">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getNombre(), &quot;el nombre del proveedor es requerido&quot;);</span>
-<span class="nc" id="L40">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getDireccion(), &quot;La direccion del proveedor es requerida&quot;);</span>
-<span class="nc" id="L41">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getTelefono(), &quot;El telefono del proveedor es requerido&quot;);</span>
-<span class="nc" id="L42">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getPaginaWeb(), &quot;La pagina web del proveedor es requerida&quot;);</span>
+<span class="fc" id="L39">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getNombre(), &quot;el nombre del proveedor es requerido&quot;);</span>
+<span class="fc" id="L40">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getDireccion(), &quot;La direccion del proveedor es requerida&quot;);</span>
+<span class="fc" id="L41">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getTelefono(), &quot;El telefono del proveedor es requerido&quot;);</span>
+<span class="fc" id="L42">        ValidadorArgumento.validarObligatorio(solicitudProveedor.getPaginaWeb(), &quot;La pagina web del proveedor es requerida&quot;);</span>
 
-<span class="nc" id="L44">        return  new Proveedor(solicitudProveedor.getNombre(), solicitudProveedor.getDireccion(), solicitudProveedor.getTelefono(), solicitudProveedor.getPaginaWeb());</span>
+<span class="fc" id="L44">        return  new Proveedor(solicitudProveedor.getNombre(), solicitudProveedor.getDireccion(), solicitudProveedor.getTelefono(), solicitudProveedor.getPaginaWeb());</span>
 
     }
 

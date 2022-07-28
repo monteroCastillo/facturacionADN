@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.empleado.SolicitudCrearEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T13:03:59" hostname="RODRIGO-MONTERO" time="0.001">
+<testsuite name="com.ceiba.empleado.SolicitudCrearEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T15:44:24" hostname="RODRIGO-MONTERO" time="0.003">
   <properties/>
-  <testcase name="deberiaReconstruirPersonaExitosamente()" classname="com.ceiba.empleado.SolicitudCrearEmpleadoTest" time="0.001"/>
+  <testcase name="deberiaReconstruirunEmpleadoExitosamente()" classname="com.ceiba.empleado.SolicitudCrearEmpleadoTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

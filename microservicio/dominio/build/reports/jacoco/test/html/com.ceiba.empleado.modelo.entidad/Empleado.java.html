@@ -37,13 +37,13 @@ public class Empleado {
     }
 
     public static Empleado crear(SolicitudCrearEmpleado solicitudCrearEmpleado){
-<span class="nc" id="L40">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getNombre(), &quot;No se puede crear un empleado sin nombre&quot;);</span>
-<span class="nc" id="L41">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getDireccion(), &quot;No se puede crear un empleado sin direccion&quot;);</span>
-<span class="nc" id="L42">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getTelefono(), &quot;El telefono del empleado es requerido&quot;);</span>
-<span class="nc" id="L43">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getEmail(), &quot;El email del empleado es requerido&quot;);</span>
-<span class="nc" id="L44">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getFechaRegistro(), &quot;La fecha de registro es requerida&quot;);</span>
-<span class="nc" id="L45">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getPerfil(), &quot;El perfil del empleado es requerido&quot;);</span>
-<span class="nc" id="L46">        return new Empleado(solicitudCrearEmpleado.getIdEmpleado(), solicitudCrearEmpleado.getNombre(), solicitudCrearEmpleado.getDireccion(), solicitudCrearEmpleado.getTelefono(), solicitudCrearEmpleado.getEmail(), solicitudCrearEmpleado.getFechaRegistro(), solicitudCrearEmpleado.getPerfil());</span>
+<span class="fc" id="L40">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getNombre(), &quot;No se puede crear un empleado sin nombre&quot;);</span>
+<span class="fc" id="L41">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getDireccion(), &quot;No se puede crear un empleado sin direccion&quot;);</span>
+<span class="fc" id="L42">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getTelefono(), &quot;El telefono del empleado es requerido&quot;);</span>
+<span class="fc" id="L43">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getEmail(), &quot;El email del empleado es requerido&quot;);</span>
+<span class="fc" id="L44">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getFechaRegistro(), &quot;La fecha de registro es requerida&quot;);</span>
+<span class="fc" id="L45">        ValidadorArgumento.validarObligatorio(solicitudCrearEmpleado.getPerfil(), &quot;El perfil del empleado es requerido&quot;);</span>
+<span class="fc" id="L46">        return new Empleado(solicitudCrearEmpleado.getIdEmpleado(), solicitudCrearEmpleado.getNombre(), solicitudCrearEmpleado.getDireccion(), solicitudCrearEmpleado.getTelefono(), solicitudCrearEmpleado.getEmail(), solicitudCrearEmpleado.getFechaRegistro(), solicitudCrearEmpleado.getPerfil());</span>
     }
 
     public Perfil getPerfil() {

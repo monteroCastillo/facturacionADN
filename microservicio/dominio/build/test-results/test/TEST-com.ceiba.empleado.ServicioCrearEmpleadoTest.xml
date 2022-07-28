@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.empleado.ServicioCrearEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T13:03:59" hostname="RODRIGO-MONTERO" time="0.005">
+<testsuite name="com.ceiba.empleado.ServicioCrearEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T15:44:24" hostname="RODRIGO-MONTERO" time="0.002">
   <properties/>
-  <testcase name="validarCreacionEmpleado()" classname="com.ceiba.empleado.ServicioCrearEmpleadoTest" time="0.005"/>
+  <testcase name="validarCreacionEmpleado()" classname="com.ceiba.empleado.ServicioCrearEmpleadoTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

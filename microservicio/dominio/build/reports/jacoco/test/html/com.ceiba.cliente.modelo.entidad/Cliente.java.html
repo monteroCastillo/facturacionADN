@@ -31,13 +31,13 @@ public class Cliente {
     }
 
     public static Cliente crear(SolicitudCrearCliente solicitudCrearCliente){
-<span class="nc" id="L34">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getNombre(), &quot;Nombre del cliente es requerido&quot;);</span>
-<span class="nc" id="L35">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getDireccion(), &quot;La direccion es requerido&quot;);</span>
-<span class="nc" id="L36">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTelefono(), &quot;El telefono del cliente es requerido&quot;);</span>
-<span class="nc" id="L37">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getEmail(), &quot;El Email  del cliente es requerido&quot;);</span>
-<span class="nc" id="L38">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTipoCliente(), &quot;Tipo de cliente es requerido&quot;);</span>
-<span class="nc" id="L39">        return new Cliente(solicitudCrearCliente.getId(), solicitudCrearCliente.getNombre(),solicitudCrearCliente.getDireccion(),</span>
-<span class="nc" id="L40">                solicitudCrearCliente.getTelefono(), solicitudCrearCliente.getEmail(), solicitudCrearCliente.getTipoCliente());</span>
+<span class="fc" id="L34">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getNombre(), &quot;Nombre del cliente es requerido&quot;);</span>
+<span class="fc" id="L35">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getDireccion(), &quot;La direccion es requerido&quot;);</span>
+<span class="fc" id="L36">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTelefono(), &quot;El telefono del cliente es requerido&quot;);</span>
+<span class="fc" id="L37">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getEmail(), &quot;El Email  del cliente es requerido&quot;);</span>
+<span class="fc" id="L38">        ValidadorArgumento.validarObligatorio(solicitudCrearCliente.getTipoCliente(), &quot;Tipo de cliente es requerido&quot;);</span>
+<span class="fc" id="L39">        return new Cliente(solicitudCrearCliente.getId(), solicitudCrearCliente.getNombre(),solicitudCrearCliente.getDireccion(),</span>
+<span class="fc" id="L40">                solicitudCrearCliente.getTelefono(), solicitudCrearCliente.getEmail(), solicitudCrearCliente.getTipoCliente());</span>
     }
 
     public Long getId() {

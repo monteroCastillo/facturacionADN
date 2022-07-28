@@ -16,16 +16,16 @@ public class PlantaPorProveedor {
 <span class="fc" id="L16">        this.planta = planta;</span>
 <span class="fc" id="L17">    }</span>
 
-<span class="nc" id="L19">    private PlantaPorProveedor(Proveedor proveedor, Planta planta) {</span>
-<span class="nc" id="L20">        this.proveedor = proveedor;</span>
-<span class="nc" id="L21">        this.planta = planta;</span>
-<span class="nc" id="L22">    }</span>
+<span class="fc" id="L19">    private PlantaPorProveedor(Proveedor proveedor, Planta planta) {</span>
+<span class="fc" id="L20">        this.proveedor = proveedor;</span>
+<span class="fc" id="L21">        this.planta = planta;</span>
+<span class="fc" id="L22">    }</span>
 
     public static PlantaPorProveedor crear(SolicitudCrearPlantaPorProveedor solicitudCrearPlantaPorProveedor){
 
-<span class="nc" id="L26">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor(), &quot;El proveedor es necesario&quot;);</span>
-<span class="nc" id="L27">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta(), &quot;El id de la planta es necesario&quot;);</span>
-<span class="nc" id="L28">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getProveedor(),solicitudCrearPlantaPorProveedor.getPlanta());</span>
+<span class="fc" id="L26">        ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getProveedor(), &quot;El proveedor es necesario&quot;);</span>
+<span class="fc" id="L27">                ValidadorArgumento.validarObligatorio(solicitudCrearPlantaPorProveedor.getPlanta(), &quot;El id de la planta es necesario&quot;);</span>
+<span class="fc" id="L28">                        return new PlantaPorProveedor(solicitudCrearPlantaPorProveedor.getProveedor(),solicitudCrearPlantaPorProveedor.getPlanta());</span>
     }
     public static PlantaPorProveedor reconstruir(Long id, Proveedor idProveedor, Planta idPlanta) {
 <span class="fc" id="L31">        ValidadorArgumento.validarObligatorio(idProveedor, &quot;Proveedor es requerido&quot;);</span>

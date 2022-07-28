@@ -1,6 +1,7 @@
 package com.ceiba.proveedor;
 
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
+import com.ceiba.proveedor.modelo.entidad.SolicitudProveedor;
 
 public class SolicitudProveedorTestDataBuilder {
 
@@ -44,8 +45,8 @@ public class SolicitudProveedorTestDataBuilder {
         this.paginaWeb = paginaWeb;
         return this;
     }
-    public Proveedor reconstruir() {
-        return Proveedor.reconstruir(id, nombre, direccion, telefono, paginaWeb);
+    public SolicitudProveedor construir() {
+        return new SolicitudProveedor(id, nombre, direccion, telefono, paginaWeb);
     }
 
 }

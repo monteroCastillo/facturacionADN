@@ -1,10 +1,14 @@
 package com.ceiba.planta;
 
+
 import com.ceiba.planta.modelo.entidad.CategoriaPlanta;
-import com.ceiba.proveedor.ProveedorTestDataBuilder;
-import com.ceiba.proveedor.SolicitudProveedorTestDataBuilder;
+import com.ceiba.planta.modelo.entidad.Planta;
+import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
+import com.ceiba.planta.servicio.ServicioCrearPlanta;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -14,7 +18,11 @@ public class SolicitudCrearPlantaTest {
 
         @Test
         void deberiaCrearPlantaExitosamente() {
-            var planta = new SolicitudCrerPlantaTestDataBuilder()
+            Planta planta = new PlantaTestDataBuilder()
+                    .conPlantaPorDefecto()
+                    .reconstruir();
+
+            var solicitudCrearPlanta = new SolicitudCrerPlantaTestDataBuilder()
                     .conId(123l)
                     .conNombre("Girasol")
                     .conDescripcion("Color Amarillo")
@@ -22,15 +30,24 @@ public class SolicitudCrearPlantaTest {
                     .conCantidad(180)
                     .conValor(new BigDecimal(15000))
                     .conCategoria(CategoriaPlanta.PLANTASDEFLOR).
-                    reconstruir();
+                    construir();
 
-            Assertions.assertEquals(123, planta.getId());
-            Assertions.assertEquals("Girasol", planta.getNombre());
-            Assertions.assertEquals("Color Amarillo", planta.getDescripcion());
-            Assertions.assertEquals(LocalDate.of(2022,06,22), planta.getFechaIngreso());
-            Assertions.assertEquals(180, planta.getCantidad());
-            Assertions.assertEquals(new BigDecimal(15000),planta.getValor());
-            Assertions.assertEquals(CategoriaPlanta.PLANTASDEFLOR, planta.getCategoria());
+            var repositorioPlanta = Mockito.mock(RepositorioPlanta.class);
+            Mockito.when(repositorioPlanta.guardar(Mockito.any())).thenReturn(123L);
+
+            var servicioPlanta = new ServicioCrearPlanta(repositorioPlanta);
+            var idPlantaGuardado = servicioPlanta.ejecutar(solicitudCrearPlanta);
+
+            ArgumentCaptor<Planta> captorPlanta = ArgumentCaptor.forClass(Planta.class);
+            Mockito.verify(repositorioPlanta, Mockito.times(1)).guardar(captorPlanta.capture());
+
+            Assertions.assertEquals(123l, idPlantaGuardado);
+            Assertions.assertEquals("Girasol", captorPlanta.getValue().getNombre());
+            Assertions.assertEquals("Color Amarillo", captorPlanta.getValue().getDescripcion());
+            Assertions.assertEquals(LocalDate.of(2022,06,22), captorPlanta.getValue().getFechaIngreso());
+            Assertions.assertEquals(180, captorPlanta.getValue().getCantidad());
+            Assertions.assertEquals(new BigDecimal(15000),captorPlanta.getValue().getValor());
+            Assertions.assertEquals(CategoriaPlanta.PLANTASDEFLOR, captorPlanta.getValue().getCategoria());
         }
 
 

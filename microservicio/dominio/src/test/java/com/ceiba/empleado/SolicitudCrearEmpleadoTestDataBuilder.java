@@ -2,6 +2,7 @@ package com.ceiba.empleado;
 
 import com.ceiba.empleado.modelo.entidad.Empleado;
 import com.ceiba.empleado.modelo.entidad.Perfil;
+import com.ceiba.empleado.modelo.entidad.SolicitudCrearEmpleado;
 
 import java.time.LocalDate;
 
@@ -61,7 +62,7 @@ public class SolicitudCrearEmpleadoTestDataBuilder {
         return this;
     }
 
-    public Empleado reconstruir(){
-        return  Empleado.reconstruir(idEmpleado,nombre,direccion,telefono,email,fechaRegistro,perfil);
+    public SolicitudCrearEmpleado construir(){
+        return new SolicitudCrearEmpleado(idEmpleado,nombre,direccion,telefono,email,fechaRegistro,perfil);
     }
 }
