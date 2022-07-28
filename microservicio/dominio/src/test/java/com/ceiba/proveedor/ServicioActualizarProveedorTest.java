@@ -1,30 +1,25 @@
 package com.ceiba.proveedor;
 
 
+import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionSinDatos;
+import com.ceiba.empleado.utils.MensajesDeExcepcion;
 import com.ceiba.proveedor.modelo.entidad.Proveedor;
-
-
 
 import com.ceiba.proveedor.puerto.repositorio.RepositorioProveedor;
 import com.ceiba.proveedor.servicio.ServicioActualizarProveedor;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.Mockito.times;
 
 
 public class ServicioActualizarProveedorTest {
 
-
     @Autowired
     private MockMvc mocMvc;
-
-
 
 //    @Test
 //    public void validarProveedorExistenciaPreviaTest() {

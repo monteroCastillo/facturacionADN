@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-28T08:52:30" hostname="RODRIGO-MONTERO" time="0.005">
+<testsuite name="com.ceiba.proveedor.ProveedorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-07-28T09:27:41" hostname="RODRIGO-MONTERO" time="0.004">
   <properties/>
-  <testcase name="reconstruirSinPaginaWebdeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
+  <testcase name="reconstruirSinPaginaWebdeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.0"/>
   <testcase name="reconstruirSinNombredeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinIddeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
   <testcase name="reconstruirSinDirecciondeberiaDeberiaLanzarError()" classname="com.ceiba.proveedor.ProveedorTest" time="0.001"/>
