@@ -17,8 +17,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.Mockito.times;
 
-@ExtendWith(SpringExtension.class)
-@WebMvcTest(ServicioActualizarProveedor.class)
 
 public class ServicioActualizarProveedorTest {
 

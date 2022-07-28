@@ -11,11 +11,11 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
+.html
 .idea
 *.iws
 *.iml
 *.ipr
-*.html
 
 /out/
 

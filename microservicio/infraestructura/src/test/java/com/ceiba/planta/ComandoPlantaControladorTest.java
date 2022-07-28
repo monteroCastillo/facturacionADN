@@ -42,7 +42,7 @@ public class ComandoPlantaControladorTest {
         String jsonResult = resultado.getResponse().getContentAsString();
         var respuesta = objectMapper.readValue(jsonResult, RespuestaComando.class);
 
-        var plantaGuardada = daoPlanta.obtener(respuesta.getValor().longValue());
+        var plantaGuardada = daoPlanta.obtenerPlantaPorId(respuesta.getValor().longValue());
 
         Assertions.assertEquals("manzanilla", plantaGuardada.getNombre());
 

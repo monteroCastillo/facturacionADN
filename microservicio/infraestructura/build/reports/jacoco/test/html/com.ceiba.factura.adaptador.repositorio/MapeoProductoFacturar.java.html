@@ -26,7 +26,7 @@ public class MapeoProductoFacturar implements RowMapper&lt;ProductoFacturar&gt;,
 <span class="fc" id="L26">        var idPlanta = resultSet.getLong(&quot;id_planta&quot;);</span>
 <span class="fc" id="L27">        var cantidad = resultSet.getInt(&quot;cantidad&quot;);</span>
 
-<span class="fc" id="L29">        return ProductoFacturar.reconstruir(id, cantidad, daoPlanta.obtener(idPlanta));</span>
+<span class="fc" id="L29">        return ProductoFacturar.reconstruir(id, cantidad, daoPlanta.obtenerPlantaPorId(idPlanta));</span>
     }
 
 }

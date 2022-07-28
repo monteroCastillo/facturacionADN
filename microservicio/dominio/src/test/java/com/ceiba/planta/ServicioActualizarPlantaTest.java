@@ -3,8 +3,6 @@ package com.ceiba.planta;
 import com.ceiba.planta.modelo.entidad.Planta;
 import com.ceiba.planta.puerto.repositorio.RepositorioPlanta;
 import com.ceiba.planta.servicio.ServicioActualizarPlanta;
-import com.ceiba.proveedor.ProveedorTestDataBuilder;
-import com.ceiba.proveedor.modelo.entidad.Proveedor;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
