@@ -73,7 +73,7 @@ public class Factura {
             this.valorTotal = valorTotal.add(valorTotal.multiply(BigDecimal.valueOf(COBRO_ADICIONAL_FESTIVO)));
         }
     }
-    public LocalDate validarSiguienteDiaHabil(LocalDate fecha){
+    public static LocalDate validarSiguienteDiaHabil(LocalDate fecha){
         var anio = fecha.getYear();
 
         Date fecha2 = java.sql.Date.valueOf(fecha);

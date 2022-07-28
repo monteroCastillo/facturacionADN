@@ -9,8 +9,6 @@ public interface DaoPlanta {
 
     Planta obtenerPlantaPorId(Long id);
 
-    Planta obtener(Long id);
-
     List<Planta> plantaProveedor(Long proveedor);
 
 

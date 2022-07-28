@@ -12,16 +12,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ServicioCrearEmpleadoTest {
 
-//    @Test
-//    public void validarCreacionEmpleado(){
-//        Long ID = 1l;
-//        Empleado empleado = new EmpleadoTestDataBuilder().conEmpleadoPorDefecto().build();
-//        RepositorioEmpleado repositorioEmpleado = Mockito.mock(RepositorioEmpleado.class);
-//        Mockito.when(repositorioEmpleado.existe(Mockito.anyLong())).thenReturn(false);
-//        Mockito.when(repositorioEmpleado.guardar(empleado)).thenReturn(ID);
-//        ServicioCrearEmpleado servicioCrearEmpleado = new ServicioCrearEmpleado(repositorioEmpleado);
-//        // act - assert
-//        assertEquals(ID,servicioCrearEmpleado.ejecutar(SolicitudCrearEmpleado solicitudCrearEmpleado));
-//
-//    }
+    @Test
+    public void validarCreacionEmpleado(){
+        Long ID = 1l;
+        Empleado empleado = new EmpleadoTestDataBuilder().conEmpleadoPorDefecto().reconstruir();
+
+        var repositorioEmpleado = Mockito.mock(RepositorioEmpleado.class);
+        Mockito.when(repositorioEmpleado.guardar(Mockito.any())).thenReturn(1l);
+
+
+        var servicioCrearEmpleado = new ServicioCrearEmpleado(repositorioEmpleado);
+
+        var idEmpleado = repositorioEmpleado.guardar(empleado);
+        // act - assert
+        assertEquals(1l,idEmpleado);
+
+    }
 }

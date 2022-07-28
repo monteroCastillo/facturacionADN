@@ -2,20 +2,13 @@
 
 import com.ceiba.cliente.comando.ComandoCliente;
 import com.ceiba.cliente.modelo.entidad.SolicitudCrearCliente;
-import com.ceiba.cliente.puerto.repositorio.RepositorioCliente;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FabricaCliente {
-
-    private final RepositorioCliente repositorioCliente;
-
-<span class="nc" id="L13">    public FabricaCliente(RepositorioCliente repositorioCliente){</span>
-<span class="nc" id="L14">        this.repositorioCliente = repositorioCliente;</span>
-<span class="nc" id="L15">    }</span>
+<span class="nc" id="L8">public class FabricaCliente {</span>
 
     public SolicitudCrearCliente guardarCliente(ComandoCliente comandoCliente){
-<span class="nc" id="L18">        return new SolicitudCrearCliente(comandoCliente.getId(), comandoCliente.getNombre(), comandoCliente.getDireccion(), comandoCliente.getTelefono(), comandoCliente.getEmail(), comandoCliente.getTipoCliente());</span>
+<span class="nc" id="L11">        return new SolicitudCrearCliente(comandoCliente.getId(), comandoCliente.getNombre(), comandoCliente.getDireccion(), comandoCliente.getTelefono(), comandoCliente.getEmail(), comandoCliente.getTipoCliente());</span>
 
     }
 

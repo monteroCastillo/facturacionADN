@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ServicioCrearPlantaPorProveedorTest {
 
-//    @Test
-//    public void validarCreacionPlantaPorProveedor(){
-//        Long ID = 1l;
-//        PlantaPorProveedor plantaPorProveedor = new PlantaPorProveedorTestDataBuilder().conPlantaPorProveedorPorDefecto().reconstruir();
-//        RepositorioPlantaPorProveedor repositorioPlantaPorProveedor = Mockito.mock(RepositorioPlantaPorProveedor.class);
-//        Mockito.when(repositorioPlantaPorProveedor.existe(Mockito.anyLong())).thenReturn(false);
-//        Mockito.when(repositorioPlantaPorProveedor.guardar(plantaPorProveedor)).thenReturn(ID);
-//        ServicioCrearPlantaPorProveedor servicioCrearPlantaPorProveedor = new ServicioCrearPlantaPorProveedor(repositorioPlantaPorProveedor);
-//        // act - assert
-//        assertEquals(ID,servicioCrearPlantaPorProveedor.ejecutar());
-//
-//    }
+    @Test
+    public void validarCreacionPlantaPorProveedor(){
+        Long ID = 1l;
+        PlantaPorProveedor plantaPorProveedor = new PlantaPorProveedorTestDataBuilder().conPlantaPorProveedorPorDefecto().reconstruir();
+        RepositorioPlantaPorProveedor repositorioPlantaPorProveedor = Mockito.mock(RepositorioPlantaPorProveedor.class);
+        Mockito.when(repositorioPlantaPorProveedor.guardar(Mockito.any())).thenReturn(1l);
+        var servicioCrearPlantaPorProveedor = new ServicioCrearPlantaPorProveedor(repositorioPlantaPorProveedor);
+        var idPlantaPorProveedor = repositorioPlantaPorProveedor.guardar(plantaPorProveedor);
+        // act - assert
+        assertEquals(1l, idPlantaPorProveedor);
+
+    }
 }

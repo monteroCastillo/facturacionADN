@@ -51,16 +51,7 @@ public class DaoPlantaDB implements DaoPlanta{
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoPlanta());
     }
 
-    @Override
-    public Planta obtener(Long id) {
-        MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("id", id);
-        List<Planta> list=this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlObtener, paramSource, new MapeoPlanta());
-        if(list.size()==1){
-            return list.get(0);
-        }
-        return null;
-    }
+
 
 
 }
