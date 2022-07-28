@@ -28,6 +28,7 @@ public class Planta {
         this.valor = valor;
         this.categoria = categoria;
     }
+
     private Planta( String nombre, String descripcion, LocalDate fechaIngreso, int cantidad, BigDecimal valor, CategoriaPlanta categoria) {
 
         this.nombre = nombre;

@@ -15,7 +15,9 @@ public class ServicioActualizarPlanta {
 
     public void ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
 
+        System.out.println("la solicitud  de crear :"+ solicitudCrearPlanta);
         var planta = Planta.crear(solicitudCrearPlanta);
+        System.out.println("La planta: "+ planta.getId());
         this.repositorioPlanta.actualizar(planta);
     }
 

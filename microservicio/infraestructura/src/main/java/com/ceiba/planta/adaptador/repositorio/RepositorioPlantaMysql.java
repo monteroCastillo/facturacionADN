@@ -62,6 +62,7 @@ public class RepositorioPlantaMysql implements RepositorioPlanta  {
         paramSource.addValue("cantidad", planta.getCantidad());
         paramSource.addValue("valor",planta.getValor());
         paramSource.addValue("categoria", planta.getCategoria().name());
+        System.out.println("Datos para actualizar " + paramSource);
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlActualizar, paramSource);
 
     }

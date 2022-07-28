@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.empleado.ServicioActualizarEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T15:44:24" hostname="RODRIGO-MONTERO" time="0.03">
+<testsuite name="com.ceiba.empleado.ServicioActualizarEmpleadoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-28T18:53:41" hostname="RODRIGO-MONTERO" time="0.029">
   <properties/>
-  <testcase name="validarActualizacionEmpleadoTest()" classname="com.ceiba.empleado.ServicioActualizarEmpleadoTest" time="0.03"/>
+  <testcase name="validarActualizacionEmpleadoTest()" classname="com.ceiba.empleado.ServicioActualizarEmpleadoTest" time="0.029"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

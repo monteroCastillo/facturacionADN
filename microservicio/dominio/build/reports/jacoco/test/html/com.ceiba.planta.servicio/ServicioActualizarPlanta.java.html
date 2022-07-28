@@ -15,9 +15,11 @@ public class ServicioActualizarPlanta {
 
     public void ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
 
-<span class="nc" id="L18">        var planta = Planta.crear(solicitudCrearPlanta);</span>
-<span class="nc" id="L19">        this.repositorioPlanta.actualizar(planta);</span>
-<span class="nc" id="L20">    }</span>
+<span class="nc" id="L18">        System.out.println(&quot;la solicitud  de crear :&quot;+ solicitudCrearPlanta);</span>
+<span class="nc" id="L19">        var planta = Planta.crear(solicitudCrearPlanta);</span>
+<span class="nc" id="L20">        System.out.println(&quot;La planta: &quot;+ planta.getId());</span>
+<span class="nc" id="L21">        this.repositorioPlanta.actualizar(planta);</span>
+<span class="nc" id="L22">    }</span>
 
 
 

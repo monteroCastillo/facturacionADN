@@ -21,6 +21,8 @@ public class ManejadorActualizarPlanta implements ManejadorComando<ComandoPlanta
 
     @Override
     public void ejecutar(ComandoPlanta comandoPlanta) {
+        System.out.println("Comandoplanta en el manejador el id es: " + comandoPlanta.getId());
         this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));
+
     }
 }

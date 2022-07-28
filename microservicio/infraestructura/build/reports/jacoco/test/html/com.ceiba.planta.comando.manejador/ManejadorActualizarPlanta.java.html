@@ -21,7 +21,9 @@ public class ManejadorActualizarPlanta implements ManejadorComando&lt;ComandoPla
 
     @Override
     public void ejecutar(ComandoPlanta comandoPlanta) {
-<span class="nc" id="L24">        this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));</span>
-<span class="nc" id="L25">    }</span>
+<span class="nc" id="L24">        System.out.println(&quot;Comandoplanta en el manejador el id es: &quot; + comandoPlanta.getId());</span>
+<span class="nc" id="L25">        this.servicioActualizarPlanta.ejecutar(fabricaPlanta.guardarPlanta(comandoPlanta));</span>
+
+<span class="nc" id="L27">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
