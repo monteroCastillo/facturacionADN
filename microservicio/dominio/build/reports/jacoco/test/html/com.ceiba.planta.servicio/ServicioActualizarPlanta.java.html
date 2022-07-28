@@ -15,17 +15,12 @@ public class ServicioActualizarPlanta {
 <span class="fc" id="L15">    }</span>
 
     public void ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
-<span class="nc" id="L18">        validarExistenciaPrevia(solicitudCrearPlanta);</span>
+
 <span class="nc" id="L19">        var planta = Planta.crear(solicitudCrearPlanta);</span>
 <span class="nc" id="L20">        this.repositorioPlanta.actualizar(planta);</span>
 <span class="nc" id="L21">    }</span>
 
-    private void validarExistenciaPrevia(SolicitudCrearPlanta solicitudCrearPlanta){
-<span class="nc" id="L24">        boolean existe = this.repositorioPlanta.existe(solicitudCrearPlanta.getId());</span>
-<span class="nc bnc" id="L25" title="All 2 branches missed.">        if(!existe) {</span>
-<span class="nc" id="L26">            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());</span>
-        }
-<span class="nc" id="L28">    }</span>
+
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

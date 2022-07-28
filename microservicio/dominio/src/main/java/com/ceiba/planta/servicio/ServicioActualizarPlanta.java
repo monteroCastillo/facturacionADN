@@ -15,16 +15,11 @@ public class ServicioActualizarPlanta {
     }
 
     public void ejecutar(SolicitudCrearPlanta solicitudCrearPlanta){
-        validarExistenciaPrevia(solicitudCrearPlanta);
+
         var planta = Planta.crear(solicitudCrearPlanta);
         this.repositorioPlanta.actualizar(planta);
     }
 
-    private void validarExistenciaPrevia(SolicitudCrearPlanta solicitudCrearPlanta){
-        boolean existe = this.repositorioPlanta.existe(solicitudCrearPlanta.getId());
-        if(!existe) {
-            throw new ExcepcionSinDatos(MensajesDeExcepcion.NO_EXISTE_UNA_PERSONA_REGISTRADO_CON_ESTE_ID.getMensaje());
-        }
-    }
+
 
 }
