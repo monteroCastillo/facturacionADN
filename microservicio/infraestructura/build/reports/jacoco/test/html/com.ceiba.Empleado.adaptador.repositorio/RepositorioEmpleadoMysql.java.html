@@ -45,9 +45,9 @@ public class RepositorioEmpleadoMysql implements RepositorioEmpleado {
 <span class="nc" id="L45">    }</span>
     @Override
     public boolean existe(Long id) {
-<span class="fc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
-<span class="fc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
-<span class="fc" id="L50">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
+<span class="nc" id="L48">        MapSqlParameterSource paramSource = new MapSqlParameterSource();</span>
+<span class="nc" id="L49">        paramSource.addValue(&quot;id&quot;, id);</span>
+<span class="nc" id="L50">        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste, paramSource, Boolean.class);</span>
 
     }
     @Override
